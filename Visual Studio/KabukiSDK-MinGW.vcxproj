@@ -19,8 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\KabukiSDK-Library\KabukiSDK-Config.hpp" />
     <ClInclude Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Account.h" />
     <ClInclude Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\ARadioButton.h" />
+    <ClInclude Include="..\KabukiSDK-Library\KabukiSDK.hpp" />
     <ClInclude Include="..\KabukiSDK-Library\_2D\Angle.hpp" />
     <ClInclude Include="..\KabukiSDK-Library\_2D\Bezier.hpp" />
     <ClInclude Include="..\KabukiSDK-Library\_2D\Point.hpp" />

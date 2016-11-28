@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FreeI2P-MinGW", "..\..\FreeI2P\Visual Studio\FreeI2P-MinGW.vcxproj", "{650E7772-97F1-4966-BE71-68DB9D59CDBD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mbedBunk-MinGW", "..\..\mbedBunk\mbedBunk-MinGW\Visual Studio\mbedBunk-MinGW.vcxproj", "{13694A1F-3662-4878-8A33-47CC3FCC67BE}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KabukiSDK-DLL", "KabukiSDK-DLL.vcxproj", "{33FFB086-A1F5-44D9-BB42-4F576AE42A26}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KabukiSDK-MinGW", "KabukiSDK-MinGW.vcxproj", "{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +33,6 @@ Global
 		{650E7772-97F1-4966-BE71-68DB9D59CDBD}.Release|x64.Build.0 = Release|x64
 		{650E7772-97F1-4966-BE71-68DB9D59CDBD}.Release|x86.ActiveCfg = Release|Win32
 		{650E7772-97F1-4966-BE71-68DB9D59CDBD}.Release|x86.Build.0 = Release|Win32
-		{13694A1F-3662-4878-8A33-47CC3FCC67BE}.Debug|ARM.ActiveCfg = Debug|Win32
-		{13694A1F-3662-4878-8A33-47CC3FCC67BE}.Debug|ARM64.ActiveCfg = Debug|Win32
-		{13694A1F-3662-4878-8A33-47CC3FCC67BE}.Debug|x64.ActiveCfg = Debug|x64
-		{13694A1F-3662-4878-8A33-47CC3FCC67BE}.Debug|x64.Build.0 = Debug|x64
-		{13694A1F-3662-4878-8A33-47CC3FCC67BE}.Debug|x86.ActiveCfg = Debug|Win32
-		{13694A1F-3662-4878-8A33-47CC3FCC67BE}.Debug|x86.Build.0 = Debug|Win32
-		{13694A1F-3662-4878-8A33-47CC3FCC67BE}.Release|ARM.ActiveCfg = Release|Win32
-		{13694A1F-3662-4878-8A33-47CC3FCC67BE}.Release|ARM64.ActiveCfg = Release|Win32
-		{13694A1F-3662-4878-8A33-47CC3FCC67BE}.Release|x64.ActiveCfg = Release|x64
-		{13694A1F-3662-4878-8A33-47CC3FCC67BE}.Release|x64.Build.0 = Release|x64
-		{13694A1F-3662-4878-8A33-47CC3FCC67BE}.Release|x86.ActiveCfg = Release|Win32
-		{13694A1F-3662-4878-8A33-47CC3FCC67BE}.Release|x86.Build.0 = Release|Win32
 		{33FFB086-A1F5-44D9-BB42-4F576AE42A26}.Debug|ARM.ActiveCfg = Debug|Win32
 		{33FFB086-A1F5-44D9-BB42-4F576AE42A26}.Debug|ARM64.ActiveCfg = Debug|Win32
 		{33FFB086-A1F5-44D9-BB42-4F576AE42A26}.Debug|x64.ActiveCfg = Debug|x64
@@ -57,6 +45,18 @@ Global
 		{33FFB086-A1F5-44D9-BB42-4F576AE42A26}.Release|x64.Build.0 = Release|x64
 		{33FFB086-A1F5-44D9-BB42-4F576AE42A26}.Release|x86.ActiveCfg = Release|Win32
 		{33FFB086-A1F5-44D9-BB42-4F576AE42A26}.Release|x86.Build.0 = Release|Win32
+		{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}.Debug|ARM.ActiveCfg = Debug|Win32
+		{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}.Debug|x64.ActiveCfg = Debug|x64
+		{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}.Debug|x64.Build.0 = Debug|x64
+		{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}.Debug|x86.ActiveCfg = Debug|Win32
+		{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}.Debug|x86.Build.0 = Debug|Win32
+		{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}.Release|ARM.ActiveCfg = Release|Win32
+		{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}.Release|ARM64.ActiveCfg = Release|Win32
+		{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}.Release|x64.ActiveCfg = Release|x64
+		{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}.Release|x64.Build.0 = Release|x64
+		{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}.Release|x86.ActiveCfg = Release|Win32
+		{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

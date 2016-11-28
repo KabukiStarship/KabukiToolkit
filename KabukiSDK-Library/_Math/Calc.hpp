@@ -311,7 +311,7 @@ class _KabukiSDK Calc: public I2P::Object
     /*< Constructs a calculator. */
 
     virtual const char* Do (I2P::Terminal& Slot, int Index, int Enq);
-    /*< Inter-process subroutines. */
+    /*< Inter-process oproutines. */
 
     inline void Print (I2P::Terminal& Slot);
     /*< Prints this object to the terminal. */

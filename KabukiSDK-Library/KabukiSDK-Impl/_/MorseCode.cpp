@@ -1,5 +1,5 @@
 /** Kabuki Software Development Kit
-    @file    /.../KabukiSDK-Library/KabukiSDK-Impl/_Util/MorseCode.cpp
+    @file    /.../KabukiSDK-Library/KabukiSDK-Impl/_/MorseCode.cpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2016 [Cale McCollough](calemccollough.github.io)
 
@@ -18,41 +18,41 @@
         limitations under the License.
 */
 
-#include "MorseCode.hpp"
+#include <_/MorseCode.hpp>
 
-namespace _Util {
+namespace _ {
 
-const char* Encode (char Code)
+const char* toMorseCode (char code)
 {
     static const char* space = " "; //<
 
     static const char* cypher[] = {
-        ".-.-.",        //< ASCII: NUL, Morse Code: End of message.
+        ".-.-.",        //< ASCII: NUL, Morse code: End of message.
         0,              //< ASCII: SOH.
-        "-.-.-",        //< ASCII: STX, Morse Code: Start copying.
-        "-.-..-..",     //< ASCII: ETX, Morse Code: Going off the air ("clear").
-        "...-.-",       //< ASCII: EOT, Morse Code: End of transmission.
-        "-.--.",        //< ASCII: ENQ, Morse Code: Invite a specific station to transmit.
-        "...-.",        //< ASCII: ACK, Morse Code: Understood.
-        "...---...",    //< ASCII: BEL, Morse Code: SOS distress signal.
-        "........",     //< ASCII: BS,  Morse Code: Prosign error.
-        space,          //< ASCII: HT,  Morse Code: non-standard space.
-        ".-.-",         //< ASCII: LF,  Morse Code: New Line
-        "-...-",        //< ASCII: VT,  Morse Code: New paragraph.
-        ".-.-.",        //< ASCII: FF,  Morse Code: New Page
+        "-.-.-",        //< ASCII: STX, Morse code: Start copying.
+        "-.-..-..",     //< ASCII: ETX, Morse code: Going off the air ("clear").
+        "...-.-",       //< ASCII: EOT, Morse code: End of transmission.
+        "-.--.",        //< ASCII: ENQ, Morse code: Invite a specific station to transmit.
+        "...-.",        //< ASCII: ACK, Morse code: Understood.
+        "...---...",    //< ASCII: BEL, Morse code: SOS distress signal.
+        "........",     //< ASCII: BS,  Morse code: Prosign error.
+        space,          //< ASCII: HT,  Morse code: non-standard space.
+        ".-.-",         //< ASCII: LF,  Morse code: New Line
+        "-...-",        //< ASCII: VT,  Morse code: New paragraph.
+        ".-.-.",        //< ASCII: FF,  Morse code: New Page
         0,              //< ASCII: CR
-        "-..---",       //< ASCII: SO,  Morse Code: Change to Wabun Mores code.
-        ".--...",       //< ASCII: SI,  Morse Code: Non-standard return to Western Mores Code
+        "-..---",       //< ASCII: SO,  Morse code: Change to Wabun Mores code.
+        ".--...",       //< ASCII: SI,  Morse code: Non-standard return to Western Mores code
         0,              //< ASCII: DLE
         0,              //< ASCII: DC1
         0,              //< ASCII: DC2
         0,              //< ASCII: DC3
         0,              //< ASCII: DC4
         0,              //< ASCII: NAK
-        ".-...",        //< ASCII: SYN, Morse Code: AS, Wait.
+        ".-...",        //< ASCII: SYN, Morse code: AS, Wait.
         0,              //< ASCII: ETB
         0,              //< ASCII: CAN
-        "-...-.-",      //< ASCII: EM,  Morse Code: Break/BRB.
+        "-...-.-",      //< ASCII: EM,  Morse code: Break/BRB.
         0,              //< ASCII: SUB
         0,              //< ASCII: ESC
         0,              //< ASCII: FS
@@ -120,11 +120,11 @@ const char* Encode (char Code)
         "--.."          //< ASCII: 'Z'
     };
 
-    if (Code < 0) return 0;
-    if (Code >= 'a' && Code <= 'z') Code -= 'a' - 'A';   //< Covert from lowercase to upper case if need be.
-    if (Code > 'Z')
+    if (code < 0) return 0;
+    if (code >= 'a' && code <= 'z') code -= 'a' - 'A';   //< Covert from lowercase to upper case if need be.
+    if (code > 'Z')
     {
-        switch (Code)
+        switch (code)
         {
           case -4: return ".-.-";   //< 132
           case -5: return ".--.-";  //< 133
@@ -136,27 +136,7 @@ const char* Encode (char Code)
           default:  return 0;
         }
     }
-    return cypher[Code];
+    return cypher[code];
 }
 
-byte MorseCode::getState ()
-{
-    return 0;
-}
-
-const char* MorseCode::getState (byte Value)
-{
-    return 0;
-}
-
-const char* MorseCode::sub (I2P::Terminal& slot, int index, int Enq)
-{
-    switch (Index)
-    {
-        case 0: return I2P::NumMembers (0);
-    }
-    
-    return Query ? Enquery ("MorseCode", "_Com"): InvalidIndex ();
-}
-
-}   //< namespace _Util
+}   //< namespace _

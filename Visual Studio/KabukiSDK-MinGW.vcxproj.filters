@@ -123,9 +123,6 @@
     <ClInclude Include="..\KabukiSDK-Library\_\IEvent.hpp">
       <Filter>KabukiSDK\_</Filter>
     </ClInclude>
-    <ClInclude Include="..\KabukiSDK-Library\_\Memory.hpp">
-      <Filter>KabukiSDK\_</Filter>
-    </ClInclude>
     <ClInclude Include="..\KabukiSDK-Library\_\MorseCode.hpp">
       <Filter>KabukiSDK\_</Filter>
     </ClInclude>
@@ -377,11 +374,11 @@
     <None Include="..\KabukiSDK-Library\_Math\ReadMe.md">
       <Filter>KabukiSDK\_Math</Filter>
     </None>
+    <None Include="..\KabukiSDK-Library\_3D\ReadMe.md">
+      <Filter>KabukiSDK\_3D</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\Memory.cpp">
-      <Filter>KabukiSDK-Impl\_</Filter>
-    </ClCompile>
     <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\MorseCode.cpp">
       <Filter>KabukiSDK-Impl\_</Filter>
     </ClCompile>
@@ -576,6 +573,9 @@
     </ClCompile>
     <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\Components\XYControl.cpp">
       <Filter>KabukiSDK-Impl\_UI\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\ErrorList.cpp">
+      <Filter>KabukiSDK-Impl\_</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

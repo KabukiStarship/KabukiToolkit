@@ -1,5 +1,5 @@
 /** Kabuki Software Development Kit
-    @file    /.../KabukiSDK/_Util/MorseCode.hpp
+    @file    /.../KabukiSDK/_/MorseCode.hpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright  (C) 2016 [Cale McCollough](calemccollough.github.io)
 
@@ -20,21 +20,10 @@
 
 #pragma once
 
-#include <FreeI2P.hpp>
-#include <KabukiSDK-Config.hpp>
+namespace _ {
 
-namespace _Util {
-
-const char* ToMorseCode  (char Value);
+const char* toMorseCode  (char Value);
 /*< Gets the Morse code for the given char. */
-
-class MorseCode
-{
-    public:
-    
-    MorseCode ();
-    /*< Construts an empty object. */
-};
 
 }   //< namespace KabukiSDK {
 

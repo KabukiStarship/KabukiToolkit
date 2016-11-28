@@ -83,7 +83,7 @@ namespace _Data {
                     {
                         currentBranch = currentBranch.rootNode ();
                         currentBranch.hppaveBeenThatWay = currentBranch.hppaveBeenThatWay = false;
-                        // now were done with this sub-tree so we reset the flags so that
+                        // now were done with this op-tree so we reset the flags so that
                         // we don't have to reset the whole tree to search it again
                     }
                     else

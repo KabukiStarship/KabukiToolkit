@@ -171,7 +171,7 @@ const char* ButtonScroller::getState (byte Value)
     return 0;
 }
 
-const char* ButtonScroller::sub (I2P::Terminal& slot, int index, int Enq)
+const char* ButtonScroller::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

@@ -1,8 +1,6 @@
-# Data Structures Module
-Contains various data structures that can be used across an assembly line boundry.
-
-## C# and Java Junk
-These files were created in C# and some in Java, and they need to get ported to C++.
+# Abstract User Interface Module
+This module contains utilties for creating abstract user interfaces for GUIs, and remote mapped 
+technologies.
 
 ## License ##
 Copyright 2016 (C) Cale McCollough <cale.mccollough@gmail.com> and contributors.

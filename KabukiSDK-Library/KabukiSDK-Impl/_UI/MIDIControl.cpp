@@ -101,7 +101,7 @@ const char* MIDIControl::getState (byte Value)
     return 0;
 }
 
-const char* MIDIControl::sub (I2P::Terminal& slot, int index, int Enq)
+const char* MIDIControl::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

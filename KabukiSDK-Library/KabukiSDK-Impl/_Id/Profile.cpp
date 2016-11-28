@@ -37,7 +37,7 @@ const char* Profile::getState (byte Value)
     return 0;
 }
 
-const char* Profile::sub (I2P::Terminal& slot, int index, int Enq)
+const char* Profile::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

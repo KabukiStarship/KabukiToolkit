@@ -25,14 +25,28 @@
 namespace _ {
 
 class IEvent
-/*< Interface with an event. */
+/*< Interface with an event.
+    
+    @code
+    #include <_/IEvent.hpp>
+    struct Example: public IEvent
+    {
+        virtual void trigger ()
+        {
+            
+        }
+        
+        virtual print (I2P::Terminal)
+        {
+            
+        }
+    };
+    @endcode
+*/
 {
     public:
-
-    virtual timestamp_t getEventTime () = 0;
-    /*< Gets the timestamp of when the event occurred. */
     
-    virtual void Trigger (I2P::IObject* source) = 0;
+    virtual void trigger () = 0;
     /*< Triggers the event. */
 
     virtual void print (I2P::Terminal& slot) = 0;

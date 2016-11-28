@@ -52,7 +52,7 @@ int HexToToInt (const char* binaryHex)
     
     for (int i = 0; i < 4; i++)
     {
-        if (binaryHex.subconst char* (i,i+1).equals ("1"))
+        if (binaryHex.opconst char* (i,i+1).equals ("1"))
         Value += amount;
         amount/=2;
     }

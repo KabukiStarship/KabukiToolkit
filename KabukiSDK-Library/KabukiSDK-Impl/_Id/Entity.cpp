@@ -54,7 +54,7 @@ bool Entity::contains (const char* queery)
     return false;
 }
 
-const char* Entity::sub (I2P::Terminal& slot, int index, int Enq)
+const char* Entity::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

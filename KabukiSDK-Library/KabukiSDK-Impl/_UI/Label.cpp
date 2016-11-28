@@ -101,7 +101,7 @@ const char* Label::getState (byte Value)
     return 0;
 }
 
-const char* Label::sub (I2P::Terminal& slot, int index, int Enq)
+const char* Label::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

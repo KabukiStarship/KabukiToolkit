@@ -34,35 +34,45 @@ class _KabukiSDK RectRotor_f
     RectRotor_f  (bool rotated, const Rect_f& area);
     /*< Constructs a RectRotar with an unrotated rectangle. */
 
-    float GetX () const;
+    float getX () const;
     /*< Gets the X value. */
 
-    float& GetX_ref ();
+    float& getX_ref ();
+    /*< Gets the X reference value. */
 
-    float GetY () const;
+    float getY () const;
+    /*< Gets the Y value. */
 
-    float& GetY_ref ();
+    float& getY_ref ();
+    /*< Gets the Y reference value. */
 
-    unsigned GetWidth () const;
+    unsigned getWidth () const;
+    /*< Gets the width. */
 
-    unsigned& GetWidth_ref ();
+    unsigned& getWidth_ref ();
+    /*< Gets the width reference. */
 
-    unsigned GetHeight () const;
+    unsigned getHeight () const;
+    /*< Gets the height. */
 
-    unsigned& GetHeight_ref ();
+    unsigned& getHeight_ref ();
+    /*< Gets the height reference. */
 
-    float GetRight () const;
+    float getRight () const;
+    /*< Gets the right x value. */
 
-    float GetBottom () const;
+    float getBottom () const;
+    /*< Gets the bottom y value. */
 
-    const Rect_f& Rotate () const;
+    const Rect_f& rotate () const;
+    /*< Rotates the original vector and returns the outter bouncs
 
-    void Print (I2P::Terminal& Slot);
+    void print (I2P::Terminal& slot);
     /*< Prints this object to the terminal. */
 
     private:
 
-    bool rotated;       //< Flag for if rectangle has been rotated.
+    float angle;        //< The angle rotated by.
 
     Vect_f vector;      //< The unrotated vector.
 

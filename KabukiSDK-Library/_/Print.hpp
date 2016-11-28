@@ -1,11 +1,11 @@
 /** Kabuki Software Development Kit
     @file    /.../KabukiSDK/_/Print.hpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
-    @license Copyright  (C) 2016 [Cale McCollough](calemccollough.github.io)
+    @license Copyright (C) 2016 [Cale McCollough](calemccollough.github.io)
 
-                            All right reserved  (R).
+                            All right reserved (R).
 
-        Licensed under the Apache License, Version 2.0  (the "License"); you may
+        Licensed under the Apache License, Version 2.0 (the "License"); you may
         not use this file except in compliance with the License. You may obtain
         a copy of the License at
 
@@ -20,16 +20,13 @@
 
 #pragma once
 
-#include <stdint.hpp>
-#include <mbed.hpp>
-
 namespace _ {
 
-void PrintLine  (int ColumnWidth = 80, const char* Token = "-");
+void printLine (const char* Token = "-", int ColumnWidth = 80);
 /*< Prints a line with the given token and number of columns to the debug
     stream. */
 
-void PrintLines (int NumRows = 10);
+void printLines (int NumRows = 10);
 /*< Prints a vertical tab with the given number of rows. */
 
 }

@@ -37,7 +37,7 @@ class _KabukiSDK AVControl, public Label, public Event
     /** A list of the different types of Control  (s). */
     enum Types { DMXControl = 0, MIDIControl, OSCControl, DMXButton, MIDIButton, OSCButton, MacroButton } ;
 
-    static const char* MacroHeader;        //< const char* for printing multiple AVControls with other subclasses.
+    static const char* MacroHeader;        //< const char* for printing multiple AVControls with other opclasses.
     static const int MacroHeaderLength;     //< The length of the MacroHeader
 
     AVControl  (int newType, const char* &newLabel = "", int newChannel = 0, int initValue = 0, int newMinValue = 0,

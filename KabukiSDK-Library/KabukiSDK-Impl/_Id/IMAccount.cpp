@@ -37,7 +37,7 @@ const char* IMAccount::getState (byte Value)
     return 0;
 }
 
-const char* IMAccount::sub (I2P::Terminal& slot, int index, int Enq)
+const char* IMAccount::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

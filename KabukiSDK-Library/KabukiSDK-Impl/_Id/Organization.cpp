@@ -27,7 +27,7 @@ Organization::Organization ()
 
 }
 
-const char* Organization::sub (I2P::Terminal& slot, int index, int Enq)
+const char* Organization::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

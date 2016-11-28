@@ -97,13 +97,13 @@
     <ClInclude Include="..\KabukiSDK-Library\_\EventSequence.hpp" />
     <ClInclude Include="..\KabukiSDK-Library\_\IComparable.hpp" />
     <ClInclude Include="..\KabukiSDK-Library\_\IEvent.hpp" />
-    <ClInclude Include="..\KabukiSDK-Library\_\Memory.hpp" />
     <ClInclude Include="..\KabukiSDK-Library\_\MorseCode.hpp" />
     <ClInclude Include="..\KabukiSDK-Library\_\Print.hpp" />
     <ClInclude Include="..\KabukiToolkit-Library\_Math\Operators\Divide.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\KabukiSDK-Library\_2D\ReadMe.md" />
+    <None Include="..\KabukiSDK-Library\_3D\ReadMe.md" />
     <None Include="..\KabukiSDK-Library\_Data\ReadMe.md" />
     <None Include="..\KabukiSDK-Library\_Id\ReadMe.md" />
     <None Include="..\KabukiSDK-Library\_Math\ReadMe.md" />
@@ -172,8 +172,8 @@
     <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\MIDIControl.cpp" />
     <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\Widget.cpp" />
     <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\Converter.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\ErrorList.cpp" />
     <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\EventSequence.cpp" />
-    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\Memory.cpp" />
     <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\MorseCode.cpp" />
     <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\Print.cpp" />
   </ItemGroup>
@@ -230,7 +230,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\KabukiToolkit-Library;..\..\mbed-os\hal\api;..\..\cpputest\include;..\..\FreeI2P\FreeI2P-Library;$(IncludePath)</IncludePath>
+    <IncludePath>..\KabukiSDK-Library;..\..\mbed-os\hal\api;..\..\cpputest\include;..\..\FreeI2P\FreeI2P-Library;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

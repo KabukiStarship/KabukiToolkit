@@ -37,7 +37,7 @@ const char* Relationship::getState (byte Value)
     return 0;
 }
 
-const char* Relationship::sub (I2P::Terminal& slot, int index, int Enq)
+const char* Relationship::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

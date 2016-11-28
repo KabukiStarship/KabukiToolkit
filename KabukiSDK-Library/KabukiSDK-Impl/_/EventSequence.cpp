@@ -22,6 +22,11 @@
 #include <_/EventSequence.hpp>
 
 namespace _ {
+ EventNode::EventNode (IEvent* nodeEvent)
+ :   event (nodeEvent)
+ {
+     
+ }
 
 EventSequence::EventSequence ()
 {
@@ -33,19 +38,19 @@ timestamp_t EventSequence::getEventTime ()
     return 0;
 }
 
-void EventSequence::Trigger (I2P::IObject* Source)
+void EventSequence::trigger (IEvent* Source)
 {
     if (head == nullptr) return;
-    head->Trigger (Source);
+    head->trigger (Source);
 }
 
-void EventSequence::Print (I2P::Terminal& Slot)
+void EventSequence::print (I2P::Terminal& slot)
 {
     if (head == nullptr) return;
     
-    head->Print (Slot);
+    head->Print (slot);
     EventNode* next = head->GetNext ();
-    if (next != nullptr) next->Print (Slot);
+    if (next != nullptr) next->Print (slot);
 }
 
 }   //< namespace _

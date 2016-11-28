@@ -33,7 +33,7 @@ class _KabukiSDK Widget// : public ControlGrid
     ~Widget ();
     
     virtual const char* Do  (const char* Query, byte index, Roombot* Bot);
-    /*< Inter-process subroutines. */
+    /*< Inter-process oproutines. */
 
     private:
 

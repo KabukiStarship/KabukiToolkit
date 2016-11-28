@@ -37,7 +37,7 @@ const char* Person::getState (byte Value)
     return 0;
 }
 
-const char* Person::sub (I2P::Terminal& slot, int index, int Enq)
+const char* Person::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

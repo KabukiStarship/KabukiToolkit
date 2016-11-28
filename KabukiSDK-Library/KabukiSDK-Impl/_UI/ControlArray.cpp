@@ -128,7 +128,7 @@ const char* ControlArray::getState (byte Value)
     return 0;
 }
 
-const char* ControlArray::sub (I2P::Terminal& slot, int index, int Enq)
+const char* ControlArray::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

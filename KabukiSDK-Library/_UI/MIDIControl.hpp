@@ -69,7 +69,7 @@ class _KabukiSDK MIDIControl : public AVControl
     //< Gets a column of the values without the labels.
     
     virtual const char* Do  (const char* Query, byte index, Roombot* Bot);
-    /*< Inter-process subroutines. */
+    /*< Inter-process oproutines. */
 
     private:
 

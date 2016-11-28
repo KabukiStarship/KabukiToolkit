@@ -38,7 +38,7 @@ const char* Name::getState (byte Value)
     return 0;
 }
 
-const char* Name::sub (I2P::Terminal& slot, int index, int Enq)
+const char* Name::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

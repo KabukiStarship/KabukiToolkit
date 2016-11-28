@@ -30,6 +30,6 @@ class IComparable
     public:
 
     virtual int compare  (IComparable* o) = 0;
-    /*< Compares this object to the given and returns an integer representing their comparativeness. */
+    /*< Numerically compares this object to the other. */
 };
 }

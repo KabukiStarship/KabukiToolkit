@@ -51,7 +51,7 @@ class _KabukiSDK OSCControl : public AVControl
     //< Gets a column of the values without the labels.
     
     virtual const char* Do  (const char* Query, byte index, Roombot* Bot);
-    /*< Inter-process subroutines. */
+    /*< Inter-process oproutines. */
 };
 
 #if DEBUG
@@ -71,7 +71,7 @@ class _KabukiSDK OSCControlTests : public UnitTest
     }
     
     virtual const char* Do  (const char* Query, byte index, Roombot* Bot);
-    /*< Inter-process subroutines. */
+    /*< Inter-process oproutines. */
 };
 static OSCControlTests testUnit_DMXControl;
 #endif // DEBUG

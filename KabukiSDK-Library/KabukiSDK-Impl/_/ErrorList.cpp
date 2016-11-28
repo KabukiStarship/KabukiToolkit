@@ -1,5 +1,5 @@
 /** Kabuki Software Development Kit
-    @file    /.../_/Memory.hpp
+    @file    /.../_/ErrorList.cpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright  (C) 2016 [Cale McCollough](calemccollough.github.io)
 
@@ -18,29 +18,40 @@
         limitations under the License.
 */
 
-#pragma once
-
-#include <FreeI2P.hpp>
-#include <KabukiSDK-Config.hpp>
+#include <_/ErrorList.hpp>
 
 namespace _ {
 
-inline int WordAlign  (int16_t Value);
-/*< Word-aligns the given value. */
+ErrorList::ErrorList (char** errorBuffer, int maximumNumErrors)
+:   numErrors  (0),
+    maxNumErrors (maximumNumErrors < 0 ? DefaultNumErrors : maximumNumErrors)
+{
+    /// Nothing to do here! :-)
+}
 
-inline int WordAlign  (uint16_t Value);
-/*< Word-aligns the given value. */
+void ErrorList::clear () { numErrors = 0; }
 
-inline int WordAlign  (int32_t Value);
-/*< Word-aligns the given value. */
+unsigned int ErrorList::getNumErrors () { return numErrors; }
 
-inline int WordAlign  (uint32_t Value);
-/*< Word-aligns the given value. */
+void ErrorList::report  (const char* s)
+{
+    if  (numErrors >= MaxNumErrors) return;
+    errors[numErrors++] = s;
+    return this;
+}
+    
+ErrorList& operator +=  (const char* s)
+{
+    report  (s);
+    return this;
+}
 
-inline int WordAlign  (int64_t Value);
-/*< Word-aligns the given value. */
-
-inline int WordAlign  (uint64_t Value);
-/*< Word-aligns the given value. */
+const char* ErrorList::getErrors () { return errors; }
+    
+void ErrorList::print (I2P::Terminal& slot)
+{
+    for  (int i = 0; i < numErrors; ++i)
+        printLine (errors[i]);
+}
 
 }   //< namespace _

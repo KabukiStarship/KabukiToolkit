@@ -37,9 +37,11 @@ class _KabukiSDK Hit
 {
     public:
     
-    static const int MaxnameLength = 12,    //< The max name length.
-        MaxTagLength = 20,                  //< The max tag length.
-        MaxDescriptionLength = 256;         //< The max description length.
+    enum {
+        MaxnameLength = 12,             //< The max name length.
+        MaxTagLength = 20,              //< The max tag length.
+        MaxDescriptionLength = 256      //< The max description length.
+    };
 
     Hit (const char* aName = "", char patch = 0, const char* aDescription = "", const char* aCatagory = "", const char* aType = "", char* someTags = 0, int ANumTags = 0);
     /** Simple constructor. 
@@ -79,7 +81,7 @@ class _KabukiSDK Hit
         @return Gets an empty const char* no tags exist. */
 
     char* getSubcatagory () noexcept;
-    /** Gets the subcatagory const char*.
+    /** Gets the opcatagory const char*.
         @return Gets an empty const char* no tags exist. */
 
     void addTags (char* SomeTags, int numTags);
@@ -102,15 +104,15 @@ class _KabukiSDK Hit
     
     private:
 
-    const char* name,           //< The name of the patch.
-        * description;          //< Description of the patch. 
+    const char* name,               //< The name of the patch.
+        * description;              //< Description of the patch. 
     
-    const char** catagory,      //< Pointer to the catagory const char*.
-        * type;                 //< Pointer to the type of instrument  (i.e. Flute, claranet).
+    const char** catagory,          //< Pointer to the catagory const char*.
+        * type;                     //< Pointer to the type of instrument  (i.e. Flute, claranet).
     
-    int uniqueId;               //< The unique identifier.
+    int uniqueId;                   //< The unique identifier.
 
-    std::vector<const char*> tags;   //< List of tags.
+    std::vector<const char*> tags;  //< List of tags.
 };
 }   //< namespace Librarian
 

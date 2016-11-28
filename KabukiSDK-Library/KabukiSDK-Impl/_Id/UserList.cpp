@@ -77,7 +77,7 @@ const char* UserList::getState (byte Value)
     return 0;
 }
 
-const char* UserList::sub (I2P::Terminal& slot, int index, int Enq)
+const char* UserList::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

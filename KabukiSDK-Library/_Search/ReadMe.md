@@ -1,8 +1,8 @@
-# Data Structures Module
-Contains various data structures that can be used across an assembly line boundry.
+# Search Module
+This module contains search utilities for querring for metadata.
 
-## C# and Java Junk
-These files were created in C# and some in Java, and they need to get ported to C++.
+## Example
+For an example of how to use this module, see the /.../KabukiSDK-Examples/_Search/ folder.
 
 ## License ##
 Copyright 2016 (C) Cale McCollough <cale.mccollough@gmail.com> and contributors.

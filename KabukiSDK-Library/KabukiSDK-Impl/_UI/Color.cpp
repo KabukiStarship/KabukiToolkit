@@ -134,7 +134,7 @@ const char* Color::getState (byte Value)
     return 0;
 }
 
-const char* Color::sub (I2P::Terminal& slot, int index, int Enq)
+const char* Color::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

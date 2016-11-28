@@ -73,7 +73,7 @@ class _KabukiSDK Library: public IObject
         @return returns 0 upon success, and an I2P::Errror upon failure. */
     
     virtual const char* Do  (const char* Query, byte index, Roombot* Bot);
-    /*< Inter-process subroutines. */
+    /*< Inter-process oproutines. */
     
     private:
 

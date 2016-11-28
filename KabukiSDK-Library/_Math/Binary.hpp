@@ -25,68 +25,68 @@
 
 namespace _Math {
 
-inline void ToBinary (char* Result, int8_t Value);
+inline void toBinary (char* Result, int8_t Value);
 /*< Converts the Value to ASCII binary string into the given buffer.
     @pre    The Result must be at least 9 bytes in length! 
 */
 
-inline void ToBinary (char* Result, byte Value);
+inline void toBinary (char* Result, byte Value);
 /*< Converts the Value to ASCII binary string into the given buffer.
     @pre    The Result must be at least 9 bytes in length! 
 */
 
-inline void ToBinary (char* Result, int16_t Value);
+inline void toBinary (char* Result, int16_t Value);
 /*< Converts the Value to ASCII binary string into the given buffer.
     @pre    The Result must be at least 9 bytes in length! 
 */
 
-inline void ToBinary (char* Result, uint16_t Value);
+inline void toBinary (char* Result, uint16_t Value);
 /*< Converts the Value to ASCII binary string into the given buffer.
     @pre    The Result must be at least 9 bytes in length! 
 */
 
-inline void ToBinary (char* Result, int32_t Value);
+inline void toBinary (char* Result, int32_t Value);
 /*< Converts the Value to ASCII binary string into the given buffer.
     @pre    The Result must be at least 9 bytes in length! 
 */
 
-inline void ToBinary (char* Result, uint32_t Value);
+inline void toBinary (char* Result, uint32_t Value);
 /*< Converts the Value to ASCII binary string into the given buffer.
     @pre    The Result must be at least 9 bytes in length! 
 */
 
-inline void ToBinary (char* Result, int64_t Value);
+inline void toBinary (char* Result, int64_t Value);
 /*< Converts the Value to ASCII binary string into the given buffer.
     @pre    The Result must be at least 9 bytes in length! 
 */
 
-inline void ToBinary (char* Result, uint64_t Value);
+inline void toBinary (char* Result, uint64_t Value);
 /*< Converts the Value to ASCII binary string into the given buffer.
     @pre    The Result must be at least 9 bytes in length! 
 */
 
-int8_t BinaryToInt8 (const char* Value);
+int8_t binaryToInt8 (const char* Value);
 /*< Converts the given string into an int8_t. */
 
-uint8_t BinaryToUInt8 (const char* Value);
+uint8_t binaryToUInt8 (const char* Value);
 /*< Converts the given string into an uint8_t. */
 
-int16_t BinaryToInt16 (const char* Value);
+int16_t binaryToInt16 (const char* Value);
 /*< Converts the given string into an int16_t. */
 
-uint16_t BinaryToUInt16 (const char* Value);
+uint16_t binaryToUInt16 (const char* Value);
 /*< Converts the given string into an uint16_t. */
 
-int32_t BinaryToInt32 (const char* Value);
+int32_t binaryToInt32 (const char* Value);
 /*< Converts the given string into an int32_t. */
 
-uint32_t BinaryToUInt32 (const char* Value);
+uint32_t binaryToUInt32 (const char* Value);
 /*< Converts the given string into an uint32_t. */
 
-int64_t BinaryToInt64 (const char* Value);
+int64_t binaryToInt64 (const char* Value);
 /*< Converts the given string into an int64_t. */
 
-uint64_t BinaryToUInt64 (const char* Value);
+uint64_t binaryToUInt64 (const char* Value);
 /*< Converts the given string into an uint64_t. */
 
 }   //< namespace _

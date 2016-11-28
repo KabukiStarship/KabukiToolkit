@@ -1,5 +1,5 @@
 /** Kabuki Software Development Kit
-    @file    /.../KabukiSDK-Impl/_Data/File.cpp
+    @file    /.../KabukiSDK-Examples/_/main.cpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2016 [Cale McCollough](calemccollough.github.io)
 
@@ -18,36 +18,9 @@
         limitations under the License.
 */
 
-#include <_Data/Data.hpp>
+#include <_/Print.hpp>
 
-namespace _Data {
-    
-File::File (const char* thisFilesName)
+int main ()
 {
-    filename = thisFilesName;
-}
-
-/**  */
-static File File::open (const char* filename)
-{
-    return nullptr;
-}
-
-/**  */
-const char* File::getExtension ()
-{
-    int startIndex;
-
-    startIndex = filename.LastIndexOf ('.');
-
-    if (startIndex < 1 || startIndex > filename.Length)
-        return "";//Then its an invalid file
-
-    return filename.Subconst char* (startIndex, filename.Length).ToLower ();
-}
-
-const char* File::toString ()
-{
-    return "File";
-}
+    printf ();
 }

@@ -118,9 +118,9 @@ void Hit::addTags (char* SomeTags, int numTags)
 {
     if (numTags < 0) return;
     
-    for_each (tags.begin (), tags.end (), [] (string *s)
+    for_each (tags.begin (), tags.end (), [](string *s)
     {
-        tags.Add (s);
+        tags.add (s);
     });
 }
 

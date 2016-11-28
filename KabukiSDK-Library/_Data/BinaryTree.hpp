@@ -42,6 +42,9 @@ class BinaryTree
     BinaryTree (const char* fileSeed)
     /*< Constructs a BinaryTree from the given filename. */
     
+    ~BinaryTrea ();
+    /*< 
+    
     void resetList ();
     /*< Deletes all items. */
     
@@ -59,9 +62,7 @@ class BinaryTree
 
     BTNode* getCurrentNode ();
 
-    IIterator* iterator ();
-    
-    IIterator* linearIterator ();
+    IIterator* getIterator ();
 
     size_t getSize ();
         

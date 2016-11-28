@@ -1,8 +1,5 @@
-# Data Structures Module
-Contains various data structures that can be used across an assembly line boundry.
-
-## C# and Java Junk
-These files were created in C# and some in Java, and they need to get ported to C++.
+# 3D Geometry Module
+This module is empty currently, but after the _2D module has been finished, it will then be copied into this folder, and the z dimension added into the those files.
 
 ## License ##
 Copyright 2016 (C) Cale McCollough <cale.mccollough@gmail.com> and contributors.

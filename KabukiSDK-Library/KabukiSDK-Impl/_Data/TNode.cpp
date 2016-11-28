@@ -122,7 +122,7 @@ TNode* TNode::findDepthFirst (void* thisObj)
     }
     if (rootNode != nullptr)// cant go this or that way so go up
     {
-        haveBeenThisWay = haveBeenThatWay = false;// were done with this subtree so we can
+        haveBeenThisWay = haveBeenThatWay = false;// were done with this optree so we can
         return rootNode.findDepthFirst (thisObj); // reset the flags so that we can search
     }                                                          // again without resetting the whole tree.
     return nullptr;

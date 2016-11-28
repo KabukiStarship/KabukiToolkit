@@ -32,7 +32,7 @@ class _KabukiSDK ButtonControl
     A button can be linked to a physical hardware button, a software button, or both. A button can serve one of the 
     following functions:
     - Trigger a MIDI event.
-    - Load a sub-page.
+    - Load a op-page.
     - Switch modes.
     - Do nothing.
 */

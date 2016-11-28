@@ -58,7 +58,7 @@ const char* EntityGroup::getState (byte Value)
     return 0;
 }
 
-const char* EntityGroup::sub (I2P::Terminal& slot, int index, int Enq)
+const char* EntityGroup::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

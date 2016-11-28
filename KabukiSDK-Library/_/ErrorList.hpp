@@ -21,64 +21,55 @@
 #pragma once
 
 #include <FreeI2P.hpp>
-#include <KabukiSDK-Config.hpp>
 
 namespace _ {
 
-template<unsigned int MaxNumErrors>
 class _KabukiSDK ErrorList
 /** An array of error strings.
-    @code
-    ErrorList<5> errors;
 
+    @code
+    int maxNumErrors = 5;
+    char* errorBuffer[maxNumErrors];
+    ErrorList errors (ErrorBuffer, maxNumErrors);
     @endcode
 */
 {
     public:
 
-    ErrorList ()
-    /** Default simple constructor. */
-    :   numErrors  (0)
-    {
-        /// Nothing to do here! :-)
-    }
+    enum {
+        DefaultMaxNumErrors = 8     //< The default maxNumErrors.
+    };
 
-    void clear () { numErrors = 0; }
+    ErrorList (char** errorBuffer, int maximumNumErrors);
+    /*< Constructs an ErrorList from the given buffer and max number of errors. */
+
+    void clear ();
     /*< Clears the error list. */
 
-    unsigned int getNumErrors () { return numErrors; }
+    unsigned int getNumErrors ();
     /*< Gets the number of errors. */
 
-    void report  (const char* Error)
-    /** Reports an error with the given message. */
-    {
-        if  (numErrors >= MaxNumErrors) return;
-        errors[numErrors++] = Error;
-        return this;
-    }
-    
-    ErrorList& operator +=  (const char* Error)
-    /** Reports an error with the given message. */
-    {
-        Report  (Error);
-        return this;
-    }
+    unsigned int getMaxNumErrors ();
+    /*< Gets the number of errors. */
 
-    const char* getErrors () { return errors; }
+    void report  (const char* s);
+    /** Reports an error with the given message. */
+    
+    ErrorList& operator +=  (const char* s)
+    /** Reports an error with the given message. */
+
+    const char* getErrors ();
     /*< Gets the list of errors. */
     
-    inline void print (I2P::Terminal& slot)
+    inline void print (I2P::Terminal& slot);
     /*< Prints this object to a terminal. */
-    {
-        for  (int i = 0; i < numErrors; ++i)
-            printLine (errors[i]);
-    }
 
     private:
 
-    uint numErrors;
+    int numErrors,          //< The number of errors.
+        maxNumErrors;       //< The max number of errors.
 
-    const char* errors[MaxNumErrors];
+    const char** errors;    //< Pointer to an array of pointers to error strings.
 };
 
 }   //< namespace _

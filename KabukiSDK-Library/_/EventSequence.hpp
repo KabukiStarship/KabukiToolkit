@@ -28,6 +28,9 @@ class EventNode
 /*< An IEvent node in a linear linked list. */
 {
     public:
+    
+    EventNode (IEvent* nodeEvent);
+    /*< Constructs an event node with the given IEvent. */
 
     EventNode* getNext () = 0;
     /*< Gets the next IEvent */

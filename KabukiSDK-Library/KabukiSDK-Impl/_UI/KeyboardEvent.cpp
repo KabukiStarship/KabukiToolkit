@@ -79,7 +79,7 @@ const char* KeyboardEvent::getState (byte Value)
     return 0;
 }
 
-const char* KeyboardEvent::sub (I2P::Terminal& slot, int index, int Enq)
+const char* KeyboardEvent::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

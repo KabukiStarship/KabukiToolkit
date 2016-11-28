@@ -39,15 +39,16 @@ class _KabukiSDK TagLibrary
     TagLibrary ()
 
     
-    char* GetOrAddTag  (const char* Tag);
+    char* getOrAddTag  (const char* tag);
     /*< Gets the tag string, and adds it to the collection if it doesn't exist.
         @return Gets null if the tags list doesn't contatin the Tag, and 
             non-null if the Tag was added successfully. */
     
-    void SortTags ();
+    void sortTags ();
     /*< Sorts the tags alphabetically for fast binary search. */
     
-    int GetNumTags () { return tags.size (); }
+    int getNumTags ();
+    /*< Gets the number of tags. */
     
     private:
     

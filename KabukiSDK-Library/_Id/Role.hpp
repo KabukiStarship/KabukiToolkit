@@ -1,5 +1,5 @@
 /** Kabuki Software Development Kit
-    @file    /.../KabukiSDK/_Data/Files.hpp
+    @file    /.../KabukiSDK/_Id/Role.hpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright  (C) 2016 [Cale McCollough](calemccollough.github.io)
 
@@ -17,39 +17,53 @@
         See the License for the specific language governing permissions and
         limitations under the License.
 */
-
+ 
 #pragma once
 
-namespace _Data {
+#include <FreeI2P.hpp>
+#include <KabukiSDK-Config.hpp>
 
-class File
-/*< A cross-platform file. */
+namespace _Id {
+
+/** A role that an entinty plays in an organization.
+    A role 
+*/
+class _KabukiSDK Role
 {
-    public:
-    
-    File (const char* Filename);
+    Role (const char* aUsername, const char* aPassword);
+    /*< Constructs a user with the given username and password. */
+
+    const char* getDescription ();
     /*<  */
 
-    File* Open (const char* Filename);
-    /*<  */
-    
-    const char* Close ();
-    /*< Attempts to close the file.
-        @return Returns nullptr upon succes and an error const char* upon failure.*/
-    
-    const char* GetExtension ();
-    /*<  */
-    
-    void SetExtension (const char* Extention);
+    const char* getPassword ();
     /*<  */
 
-    const char* GetFilename ();
+    const char* encryptPassword ();
+    /*<  */
+
+    bool isValid ();
+    /*<  */
+
+    bool verify (string aUsername, string aPassword);
+
+    bool getLogin (Account thisAccount);
     /*<  */
     
-    void SetFilename (const char* Filename);
+    bool equals (Role aUser);
     /*<  */
     
-    const char* ToString ();
-    /*<  */
+    inline void print (I2P::Terminal& slot);
+    /*< Prints this object to a terminal. */
+
+    private:
+
+    const char* description,
+        password;
+
+    // Currently the user is able log into more the one account at a time. This could cause a security threat.
+    //Account.List activeAccounts;
 };
-}
+}   //< namespace _Id
+
+

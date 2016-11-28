@@ -49,7 +49,7 @@ const char* DMXControl::getState (byte Value)
     return 0;
 }
 
-const char* DMXControl::sub (I2P::Terminal& slot, int index, int Enq)
+const char* DMXControl::op (I2P::Terminal& slot, int index, int Enq)
 {
     switch (Index)
     {

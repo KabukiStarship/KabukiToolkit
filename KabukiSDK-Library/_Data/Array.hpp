@@ -22,12 +22,14 @@
 
 namespace _Data {
     
+void 
+    
 class Array
 /*< An collection of owned items stored in a packed array. */
 {
     public:
     
-    Array (size_t sizeofThis, int initBufferSize);
+    Array (size_t elementSize, int initBufferSize);
     /*< Constructs an array with the given element and buffer size. */
     
     ~Array ();
@@ -40,7 +42,7 @@ class Array
     
     bool add (const ICollection& C);
     /*< Adds the given array to this one. */
-
+    
     bool contains (void* Data);
     /*< Returns true if this array contains the given data. */
     
@@ -49,11 +51,11 @@ class Array
     
     bool contains (const Array& c);
     /*< Returns true if this Collection contains thatCollection. */
-
+    
     bool equals (void* Data);
     /*< Returns true if this Collection contains only the given data. */
-
-    long getHash ();
+    
+    hash_t getHash ();
     /*< Generates a hash for this Collection. */
     
     bool isEmpty ();
@@ -79,9 +81,9 @@ class Array
     
     private:
     
-    size_t size;        //< The sizeof this object size.
-    int numItems;       //< The number of items.
+    size_t elementSize;     //< The sizeof this object size.
+    int numItems;           //< The number of items.
     
-    void* base;         //< Pointer to the dynamic memory.
+    void* base;             //< Pointer to the dynamic memory.
 };
 }

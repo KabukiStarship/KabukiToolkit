@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Account.h" />
+    <ClInclude Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\ARadioButton.h" />
+    <ClInclude Include="..\KabukiSDK-Library\_2D\Angle.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_2D\Bezier.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_2D\Point.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_2D\Polar.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_2D\Rect.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_2D\RectRotor.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_2D\Vect.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\Array.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\BinaryTree.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\BTNode.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\Data.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\DLNode.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\File.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\ICollection.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\IFileFilter.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\IIterable.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\IIterator.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\LLList.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\LLNode.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\TNode.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\Address.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\Date.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\EmailAddress.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\Entity.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\EntityGroup.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\EntityList.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\Grammer.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\IMAccount.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\Name.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\Organization.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\Password.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\Person.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\Privilege.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\Profile.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\Relationship.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\Tag.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\User.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\UserList.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Id\Username.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Math\BCD.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Math\Binary.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Math\Calc.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Math\Converter.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Math\Equation.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Math\Hex.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Math\Imaginary.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Math\Matrix.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Math\Operators\Divide.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Search\Hit.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Search\HitList.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Search\Library.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Search\TagLibrary.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\AVControl.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\ButtonControl.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\ButtonScroller.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\Components\ADSR.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\Components\Component.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\Components\XYControl.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\ControlArray.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\ControlGrid.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\DMXButton.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\DMXControl.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\Event.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\KeyboardEvent.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\Label.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\MacroButton.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\MasterControls.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\MIDIButton.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\MIDIControl.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\OSCControl.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\RadioButton.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_UI\Widget.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\ErrorList.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\EventSequence.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\IComparable.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\IEvent.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\Memory.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\MorseCode.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\Print.hpp" />
+    <ClInclude Include="..\KabukiToolkit-Library\_Math\Operators\Divide.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\KabukiSDK-Library\_2D\ReadMe.md" />
+    <None Include="..\KabukiSDK-Library\_Data\ReadMe.md" />
+    <None Include="..\KabukiSDK-Library\_Id\ReadMe.md" />
+    <None Include="..\KabukiSDK-Library\_Math\ReadMe.md" />
+    <None Include="..\KabukiSDK-Library\_\ReadMe.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_2D\Angle.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_2D\Bezier.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_2D\Entity.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_2D\Point.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_2D\Polar.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_2D\Rect.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_2D\Vect.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Data\BinaryTree.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Data\BTNode.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Data\Data.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Data\DLNode.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Data\File.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Data\LLList.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Data\LLNode.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Data\TNode.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Account.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Address.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\EmailAddress.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Entity.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\EntityGroup.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\EntityList.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Grammer.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\IMAccount.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Name.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Organization.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Password.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Person.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Privilege.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Profile.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Relationship.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Tag.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\User.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\UserList.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Id\Username.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Math\BCD.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Math\Binary.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Math\Calc.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Math\Equation.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Math\Hex.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Math\Imaginary.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Math\Matrix.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Math\Operators\Divide.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Search\Hit.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Search\HitList.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Search\Library.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_Search\TagLibrary.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\AVControl.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\ButtonControl.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\ButtonScroller.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\Color.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\Components\XYControl.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\ControlArray.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\ControlGrid.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\DMXButton.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\DMXControl.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\KeyboardEvent.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\Label.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\MacroButton.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\MIDIButton.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\MIDIControl.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_UI\Widget.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\Converter.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\EventSequence.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\Memory.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\MorseCode.cpp" />
+    <ClCompile Include="..\KabukiSDK-Library\KabukiSDK-Impl\_\Print.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3FBC20A1-E168-4BCD-B05A-922FACDB7B9E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>KabukiToolkitMinGW</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>KabukiSDK-MinGW</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>..\KabukiToolkit-Library;..\..\mbed-os\hal\api;..\..\cpputest\include;..\..\FreeI2P\FreeI2P-Library;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

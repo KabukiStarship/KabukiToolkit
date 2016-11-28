@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\KabukiSDK-Library\_2D\Angle.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_2D\Bezier.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_2D\Point.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_2D\Polar.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_2D\Rect.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_2D\RectRotor.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_2D\Vect.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\Array.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\BinaryTree.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\BTNode.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\Data.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\DLNode.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\File.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\ICollection.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\IFileFilter.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\IIterable.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\IIterator.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\LLList.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\LLNode.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Data\TNode.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Dev\Keyboard\Keyboard.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_Dev\Keyboard\RealTimeKeyboard.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\ErrorList.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\EventSequence.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\IComparable.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\IEvent.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\Memory.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\MorseCode.hpp" />
+    <ClInclude Include="..\KabukiSDK-Library\_\Print.hpp" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\Address.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\Date.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\EmailAddress.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\Entity.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\EntityGroup.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\EntityList.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\IMAccount.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\Name.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\Organization.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\Person.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\Privilege.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\Profile.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\Relationship.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\Tag.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\User.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Librarian\Id\UserList.h" />
+    <ClInclude Include="..\Library\KabukiToolkit\Workspace\Workspace.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\KabukiSDK-Library\_2D\ReadMe.md" />
+    <None Include="..\KabukiSDK-Library\_Data\ReadMe.md" />
+    <None Include="..\KabukiSDK-Library\_\ReadMe.md" />
+    <None Include="..\Library\KabukiToolkit\Librarian\Id\ReadMe.md" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{33FFB086-A1F5-44D9-BB42-4F576AE42A26}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>KabukiToolkitMinGW</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;KABUKITOOLKITMINGW_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;KABUKITOOLKITMINGW_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;KABUKITOOLKITMINGW_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;KABUKITOOLKITMINGW_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

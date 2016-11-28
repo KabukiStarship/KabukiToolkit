@@ -1,0 +1,107 @@
+/** Kabuki Software Development Kit
+    @file    /.../KabukiSDK-Impl/_Dev/ControlGrid.cpp
+    @author  Cale McCollough <cale.mccollough@gmail.com>
+    @license Copyright (C) 2016 [Cale McCollough](calemccollough.github.io)
+
+                            All right reserved (R).
+
+        Licensed under the Apache License, Version 2.0 (the "License"); you may
+        not use this file except in compliance with the License. You may obtain
+        a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an "AS IS" BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.
+*/
+
+#include <_UI/ControlGrid.hpp>
+
+namespace _UI {
+
+ControlGrid::ControlGrid (int newNumColumns, int newNumRows)
+{
+    _numColumns = BoundRange (newNumColumns, MinNumColumns, MaxNumColumns);
+    _numRows    = BoundRange (newNumRows, MinNumRows, MaxNumRows);
+
+    rows = new ControlArray[newNumRows];
+
+    for (int i = 0; i < newNumRows; ++i)
+        rows[i] = ControlArray (newNumColumns);
+}
+
+ControlGrid::ControlGrid (const ControlGrid &other) :
+    _numRows (other._numRows),
+    _numColumns (other._numColumns)
+{
+    rows = new ControlArray (_numRows);
+}
+
+ControlGrid::~ControlGrid ()
+{
+    delete rows;
+}
+
+int ControlGrid::numRows () const
+{
+    return _numRows;
+}
+
+int ControlGrid::numColumns () const
+{
+    return _numColumns;
+}
+
+void ControlGrid::setControl (int column, int row, AVControl* newControl)
+{
+    if (row < 0 || column < 0 || row >= _numRows || column >= _numColumns)
+        return;
+    rows[row].setControl (column, newControl);
+}
+
+ControlArray* ControlGrid::getRow (int row)
+{
+    if (row < 0 || row >= _numRows)
+        return nullptr;
+
+    return &rows[row];
+}
+
+byte ControlGrid::getState ()
+{
+    return 0;
+}
+
+const char* ControlGrid::getState (byte Value)
+{
+    return 0;
+}
+
+const char* ControlGrid::sub (I2P::Terminal& slot, int index, int Enq)
+{
+    switch (Index)
+    {
+        case 0: return I2P::NumMembers (0);
+    }
+    
+    return Query ? Enquery ("ControlGrid", "_UI"): InvalidIndex ();
+}
+
+const char* ControlGrid::print (I2P::Terminal& slot) const
+{
+    const char* returnString = CharLine ('-', AVControl::MacroHeaderLength) + "Control Grid: rows = " + const char* (_numRows) + 
+        ", columns = " + const char* (_numColumns) + "\n" + CharLine ('-', AVControl::MacroHeaderLength) + 
+        AVControl::MacroHeader + "\n" + CharLine ('-', AVControl::MacroHeaderLength);
+
+    Logger::outputDebugString ("!!!!_numRows = " + const char* (_numRows));
+
+    for (int i = 0; i < _numRows; ++i)
+        returnString += "Row " + const char* (i) + "\n" + rows[i].ToString ();
+    
+    return returnString + CharLine ('-', AVControl::MacroHeaderLength);
+}
+
+}   //< namespace _UI

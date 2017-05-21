@@ -1,11 +1,11 @@
 /** Kabuki Theater
-    @file    /.../Source/_Theater/HMI/KeyEvent.hpp
+    @file    /.../KabukiTheater-Impl/_Theater/Set.cpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <https://calemccollough.github.io>
 
-                            All right reserved (R).
+                            All right reserved  (R).
 
-        Licensed under the Apache License, Version 2.0 (the "License"); you may
+        Licensed under the Apache License, Version 2.0  (the "License"); you may
         not use this file except in compliance with the License. You may obtain
         a copy of the License at
 
@@ -18,25 +18,38 @@
         limitations under the License.
 */
 
-#include <_Theater/HMI/KeyEvent.hpp>
+#include <_Theater/Set.hpp>
 
-namespace _Theater { namespace HMI {
+namespace _Theater {
 
-KeyEvent::KeyEvent (byte keyEvent)
-:   key (keyEvent)
+Set::Set ()
+//:   controlSurfaces ()
 {
-    /// Nothing to do here! :-)
 }
 
-byte KeyEvent::getVKCode ()
+Set::Set  (const Set& o) 
+//:   controlSurfaces  (O.controlSurfaces)
 {
-    return key;
+
 }
 
-void KeyEvent::print (Terminal& io)
+Set::~Set ()
 {
-    io.prints ("KeyEvent: ");
+    for (int i = 0; i < projects.size; ++i)
+        delete projects[i];
 }
 
-}   //< HMI
-}   //< _Theater
+void Set::add (HMI::Controller* c)
+{
+    if  (c == nullptr)
+        return;
+
+    projects.add (c);
+}
+
+int Set::getNumProject ()
+{
+    return projects.count ();
+}
+
+}   //< namespace _Theater

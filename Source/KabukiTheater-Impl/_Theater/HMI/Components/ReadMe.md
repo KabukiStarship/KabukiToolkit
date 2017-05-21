@@ -1,8 +1,9 @@
-# _Theater::MIDI
-This directory contains the implementation of the _Theater::MIDI module.
+# _Theater::HMI::Components Module
+This folder contains the _Theater::HMI::Components module. The module contains 
+common types components that are composed of _Theater::HMI primitives.
 
-## Author
-[Cale McCollough](https://calemccollough.github.io)
+## Authors
+* [Cale McCollough](https://calemccollough.github.io)
 
 ## License
 Copyright 2017 (C) [Cale McCollough](mailto:calemccollough@gmail.com)

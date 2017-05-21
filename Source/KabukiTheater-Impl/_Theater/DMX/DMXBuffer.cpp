@@ -1,5 +1,5 @@
 /** Kabuki Theater
-    @file    /.../Source/_Theater/HMI/KeyEvent.hpp
+    @file    /.../Source/KabukiTheater-Impl/_Theater/DMX/DMXBuffer.cpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <https://calemccollough.github.io>
 
@@ -18,25 +18,11 @@
         limitations under the License.
 */
 
-#include <_Theater/HMI/KeyEvent.hpp>
+#include <_Theater/DMX/DMXBuffer.hpp>
 
-namespace _Theater { namespace HMI {
+namespace _Theater { namespace DMX {
 
-KeyEvent::KeyEvent (byte keyEvent)
-:   key (keyEvent)
-{
-    /// Nothing to do here! :-)
-}
 
-byte KeyEvent::getVKCode ()
-{
-    return key;
-}
 
-void KeyEvent::print (Terminal& io)
-{
-    io.prints ("KeyEvent: ");
-}
-
-}   //< HMI
+}   //< DMX
 }   //< _Theater

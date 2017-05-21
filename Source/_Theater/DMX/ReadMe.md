@@ -1,8 +1,7 @@
-# _Theater::MIDI
-This directory contains the implementation of the _Theater::MIDI module.
-
-## Author
-[Cale McCollough](https://calemccollough.github.io)
+# _Theater::DMX Module
+This folder contains the _Theater::DMX module and namespace. The module 
+contains nothing at the momemnt, but will eventually contain code to work with 
+DMX devices.
 
 ## License
 Copyright 2017 (C) [Cale McCollough](mailto:calemccollough@gmail.com)

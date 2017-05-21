@@ -1,8 +1,8 @@
-# _Theater::MIDI
-This directory contains the implementation of the _Theater::MIDI module.
+# _Theater::HMI Unit Tests
+This folder contains the _Theater::HMI unit tests.
 
-## Author
-[Cale McCollough](https://calemccollough.github.io)
+## Authors
+* [Cale McCollough](https://calemccollough.github.io)
 
 ## License
 Copyright 2017 (C) [Cale McCollough](mailto:calemccollough@gmail.com)

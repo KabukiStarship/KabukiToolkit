@@ -1,5 +1,5 @@
-# _Theater::MIDI
-This directory contains the implementation of the _Theater::MIDI module.
+# _Theater::DMX Implemntation
+This directory contains the implementation of the _Theater::DMX module. The file contains 
 
 ## Author
 [Cale McCollough](https://calemccollough.github.io)

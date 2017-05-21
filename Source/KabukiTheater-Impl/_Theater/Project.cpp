@@ -1,5 +1,5 @@
 /** Kabuki Theater
-    @file    /.../Source/_Theater/Set.hpp
+    @file    /.../KabukiTheater-Impl/_Theater/Project.cpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <https://calemccollough.github.io>
 
@@ -17,39 +17,39 @@
         See the License for the specific language governing permissions and
         limitations under the License.
 */
- 
-#pragma once
 
-#include "Project.hpp"
+#include <_Theater/Project.hpp>
 
 namespace _Theater {
 
-class _KabukiTheater_ Set
-/*<  */
+Project::Project ()
+//:   controlSurfaces ()
 {
-    public:
+}
 
-    Set ();
-    /*< Constructor. */
-    
-    Set  (const Set& s);
-    /*< Copy constructor copies the other ojbect. */
+Project::Project  (const Project& O) 
+//:   controlSurfaces  (O.controlSurfaces)
+{
 
-    virtual ~Set ();
-    /*< Destructor. */
+}
 
-    void add (Project& w);
-    /*< Adds a new Project to the set. */
+Project::~Project ()
+{
+    for  (int i = 0; i < controlSurfaces.size; ++i)
+        delete controlSurfaces[i];
+}
 
-    int getNumProjects ();
-    /*< Gets the number of projects in the set. */
+void Project::add (HMI::Controller* c)
+{
+    if  (c == nullptr)
+        return;
 
-    void print (I2P::Terminal& io);
-    /*< Prints this object to the terminal. */
+    controlSurfaces.add  (c);
+}
 
-    private:
+int Project::getNumControllers ()
+{
+    return controlSurfaces.count ();
+}
 
-    std::vector<Project&> projects;     //< The array of Project(s). 
-};
-
-}   //< _Theater
+}   //< namespace _Theater

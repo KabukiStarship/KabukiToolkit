@@ -1,5 +1,6 @@
 /** Kabuki Theater
-    @file    /.../Source/_Theater/HMI/KeyEvent.hpp
+    @version 0.x
+    @file    /.../Kabuki_Toolkit/_Theater.hpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <https://calemccollough.github.io>
 
@@ -18,25 +19,6 @@
         limitations under the License.
 */
 
-#include <_Theater/HMI/KeyEvent.hpp>
+#pragma once
 
-namespace _Theater { namespace HMI {
-
-KeyEvent::KeyEvent (byte keyEvent)
-:   key (keyEvent)
-{
-    /// Nothing to do here! :-)
-}
-
-byte KeyEvent::getVKCode ()
-{
-    return key;
-}
-
-void KeyEvent::print (Terminal& io)
-{
-    io.prints ("KeyEvent: ");
-}
-
-}   //< HMI
-}   //< _Theater
+#include "_Theater/Set.hpp"

@@ -1,5 +1,5 @@
 /** Kabuki Theater
-    @file    /.../Source/_Theater/Set.hpp
+    @file    /.../Source/_Theater/Project.hpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <https://calemccollough.github.io>
 
@@ -20,36 +20,38 @@
  
 #pragma once
 
-#include "Project.hpp"
+
+#include <KabukiToolkit-Config.hpp>
+#include "../_Dev/ControlSurface.hpp"
 
 namespace _Theater {
 
-class _KabukiTheater_ Set
+class _KabukiTheater_ Project
 /*<  */
 {
     public:
 
-    Set ();
+    Project ();
     /*< Constructor. */
     
-    Set  (const Set& s);
+    Project  (const Project& o);
     /*< Copy constructor copies the other ojbect. */
 
-    virtual ~Set ();
+    virtual ~Project ();
     /*< Destructor. */
 
-    void add (Project& w);
-    /*< Adds a new Project to the set. */
+    void add  (Controller* c);
+    /*< Adds the given controller to the workspace. */
 
-    int getNumProjects ();
-    /*< Gets the number of projects in the set. */
+    int getNumControlSurfaces ();
+    /*< Gets the num_control_surfaces. */
 
     void print (I2P::Terminal& io);
     /*< Prints this object to the terminal. */
 
     private:
 
-    std::vector<Project&> projects;     //< The array of Project(s). 
+    std::vector<Controller*> controllers;     //< The array of iSymmetric control surfaces. 
 };
 
 }   //< _Theater

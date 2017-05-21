@@ -1,8 +1,7 @@
-/** Kabuki Theater
-    @version 0.x
-    @file    /.../Source/_Archive/Archive.hpp
+/** The Chinese Room
+    @file    /.../Library/ChineseRoom\MorseCode.hpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
-    @license Copyright(C) 2016 Cale McCollough <https://calemccollough.github.io>
+    @license Copyright(C) 2016 [Cale McCollough](calemccollough.github.io)
 
                             All right reserved(R).
 
@@ -19,15 +18,13 @@
         limitations under the License.
 */
 
-#include <KabukiTheater/Config.hpp>
+#pragma once
 
-namespace _File {
-    
-class Archive : public IDevice
-{
-    public:
-    
-    const Member* op (Terminal* io, byte index) override;
-    /*< I2P proceedures. */
-}
-}   //< _File
+#include <ChineseRoom\Config.hpp>
+
+namespace _ {
+
+_ChineseRoom_ const char* toMorseCode(char value);
+/*< Gets the Morse code for the given char. */
+
+}   //< _

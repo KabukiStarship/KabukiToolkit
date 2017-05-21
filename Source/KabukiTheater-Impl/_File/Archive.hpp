@@ -19,7 +19,7 @@
         limitations under the License.
 */
 
-#include <KabukiTheater/Config.hpp>
+#include <ChineseRoom\Mirror.hpp>
 
 namespace _File {
     

@@ -1,9 +1,9 @@
-# Archive
-This folder contains the _Archive namespace and utilities for working with 
-compressed files.
+# _Utils Module
+This folder contains the _Util module and namespace, which contains misc 
+utilities.
 
 ## Authors
-* [Cale McCollough] (https://calemccollough.github.io)
+* [Cale McCollough](https://calemccollough.github.io)
 
 ## License
 Copyright 2017 (C) [Cale McCollough](mailto:calemccollough@gmail.com)

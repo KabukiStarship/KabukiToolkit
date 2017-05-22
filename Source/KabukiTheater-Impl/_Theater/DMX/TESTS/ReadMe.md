@@ -1,9 +1,8 @@
-# Kabuki Theater Tests
-This module is contains unit tests for the _Theater module.
+# _Theater::DMX Unit Tests
+This folder contains the unit tests for the _Theater::DMX module.
 
 ## Author
 * [Cale McCollough](https://calemccollough.github.io)
-* [Contributors please add your names here](mailto::your@email.address)
 
 ## License
 Copyright 2017 (C) [Cale McCollough](mailto:calemccollough@gmail.com)

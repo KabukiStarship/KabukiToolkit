@@ -19,51 +19,77 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Source\kabuki-theater-impl\TESTS\KabukiTheaterTests.cpp" />
-    <ClCompile Include="..\Source\kabuki-theater-impl\_\TESTS\book_tests.cpp" />
-    <ClCompile Include="..\Source\kabuki-theater-impl\_\TESTS\console_tests.cpp" />
-    <ClCompile Include="..\Source\kabuki-theater-impl\_\TESTS\read_write_tests.cpp" />
-    <ClCompile Include="..\Source\kabuki-theater-impl\_\TESTS\record_table_tests.cpp" />
-    <ClCompile Include="..\Source\kabuki-theater-impl\_\TESTS\room_tests.cpp" />
-    <ClCompile Include="..\Source\kabuki-theater-impl\_\TESTS\uniprinter_tests.cpp" />
-    <ClCompile Include="..\Source\kabuki-theater-impl\_\TESTS\utills_tests.cpp" />
+    <ClInclude Include="..\Source\kabuki-theater\_\address.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\args.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\array.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\ascii.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\book.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\chinese_room.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\config.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\console.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\device.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\dictionary.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\door.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\error.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\event.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\exceptions.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\global.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\iterator.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\log.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\member.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\mirror.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\portal.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\record_table.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\ring_buffer.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\room.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\rx.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\slot.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\string.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\terminal.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\timestamp.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\types.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\uniprinter.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\unityper.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\utf.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\utils.h" />
+    <ClInclude Include="..\Source\kabuki-theater\_\wall.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Source\kabuki-theater-impl\_\TESTS\test_devices.h" />
+    <None Include="..\Source\kabuki-theater\_\assembly.inl" />
+    <None Include="..\Source\kabuki-theater\_\readme.md" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{67848E0E-E323-4584-B88C-A0D1418F4E77}</ProjectGuid>
-    <Keyword>Win32Proj</Keyword>
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{2DFABBE9-31F9-4CDB-A540-7A584ADEE17E}</ProjectGuid>
     <RootNamespace>KabukiTheater</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
-    <ProjectName>KabukiTheater.Tests</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -84,84 +110,46 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Workspace\cpputest\include;D:\Workspace\Kabuki-Theater\Source\kabuki-theater;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Workspace\ChineseRoom\Visual Studio\Debug;D:\Workspace\cpputest\lib;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)$(Configuration)\Tests\</OutDir>
-    <IntDir>$(Configuration)\Tests\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>D:\Workspace\cpputest\lib;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(Configuration)\Library</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Workspace\Kabuki-Theater\Source\KabukiTheater;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SDLCheck>true</SDLCheck>
     </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>CppUTestd.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Workspace\cpputest\include;D:\Workspace\Kabuki-Theater\Source\KabukiTheater;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SDLCheck>true</SDLCheck>
     </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>CppUTestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,6 +1,5 @@
-/** The Chinese Room
-    @version   1.0
-    @file      ~/source/kabuki/chinese_room/include/module.h
+/** Kabuki Theater
+    @file    ~/source/kabuki-theater-impl/TESTS/KabukiTheaterTests.cpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough.github.io>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -14,16 +13,17 @@
              permissions and limitations under the License.
 */
 
-#ifndef CHINESE_ROOM_H
-#define CHINESE_ROOM_H
+#include "../../../../cpputest/include/CppUTest/CommandLineTestRunner.h"
+#include "stdafx.h"
 
-#include "console.h"
-#include "utils.h"
-#include "table.h"
-#include "bag.h"
+using namespace std;
 
-#ifndef THIS_ROOM
-#include "this.h"
-#endif
+int main (int args_count, char** args)
+{
+    cout << "Kabuki Toolkit Unit Test.\n\n";
+    
 
-#endif  //< CHINESE_ROOM_H
+    //system ("PAUSE");
+
+    return CommandLineTestRunner::RunAllTests (args_count, args);
+}

@@ -1,6 +1,6 @@
 /** The Chinese Room
-    @version   1.0
-    @file      ~/source/kabuki/chinese_room/include/module.h
+    @version 0.x
+    @file    ~/chinses_room/include/Source/ChineseRoom/this.h
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough.github.io>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -14,16 +14,25 @@
              permissions and limitations under the License.
 */
 
-#ifndef CHINESE_ROOM_H
-#define CHINESE_ROOM_H
+#ifndef CHINESE_ROOM_THIS_H
+#define CHINESE_ROOM_THIS_H
 
-#include "console.h"
-#include "utils.h"
-#include "table.h"
-#include "bag.h"
+#include "room.h"
 
-#ifndef THIS_ROOM
-#include "this.h"
-#endif
+namespace _ {
 
-#endif  //< CHINESE_ROOM_H
+/** Default empty room.
+    
+*/
+struct This: public Room {
+    public:
+
+    This ():
+        Room (1024)
+    {
+
+    }
+};
+
+}       //< namespace _
+#endif  //< CHINESE_ROOM_THIS_H

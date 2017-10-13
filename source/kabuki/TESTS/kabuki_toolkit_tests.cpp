@@ -1,6 +1,5 @@
-/** The Chinese Room
-    @version 0.x
-    @file    ~/source/kabuki/chinese_room/impl/terminal.cpp
+/** Kabuki Theater
+    @file    ~/source/kabuki-theater-impl/TESTS/KabukiTheaterTests.cpp
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough.github.io>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -14,35 +13,17 @@
              permissions and limitations under the License.
 */
 
-#include "../include/terminal.h"
-#include "../include/automata.h"
+#include "../../../../cpputest/include/CppUTest/CommandLineTestRunner.h"
+#include "stdafx.h"
 
-namespace _ {
+using namespace std;
 
-Terminal::Terminal (MonoidTx* io) :
-    io_ (io)
+int main (int args_count, char** args)
 {
-}
+    cout << "Kabuki Toolkit Unit Test.\n\n";
+    
 
-Terminal::~Terminal () {
-    //if (io_->type > 0) Delete<MonoidRx> (io_);
-}
+    //system ("PAUSE");
 
-bool Terminal::Contains (void* address) {
-<<<<<<< HEAD
-    //return MonoidContains (io_, address);
-    return false;
-=======
-    return AutomataContains (io_, address);
->>>>>>> 98a6359c3af7d539eabe9e473c7b084cc3c6bfda
+    return CommandLineTestRunner::RunAllTests (args_count, args);
 }
-
-const Set* Terminal::Star (char_t index, Automata* a) {
-    switch (index) {
-        case 0:
-            break;
-    }
-    return 0;
-}
-
-}       //< namespace _

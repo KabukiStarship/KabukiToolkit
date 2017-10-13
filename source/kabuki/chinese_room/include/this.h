@@ -1,6 +1,6 @@
 /** The Chinese Room
     @version 0.x
-    @file    ~/source/kabuki/chinese_room/impl/terminal.cpp
+    @file    ~/chinses_room/include/Source/ChineseRoom/this.h
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough.github.io>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -14,35 +14,25 @@
              permissions and limitations under the License.
 */
 
-#include "../include/terminal.h"
-#include "../include/automata.h"
+#ifndef CHINESE_ROOM_THIS_H
+#define CHINESE_ROOM_THIS_H
+
+#include "room.h"
 
 namespace _ {
 
-Terminal::Terminal (MonoidTx* io) :
-    io_ (io)
-{
-}
+/** Default empty room.
+    
+*/
+struct This: public Room {
+    public:
 
-Terminal::~Terminal () {
-    //if (io_->type > 0) Delete<MonoidRx> (io_);
-}
+    This ():
+        Room (1024)
+    {
 
-bool Terminal::Contains (void* address) {
-<<<<<<< HEAD
-    //return MonoidContains (io_, address);
-    return false;
-=======
-    return AutomataContains (io_, address);
->>>>>>> 98a6359c3af7d539eabe9e473c7b084cc3c6bfda
-}
-
-const Set* Terminal::Star (char_t index, Automata* a) {
-    switch (index) {
-        case 0:
-            break;
     }
-    return 0;
-}
+};
 
 }       //< namespace _
+#endif  //< CHINESE_ROOM_THIS_H

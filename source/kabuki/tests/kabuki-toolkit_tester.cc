@@ -1,6 +1,5 @@
-/** The Chinese Room
-    @version 0.x
-    @file    ~/source/kabuki/chinese_room/include/ascii.h
+/** Kabuki Starship
+    @file    ~/source/kabuki/kabuki-toolkit_tester.cc
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough.github.io>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -14,46 +13,14 @@
              permissions and limitations under the License.
 */
 
-#ifndef CHINESE_ROOM_ASCII_H
-#define CHINESE_ROOM_ASCII_H
+#include "../../../../../cpputest/include/CppUTest/CommandLineTestRunner.h"
+#include "stdafx.h"
 
-namespace ascii {
+using namespace std;
 
-typedef enum {
-    NUL = 0,
-    SOH,
-    STX,
-    ETX,
-    EOT,
-    ENQ,
-    ACK,
-    BEL,
-    BS,
-    TAB,
-    LF,
-    VT,
-    FF,
-    CR,
-    SO,
-    SI,
-    DLE,
-    DC1,
-    DC2,
-    DC3,
-    DC4,
-    NAK,
-    SYN,
-    ETB,
-    CAN,
-    EM,
-    SUB,
-    ESC,
-    FS,
-    GS,
-    RS,
-    US
-} C0Code;
+int main (int args_count, char** args)
+{
+    cout << "Kabuki Toolkit Unit Test.\n\n";
 
-}   //< namespace ASCII
-
-#endif  //< CHINESE_ROOM_ASCII_H
+    return CommandLineTestRunner::RunAllTests (args_count, args);
+}

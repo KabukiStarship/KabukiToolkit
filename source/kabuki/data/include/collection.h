@@ -1,6 +1,6 @@
 /** kabuki::data
     @version 0.x
-    @file    ~/source/data/include/array.h
+    @file    ~/source/data/include/collection.h
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough.github.io>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -14,79 +14,66 @@
              permissions and limitations under the License.
 */
 
-#ifndef KABUKI_DATA_ARRAY_H
-#define KABUKI_DATA_ARRAY_H
+#ifndef KABUKI_DATA_BTREE_H
+#define KABUKI_DATA_BTREE_H
 
 #include "config.h"
 
 namespace kabuki { namespace data {
 }       //< namespace data
 }       //< namespace kabuki
-#endif  //< KABUKI_DATA_ARRAY_H
+#endif  //< KABUKI_DATA_BTREE_H
 
-class ArrayIterator;
-
-class Array
-/*< An collection of owned items stored in a packed array. */
+namespace _Data {
+    
+class ICollection
+/*< Interface for a generic collection. */
 {
     public:
     
-    Array (size_t element_size, int initBufferSize);
-    /*< Constructs an array with the given element and buffer size. */
+    virtual bool Add (void* Data) = 0;
+    /*< Adds thatObject to this Collection. */
     
-    ~Array ();
+    virtual bool Add (const Collection* C) = 0;
+    /*< Adds the given collection to this one. */
     
-    void clear ();
+    virtual void Delete () = 0;
+    /*< Deletes the Collection. */
+    
+    virtual void Clear () = 0;
     /*< Resets the Collection without deleting the contents. */
+
+    virtual bool contains (void* Data) = 0;
+    /*< Returns true if this Collection contains thatObect. */
     
-    bool add (void* ptr);
-    /*< Adds the given object from the given pointer. */
-    
-    bool add (const Array& a);
-    /*< Adds the given array to this one. */
-    
-    bool contains (void* Data);
-    /*< Returns true if this array contains the given data. */
-    
-    bool contains (const Array& a);
+    virtual bool contains (const Collection* c) = 0;
     /*< Returns true if this Collection contains thatCollection. */
-    
-    bool equals (void* Data);
+
+    virtual bool equals (void* Data) = 0;
     /*< Returns true if this Collection contains only the given data. */
-    
-    hash_t getHash ();
+
+    virtual long GetHash () = 0;
     /*< Generates a hash for this Collection. */
     
-    bool isEmpty ();
+    virtual bool IsEmpty () = 0;
     /*< Returns true of this Collection is empty. */
 
-    bool remove (void* Data);
+    virtual bool Remove (void* Data) = 0;
     /*< Removes that object from the collection. */
     
-    bool remove (Array& a);
-    /*< Removes that object from the collection. */
-    
-    bool remove (Collection& c);
+    virtual bool Remove (Collection* C) = 0;
     /*< Removes that object from the collection. */
 
-    bool retain (Collection& c);
+    virtual bool Retain (Collection* C) = 0;
     /*< Removes all but the given collection from this collection. */
 
+    virtual IIterator* GetIterator () = 0;
     /*< Gets an iterator for this collection. */
-    ArrayIterator* GetIterator ();
-
+    
+    virtual size_t GetSize () = 0
     /*< Gets the size_t of the object being stored. */
-    size_t GetSize ();
 
-    /*< Returns a Script Array packed array of the collection. */
-    void* ToScript ();
-    
-    private:
-    
-    size_t element_size;     //< The sizeof this object size.
-    int numItems;           //< The number of items.
-    
-    void* base;             //< Pointer to the dynamic memory.
+    virtual void* ToArray () = 0;
+    /*< Returns a pointer to a packed array of the collection. */
 };
-
 }

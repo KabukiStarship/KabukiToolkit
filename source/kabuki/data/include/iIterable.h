@@ -1,6 +1,6 @@
-/** kabuki::script
+/** kabuki::data
     @version 0.x
-    @file    ~/source/kabuki/script/include/a.h
+    @file    ~/source/data/include/iterable.h
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough.github.io>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -14,25 +14,23 @@
              permissions and limitations under the License.
 */
 
-#ifndef KABUKI_SCRIPT_A_H
-#define KABUKI_SCRIPT_A_H
+#ifndef KABUKI_DATA_BTREE_H
+#define KABUKI_DATA_BTREE_H
 
-#include "room.h"
+#include "config.h"
 
-namespace _ {
+namespace kabuki { namespace data {
+}       //< namespace data
+}       //< namespace kabuki
+#endif  //< KABUKI_DATA_BTREE_H
 
-/** The A in A*B.
-    
-*/
-struct A: public Room {
+namespace _Data {
+
+/**  */
+class Iterable<T>
+{
     public:
-
-    A ():
-        A (1024)
-    {
-
-    }
+    
+    IIterator<T> GetIterator ();
 };
-
-}       //< namespace _
-#endif  //< KABUKI_SCRIPT_A_H
+}

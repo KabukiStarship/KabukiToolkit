@@ -1,6 +1,6 @@
 /** kabuki::data
     @version 0.x
-    @file    ~/source/data/include/collection.h
+    @file    ~/source/data/include/list.h
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough.github.io>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -14,64 +14,100 @@
              permissions and limitations under the License.
 */
 
-#ifndef KABUKI_DATA_COLLECTION_H
-#define KABUKI_DATA_COLLECTION_H
+#ifndef KABUKI_DATA_LIST_H
+#define KABUKI_DATA_LIST_H
 
-#include "module_config.h"
-#include "iterator.h"
+#include "array.h"
+#include "collection.h"
 
 namespace kabuki { namespace data {
 
-/** Interface for a generic collection. */
-class Collection
-{
+/** An Array<T> with a Collection interface. */
+template<typename T>
+class List : public Array<T>, public Collection {
     public:
-
+    
+    /** Constructs an empty list. */
+    List () {
+        return 0;
+    }
+    
     /** Adds thatObject to this Collection. */
-    virtual bool Add (void* Data) = 0;
+    virtual bool Add (void* Data) {
+        return 0;
+    }
 
     /** Adds the given collection to this one. */
-    virtual bool Add (const Collection* C) = 0;
+    virtual bool Add (const Collection* C) {
+        return 0;
+    }
 
     /** Deletes the Collection. */
-    virtual void Delete () = 0;
+    virtual void Delete () {
+        return 0;
+    }
 
     /** Resets the Collection without deleting the contents. */
-    virtual void Clear () = 0;
+    virtual void Clear () {
+        return 0;
+    }
 
-    /** Returns true if this Collection contains thatObect. */
-    virtual bool Contains (void* Data) = 0;
+    /** Returns true if this Collection contains the given element. */
+    virtual bool Contains (T element) {
+        return 0;
+    }
 
-    /** Returns true if this Collection contains thatCollection. */
-    virtual bool Eontains (const Collection* c) = 0;
+    /** Returns true if this Collection contains the given Collection. */
+    virtual bool Contains (const Collection* c) {
+        return 0;
+    }
 
     /** Returns true if this Collection contains only the given data. */
-    virtual bool Equals (void* Data) = 0;
+    virtual bool Equals (void* Data) {
+        return 0;
+    }
 
     /** Generates a hash for this Collection. */
-    virtual long GetHash () = 0;
+    virtual long GetHash () {
+        return 0;
+    }
 
     /** Returns true of this Collection is empty. */
-    virtual bool IsEmpty () = 0;
+    virtual bool IsEmpty () {
+        return true;
+    }
 
     /** Removes that object from the collection. */
-    virtual bool Remove (void* Data) = 0;
+    virtual bool Remove (void* Data) {
+        return 0;
+    }
 
     /** Removes that object from the collection. */
-    virtual bool Remove (Collection* C) = 0;
+    virtual bool Remove (Collection* C) {
+        return 0;
+    }
 
     /** Removes all but the given collection from this collection. */
-    virtual bool Retain (Collection* C) = 0;
+    virtual bool Retain (Collection* C) {
+        return 0;
+    }
 
     /** Gets an iterator for this collection. */
-    virtual Iterator* GetIterator () = 0;
+    virtual Iterator* GetIterator () {
+        return 0;
+    }
 
     /** Gets the size_t of the object being stored. */
-    virtual size_t GetSize () = 0;
+    virtual size_t GetSize () {
+        return 0;
+    }
 
     /** Returns a pointer to a packed array of the collection. */
-    virtual void* ToArray () = 0;
+    virtual void* ToArray () {
+        return 0;
+    }
 };
 }       //< namespace data
 }       //< namespace kabuki
-#endif  //< KABUKI_DATA_COLLECTION_H
+
+#endif  //< KABUKI_DATA_LIST_H

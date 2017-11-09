@@ -1,5 +1,5 @@
 /* mbed Microcontroller Library
- * Copyright (c) 2014-2015 ARM Limited
+ * Copyright (c) 2006-2015 ARM Limited
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 #include <stdafx.h>
-#ifndef MBED_BUFFER_H
-#define MBED_BUFFER_H
+#include "../../hal/include/gpio_irq_api.h"
+#include "../../hal/include/mbed_error.h"
 
+#define CHANNEL_NUM     48
 
-/** Generic buffer structure
- */
-typedef struct buffer_s {
-    void    *buffer; /**< the pointer to a buffer */
-    size_t   length; /**< the buffer length */
-    size_t   pos;    /**< actual buffer position */
-    uint8_t  width;  /**< The buffer unit width (8, 16, 32, 64), used for proper *buffer casting */
-} buffer_t;
+static uint32_t channel_ids[CHANNEL_NUM] = {0};
+static gpio_irq_handler irq_handler;
 
-#endif
+static void handle_interrupt_in(void) {
+}
+
+int gpio_irq_init(gpio_irq_t *obj, PinName pin, gpio_irq_handler handler,
+                  uint32_t id) {
+    return 0;
+}
+
+void gpio_irq_free(gpio_irq_t *obj) {
+}
+
+void gpio_irq_set(gpio_irq_t *obj, gpio_irq_event event, uint32_t enable) {
+}
+
+void gpio_irq_enable(gpio_irq_t *obj) {
+}
+
+void gpio_irq_disable(gpio_irq_t *obj) {
+}
+

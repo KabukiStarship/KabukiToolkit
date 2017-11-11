@@ -1,6 +1,5 @@
 /** Kabuki Toolkit
-    @version 0.x
-    @file    ~/source/kabuki/stdafx.h
+    @file    ~/source/kabuki/script/tests/script_tester
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -14,41 +13,14 @@
              permissions and limitations under the License.
 */
 
-#pragma once
+#include "../../../../../cpputest/include/CppUTest/CommandLineTestRunner.h"
+#include "stdafx.h"
 
-#ifdef WIN32
-#include "targetver.h"
-#define WIN32_LEAN_AND_MEAN // Exclude rarely-used stuff from Windows headers
-#define NOMINMAX
-#include <Windows.h>
-#endif
+using namespace std;
 
-#include <algorithm>
-#include <cfloat>
-#include <chrono>
-#include <cstdint>
-#include <cstdlib>
-#include <cstring>
-#include <devguid.h>
-#include <exception>
-#include <fstream>
-#include <initguid.h>
-#include <iostream>
-#include <iterator>
-#include <locale>
-#include <math.h>
-#include <limits>
-#include <regex>
-#include <setupapi.h>
-#include <sstream>
-#include <string>
-#include <string.h>
-#include <stdexcept>
-#include <stddef.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <tchar.h>
-#include <time.h>
-#include <vector>
-#include <windows.h>
+int main (int args_count, char** args)
+{
+    cout << "Kabuki Toolkit Unit Test.\n\n";
+
+    return CommandLineTestRunner::RunAllTests (args_count, args);
+}

@@ -14,50 +14,54 @@
              permissions and limitations under the License.
 */
 
-#ifndef SCRIPT_ASCII_H
-#define SCRIPT_ASCII_H
-
-#include "module_config.h"
+#include "../include/ascii.h"
 
 namespace _ {
 
-typedef enum {
-    NUL = 0,
-    SOH,
-    STX,
-    ETX,
-    EOT,
-    ENQ,
-    ACK,
-    BEL,
-    BS,
-    TAB,
-    LF,
-    VT,
-    FF,
-    CR,
-    SO,
-    SI,
-    DLE,
-    DC1,
-    DC2,
-    DC3,
-    DC4,
-    NAK,
-    SYN,
-    ETB,
-    CAN,
-    EM,
-    SUB,
-    ESC,
-    FS,
-    GS,
-    RS,
-    US,
-    DEL = 127
-} AsciiCode;
-
-KABUKI const char* AsciiString (AsciiCode ascii_char);
+const char* AsciiString (AsciiCode ascii_char) {
+    static const char* kStrings[] = {
+        "NUL",
+        "SOH",
+        "STX",
+        "ETX",
+        "EOT",
+        "ENQ",
+        "ACK",
+        "BEL",
+        "BS",
+        "TAB",
+        "LF",
+        "VT",
+        "FF",
+        "CR",
+        "SO",
+        "SI",
+        "DLE",
+        "DC1",
+        "DC2",
+        "DC3",
+        "DC4",
+        "NAK",
+        "SYN",
+        "ETB",
+        "CAN",
+        "EM",
+        "SUB",
+        "ESC",
+        "FS",
+        "GS",
+        "RS",
+        "US"
+    };
+    static const char kInvalidString[] = "Invalid\0";
+    if (ascii_char < 0)
+        return kInvalidString;
+    if (ascii_char > 31) {
+        if (ascii_char != 127)
+            return kInvalidString;
+        return "DEL";
+    }
+    return kStrings[ascii_char];
+}
 
 }       //< namespace ascii
-#endif  //< SCRIPT_ASCII_H

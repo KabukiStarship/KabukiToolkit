@@ -14,33 +14,45 @@
              permissions and limitations under the License.
 */
 
-#ifndef SCRIPT_PORTAL_H
-#define SCRIPT_PORTAL_H
+#ifndef KABUKI_SERIAL_SERIAL_PORTAL_H
+#define KABUKI_SERIAL_SERIAL_PORTAL_H
 
-#include "module_config.h"
+#include "../../script/include/portal.h"
+#include "serial.h"
 
-namespace _ {
+namespace serial {
 
-/** A slot in Door that connects two or more Chinese Rooms.
-    Examples of common Portal are UART, Dual-UART, SPI, I2C, Quad SPI, 
-    TCP/HTTP/UDP, Bluetooth, CAN. */
-struct KABUKI Portal {
+/** A portal that connects two Chinese Rooms through a UART connection.
+    
+*/
+class KABUKI SerialPortal {
+
+    /** Constructs a SerialPortal. */
+    SerialPortal ();
 
     /** Sets the Portal up for a batch of bytes transfer.
          Implementation of this function is not required to do anything, but 
          regardless it will be called by the Set. */
-    //virtual void Prime () = 0;
+    virtual void Prime () {
+
+    }
 
     /** Gets the length of current portal.
         @warning Length might not be the actual length, but rather the length
                  of the data that is read to be pulled. */
-    //virtual uint_t Length () = 0;
+    virtual uint_t Length () {
+        return 0;
+    }
 
     /** Feeds tx messages through the a without scanning them. */
-    virtual void Feed (byte b) = 0;
+    virtual void Feed (byte b) {
+
+    }
 
     /** Pulls rx messages through the a and runs them through the scanner. */
-    virtual byte Pull () = 0;
-};
-}       //< namespace _
-#endif  //< SCRIPT_PORTAL_H
+    virtual byte Pull () {
+        return 0;
+    }
+};      //< class SerialPortal
+}       //< namespace serial
+#endif  //< KABUKI_SERIAL_SERIAL_PORTAL_H

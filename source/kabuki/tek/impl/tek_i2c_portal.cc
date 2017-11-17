@@ -1,6 +1,6 @@
 /** kabuki::tek
     @version 0.x
-    @file    ~/source/kabuki/tek/impl/tek_spi_portal.cc
+    @file    ~/source/kabuki/tek/impl/tek_i2c_portal.cc
     @author  Cale McCollough <calemccollough.github.io>
     @license Copyright (C) 2017 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -14,38 +14,38 @@
              permissions and limitations under the License.
 */
 
-#include "../include/spi_portal.h"
+#include "../include/serial_portal.h"
 
 namespace kabuki { namespace tek {
 
-SpiPortal::SpiPortal (uintptr_t* buffer, uintptr_t buffer_size,
-                      PinName tx_pin, PinName rx_pin, PinName strobe_pin) :
-    expr_ (buffer, buffer_size)
-    spi_ (tx_pin, rx_pin, strobe_pin)
-{
-    if (buffer_size < kMinBufferSize) {
-        buffer = new byte[kMinBufferSize];
-        return;
-    }
-
-    buffer = new byte[buffer_size];
+I2CPortal::I2CPortal (PinName sda_pin, PinName scl_pin,
+                      uintptr_t* buffer, uint_t buffer_size) :
+    slot (ExpressionInit (buffer, buffer_size),
+    i2c (sda_pin, scl_pin) {
+    /// Nothing to do here!
 }
 
-SpiPortal::~SpiPortal () {
-    if (buffer != 0) delete buffer;
+void I2CPortal::Feed () {
+    while (serial.readable ()) slot.StreamTxByte ();
 }
 
-const char* SpiPortal::GetError () {
-    return 0;
-}
+void I2CPortal::Pull () {
 
-void SpiPortal::Feed () {
-    //while (IsWritable (io)) UniprinterStreamByte ();
-}
+    const int addr7bit = 0x48;      // 7 bit I2C address
+    const int addr8bit = 0x48 << 1; // 8bit I2C address, 0x90
 
-void SpiPortal::Pull () {
-    //_::Expression* expr;
-    //while (UniprinterIsReadable (io)) UniprinterStream (io, slot.UniprinterStream (slot.getc ());
+    cmd[0] = 0x01;
+    cmd[1] = 0x00;
+    i2c.write (addr8bit, cmd, 2);
+
+    wait (0.5);
+
+    cmd[0] = 0x00;
+    i2c.write (addr8bit, cmd, 1);
+    i2c.read (addr8bit, cmd, 2);
+
+    float tmp = (float ((cmd[0] << 8) | cmd[1]) / 256.0);
+    printf ("Temp = %.2f\n", tmp);
 }
 
 }       //< namespace tek

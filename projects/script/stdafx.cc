@@ -1,7 +1,8 @@
-/** kabuki::tek
-    @file    ~/source/kabuki/tek/examples/unicontroller_bootstrap/tek_unicontroller_bootstrap.cc
+/** kabuki::script
+    @version 0.x
+    @file    ~/source/kabuki/impl/script_tests.cpp
     @author  Cale McCollough <calemccollough.github.io>
-    @license Copyright (C) 2017 Cale McCollough <calemccollough@gmail.com>;
+    @license Copyright (C) 2017 Cale McCollough <calemccollough.github.io>;
              All right reserved (R). Licensed under the Apache License, Version 
              2.0 (the "License"); you may not use this file except in 
              compliance with the License. You may obtain a copy of the License 
@@ -13,16 +14,7 @@
              permissions and limitations under the License.
 */
 
-#include "module_config.h"
+#include "stdafx.h"
 
-using namespace _;
-
-class UnicontrollerBootstrap {
-    
-    public:
-    
-    
-    private:
-    
-    
-};
+// TODO: reference any additional headers you need in STDAFX.H
+// and not in this file

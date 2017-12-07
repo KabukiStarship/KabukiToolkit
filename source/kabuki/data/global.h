@@ -1,5 +1,5 @@
-/** kabuki::data
-    @file    ~/source/kabuki/data/config.h
+/** kabuki::data  
+    @file    ~/source/kabuki/array/global.h
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough.github.io>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -13,9 +13,9 @@
              permissions and limitations under the License.
 */
 
-#ifndef HEADER_FOR_KABUKI_DATA_CONFIG
-#define HEADER_FOR_KABUKI_DATA_CONFIG
+#ifndef HEADER_FOR_KABUKI_DATA_GLOBAL
+#define HEADER_FOR_KABUKI_DATA_GLOBAL
 
-#include "../script/config.h"
+#include "array.h"
 
-#endif  //< HEADER_FOR_KABUKI_DATA_CONFIG
+#endif  //< HEADER_FOR_KABUKI_DATA_GLOBAL

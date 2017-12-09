@@ -13,8 +13,8 @@
              permissions and limitations under the License.
 */
 
-#ifndef HEADER_FOR_KABAUKI_CARDS_CLIENT
-#define HEADER_FOR_KABAUKI_CARDS_CLIENT
+#ifndef HEADER_FOR_KABAUKI_CARDS_CARDGAME
+#define HEADER_FOR_KABAUKI_CARDS_CARDGAME
 
 #include "deck.h"
 #include "dealer.h"
@@ -25,7 +25,7 @@ namespace kabuki { namespace cards {
 /** A playing card game client that can play many types of games in the console.
     The server does most of the game logic and feeds the client data on a 
     need to know basis. */
-class Client : public id::AuthenticatorDefault, public _::Operation {
+class CardGame : public id::AuthenticatorDefault, public _::Operation {
     public:
 
     typedef enum States {
@@ -42,12 +42,14 @@ class Client : public id::AuthenticatorDefault, public _::Operation {
     };
 
     /** Default constructor. */
-    Client ();
+    CardGame (id::UserList& users, const char* game_name, int min_players,
+              int max_players);
 
     /** Constructor. */
-    virtual ~Client ();
+    virtual ~CardGame ();
 
-    void DeleteRemotePlayers ();
+    /** Gets the game_name_. */
+    const char* GetGameName ();
 
     /** Gets the FSM state. */
     uint GetState ();
@@ -55,29 +57,64 @@ class Client : public id::AuthenticatorDefault, public _::Operation {
     /** Virtual function sets the FSM state to a positive value. */
     virtual bool SetState (int state);
 
-    /** Prints out the RemotePlayer(s). */
-    void Client::PrintPlayers ();
+    /** The number of players_.
+    min_players_ must be between the min and max number of players_. */
+    int GetNumPlayers ();
 
-    /** Prints the round stats string. */
-    void PrintRoundStatsString ();
+    /** The minimum number of players_.
+    min_players_ can not be greater than max_players_. */
+    int GetMinPlayers ();
+
+    /** The maximum number of players_. */
+    int GetMaxPlayers ();
+
+    /** Restart the game to a new state with a preset number of players_. */
+    virtual void RestartGame () = 0;
+
+    /** Game loop for card game. */
+    virtual bool PlayGameInConsole () = 0;
+
+    /** Processes the beginning of round logic. */
+    virtual void BeginRound () = 0;
+
+    /** Processes the end of round logic. */
+    virtual void EndRound () = 0;
 
     /** Prints this game out to the console. */
     virtual void Print ();
+
+    /** Prints the observers to the console. */
+    void PrintObservers ();
+
+    /** Attempts to add an observer user to the game.
+        @return Returns -1 upon failure and the number of observers upon
+                success. */
+    virtual int AddObserver (id::User* user);
+
+    /** Attempts to add an observer user to the game.
+        @return Returns -1 upon failure and the number of observers upon
+                success. */
+    virtual int RemoveObserver (id::User* user);
+
+    /** Gets a reference to the observers_. */
+    Array<id::User*>& GetObservers ();
 
     /** Script operations. */
     virtual const _::Operation* Star (uint index, _::Expression* expr);
 
     protected:
 
-    id::Authenticator  * authenticator_;
-    char                 game_name_[kMaxGameNameLength]; //< Current game name.
-    uint32_t             state_,        //< Client app state.
-                         round_number_; //< Current round number.
-    id::User             user_;         //< User.
-    Array<RemotePlayer*> players_;      //< Array of RemotePlayer(s).
+    const char     * game_name_;  //< Game name.
+    int32_t          state_,      //< Game state.
+                     min_players_;//< Min players.
+    id::UserList   & users_;      //< Server UserList.
+    Array<id::User*> observers_;  //< Array of Player.
 
-};  //< class Client
+};      //< class CardGame
+
+/** Returns the default play again or quit string. */
+KABUKI const char* DefaultPlayAgainString ();
 
 }       //< namespace cards
 }       //< namespace kabuki
-#endif  //< HEADER_FOR_KABAUKI_CARDS_CLIENT
+#endif  //< HEADER_FOR_KABAUKI_CARDS_CARDGAME

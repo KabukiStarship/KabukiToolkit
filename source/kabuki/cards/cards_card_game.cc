@@ -13,38 +13,36 @@
              permissions and limitations under the License.
 */
 
-#include "client.h"
+#include "card_game.h"
 
+using namespace std;
 using namespace _;
 using namespace kabuki::id;
-using namespace std;
 
-namespace kabuki { namespace cards {
+namespace kabuki {
+namespace cards {
 
-Client::Client ():
-    authenticator_ (new AuthenticatorDefault ()),
-    state_        (0),
-    round_number_ (0),
-    user_         (authenticator_) {
-    game_name_[0] = 0;
+CardGame::CardGame (UserList& users, const char* game_name, int min_players,
+                    int max_players) :
+    state_     (0),
+    game_name_ (game_name),
+    users_     (users),
+    observers_ (max_players) {
 }
 
-Client::~Client () {
-    DeleteRemotePlayers ();
+CardGame::~CardGame () {
+    // We don't delete the observers_.
 }
 
-void Client::DeleteRemotePlayers () {
-    for (int i = players_.GetCount (); i > 0; --i) {
-        RemotePlayer* player = players_.Pop ();
-        delete player;
-    }
+const char* CardGame::GetGameName () {
+    return game_name_;
 }
 
-uint Client::GetState () {
+uint CardGame::GetState () {
     return state_;
 }
 
-bool Client::SetState (int state) {
+bool CardGame::SetState (int state) {
     if (state < 0) {
         return false;
     }
@@ -52,39 +50,56 @@ bool Client::SetState (int state) {
     return true;
 }
 
-void Client::PrintPlayers () {
-    for (int i = 0; i < players_.GetCount (); ++i) {
-        players_[i]->Print ();
+int CardGame::GetNumPlayers () {
+    return observers_.GetCount ();
+}
+
+int32_t CardGame::GetMinPlayers () {
+    return min_players_;
+}
+
+int32_t CardGame::GetMaxPlayers () {
+    return observers_.GetSize ();
+}
+
+void CardGame::PrintObservers () {
+    for (int i = 0; i < observers_.GetCount (); ++i) {
+        observers_[i]->Print ();
     }
 }
 
-void Client::PrintRoundStatsString () {
-    PrintLine ("|", '~');
-    cout << "Round: " << round_number_ << "\n";
-
-
-    PrintLine ("|", '~');
+void CardGame::Print () {
 }
 
-void Client::Print () {
-    PrintLine (" ", '_');
-    cout << "\n| " << game_name_
-         << "\n| Num Players : " << players_.GetCount () 
-         << " Max: " << players_.GetSize ()
-         << "\n| Round Number: " << round_number_
-         << "\n| Num Players : " << players_.GetCount ();
-
-    PrintPlayers ();
-    PrintLine ("|", '_');
+int CardGame::AddObserver (User* user) {
+    if (user == nullptr) {
+        return -1;
+    }
+    return observers_.Push (user);
 }
 
-const Operation* Client::Star (uint index, _::Expression* expr) {
+int CardGame::RemoveObserver (User* user) {
+    for (int i = observers_.GetCount (); i > 0; --i) {
+        User* user = observers_[i];
+        // user will never be nil.
+        if (user->Equals (user)) {
+            return observers_.Remove (i);
+        }
+    }
+    return -1;
+}
+
+Array<id::User*>& CardGame::GetObservers () {
+    return observers_;
+}
+
+const Operation* CardGame::Star (uint index, _::Expression* expr) {
     static const Operation This = { "CardsClient",
         NumOperations (0), FirstOperation ('A'),
         "kabuki::cards Script client.", 0
     };
     void* args[4];
-    RemotePlayer* player;
+    User* user;
     switch (index) {
         case '?': return &This;
         case 'A': {
@@ -136,14 +151,21 @@ const Operation* Client::Star (uint index, _::Expression* expr) {
                 return Result (expr, Bin::InvalidArgumentError,
                                Params<1, SI4> ());
             }
-            players_.Grow (player_number);
-            player = players_[player_number];
-            player->SetDislpayName (status);
-            player->SetHandle (handle);
+            observers_.Grow (player_number);
+            user = observers_[player_number];
+            user->SetStatus (status);
+            user->GetHandle ().SetKey (handle);
             return nullptr;
         }
     }
     return nullptr;
+}
+
+const char* DefaultPlayAgainString () {
+    static const char play_again[] = "\n| Do you want to play again?"
+        "\n| Enter y to continue, or n to quit."
+        "\n< \0";
+    return play_again;
 }
 
 }       //< namespace cards

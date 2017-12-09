@@ -13,9 +13,7 @@
              permissions and limitations under the License.
 */
 
-#include "hand.h"
-#include "card_stack.h"
-#include "blackjack_player.h"
+#include "blackjack_player_ai.h"
 
 using namespace _;
 using namespace std;
@@ -23,93 +21,17 @@ using namespace kabuki::id;
 
 namespace kabuki { namespace cards {
 
-int BlackjackScore (Hand& hand, int ace_value) {
-    int score = 0;  //< Always set the variable before you start using it!!!
-
-    CardStack& cards = hand.GetVisibleCards ();
-    Card* card;
-    for (int i = 0; i < cards.GetCount (); ++i) {
-        card = cards.GetCard (i);
-        int denomination = card->GetDenomination ();
-        score += ((denomination == Card::kAce) ? ace_value : denomination);
-    }
-
-    return score;
-}
-
-int BlackjackMinScore (Hand& hand) {
-    return BlackjackScore (hand, 1);
-}
-
-int BlackjackMaxScore (Hand& hand) {
-    return BlackjackScore (hand, 11);
-}
-
-
-int BlackjackCompareHands (Hand& a, Hand& b) {
-    int a_min = BlackjackMinScore (a),
-        a_max = BlackjackMaxScore (a),
-        b_min = BlackjackMinScore (b),
-        b_max = BlackjackMaxScore (b);
-
-    if (a_min == 21 || a_max == 21)
-        if (b_min == 21 || b_max == 21) // We both got 21!
-            return 2;
-        else
-            return 3; //< We won!
-
-    if (b_min == 21 || b_max == 21) //< We lost.
-        return -2;
-
-    int best_score = a_max > 21?a_min:a_max,
-        other_best_score = b_max > 21?b_min:b_max;
-
-    if (best_score > 21)           //< We lost :-(
-        if (other_best_score > 21) //< We both lost!
-            return -2;
-        else
-            return -1;
-
-    if (other_best_score > 21)     //< We won!!!
-        return 1;
-
-    if (best_score > other_best_score)
-        return 1;
-
-    //if (best_score == other_best_score)
-    return 0;
-}
-
-
-BlackjackPlayer::BlackjackPlayer (id::User* user, CardStack& stock,
-                                  bool is_dealder) :
-    Player (user, is_dealder),
-    stock_ (stock) {
+BlackjackPlayerAi::BlackjackPlayerAi (id::User* user, CardStack& stock) :
+    BlackjackPlayer (user, stock) {
     // Nothing to do here!
 }
 
-BlackjackPlayer::~BlackjackPlayer () {
+BlackjackPlayerAi::~BlackjackPlayerAi () {
     // Nothing to do here.
 }
 
-const char* BlackjackPlayer::SetState (int state) {
-    static const char* error = "Invalid state";
-    if (state < 0) {
-        return error;
-    }
-    if (state > 3) {
-        return error;
-    }
-    state_ = state;
-    return nullptr;
-}
-
-bool BlackjackPlayer::IsHolding () {
-    return state_ == kStateHolding;
-}
-
 /*
-Array<CardCombo> BlackjackPlayer::GetHandCombos () {
+Array<CardCombo> BlackjackPlayerAi::GetHandCombos () {
     auto low_score,
         high_score;
 
@@ -139,16 +61,8 @@ Array<CardCombo> BlackjackPlayer::GetHandCombos () {
     return scores;
 }*/
 
-bool BlackjackPlayer::Is21 () {
-    return BlackjackMinScore (hand_) == 21 || BlackjackMaxScore (hand_) == 21;
-}
-
-bool BlackjackPlayer::IsBust () {
-    return BlackjackMaxScore (hand_) > 21;
-}
-
 /**
-bool BlackjackPlayer::PlayOrPass () {
+bool BlackjackPlayerAi::PlayOrPass () {
     // Estimated chances of winning. 
     static const float chanes_of_winning_low[] = {
         0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f
@@ -214,15 +128,7 @@ bool BlackjackPlayer::PlayOrPass () {
     return chance_of_winning * randomNumberBetween0and1 >= 0.5;
 }*/
 
-void BlackjackPlayer::RestartGame () {
-
-}
-
-void BlackjackPlayer::BeginRound () {
-
-}
-
-void BlackjackPlayer::PlayRound () {
+void BlackjackPlayerAi::PlayRound () {
     cout << "\n| " << GetUser ()->GetHandle ().GetKey () << "'s turn.";
     if (IsBust () || Is21 ()) {
         // If the player's hand is a bust, than the dealer is not allowed to
@@ -244,35 +150,6 @@ void BlackjackPlayer::PlayRound () {
         // deal that player another card.
         state_ = kStateHolding;
     }
-}
-
-void BlackjackPlayer::EndRound () {
-
-}
-
-void BlackjackPlayer::EndGame () {
-
-}
-
-int BlackjackPlayer::Compare (Hand& other) {
-    return BlackjackCompareHands (hand_, other);
-}
-
-bool BlackjackPlayer::Wins (Hand& other) {
-    return BlackjackCompareHands (hand_, other) > 0;
-}
-
-void BlackjackPlayer::PrintStats () {
-
-}
-
-void BlackjackPlayer::Print () {
-    PrintLine ("|", '_');
-    cout << "Player: " << GetUser ()->GetHandle ().GetKey () <<
-        "\n| Num Points: " << num_points_ << " Num Wins: " << num_wins_;
-
-    hand_.GetVisibleCards ().Print ();
-    PrintLine ("|", '_');
 }
 
 }   //< namespace cards

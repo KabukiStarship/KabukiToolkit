@@ -1,6 +1,6 @@
 /** kabuki::script
     @version 0.x
-    @file    ~/source/kabuki/script/module_config.h
+    @file    ~/source/kabuki/script/script_keyboard.cc
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -12,35 +12,52 @@
              WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or 
              implied. See the License for the specific language governing 
              permissions and limitations under the License.
-    
-    @brief   This file contains the system configuration for ChineseRoom and 
-             apps that use it.
-    @desc  
 */
 
-#pragma once
 #include <stdafx.h>
 
-#ifndef SCRIPT_GLOBAL_H
-#define SCRIPT_GLOBAL_H
-
-#include "text.h"
-#include "strand.h"
-#include "memory.h"
-#include "random.h"
-#include "table.h"
-#include "log.h"
-#include "tbook.h"
-#include "ascii.h"
-#include "bout_portal.h"
-#include "color.h"
-#include "address.h"
-#include "event.h"
-#include "room.h"
-#include "expression.h"
-#include "window.h"
-#include "args.h"
 #include "keyboard.h"
-#include "print.h"
 
-#endif  //< SCRIPT_GLOBAL_H
+using namespace std;
+
+namespace _ {
+
+#if USING_SCRIPT_KEYBOARD
+
+char KeyboardChar (const char* header) {
+    cout << header;
+    char c = getchar ();
+    cout << '\n';
+    return c;
+}
+
+int KeyboardInt (const char* header) {
+    int number;
+    cout << header;
+    cin.clear ();
+    cin >> number;
+    return number;
+}
+
+float KeyboardFloat (const char* header) {
+    float number;
+    cout << header;
+    cin.clear ();
+    cin >> number;
+    return number;
+}
+
+void KeyboardText (const char* header, char* target, char* target_end) {
+    if (!target) {
+        return;
+    }
+    if (target > target_end) {
+        return;
+    }
+    cout << header;
+    cin.get (target, target_end - target, '\n');
+    cin.clear ();
+    cin.ignore (target_end - target, '\n');
+}
+#endif  //< USING_SCRIPT_KEYBOARD
+}       //< namespace _

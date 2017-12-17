@@ -1,7 +1,8 @@
 /** Kabuki Toolkit
-    @file    ~/source/kabuki/store/config.h
-    @author  Cale McCollough <cale.mccollough@gmail.com>
-    @license Copyright (C) 2017 Cale McCollough <calemccollough.github.io>;
+    @version 0.x
+    @file    ~/source/kabuki/global.h
+    @author  Cale McCollough <calemccollough.github.io>
+    @license Copyright (C) 2017 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 
              2.0 (the "License"); you may not use this file except in 
              compliance with the License. You may obtain a copy of the License 
@@ -12,11 +13,18 @@
              implied. See the License for the specific language governing 
              permissions and limitations under the License.
 */
- 
-#ifndef HEADER_FOR_KABUKI_STORE_CONFIG
-#define HEADER_FOR_KABUKI_STORE_CONFIG
 
-#include "../config.h"
-#include "../id/global.h"
+#pragma once
+#include <stdafx.h>
 
-#endif  //< HEADER_FOR_KABUKI_STORE_CONFIG
+#ifndef HEADER_FOR_PROJECTS_GLOBAL
+#define HEADER_FOR_PROJECTS_GLOBAL
+
+#include "../../../cpputest/include/CppUTest/CommandLineTestRunner.h"
+#include "../../../cpputest/include/CppUTest/TestHarness.h"
+#include "../script/global.h"
+
+using namespace _;
+using namespace std;
+
+#endif  //< HEADER_FOR_PROJECTS_GLOBAL

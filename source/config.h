@@ -1,7 +1,7 @@
 /** Kabuki Toolkit
-    @file    ~/source/kabuki/store/config.h
-    @author  Cale McCollough <cale.mccollough@gmail.com>
-    @license Copyright (C) 2017 Cale McCollough <calemccollough.github.io>;
+    @file    ~/source/kabuki/config.h
+    @author  Cale McCollough <calemccollough.github.io>
+    @license Copyright (C) 2017 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 
              2.0 (the "License"); you may not use this file except in 
              compliance with the License. You may obtain a copy of the License 
@@ -13,10 +13,9 @@
              permissions and limitations under the License.
 */
  
-#ifndef HEADER_FOR_KABUKI_STORE_CONFIG
-#define HEADER_FOR_KABUKI_STORE_CONFIG
+#ifndef HEADER_FOR_KABUKI_CONFIG
+#define HEADER_FOR_KABUKI_CONFIG
 
-#include "../config.h"
-#include "../id/global.h"
+#include "script/global.h"
 
-#endif  //< HEADER_FOR_KABUKI_STORE_CONFIG
+#endif	//< HEADER_FOR_KABUKI_CONFIG

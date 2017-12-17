@@ -1,6 +1,7 @@
 /** Kabuki Toolkit
-    @file    ~/source/kabuki/cards/config.h
-    @author  Cale McCollough <calemccollough.github.io>
+    @version 0.x
+    @file    ~/source/kabuki/script/config.h
+    @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 
              2.0 (the "License"); you may not use this file except in 
@@ -11,14 +12,36 @@
              WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or 
              implied. See the License for the specific language governing 
              permissions and limitations under the License.
+    
+    @brief   This file contains the system configuration for ChineseRoom and 
+             apps that use it.
+    @desc  
 */
- 
-#ifndef KABUKI_CARDS_COFIG_H
-#define KABUKI_CARDS_COFIG_H
 
-#include "../config.h"
-#include "../id/global.h"
-#include "../data/global.h"
-#include "../store/global.h"
+#pragma once
+#include <stdafx.h>
 
-#endif	//< KABUKI_CARDS_COFIG_H
+#ifndef HEADER_FOR_SCRIPT_GLOBAL
+#define HEADER_FOR_SCRIPT_GLOBAL
+
+#include "strand.h"
+#include "memory.h"
+#include "random.h"
+#include "table.h"
+#include "log.h"
+#include "tbook.h"
+#include "ascii.h"
+#include "color.h"
+#include "address.h"
+#include "event.h"
+#include "room.h"
+#include "expression.h"
+#include "mirror.h"
+#include "args.h"
+#include "params.h"
+#include "keyboard.h"
+#include "textmessage.h"
+#include "token.h"
+//#include "display.h"
+
+#endif  //< HEADER_FOR_SCRIPT_GLOBAL

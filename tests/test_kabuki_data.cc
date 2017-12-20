@@ -1,6 +1,6 @@
 /** Kabuki Toolkit
     @version 0.x
-    @file    ~/source/global.h
+    @file    ~/source/tests/kabuki_data_tests.cc
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version
@@ -14,9 +14,26 @@
              permissions and limitations under the License.
 */
 
-#ifndef HEADER_FOR_GLOBAL
-#define HEADER_FOR_GLOBAL
+#include <stdafx.h>
+#include "global.h"
 
-#include "kabuki/data/global.h"
+#include "../source/kabuki/data/global.h"
 
-#endif  //< HEADER_FOR_GLOBAL
+using namespace _;
+using namespace std;
+
+TEST_GROUP (SCRIPT_DATA_TESTS) {
+
+    void setup () {
+        std::cout << Text ().Line ();
+        std::cout << "\n|  + Running kabuki::data tests...";
+    }
+
+    void teardown () {
+        std::cout << "\n| kabuki::data completed.";
+    }
+};
+
+TEST (SCRIPT_DATA_TESTS, AllTests) {
+    
+}

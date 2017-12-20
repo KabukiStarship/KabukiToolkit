@@ -1,6 +1,6 @@
 /** Kabuki Toolkit
     @version 0.x
-    @file    ~/source/kabuki/script/ascii.h
+    @file    ~/source/script/script_display.cc
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -14,51 +14,8 @@
              permissions and limitations under the License.
 */
 
-#ifndef SCRIPT_ASCII_H
-#define SCRIPT_ASCII_H
-
-#include "config.h"
+#include "display.h"
 
 namespace _ {
 
-typedef enum AsciiCodes {
-    NUL = 0,
-    SOH,
-    STX,
-    ETX,
-    EOT,
-    ENQ,
-    ACK,
-    BEL,
-    BS,
-    TAB,
-    LF,
-    VT,
-    FF,
-    CR,
-    SO,
-    SI,
-    DLE,
-    DC1,
-    DC2,
-    DC3,
-    DC4,
-    NAK,
-    SYN,
-    ETB,
-    CAN,
-    EM,
-    SUB,
-    ESC,
-    FS,
-    GS,
-    RS,
-    US,
-    DEL = 127
-} AsciiCode;
-
-#if SCRIPT_USING_TEXT
-KABUKI const char* AsciiText (AsciiCode ascii_char);
-#endif  //< SCRIPT_USING_TEXT
-}       //< namespace ascii
-#endif  //< SCRIPT_ASCII_H
+}   //< namespace _

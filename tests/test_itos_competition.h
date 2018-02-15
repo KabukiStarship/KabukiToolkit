@@ -16,26 +16,11 @@
 
 #include <stdafx.h>
 
-#ifndef HEADER_FOR_SCRIPT_ITOS_TESTS
-#define HEADER_FOR_SCRIPT_ITOS_TESTS
+#ifndef HEADER_FOR_TEST_ITOS_SIZELUT
+#define HEADER_FOR_TEST_ITOS_SIZELUT
 
-void PrintBinary (uint64_t value);
+char* PrintSizeLut (uint64_t val, char* text, char* text_end);
 
-inline uint64_t GetRandomUInt64 () {
-    std::random_device rd;
-    std::mt19937_64 eng (rd ());
-    std::uniform_int_distribution<unsigned long long> distr;
-    return distr (eng);
-}
+void TestItoSSizeLut ();
 
-inline int64_t GetRandomInt64 () {
-    return (int64_t)GetRandomUInt64 ();
-}
-
-char* PrintNull (uint64_t value, char* text, char* text_end);
-
-void TestItoSScript ();
-
-void BenchmarkItoS ();
-
-#endif //< HEADER_FOR_SCRIPT_ITOS_TESTS
+#endif //< HEADER_FOR_TEST_ITOS_SIZELUT

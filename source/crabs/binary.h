@@ -17,8 +17,8 @@
 #pragma once
 #include <stdafx.h>
 
-#ifndef HEADER_FOR_CRABS_HEX
-#define HEADER_FOR_CRABS_HEX
+#ifndef HEADER_FOR_CRABS_BINARY
+#define HEADER_FOR_CRABS_BINARY
 
 #include "printer.h"
 
@@ -27,27 +27,22 @@
 namespace _ {
 
 /** Utility class for printing hex with operator<<. */
-template<typename T = uintptr_t>
-class Hex {
+template<typename T>
+class Binary {
     public:
 
-    T value;    //< Value to convert to hex.
+    T value;    //< Value to convert to binary.
 
     /** Constructor saves value for use with operator overloads. */
-    Hex (T value) :
+    Binary (T value) :
         value (value) {
     }
 
-    /** Constructor saves value for use with operator overloads. */
-    Hex (void* pointer) :
-        value (reinterpret_cast<T> (pointer)) {
-    }
-
-    Printer& Print (Printer& printer) {
+    Printer& Print (Printer& p) {
         enum { kSize = sizeof (T) * 2 + 2 };
-        char* l_cursor = printer.cursor;
-        intptr_t size = printer.end - l_cursor;
-        if (size <= kSize) return printer;
+        char* l_cursor = print.cursor;
+        intptr_t size = print.end - l_cursor;
+        if (size <= kSize) return print;
         *l_cursor++ = '0';
         *l_cursor++ = 'x';
         for (int num_bits_shift = 0; num_bits_shift < sizeof (T) * 8;
@@ -57,8 +52,8 @@ class Hex {
             *l_cursor++ = c;
         }
         *l_cursor = 0;
-        printer.cursor = l_cursor;
-        return printer;
+        print.cursor = l_cursor;
+        return print;
     }
 };
 
@@ -83,7 +78,7 @@ KABUKI char* PrintHex (uint8_t value, char* buffer, char* buffer_end,
     @param  buffer_end End of the buffer.
     @return            Null upon failure or a pointer to the byte after the last 
                        byte written. */
-inline char* PrintHex (int8_t value, char* buffer, char* buffer_end,
+inline KABUKI char* PrintHex (int8_t value, char* buffer, char* buffer_end,
                        char delimiter = 0) {
     return PrintHex ((uint8_t)value, buffer, buffer_end, delimiter);
 }
@@ -101,7 +96,7 @@ KABUKI char* PrintHex (uint16_t value, char* buffer, char* buffer_end,
     @param  buffer_end End of the buffer.
     @return            Null upon failure or a pointer to the byte after the last 
                        byte written. */
-inline char* PrintHex (int16_t value, char* buffer, char* buffer_end,
+inline KABUKI char* PrintHex (int16_t value, char* buffer, char* buffer_end,
                        char delimiter = 0) {
     return PrintHex ((uint16_t)value, buffer, buffer_end, delimiter);
 }
@@ -119,7 +114,7 @@ KABUKI char* PrintHex (uint32_t value, char* buffer, char* buffer_end,
     @param  buffer_end End of the buffer.
     @return            Null upon failure or a pointer to the byte after the last 
                        byte written. */
-inline char* PrintHex (int32_t value, char* buffer, char* buffer_end,
+inline KABUKI char* PrintHex (int32_t value, char* buffer, char* buffer_end,
                        char delimiter = 0) {
     return PrintHex ((uint32_t)value, buffer, buffer_end, delimiter);
 }
@@ -137,17 +132,17 @@ KABUKI char* PrintHex (uint64_t value, char* buffer, char* buffer_end,
     @param  buffer_end End of the buffer.
     @return            Null upon failure or a pointer to the byte after the last 
                        byte written. */
-inline char* PrintHex (int64_t value, char* buffer, char* buffer_end,
+inline KABUKI char* PrintHex (int64_t value, char* buffer, char* buffer_end,
                        char delimiter = 0) {
     return PrintHex ((uint64_t)value, buffer, buffer_end, delimiter);
 }
-    
+
 /** Print's out the given word to the text buffer.
     @param  text     Beginning of the buffer.
     @param  text_end End of the buffer.
     @return          Null upon failure or a pointer to the byte after the last 
                      byte written. */
-inline char* PrintHex (const void* ptr, char* text, char* text_end,
+inline KABUKI char* PrintHex (const void* ptr, char* text, char* text_end,
                        char delimiter = 0) {
     return PrintHex ((uintptr_t)ptr, text, text_end, delimiter);
 }
@@ -160,4 +155,4 @@ inline _::Printer& operator<< (_::Printer& printer, _::Hex<T> value) {
 }
 
 #endif  //< MAJOR_SEAM >= 1 && MINOR_SEAM >= 3
-#endif  //< HEADER_FOR_CRABS_HEX
+#endif  //< HEADER_FOR_CRABS_BINARY

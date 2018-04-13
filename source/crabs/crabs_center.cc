@@ -15,11 +15,9 @@
 */
 
 #include <stdafx.h>
-
 #if MAJOR_SEAM >= 1 && MINOR_SEAM >= 2
 
 #include "printer.h"
-
 #if USING_PRINTER
 
 #include "type.h"
@@ -36,51 +34,55 @@
 #define PRINT_HEADING
 #endif
 
-namespace _ {/** 
-void PrintBinary (uint32_t value) {
-    enum { kSize = sizeof (uint32_t) * 8 };
+namespace _ {
+
+char* PrintCentered (const char* string, int num_columns, char* buffer,
+                     char* buffer_end, char delimiter) {
+    assert (buffer);
+    assert (string);
+    if (buffer >= buffer_end) {
+        return nullptr;
+    }
+    assert (num_columns > 0);
+
+    // We need to leave at least one space to the left and right of
+    int length = TextLength (string),
+        offset;
+    PRINTF ("\n\n    Printing \"%s\":%i num_columns:%i", string, length,
+            num_columns)
     
-    std::cout << "\n    ";
-    for (int i = kSize; i > 0; --i) {
-        char c = (char)('0' + (value >> (kSize - 1)));
-        std::cout << c;
-        value = value << 1;
+    if (num_columns < length) {
+        offset = length - num_columns;
+        if (offset > 3) {
+            offset = 3;
+        }
+        num_columns -= offset;
+        while (num_columns-- > 0) {
+            *buffer++ = *string++;
+        }
+        while (offset-- > 0) {
+            *buffer++ = '.';
+        }
+        *buffer = delimiter;
+        return buffer;
     }
-}
-Don't think I need this anymore. It was for chopping off the MSD but it
-    was so slow it makes me shutter.
-
-void PrintBinaryTable (uint32_t value) {
-    enum { kSize = sizeof (uint32_t) * 8 };
-
-    std::cout << "\n    ";
-    for (int i = kSize; i > 0; --i) {
-        char c = (char)('0' + (value >> (kSize - 1)));
-        std::cout << c;
-        value = value << 1;
+    offset = (num_columns - length) >> 1; //< >> 1 to /2
+    length = num_columns - length - offset;
+    PRINTF ("\n    length:%i offset:%i", length, offset)
+    
+    while (length-- > 0) {
+        *buffer++ = ' ';
     }
-    std::cout << "\n    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
-                 "\n    33222222222211111111110000000000"
-                 "\n    10987654321098765432109876543210"
-                 "\n    ||  |  |   |  |  |   |  |  |   |"
-                 "\n    |1  0  0   0  0  0   0  0  0   0"
-                 "\n    |0  9  8   7  6  5   4  3  2   1";
-}*/
-
-char* PrintBinary (uint64_t value, char* buffer, char* buffer_end,
-                   char delimiter) {
-    if (!buffer) {
-        return nullptr;
+    char c = *string++;
+    while (c) {
+        *buffer++ = c;
+        c = *string++;
     }
-    if (buffer + sizeof (uint64_t) * 8 >= buffer_end) {
-        return nullptr;
-    }
-
-    for (int i = 0; i < 64; ++i) {
-        *buffer++ = (char)('0' + (value >> 63));
-        value = value << 1;
+    while (offset-- > 0) {
+        *buffer++ = ' ';
     }
     *buffer = delimiter;
+    PRINTF ("\n    Printed:\"%s\"", string);
     return buffer;
 }
 

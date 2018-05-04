@@ -1,6 +1,6 @@
 /** Kabuki Toolkit
     @version 0.x
-    @file    ~/library/kabuki/toolkit/aiml/perceptron.h
+    @file    ~/library/kabuki/toolkit/aiml/aiml_perceptron_layer.cc
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2014-2017-2018 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -14,60 +14,55 @@
              permissions and limitations under the License.
 */
 
-#pragma once
 #include <stdafx.h>
 
 #if MAJOR_SEAM >= 5 && MINOR_SEAM >= 1
-
-#ifndef HEADER_FOR_PERCEPTRON
-#define HEADER_FOR_PERCEPTRON
 
 #include "synapse.h"
 
 namespace kabuki { namespace toolkit { namespace aiml {
 
-/** A Perceptron.
+float_t kSynapseMax = 1.0;
+float_t kSynapseMin = -1.0;
+float_t kSynapseBias = 0.0;
+float_t kSynapseNoiseMin = -0.05;
+float_t kSynapseNoiseMax = 0.05;
 
-    A Perceptron needs to get it's input from either floating-point or 
-    integers.
+float_t SynapseNoise (float_t min_value, float_t max_value) {
+    static std::default_random_engine e;
+    static std::uniform_real_distribution<float_t> dis (min_value, max_value);
+    return dis (e);
+}
 
-    @code
-    x_1 ---\        _________     _________
-        w_1 \       | _____ |     |   ___ |
-    x_2 -----\      | \     |     |   |   |
-        w_2   |-----|  \    |---->|   |   |----> Output Y
-    ...      /      |  /    |  h  |   |   |
-    x_n ----/       | /____ |     | __|0  |
-        w_n         |_______|     |_______|
-    @endcode
-*/
-class Perceptron {
+Synapse::Synapse (Perceptron* rx, float_t weight) :
+    rx_     (rx),
+    weight_ (weight) {
+    // Nothing to do here! :-)
+}
 
-    public:
+Synapse::Synapse (Perceptron* rx, float_t min_value, float_t max_value) :
+    rx_     (rx),
+    weight_ (SynapseNoise (min_value, max_value)) {
+    // Nothing to do here! :-)
+}
 
-    /** Default constructor. */
-    Perceptron ();
+Synapse::Synapse (const Synapse& other) :
+    weight_ (other.weight_),
+    rx_     (other.rx_) {
+    // Nothing to do here! :-)
+}
 
-    /** Gets the perceptron value. */
-    float_t GetValue ();
+float_t Synapse::GetWeight () { return weight_; }
 
-    /** Sets the perceptron value. */
-    void SetValue (float_t value);
+void Synapse::SetWeight (float_t weight) { weight_ = weight; }
+Perceptron* Synapse::GetRx () { return rx_; }
 
-    /** Connects the given perceptron. */
-    void Connect (Perceptron* p);
-
-    void Update ();
-
-    private:
-
-    float_t               value_; //< Perceptron value.
-    std::vector<Synapse*> axon_;  //< Connected neurons.
-};
+void Synapse::SetRx (Perceptron* rx) {
+    assert (rx);
+    rx_ = rx;
+}
 
 }   //< namespace aiml
 }   //< namespace toolkit
 }   //< namespace kabuki
-
-#endif  //< #ifndef HEADER_FOR_PERCEPTRON
 #endif  //< #if MAJOR_SEAM >= 5 && MINOR_SEAM >= 1

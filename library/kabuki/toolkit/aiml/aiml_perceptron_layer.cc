@@ -1,6 +1,6 @@
 /** Kabuki Toolkit
     @version 0.x
-    @file    ~/library/kabuki/toolkit/aiml/perceptron_layer.h
+    @file    ~/library/kabuki/toolkit/aiml/aiml_perceptron_layer.cc
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2014-2017-2018 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -14,37 +14,34 @@
              permissions and limitations under the License.
 */
 
-#pragma once
 #include <stdafx.h>
 
 #if MAJOR_SEAM >= 5 && MINOR_SEAM >= 1
 
+#include "perceptron_layer.h"
+
 namespace kabuki { namespace toolkit { namespace aiml {
 
-#include "perceptron.h"
+PerceptronLayer::PerceptronLayer (uint32_t neuron_count, float_t bias) :
+    bias_ (bias),
+    next_layer_ (nullptr) {
+    perceptrons_.reserve (neuron_count);
+}
 
-/** A layer in a Multi-layer Perceptron Network.
-    Each Perceptron is individually controlled, but it is convenient to 
-*/
-class PerceptronLayer {
-    public:
-
-    PerceptronLayer (uint32_t neuron_count, float_t bias);
-
-    void Connect (PerceptronLayer* layer);
-
-    void Disconnect (PerceptronLayer* layer);
-
-    Perceptron* GetPerceptron (size_t index);
-
-    void Update ();
-
-    private:
-
-    float_t                 bias_;        //< Layer bias value.
-    std::vector<Perceptron> perceptrons_; //< Layer perceptrons.
-    PerceptronLayer*        next_layer_;  //< Next layer in the list.
-};
+void PerceptronLayer::Update () {
+    int n = perceptrons_.size ();
+    if (n == 0)
+        return;
+    for (--n; n > 0; --n) {
+        Perceptron* perceptron = &perceptrons_[0];
+        perceptron->Update ();
+        ++perceptron;
+    }
+    PerceptronLayer* next_layer = next_layer_;
+    if (!next_layer)
+        return;
+    next_layer->Update ();
+}
 
 }   //< namespace aiml
 }   //< namespace toolkit

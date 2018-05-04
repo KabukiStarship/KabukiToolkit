@@ -1,6 +1,6 @@
 /** Kabuki Toolkit
     @version 0.x
-    @file    ~/library/kabuki/toolkit/aiml/perceptron_layer.h
+    @file    ~/library/kabuki/toolkit/aiml/perceptron.h
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2014-2017-2018 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -19,34 +19,54 @@
 
 #if MAJOR_SEAM >= 5 && MINOR_SEAM >= 1
 
-namespace kabuki { namespace toolkit { namespace aiml {
-
 #include "perceptron.h"
 
-/** A layer in a Multi-layer Perceptron Network.
-    Each Perceptron is individually controlled, but it is convenient to 
+namespace kabuki { namespace toolkit { namespace aiml {
+
+typedef float_t (*PerceptronSensor) ();
+
+#ifndef HEADER_FOR_SENSORY_PERCEPTRON
+#define HEADER_FOR_SENSORY_PERCEPTRON
+
+/** A Sensory Perceptron that takes in data from various types and ouptuts.
+    
 */
-class PerceptronLayer {
+template<typename T>
+class Persenseron {
     public:
 
-    PerceptronLayer (uint32_t neuron_count, float_t bias);
-
-    void Connect (PerceptronLayer* layer);
-
-    void Disconnect (PerceptronLayer* layer);
-
-    Perceptron* GetPerceptron (size_t index);
+    Persenseron ();
 
     void Update ();
 
     private:
 
-    float_t                 bias_;        //< Layer bias value.
-    std::vector<Perceptron> perceptrons_; //< Layer perceptrons.
-    PerceptronLayer*        next_layer_;  //< Next layer in the list.
+    Perceptron* y_;
 };
 
-}   //< namespace aiml
-}   //< namespace toolkit
-}   //< namespace kabuki
+
+
+class Persenseron2D {
+    public:
+
+    Persenseron2D (uintptr_t width, uintptr_t height);
+
+    uintptr_t GetWidth ();
+
+    uintptr_t GetHeight ();
+
+    Persensron* GetPersenseron (uint x, uint y);
+
+    private:
+
+    uint       width_,
+               height_;
+    Axion_UI1* x_,
+             * y_;
+};
+
+}       //< namespace aiml
+}       //< namespace toolkit
+}       //< namespace kabuki
+#endif  //< #ifndef HEADER_FOR_SENSORY_PERCEPTRON
 #endif  //< #if MAJOR_SEAM >= 5 && MINOR_SEAM >= 1

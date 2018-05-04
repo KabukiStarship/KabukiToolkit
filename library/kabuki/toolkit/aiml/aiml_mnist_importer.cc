@@ -1,6 +1,6 @@
 /** Kabuki Toolkit
     @version 0.x
-    @file    ~/library/kabuki/toolkit/aiml/perceptron_layer.h
+    @file    ~/library/kabuki/toolkit/aiml/aiml_mnist_importer.h
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2014-2017-2018 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -16,35 +16,45 @@
 
 #pragma once
 #include <stdafx.h>
-
+using namespace std;
 #if MAJOR_SEAM >= 5 && MINOR_SEAM >= 1
+#include "nmist_importer.h"
 
 namespace kabuki { namespace toolkit { namespace aiml {
 
-#include "perceptron.h"
+void MnistImport () {
 
-/** A layer in a Multi-layer Perceptron Network.
-    Each Perceptron is individually controlled, but it is convenient to 
-*/
-class PerceptronLayer {
-    public:
+    // ifstream is used for reading files
+    // We'll read from a file called Sample.dat
+    ifstream file ("train-labels.idx1-ubyte");
 
-    PerceptronLayer (uint32_t neuron_count, float_t bias);
+    if (!file) {
+        cout << "Could open file \"nmist.ts\" for reading!" << endl;
+        exit (1);
+    }
 
-    void Connect (PerceptronLayer* layer);
+    MnistImages labels;
 
-    void Disconnect (PerceptronLayer* layer);
+    while (file) {
+        file >> labels.magic_number;
+        cout << "\nMagic Number:" << labels.magic_number;
 
-    Perceptron* GetPerceptron (size_t index);
+        file >> labels.item_count;
+        cout << "\nItem Count:" << labels.item_count;
 
-    void Update ();
+        file >> labels.row_count;
+        cout << "\nWidth:" << labels.row_count;
 
-    private:
-
-    float_t                 bias_;        //< Layer bias value.
-    std::vector<Perceptron> perceptrons_; //< Layer perceptrons.
-    PerceptronLayer*        next_layer_;  //< Next layer in the list.
-};
+        file >> labels.column_count;
+        cout << " Height:" << labels.column_count;
+        
+        uint32_t n = labels.item_count * labels.row_count *
+                     labels.column_count;
+        uint8_t* pixels = new uint8_t[n];
+        for (; n > 0; --n)
+            file >> pixels[n];
+    }
+}
 
 }   //< namespace aiml
 }   //< namespace toolkit

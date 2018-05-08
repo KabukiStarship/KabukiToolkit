@@ -1,5 +1,6 @@
-# _id Module
-This library identification tools for working with entities.
+# Kabuki Cards Client
+
+This is a stub for a GUI client for Kabuki Cards (@see seam_3).
 
 ## Author
 

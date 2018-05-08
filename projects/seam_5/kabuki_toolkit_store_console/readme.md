@@ -1,5 +1,6 @@
-# _id Module
-This library identification tools for working with entities.
+# kabuki::toolkit::store::Server
+
+This project is a simple eCommerse server for use in apps and games.
 
 ## Author
 

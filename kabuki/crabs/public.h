@@ -1,5 +1,6 @@
-/* Kabuki Toolkit @version 0.x
-@file    ~/kabuki/stdafx.h
+/* Kabuki Toolkit
+@version 0.x
+@file    ~/kabuki/crabs/global.h
 @author  Cale McCollough <cale.mccollough@gmail.com>
 @license Copyright (C) 2014-2017 Cale McCollough <calemccollough.github.io>;
 All right reserved (R). Licensed under the Apache License, Version 2.0 (the
@@ -11,14 +12,33 @@ CONDITIONS OF ANY KIND, either express or implied. See the License for the
 specific language governing permissions and limitations under the License. */
 
 #pragma once
+#include <stdafx.h>
+#ifndef INCLUDED_CRABS_GLOBAL
+#define INCLUDED_CRABS_GLOBAL
 
-#define SEAM_PAGE 0
-#define SEAM_MAJOR 0
-#define SEAM_MINOR 0
+#include "binary_64.h"
+#include "random.h"
 
-#ifndef INCLUDED_SEAMS
-#include <seams.h>
-#endif
+#include "binary_64.h"
+#include "clock.h"
+#include "debug.h"
+#include "hex.h"
+#include "socket.h"
+#include "str.h"
 
-#include <cstdarg>  //< Language feature should be built-in.
-#include <cstdint>  //< Ditto.
+#include "array.h"
+#include "ascii.h"
+#include "bsq.h"
+
+#include "address.h"
+#include "args.h"
+#include "bin.h"
+#include "bout.h"
+#include "event.h"
+#include "expr.h"
+#include "interrupts.h"
+#include "op.h"
+#include "room.h"
+#include "slot.h"
+
+#endif  //< INCLUDED_CRABS_GLOBAL

@@ -1,7 +1,7 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    ~/kabuki/crabs/interrupts.h
-@author  Cale McCollough <cale.mccollough@gmail.com>
+@file    ~/kabuki/f2/talign.h
+@author  Cale McCollough <https://calemccollough.github.io>
 @license Copyright (C) 2014-2017 Cale McCollough <calemccollough.github.io>;
 All right reserved (R). Licensed under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance with the License.
@@ -13,21 +13,33 @@ specific language governing permissions and limitations under the License. */
 
 #pragma once
 #include <stdafx.h>
-#ifndef INCLUDED_CRABS_EXCEPTIONS
-#define INCLUDED_CRABS_EXCEPTIONS
-// Dependencies:
-#include "config.h"
-// End dependencies.
-#if USING_CRABS_INTERRUPTS
+
+#ifndef INCLUDED_CRABS_TCONSOLE
+#define INCLUDED_CRABS_TCONSOLE
+
+#include "console.h"
+
+#include "tbinary.h"
 
 namespace _ {
 
-#if USING_TEXT_SCRIPT
-/* Exception thrown to interrupt and crash the program. */
-struct API RoomCrashException : public std::exception {
-  const char* what() const throw();
-};
-#endif
+/* Prints the following value to the console in Hex. */
+template <typename UI>
+Char* PrintHex(UI value) {
+  enum { kHexStringLengthSizeMax = sizeof(UI) * 2 + 3 };
+
+  ASSERT(cursor);
+  if (cursor + kHexStringLengthSizeMax >= end) return nullptr;
+
+  Print('0');
+  Print('x');
+  for (int num_bits_shift = sizeof(UI) * 8 - 4; num_bits_shift >= 0;
+       num_bits_shift -= 4) {
+    Print(HexNibbleToUpperCase((uint8_t)(value >> num_bits_shift)));
+  }
+  *cursor = 0;
+  return cursor;
+}
+
 }  // namespace _
-#endif  //< USING_CRABS_INTERRUPTS
-#endif  //< INCLUDED_CRABS_EXCEPTIONS
+#endif  //< INCLUDED_CRABS_TCONSOLE

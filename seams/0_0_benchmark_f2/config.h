@@ -1,6 +1,6 @@
-/* Kabuki Toolkit @version 0.x
+/** Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    ~/kabuki/f2/global.h
+@file    ~/seams/0_0_benchmark_f2/config.h
 @author  Cale McCollough <cale.mccollough@gmail.com>
 @license Copyright (C) 2014-2017 Cale McCollough <calemccollough.github.io>;
 All right reserved (R). Licensed under the Apache License, Version 2.0 (the
@@ -14,11 +14,9 @@ specific language governing permissions and limitations under the License. */
 #pragma once
 #include <stdafx.h>
 
-#ifndef INCLUDED_F2_GLOBAL
-#define INCLUDED_F2_GLOBAL
+#ifndef INCLUDED_SEAMS_0_0_BENCHMARK_F2_CONFIG
+#define INCLUDED_SEAMS_0_0_BENCHMARK_F2_CONFIG 1
 
-#include "talign.h"
-#include "trng.h"
-#include "ttest.h"
+#include "../../kabuki/f2/global.h"
 
-#endif  //< INCLUDED_F2_GLOBAL
+#endif  // #ifndef INCLUDED_SEAMS_0_0_BENCHMARK_F2_CONFIG

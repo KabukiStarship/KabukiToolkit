@@ -19,47 +19,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\kabuki\f2\readme.md" />
-    <None Include="test_script.s2" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\kabuki\f2\benchmark.h" />
-    <ClInclude Include="..\..\kabuki\f2\binary.h" />
-    <ClInclude Include="..\..\kabuki\f2\console.h" />
-    <ClInclude Include="..\..\kabuki\f2\global.h" />
-    <ClInclude Include="..\..\kabuki\f2\public.h" />
-    <ClInclude Include="..\..\kabuki\f2\rng.h" />
-    <ClInclude Include="..\..\kabuki\f2\talign.h" />
-    <ClInclude Include="..\..\kabuki\f2\targetver.h" />
-    <ClInclude Include="..\..\kabuki\f2\tbenchmark.h" />
-    <ClInclude Include="..\..\kabuki\f2\tbinary.h" />
-    <ClInclude Include="..\..\kabuki\f2\tconsole.h" />
-    <ClInclude Include="..\..\kabuki\f2\test.h" />
-    <ClInclude Include="..\..\kabuki\f2\trng.h" />
-    <ClInclude Include="..\..\kabuki\f2\ttest.h" />
-    <ClInclude Include="assembly.h" />
+    <ClInclude Include="f2_nano.h" />
+    <ClInclude Include="maze.h" />
+    <ClInclude Include="maze_agent.h" />
     <ClInclude Include="seams.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="test_seam_0.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\kabuki\f2\f2_benchmark.cc" />
-    <ClCompile Include="..\..\kabuki\f2\f2_binary.cc" />
-    <ClCompile Include="..\..\kabuki\f2\f2_console.cc" />
-    <ClCompile Include="..\..\kabuki\f2\f2_rng.cc" />
-    <ClCompile Include="..\..\kabuki\f2\f2_test.cc" />
+    <ClCompile Include="..\..\seam_0_0_x\0_0_0_experiments\maze_agent.cc" />
+    <ClCompile Include="f2_nano.cc" />
+    <ClCompile Include="main.cc" />
+    <ClCompile Include="maze.cc" />
     <ClCompile Include="stdafx.cc" />
-    <ClCompile Include="tests_main.cc" />
-    <ClCompile Include="test_seam_0_0_0.cc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{A2320CC1-0592-43E3-9BA6-1BCEA634DD07}</ProjectGuid>
+    <ProjectGuid>{706DA7C9-FEAD-4885-8351-3471961BFEBC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>kabukitoolkit</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
-    <ProjectName>0_0_0_test</ProjectName>
+    <ProjectName>0_9_0_test</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -113,7 +93,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>$(ProjectDir)../../../cpputest/lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -151,7 +131,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>winmm.lib;CppUTestd.lib;CppUTest.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

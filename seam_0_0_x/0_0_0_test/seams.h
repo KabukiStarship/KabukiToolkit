@@ -13,55 +13,18 @@ specific language governing permissions and limitations under the License. */
 
 #pragma once
 
-#include <cstdarg>
-#include <cstdint>
+#ifndef INCLUDED_SEAMS_0_0_TEST_SEAMS
+#define INCLUDED_SEAMS_0_0_TEST_SEAMS 1
 
-typedef unsigned int uint;
+#include <f2/test.h>
 
-#define API
+TestResult TestSEAM_0_0_0(const char* args);
 
-#define SEAM_LAYER 0
-#define SEAM_MAJOR 0
-#define SEAM_MINOR 0
+static SeamMajor seam_major_1 =
+    MajorSeams<&TestSEAM_0_0_0>(0, 0, seam_major_1.GetMinorSeamCount());
 
-#define SEAM_0_0_0 1
-#define SEAM_0_0_1 2
-#define SEAM_0_0_2 3
-#define SEAM_N 3
+}  // namespace _
 
-enum { kSeamCount = SEAM_N };
-
-#define WORD_SIZE 64
-
-#ifndef INCLUDED_SEAMS
-#define INCLUDED_SEAMS
-
-#if SEAM_LAYER == 0
-#if SEAM_MAJOR == 0
-#if SEAM_MINOR == 0
-#define SEAM 1
-#elif SEAM_MINOR == 1
-#define SEAM 2
-#elif SEAM_MINOR == 2
-#define SEAM 3
-#endif
-#endif  //< #if SEAM_MAJOR == 0
-#endif  //< #if SEAM_LAYER == 0
-
-#if SEAM > 0 && SEAM <= SEAM_N
-#define DEBUG 1
-#endif
-
-#define APP_EXIT_SUCCESS 0
-#define APP_EXIT_FAILURE 1
-
-#if COMPILER == VISUAL_CPP
-#define getch() _getch();
-#define FORMAT_SI8 "%I64i"
-#define FORMAT_UI8 "%I64u"
-#else
-#define FORMAT_SI8 "%lld"
-#define FORMAT_UI8 "%llu"
-#endif
+int main(int arg_count, char** args) { return seam_major_1.Run(args); }
 
 #endif  //< #if INCLUDED_SEAMS

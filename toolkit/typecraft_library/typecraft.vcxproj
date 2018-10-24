@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -19,131 +19,54 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="00\seam_footer.inl" />
-    <ClInclude Include="00\seam_header.inl" />
-    <ClInclude Include="00\itos_and_stoi.h" />
-    <ClInclude Include="01\ascii_strings_and_socket.h" />
-    <ClInclude Include="02\ftos_and_stof.h" />
-    <ClInclude Include="03\ascii_clock.h" />
-    <ClInclude Include="04\ascii_stack.h" />
-    <ClInclude Include="05\ascii_array.h" />
-    <ClInclude Include="06\ascii_loom.h" />
-    <ClInclude Include="07\ascii_table.h" />
-    <ClInclude Include="08\ascii_list.h" />
-    <ClInclude Include="09\ascii_list.h" />
-    <ClInclude Include="10\ascii_map.h" />
-    <ClInclude Include="11\ascii_book.h" />
-    <ClInclude Include="12\ascii_dictionary.h" />
-    <ClInclude Include="ascii.h" />
-    <ClInclude Include="ascii_data.h" />
-    <ClInclude Include="benchmark.h" />
-    <ClInclude Include="binary.h" />
-    <ClInclude Include="clock.h" />
-    <ClInclude Include="console.h" />
-    <ClInclude Include="global.h" />
-    <ClInclude Include="hash.h" />
-    <ClInclude Include="lock.h" />
-    <ClInclude Include="obj.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="public.h" />
-    <ClInclude Include="rng.h" />
-    <ClInclude Include="seam_0_0_0_f2.h" />
-    <ClInclude Include="socket.h" />
-    <ClInclude Include="str.h" />
-    <ClInclude Include="str1.h" />
-    <ClInclude Include="str2.h" />
-    <ClInclude Include="str4.h" />
-    <ClInclude Include="tarray.h" />
-    <ClInclude Include="tascii_data.h" />
-    <ClInclude Include="tbenchmark.h" />
-    <ClInclude Include="tbinary.h" />
-    <ClInclude Include="tbook.h" />
-    <ClInclude Include="tclock.h" />
-    <ClInclude Include="tconsole.h" />
-    <ClInclude Include="tdic.h" />
-    <ClInclude Include="test.h" />
-    <ClInclude Include="thash.h" />
-    <ClInclude Include="tlom.h" />
-    <ClInclude Include="tlst.h" />
-    <ClInclude Include="tmap.h" />
-    <ClInclude Include="tobj.h" />
-    <ClInclude Include="tset.h" />
-    <ClInclude Include="tsocket.h" />
-    <ClInclude Include="tstk.h" />
-    <ClInclude Include="tstr.h" />
-    <ClInclude Include="ttbl.h" />
-    <ClInclude Include="ttest.h" />
-    <ClInclude Include="varint.h" />
-    <ClInclude Include="vk.h" />
+    <ClCompile Include="main.cc" />
+    <ClCompile Include="mob.cc" />
+    <ClCompile Include="stdafx.cc" />
+    <ClCompile Include="typecraft_block.cc" />
+    <ClCompile Include="typecraft_chunk.cc" />
+    <ClCompile Include="typecraft_chunk_row.cc" />
+    <ClCompile Include="typecraft_crafting_table.cc" />
+    <ClCompile Include="typecraft_entity.cc" />
+    <ClCompile Include="typecraft_game.cc" />
+    <ClCompile Include="typecraft_inventory.cc" />
+    <ClCompile Include="typecraft_item.cc" />
+    <ClCompile Include="typecraft_item_group.cc" />
+    <ClCompile Include="typecraft_project.cc" />
+    <ClCompile Include="typecraft_recipe.cc" />
+    <ClCompile Include="typecraft_server.cc" />
+    <ClCompile Include="typecraft_spawn.cc" />
+    <ClCompile Include="typecraft_tester.cc" />
+    <ClCompile Include="typecraft_tests.cc" />
+    <ClCompile Include="typecraft_world.cc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="00\readme.md" />
-    <None Include="01\readme.md" />
-    <None Include="01\seam_footer.inl" />
-    <None Include="01\seam_header.inl" />
-    <None Include="02\readme.md" />
-    <None Include="02\seam_footer.inl" />
-    <None Include="02\seam_header.inl" />
-    <None Include="03\readme.md" />
-    <None Include="03\seam_footer.inl" />
-    <None Include="03\seam_header.inl" />
-    <None Include="04\readme.md" />
-    <None Include="04\seam_footer.inl" />
-    <None Include="04\seam_header.inl" />
-    <None Include="05\readme.md" />
-    <None Include="05\seam_footer.inl" />
-    <None Include="05\seam_header.inl" />
-    <None Include="06\readme.md" />
-    <None Include="06\seam_footer.inl" />
-    <None Include="06\seam_header.inl" />
-    <None Include="07\readme.md" />
-    <None Include="07\seam_footer.inl" />
-    <None Include="07\seam_header.inl" />
-    <None Include="08\readme.md" />
-    <None Include="08\seam_footer.inl" />
-    <None Include="08\seam_header.inl" />
-    <None Include="09\readme.md" />
-    <None Include="09\seam_footer.inl" />
-    <None Include="09\seam_header.inl" />
-    <None Include="10\readme.md" />
-    <None Include="10\seam_footer.inl" />
-    <None Include="10\seam_header.inl" />
-    <None Include="11\readme.md" />
-    <None Include="11\seam_footer.inl" />
-    <None Include="11\seam_header.inl" />
-    <None Include="12\readme.md" />
-    <None Include="12\seam_footer.inl" />
-    <None Include="12\seam_header.inl" />
-    <None Include="config.inl" />
-    <None Include="readme.md" />
-    <None Include="seam_footer.inl" />
-    <None Include="seam_header.inl" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="CMakeLists.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="f2_ascii_data.cc" />
-    <ClCompile Include="f2_benchmark.cc" />
-    <ClCompile Include="f2_binary.cc" />
-    <ClCompile Include="f2_clock.cc" />
-    <ClCompile Include="f2_console.cc" />
-    <ClCompile Include="f2_hash.cc" />
-    <ClCompile Include="f2_lock.cc" />
-    <ClCompile Include="f2_obj.cc" />
-    <ClCompile Include="f2_rng.cc" />
-    <ClCompile Include="f2_socket.cc" />
-    <ClCompile Include="f2_str.cc" />
-    <ClCompile Include="f2_test.cc" />
-    <ClCompile Include="f2_vk.cc" />
-    <ClCompile Include="seam_tree.cc" />
+    <ClInclude Include="a.h" />
+    <ClInclude Include="assembly.h" />
+    <ClInclude Include="block.h" />
+    <ClInclude Include="chunk.h" />
+    <ClInclude Include="chunk_row.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="crafting_table.h" />
+    <ClInclude Include="enchantment.h" />
+    <ClInclude Include="entity.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="inventory.h" />
+    <ClInclude Include="item.h" />
+    <ClInclude Include="item_group.h" />
+    <ClInclude Include="mob.h" />
+    <ClInclude Include="recipe.h" />
+    <ClInclude Include="server.h" />
+    <ClInclude Include="spawn.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="world.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{F79642D9-DBB2-4077-8A23-463A0B195083}</ProjectGuid>
+    <ProjectGuid>{F634D713-FC6F-4A49-AAF3-099D9E936AFC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My0f2</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <RootNamespace>TypeCraft</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <ProjectName>typecraft</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -195,6 +118,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Workspace\typecraft\source\typecraft;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -204,73 +128,59 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)\.;$(ProjectDir)\..\..\..\;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Workspace\kabuki-toolkit\source\kabuki;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)\.;$(ProjectDir)\..\..\</AdditionalIncludeDirectories>
-      <AssemblerOutput>All</AssemblerOutput>
+      <AdditionalIncludeDirectories>$(ProjectDir)/typecraft/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

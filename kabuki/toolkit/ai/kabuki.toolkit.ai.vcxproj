@@ -19,16 +19,35 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ai_dataset.cc" />
+    <ClCompile Include="ai_perceptron.cc" />
+    <ClCompile Include="ai_perceptrongraph.cc" />
+    <ClCompile Include="ai_perceptrongraph2d.cc" />
+    <ClCompile Include="ai_perceptronlayer.cc" />
+    <ClCompile Include="ai_synapse.cc" />
+    <ClCompile Include="main.cc" />
+    <ClCompile Include="pch.cc" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="00_foo.h" />
     <ClInclude Include="01_bar.h" />
+    <ClInclude Include="assembly.h" />
+    <ClInclude Include="cagent.h" />
+    <ClInclude Include="casyncronous.h" />
+    <ClInclude Include="cdatasetimporter.h" />
+    <ClInclude Include="cgan.h" />
+    <ClInclude Include="ckernel.h" />
+    <ClInclude Include="cperceptron.h" />
+    <ClInclude Include="cperceptrongraph.h" />
+    <ClInclude Include="cperceptrongraph2d.h" />
+    <ClInclude Include="cperceptronlayer.h" />
+    <ClInclude Include="cperceptronmodel.h" />
+    <ClInclude Include="cpersenseron.h" />
+    <ClInclude Include="crdnn.h" />
+    <ClInclude Include="csynapse.h" />
+    <ClInclude Include="ctask.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="test_tree.h" />
-    <ClInclude Include="t_color.h" />
-    <ClInclude Include="t_figure.h" />
-    <ClInclude Include="t_internal.h" />
-    <ClInclude Include="global.h" />
-    <ClInclude Include="c_plotgui.h" />
-    <ClInclude Include="t_window.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="global_config.inl" />
@@ -37,21 +56,13 @@
     <None Include="test_footer.inl" />
     <None Include="test_release.inl" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="00_color.cc" />
-    <ClCompile Include="01_figure.cc" />
-    <ClCompile Include="02_window.cc" />
-    <ClCompile Include="pch.cc" />
-    <ClCompile Include="plotting_figure.cc" />
-    <ClCompile Include="plotting_highgui.cc" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{831BC4F7-AC2F-49FC-90FF-3A9B655CC83A}</ProjectGuid>
+    <ProjectGuid>{005095AF-76C7-4C10-937F-67B19F39BA00}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>kabukisdkdata</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>kabuki.toolkit.plotting</ProjectName>
+    <ProjectName>kabuki.toolkit.ai</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

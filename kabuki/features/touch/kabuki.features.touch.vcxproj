@@ -19,18 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="00_foo.h" />
-    <ClInclude Include="01_bar.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="test_tree.h" />
-    <ClInclude Include="t_color.h" />
-    <ClInclude Include="t_figure.h" />
-    <ClInclude Include="t_internal.h" />
-    <ClInclude Include="global.h" />
-    <ClInclude Include="c_plotgui.h" />
-    <ClInclude Include="t_window.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="global_config.inl" />
     <None Include="readme.md" />
     <None Include="test_debug.inl" />
@@ -38,20 +26,25 @@
     <None Include="test_release.inl" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="00_color.cc" />
-    <ClCompile Include="01_figure.cc" />
-    <ClCompile Include="02_window.cc" />
+    <ClInclude Include="00_foo.h" />
+    <ClInclude Include="01_bar.h" />
+    <ClInclude Include="c_keyboard.h" />
+    <ClInclude Include="c_keyevent.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="test_tree.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="pch.cc" />
-    <ClCompile Include="plotting_figure.cc" />
-    <ClCompile Include="plotting_highgui.cc" />
+    <ClCompile Include="touch_keyboardbuffer.cc" />
+    <ClCompile Include="touch_keyboardrealtime.cc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{831BC4F7-AC2F-49FC-90FF-3A9B655CC83A}</ProjectGuid>
+    <ProjectGuid>{217214D1-1D4B-4B06-AF93-262A1F98006E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>kabukisdkdata</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>kabuki.toolkit.plotting</ProjectName>
+    <ProjectName>kabuki.features.touch</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

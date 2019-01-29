@@ -23,12 +23,6 @@
     <ClInclude Include="01_bar.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="test_tree.h" />
-    <ClInclude Include="t_color.h" />
-    <ClInclude Include="t_figure.h" />
-    <ClInclude Include="t_internal.h" />
-    <ClInclude Include="global.h" />
-    <ClInclude Include="c_plotgui.h" />
-    <ClInclude Include="t_window.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="global_config.inl" />
@@ -38,20 +32,15 @@
     <None Include="test_release.inl" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="00_color.cc" />
-    <ClCompile Include="01_figure.cc" />
-    <ClCompile Include="02_window.cc" />
     <ClCompile Include="pch.cc" />
-    <ClCompile Include="plotting_figure.cc" />
-    <ClCompile Include="plotting_highgui.cc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{831BC4F7-AC2F-49FC-90FF-3A9B655CC83A}</ProjectGuid>
+    <ProjectGuid>{0FD8B2B6-0154-4EA0-A298-E4A50DB4B996}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>kabukisdkdata</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>kabuki.toolkit.plotting</ProjectName>
+    <ProjectName>0_0_11.calc.console</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -119,7 +108,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir).\;$(ProjectDir).\..\..\..\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir).\;$(ProjectDir).\..\..\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

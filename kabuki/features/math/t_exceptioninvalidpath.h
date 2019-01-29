@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /kabuki/features/math/01_bar.h
+@file    /kabuki/features/math/t_exceptioninvalidpath.h
 @author  Cale McCollough <calemccollough.github.io>
 @license Copyright (C) 2014-2019 Cale McCollough <calemccollough.github.io>;
 All right reserved (R). Licensed under the Apache License, Version 2.0 (the
@@ -13,25 +13,19 @@ specific language governing permissions and limitations under the License. */
 
 #pragma once
 #include <pch.h>
+#if SEAM >= KABUKI_FEATURES_MATH_1
+#ifndef KABUKI_FEATURES_MATH_EXCEPTIONPATHINVALID_T
+#define KABUKI_FEATURES_MATH_EXCEPTIONPATHINVALID_T 1
 
-#if SEAM == KABUKI_FEATURES_MATH_0
-#include "test_debug.inl"
-#else
-#include "test_release.inl"
+namespace _ { 
+
+template<typename T>
+class InvalidPathException: public runtime_error  {
+ public:
+  InvalidPathException (T x, T y)
+  : runtime_error( "Invalid path") {}
+};
+
+}       //< namespace _
 #endif
-
-using namespace _;
-
-namespace kabuki { namespace features { namespace _ {
-inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
-#if SEAM >= KABUKI_FEATURES_MATH_0
-  TEST_BEGIN;
-
-  PRINT_HEADING ("Testing Foo fun.");
-
 #endif
-  return 0;
-}
-} //< namespace _
-} //< namespace features
-} //< namespace kabuki

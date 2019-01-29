@@ -19,18 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="00_foo.h" />
-    <ClInclude Include="01_bar.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="test_tree.h" />
-    <ClInclude Include="t_color.h" />
-    <ClInclude Include="t_figure.h" />
-    <ClInclude Include="t_internal.h" />
-    <ClInclude Include="global.h" />
-    <ClInclude Include="c_plotgui.h" />
-    <ClInclude Include="t_window.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="global_config.inl" />
     <None Include="readme.md" />
     <None Include="test_debug.inl" />
@@ -38,20 +26,22 @@
     <None Include="test_release.inl" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="00_color.cc" />
-    <ClCompile Include="01_figure.cc" />
-    <ClCompile Include="02_window.cc" />
+    <ClInclude Include="00_foo.h" />
+    <ClInclude Include="01_bar.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="test_tree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="01_benchmark_mnist.cc" />
     <ClCompile Include="pch.cc" />
-    <ClCompile Include="plotting_figure.cc" />
-    <ClCompile Include="plotting_highgui.cc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{831BC4F7-AC2F-49FC-90FF-3A9B655CC83A}</ProjectGuid>
+    <ProjectGuid>{492B2B84-5D49-42CA-BD66-31283A49F44F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>kabukisdkdata</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>kabuki.toolkit.plotting</ProjectName>
+    <ProjectName>0_3_08.calc.app</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -119,7 +109,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir).\;$(ProjectDir).\..\..\..\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir).\;$(ProjectDir).\..\..\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

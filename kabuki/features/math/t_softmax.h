@@ -1,6 +1,6 @@
-/* Kabuki Toolkit @version 0.x
+/* Kabuki Toolkit @version 0.x_
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /kabuki/features/math/01_bar.h
+@file    /kabuki/features/math/t_point2d.h
 @author  Cale McCollough <calemccollough.github.io>
 @license Copyright (C) 2014-2019 Cale McCollough <calemccollough.github.io>;
 All right reserved (R). Licensed under the Apache License, Version 2.0 (the
@@ -13,25 +13,29 @@ specific language governing permissions and limitations under the License. */
 
 #pragma once
 #include <pch.h>
+#if SEAM >= KABUKI_FEATURES_MATH_1
+#ifndef KABUKI_FEATURES_MATH_SOFTMAX_T
+#define KABUKI_FEATURES_MATH_SOFTMAX_T 1
 
-#if SEAM == KABUKI_FEATURES_MATH_0
-#include "test_debug.inl"
-#else
-#include "test_release.inl"
-#endif
+namespace _ {
 
-using namespace _;
-
-namespace kabuki { namespace features { namespace _ {
-inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
-#if SEAM >= KABUKI_FEATURES_MATH_0
-  TEST_BEGIN;
-
-  PRINT_HEADING ("Testing Foo fun.");
-
-#endif
-  return 0;
+template<typename F, typename U>
+void TSoftmax (F* x, U count, F* y) {
+    DASSERT (x);
+    DASSERT (x_count > 0);
+    DASSERT (y);
+    F sum_of_e_j_to_the_x = 0.0;
+    SIW delta_yx = y - x;
+    for (F* x_cursor = x; x_cursor <= x + count; ++x_cursor) {
+        F e_j_to_the_x = exp (*x_cursor);
+        sum_of_e_j_to_the_x += e_j_to_the_x;
+        *(x_cursor + delta_yx) = e_j_to_the_x;
+    }
+    for (F* y_cursor = y; y_cursor <= y + cursor; ++y_cursor) {
+        *y_cursor = *y_cursor / sum_of_e_j_to_the_x;
+    }
 }
-} //< namespace _
-} //< namespace features
-} //< namespace kabuki
+
+}       //< namespace _
+#endif
+#endif

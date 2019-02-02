@@ -1,8 +1,8 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /projects/kabuki/igeek/library/igeek_virusdna.cc
+@file    /projects/kabuki/kabukinet/benchmark/test_tree.h
 @author  Cale McCollough <cale.mccollough@gmail.com>
-@license Copyright (C) 2014-19 Cale McCollough <cale@astartup.net>;
+@license Copyright (C) 2014-2017 Cale McCollough <calemccollough.github.io>;
 All right reserved (R). Licensed under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance with the License.
 You may obtain a copy of the License at www.apache.org/licenses/LICENSE-2.0.
@@ -11,17 +11,24 @@ under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
 CONDITIONS OF ANY KIND, either express or implied. See the License for the
 specific language governing permissions and limitations under the License. */
 
+#pragma once
 #include <pch.h>
 
-#include "cvirusdna"
+#include "00_foo.h"
 
-namespace kabuki {
-namespace igeek {
+#if SEAM >= PROJECT_KABUKINET_BENCHMARK_1
+#include "01_bar.h"
+#endif
 
-DNAVirus::DNAVirus (FP8 initX, FP8 initY)
-  : Virus (initX, initY)
-{
-}
+namespace kabuki { namespace kabukinet { 
 
+static const CH1* Test(CH1* seam_log, CH1* seam_end,
+                        const CH1* args) {
+  return TTestTree<_0_Foo
+#if SEAM >= PROJECT_KABUKINET_BENCHMARK_1
+                    , _1_Bar
+#endif
+  >(seam_log, seam_end, args);
 }
-}
+}  //< namespace kabukinet
+}  //< namespace kabuki

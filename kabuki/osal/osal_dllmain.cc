@@ -1,5 +1,5 @@
 ﻿/* Kabuki Toolkit
-    @file    $kabuki-toolkit/kabuki/toolkit/app//app_dllmain.cc
+    @file    $kabuki-toolkit/kabuki_toolkit/app//app_dllmain.cc
     @author  Cale McCollough <calemccollough.github.io>
     @license Copyright (C) 2014-2017 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 

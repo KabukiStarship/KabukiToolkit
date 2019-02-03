@@ -7,7 +7,7 @@
     BSD-style license that can be found in the LICENSE.txt file.
 */
 /*
- * @file /kabuki/toolkit/gui/combobox.h
+ * @file /kabuki_toolkit/gui/combobox.h
  *
  * @brief Simple combo box widget based on a popup button.
  */

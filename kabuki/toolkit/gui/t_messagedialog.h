@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/messagedialog.h -- Simple "OK" or "Yes/No"-style modal
+    /kabuki_toolkit/gui/messagedialog.h -- Simple "OK" or "Yes/No"-style modal
    dialogs
 
     NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.
@@ -21,7 +21,7 @@
 namespace _ {
 
 /*
- * \class MessageDialog messagedialog.h /kabuki/toolkit/gui/messagedialog.h
+ * \class MessageDialog messagedialog.h /kabuki_toolkit/gui/messagedialog.h
  *
  * @brief Simple "OK" or "Yes/No"-style modal dialogs.
  */

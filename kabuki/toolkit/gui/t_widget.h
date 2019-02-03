@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/widget.h -- Base class of all widgets
+    /kabuki_toolkit/gui/widget.h -- Base class of all widgets
 
     NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.
     The widget drawing code is based on the NanoVG demo application
@@ -30,7 +30,7 @@ namespace _ {
 enum class Cursor;// do not put a docstring, this is already documented
 
 /*
- * \class Widget widget.h /kabuki/toolkit/gui/widget.h
+ * \class Widget widget.h /kabuki_toolkit/gui/widget.h
  *
  * @brief Base class of all widgets.
  *

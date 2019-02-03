@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/popupbutton.h -- Button which launches a popup widget
+    /kabuki_toolkit/gui/popupbutton.h -- Button which launches a popup widget
 
     NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.
     The widget drawing code is based on the NanoVG demo application

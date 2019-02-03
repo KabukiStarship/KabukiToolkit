@@ -14,23 +14,29 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="readme.md">
+    <ClCompile Include="osal_dllmain.cc">
       <Filter>kabuki\osal</Filter>
-    </None>
-    <None Include="test_debug.inl">
+    </ClCompile>
+    <ClCompile Include="osal_eventsequence.cc">
       <Filter>kabuki\osal</Filter>
-    </None>
-    <None Include="test_footer.inl">
+    </ClCompile>
+    <ClCompile Include="osal_processtree.cc">
       <Filter>kabuki\osal</Filter>
-    </None>
-    <None Include="test_release.inl">
+    </ClCompile>
+    <ClCompile Include="pch.cc">
       <Filter>kabuki\osal</Filter>
-    </None>
-    <None Include="global_config.inl">
+    </ClCompile>
+    <ClCompile Include="osal_app.cc">
       <Filter>kabuki\osal</Filter>
-    </None>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>kabuki\osal</Filter>
+    </ClInclude>
+    <ClInclude Include="t_processtree.h">
+      <Filter>kabuki\osal</Filter>
+    </ClInclude>
     <ClInclude Include="test_tree.h">
       <Filter>kabuki\osal</Filter>
     </ClInclude>
@@ -38,6 +44,9 @@
       <Filter>kabuki\osal</Filter>
     </ClInclude>
     <ClInclude Include="01_bar.h">
+      <Filter>kabuki\osal</Filter>
+    </ClInclude>
+    <ClInclude Include="c_keylistener.h">
       <Filter>kabuki\osal</Filter>
     </ClInclude>
     <ClInclude Include="capp.h">
@@ -64,31 +73,22 @@
     <ClInclude Include="group.h">
       <Filter>kabuki\osal</Filter>
     </ClInclude>
-    <ClInclude Include="key_listener.h">
-      <Filter>kabuki\osal</Filter>
-    </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>kabuki\osal</Filter>
-    </ClInclude>
-    <ClInclude Include="processtree.h">
-      <Filter>kabuki\osal</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="app.cc">
+    <None Include="readme.md">
       <Filter>kabuki\osal</Filter>
-    </ClCompile>
-    <ClCompile Include="app_dllmain.cc">
+    </None>
+    <None Include="test_debug.inl">
       <Filter>kabuki\osal</Filter>
-    </ClCompile>
-    <ClCompile Include="app_eventsequence.cc">
+    </None>
+    <None Include="test_footer.inl">
       <Filter>kabuki\osal</Filter>
-    </ClCompile>
-    <ClCompile Include="app_processtree.cc">
+    </None>
+    <None Include="test_release.inl">
       <Filter>kabuki\osal</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cc">
+    </None>
+    <None Include="global_config.inl">
       <Filter>kabuki\osal</Filter>
-    </ClCompile>
+    </None>
   </ItemGroup>
 </Project>

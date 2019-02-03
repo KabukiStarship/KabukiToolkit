@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/toolbutton.h -- Simple radio+toggle button with an icon
+    /kabuki_toolkit/gui/toolbutton.h -- Simple radio+toggle button with an icon
 
     NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.
     The widget drawing code is based on the NanoVG demo application
@@ -19,7 +19,7 @@
 namespace _ {
 
 /*
- * \class ToolButton toolbutton.h /kabuki/toolkit/gui/toolbutton.h
+ * \class ToolButton toolbutton.h /kabuki_toolkit/gui/toolbutton.h
  *
  * @brief Simple radio+toggle button with an icon.
  */

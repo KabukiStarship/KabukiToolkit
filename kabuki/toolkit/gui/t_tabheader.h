@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/tabheader.h -- Widget used to control tabs.
+    /kabuki_toolkit/gui/tabheader.h -- Widget used to control tabs.
 
     The tab header widget was contributed by Stefan Ivanov.
 
@@ -30,7 +30,7 @@
 namespace _ {
 
 /*
- * \class TabHeader tabheader.h /kabuki/toolkit/gui/tabheader.h
+ * \class TabHeader tabheader.h /kabuki_toolkit/gui/tabheader.h
  *
  * @brief A Tab navigable widget.
  */
@@ -462,7 +462,7 @@ private:
     Vector2i mSize;
 
     /*
-     * \struct StringView tabheader.h /kabuki/toolkit/gui/tabheader.h
+     * \struct StringView tabheader.h /kabuki_toolkit/gui/tabheader.h
      *
      * @brief Helper struct to represent the TabButton.
      */

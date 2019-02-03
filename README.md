@@ -11,16 +11,16 @@
    /         \                    ♫♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪
 ```
 
-![Under Construction Image](https://github.com/kabuki-starship/kabuki-toolkit/wiki/under_construction.png)
+![Under Construction Image](https://github.com/kabuki-starship/kabuki_toolkit/wiki/under_construction.png)
 
 Kabuki Toolkit (KT) is a modern embedded-C++ toolkit for making intelligent connected technologies, apps, plugins, games, servers, firmware, and art with Script2.
 
-[![GitHub version](https://badge.fury.io/gh/kabuki-starship%2Fkabuki-toolkit.svg)](https://badge.fury.io/gh/kabuki-starship%2Fkabuki-toolkit)
+[![GitHub version](https://badge.fury.io/gh/kabuki-starship%2Fkabuki_toolkit.svg)](https://badge.fury.io/gh/kabuki-starship%2Fkabuki_toolkit)
 
 ## Quick Links
 
 * [Script2 and the SCRIPT Specification](https://github.com/kabuki-starship/script2) - *Serial Chinese Room, Interprocess, and Telemetry (SCRIPT) Script (Script2) is the foundation of KT so it's the best place to start learning.*
-* [Documents & FAQ](https://github.com/kabuki-starship/kabuki-toolkit.git/blob/master/docs/faq.md) - *Check out the `/docs/readme.md` for answers to Frequently asked questions and other promotional and learning materials.*
+* [Documents & FAQ](https://github.com/kabuki-starship/kabuki_toolkit.git/blob/master/docs/faq.md) - *Check out the `/docs/readme.md` for answers to Frequently asked questions and other promotional and learning materials.*
 * [Kabuki Starship Website](https://kabuki-starship.github.io/)
 
 ## kabuki Modules
@@ -107,7 +107,7 @@ Kabuki Toolkit (KT) is a modern embedded-C++ toolkit for making intelligent conn
 
 ### Kabuki VM Seam Package Diagram
 
-![Kabuki VM Package Diagram](https://raw.githubusercontent.com/kabuki-starship/kabuki-toolkit/master/docs/kabuki_package_diagram.jpg)
+![Kabuki VM Package Diagram](https://raw.githubusercontent.com/kabuki-starship/kabuki_toolkit/master/docs/kabuki_package_diagram.jpg)
 
 **@note** *Package Diagram uses `C++` dependency inclusion, meaning that when a module/namespace is included all of the module's/namespace's dependencies are also included.*
 

@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/textbox.h -- Fancy text box with builtin regular
+    /kabuki_toolkit/gui/textbox.h -- Fancy text box with builtin regular
     expression-based validation
 
     The text box widget was contributed by Christian Schueller.
@@ -757,7 +757,7 @@ public:
 };
 
 /*
- * \class IntBox textbox.h /kabuki/toolkit/gui/textbox.h
+ * \class IntBox textbox.h /kabuki_toolkit/gui/textbox.h
  *
  * @brief A specialization of TextBox for representing integral values.
  *
@@ -870,7 +870,7 @@ public:
 };
 
 /*
- * \class FloatBox textbox.h /kabuki/toolkit/gui/textbox.h
+ * \class FloatBox textbox.h /kabuki_toolkit/gui/textbox.h
  *
  * @brief A specialization of TextBox representing floating point values.
 

@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/opengl.h -- Pulls in OpenGL, GLAD (if needed), GLFW, and
+    /kabuki_toolkit/gui/opengl.h -- Pulls in OpenGL, GLAD (if needed), GLFW, and
     NanoVG header files
 
     NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.

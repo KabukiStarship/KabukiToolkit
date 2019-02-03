@@ -1,6 +1,6 @@
 # Kabuki Toolkit Documentation
 
-Please **@see** `~/kabuki-toolkit.mdj` using [StarUML](http://staruml.io) for object models. Documents are split between the Wiki and the `~/docs/` folder and additional documents can be found in the [script2 repo](https://github.com/kabuki-starship/script2). 
+Please **@see** `~/kabuki_toolkit.mdj` using [StarUML](http://staruml.io) for object models. Documents are split between the Wiki and the `~/docs/` folder and additional documents can be found in the [script2 repo](https://github.com/kabuki-starship/script2). 
 
 ## Docs
 
@@ -67,15 +67,15 @@ __  / / /  / / /_  /_  ___/_  //_/   __  ___/  __/  __ `/_  ___/  __/
  \___\_\\__,_/ /_/  \___/ /_/|_|     /____/ \__/ \__,_/ /_/    \__/
 ```
 
-**1.** Clone the kabuki-toolkit and script2 repos into your workspace or project 3rd-party dependencies directory:
+**1.** Clone the kabuki_toolkit and script2 repos into your workspace or project 3rd-party dependencies directory:
 
 ```Console
-git clone https://github.com/kabuki-starship/kabuki-toolkit.git
-cd kabuki-toolkit
+git clone https://github.com/kabuki-starship/kabuki_toolkit.git
+cd kabuki_toolkit
 git clone https://github.com/kabuki-starship/script2.git
 ```
 
-**2.** Open the `kabuki-toolkit.sln` Visual Studio Project.
+**2.** Open the `kabuki_toolkit.sln` Visual Studio Project.
 
 **3.** Start by looking in the `0_0_00.experiments` project. Open the `global_config.inl` and look at the typedef(s) and seam macros, then set the seam number in the `pch.h` file to one in the `global_config.inl`. Then look through the `test_debug.inl` and `test_release.inl`, the look through the seam tree tests in the files that start with numbers and see how the tests tree builds seams layer by layer.
 

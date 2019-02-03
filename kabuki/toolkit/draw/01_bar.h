@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /kabuki/toolkit/plotting/01_bar.h
+@file    /kabuki_toolkit/drawing/01_bar.h
 @author  Cale McCollough <calemccollough.github.io>
 @license Copyright (C) 2014-2019 Cale McCollough <calemccollough.github.io>;
 All right reserved (R). Licensed under the Apache License, Version 2.0 (the
@@ -14,7 +14,7 @@ specific language governing permissions and limitations under the License. */
 #pragma once
 #include <pch.h>
 
-#if SEAM == KABUKI_TOOLKIT_PLOTTING_0
+#if SEAM == KABUKI_TOOLKIT_DRAWING_0
 #include "test_debug.inl"
 #else
 #include "test_release.inl"
@@ -22,9 +22,9 @@ specific language governing permissions and limitations under the License. */
 
 using namespace _;
 
-namespace kabuki { namespace toolkit { namespace plotting {
+namespace kabuki { namespace toolkit { namespace drawing {
 inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
-#if SEAM >= KABUKI_TOOLKIT_PLOTTING_0
+#if SEAM >= KABUKI_TOOLKIT_DRAWING_0
   TEST_BEGIN;
 
   PRINT_HEADING ("Testing Foo fun.");
@@ -32,6 +32,6 @@ inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
 #endif
   return 0;
 }
-} //< namespace plotting
+} //< namespace drawing
 } //< namespace toolkit
 } //< namespace kabuki

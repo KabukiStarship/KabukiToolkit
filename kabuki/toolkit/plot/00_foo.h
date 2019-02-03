@@ -1,8 +1,8 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /kabuki/toolkit/drawing/test_tree.h
-@author  Cale McCollough <cale.mccollough@gmail.com>
-@license Copyright (C) 2014-19 Cale McCollough <cale@astartup.net>;
+@file    /kabuki_toolkit/plotting/00_foo.h
+@author  Cale McCollough <calemccollough.github.io>
+@license Copyright (C) 2014-2019 Cale McCollough <calemccollough.github.io>;
 All right reserved (R). Licensed under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance with the License.
 You may obtain a copy of the License at www.apache.org/licenses/LICENSE-2.0.
@@ -14,22 +14,24 @@ specific language governing permissions and limitations under the License. */
 #pragma once
 #include <pch.h>
 
-#include "00_foo.h"
-
-#if SEAM >= KABUKI_TOOLKIT_DRAWING_1
-#include "01_bar.h"
+#if SEAM == KABUKI_TOOLKIT_PLOTTING_0
+#include "test_debug.inl"
+#else
+#include "test_release.inl"
 #endif
 
-namespace kabuki { namespace toolkit { namespace drawing { 
+using namespace _;
 
-static const CH1* Test(CH1* seam_log, CH1* seam_end,
-                        const CH1* args) {
-  return TTestTree<_0_Foo
-#if SEAM >= KABUKI_TOOLKIT_DRAWING_1
-                    , _1_Bar
+namespace kabuki { namespace toolkit { namespace plotting {
+inline const CH1* _0_Foo (CH1* seam_log, CH1* seam_end, const CH1* args) {
+#if SEAM >= KABUKI_TOOLKIT_PLOTTING_0
+  TEST_BEGIN;
+
+  PRINT_HEADING ("Testing Foo Fun.");
+
 #endif
-  >(seam_log, seam_end, args);
+  return 0;
 }
-}  //< namespace drawing
-}  //< namespace toolkit
-}  //< namespace kabuki
+} //< namespace plotting
+} //< namespace toolkit
+} //< namespace kabuki

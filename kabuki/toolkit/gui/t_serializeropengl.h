@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/serializer/opengl.h -- serialization support for OpenGL buffers
+    /kabuki_toolkit/gui/serializer/opengl.h -- serialization support for OpenGL buffers
 
     NanoGUI was developed by Wenzel Jakob <wenzel@inf.ethz.ch>.
     The widget drawing code is based on the NanoVG demo application

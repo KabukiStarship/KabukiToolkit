@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/glutil.h -- Convenience classes for accessing OpenGL >= 3.x
+    /kabuki_toolkit/gui/glutil.h -- Convenience classes for accessing OpenGL >= 3.x
 
     NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.
     The widget drawing code is based on the NanoVG demo application
@@ -53,7 +53,7 @@ class GLUniformBuffer;
 //  ----------------------------------------------------
 
 /*
- * \class GLShader glutil.h /kabuki/toolkit/gui/glutil.h
+ * \class GLShader glutil.h /kabuki_toolkit/gui/glutil.h
  *
  * Helper class for compiling and linking OpenGL shaders and uploading
  * associated vertex and index buffers from Eigen matrices.
@@ -65,7 +65,7 @@ class SDK GLShader {
 #endif
 public:
     /*
-     * \struct Buffer glutil.h /kabuki/toolkit/gui/glutil.h
+     * \struct Buffer glutil.h /kabuki_toolkit/gui/glutil.h
      *
      * A wrapper struct for maintaining various aspects of items being managed
      * by OpenGL.  Buffers are created when @ref GLShader::uploadAttrib is
@@ -589,7 +589,7 @@ protected:
 //  ----------------------------------------------------
 
 /*
- * \class GLUniformBuffer glutil.h /kabuki/toolkit/gui/glutil.h
+ * \class GLUniformBuffer glutil.h /kabuki_toolkit/gui/glutil.h
  *
  * @brief Helper class for creating OpenGL Uniform Buffer objects.
  */
@@ -635,7 +635,7 @@ private:
 //  ----------------------------------------------------
 
 /*
- * \class UniformBufferStd140 glutil.h /kabuki/toolkit/gui/glutil.h
+ * \class UniformBufferStd140 glutil.h /kabuki_toolkit/gui/glutil.h
  *
  * @brief Helper class for accumulating uniform buffer data following the
  *        'std140' packing format.
@@ -683,7 +683,7 @@ public:
 //  ----------------------------------------------------
 
 /*
- * \class GLFramebuffer glutil.h /kabuki/toolkit/gui/glutil.h
+ * \class GLFramebuffer glutil.h /kabuki_toolkit/gui/glutil.h
  *
  * @brief Helper class for creating framebuffer objects.
  */
@@ -825,7 +825,7 @@ public:
 //  ----------------------------------------------------
 
 /*
- * \struct Arcball glutil.h /kabuki/toolkit/gui/glutil.h
+ * \struct Arcball glutil.h /kabuki_toolkit/gui/glutil.h
  *
  * @brief Arcball helper class to interactively rotate objects on-screen.
  *

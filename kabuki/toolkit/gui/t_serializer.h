@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/serializer/core.h -- helper class to serialize
+    /kabuki_toolkit/gui/serializer/core.h -- helper class to serialize
     the full state of an application to a convenient binary format
 
     NanoGUI was developed by Wenzel Jakob <wenzel@inf.ethz.ch>.
@@ -29,7 +29,7 @@ namespace half_float { class half; }
 
 namespace _ {
 /*
- * \struct serialization_helper core.h /kabuki/toolkit/gui/serializer/core.h
+ * \struct serialization_helper core.h /kabuki_toolkit/gui/serializer/core.h
  *
  * \rst
  * The primary serialization helper class; preliminary specializations
@@ -39,7 +39,7 @@ namespace _ {
 template <typename T> struct serialization_helper;
 
 /*
- * \class Serializer core.h /kabuki/toolkit/gui/serializer/core.h
+ * \class Serializer core.h /kabuki_toolkit/gui/serializer/core.h
  *
  * @brief Serialization helper class
  *
@@ -51,7 +51,7 @@ template <typename T> struct serialization_helper;
  * objects.
  *
  * Note that this header file just provides the basics; the files
- * `/kabuki/toolkit/gui/serializer/opengl.h`, and `/kabuki/toolkit/gui/serializer/sparse.h` must
+ * `/kabuki_toolkit/gui/serializer/opengl.h`, and `/kabuki_toolkit/gui/serializer/sparse.h` must
  * be included to serialize the respective data types.
  */
 class Serializer {
@@ -297,7 +297,7 @@ private:
 };
 
 /*
- * \struct serialization_traits core.h /kabuki/toolkit/gui/seralizer/core.h
+ * \struct serialization_traits core.h /kabuki_toolkit/gui/seralizer/core.h
  *
  * @brief SFINAE helper struct for generic traits serialization.
  *

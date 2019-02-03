@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/vscrollpanel.h -- Adds a vertical scrollbar around a widget
+    /kabuki_toolkit/gui/vscrollpanel.h -- Adds a vertical scrollbar around a widget
     that is too big to fit into a certain area
 
     NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.
@@ -23,7 +23,7 @@
 namespace _ {
 
 /*
- * \class VScrollPanel vscrollpanel.h /kabuki/toolkit/gui/vscrollpanel.h
+ * \class VScrollPanel vscrollpanel.h /kabuki_toolkit/gui/vscrollpanel.h
  *
  * @brief Adds a vertical scrollbar around a widget that is too big to fit into
  *        a certain area.

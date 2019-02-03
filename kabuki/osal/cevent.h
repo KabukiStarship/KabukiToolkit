@@ -1,5 +1,5 @@
 /* Kabuki Tek
-    @file    $kabuki-toolkit/kabuki/toolkit/app/event.h
+    @file    $kabuki-toolkit/kabuki_toolkit/app/event.h
     @author  Cale McCollough <calemccollough.github.io>
     @license Copyright (C) 2014-2017 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 

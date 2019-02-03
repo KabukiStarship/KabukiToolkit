@@ -7,7 +7,7 @@
     BSD-style license that can be found in the LICENSE.txt file.
 */
 /*
- * @file /kabuki/toolkit/gui/formhelper.h
+ * @file /kabuki_toolkit/gui/formhelper.h
  *
  * @brief Helper class to construct forms for editing a set of variables of
  *        various types.

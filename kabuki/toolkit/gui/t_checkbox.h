@@ -7,7 +7,7 @@
     BSD-style license that can be found in the LICENSE.txt file.
 */
 /*
- * @file /kabuki/toolkit/gui/checkbox.h
+ * @file /kabuki_toolkit/gui/checkbox.h
  *
  * @brief Two-state check box Widget.
  */

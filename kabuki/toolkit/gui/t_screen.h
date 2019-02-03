@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/screen.h -- Top-level widget and interface between NanoGUI and GLFW
+    /kabuki_toolkit/gui/screen.h -- Top-level widget and interface between NanoGUI and GLFW
 
     A significant redesign of this code was contributed by Christian Schueller.
 

@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/stackedwidget.h -- Widget used to stack widgets on top
+    /kabuki_toolkit/gui/stackedwidget.h -- Widget used to stack widgets on top
     of each other. Only the active widget is visible.
 
     The stacked widget was contributed by Stefan Ivanov.
@@ -22,7 +22,7 @@
 namespace _ {
 
 /*
- * \class StackedWidget stackedwidget.h /kabuki/toolkit/gui/stackedwidget.h
+ * \class StackedWidget stackedwidget.h /kabuki_toolkit/gui/stackedwidget.h
  *
  * @brief A stack widget.
  */

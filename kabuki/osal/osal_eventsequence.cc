@@ -1,5 +1,5 @@
 /* Kabuki Toolkit
-    @file    $kabuki-toolkit/kabuki/toolkit/app/app.h
+    @file    $kabuki-toolkit/kabuki_toolkit/app/app_event_sequence.cc
     @author  Cale McCollough <calemccollough.github.io>
     @license Copyright (C) 2014-2017 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version 
@@ -13,75 +13,72 @@
              permissions and limitations under the License.
 */
 
-#pragma once
 #include <pch.h>
 #if MAJOR_SEAM >= 2 && MINOR_SEAM >= 1
 
-#include "app.h"
+#include "event_sequence.h"
 
 namespace _ {
+
+EventNode::EventNode(IEvent* nodeEvent)
+:   iEvent(nodeEvent)
+{
+     
+}
+
+EventNode* EventNode::getNext()
+{
+    return next;
+}
+
+IEvent* EventNode::getEvent()
+{
+    return iEvent;
+}
+
+void EventNode::setEvent(IEvent* newEvent)
+{
+    iEvent = newEvent;
+}
+
+void EventNode::trigger(EventSequence* source)
+{
+    iEvent->trigger();
+}
+
+void EventNode::query(Expression& io)
+{
+    if(iEvent == nullptr)
+    {
+        if(next == nullptr) return;
+        next->query(io);
+    }
+    iEvent->query(io);
+    if(next == nullptr) return;
+    next->query(io);
+}
+
+EventSequence::EventSequence()
+{
+
+}
+
+void EventSequence::trigger()
+{
+    if(head == nullptr) return;
+
+    head->trigger(this);
+}
+
+void EventSequence::query(Expression& io)
+{
+    if(head == nullptr) return;
     
-App::App (SI4 initWidth, SI4 initHeight)
-{
-    if (initWidth < MinWidthOrHeight)   initWidth = MinWidthOrHeight;
-    else if (initWidth > MaxWidth)      initWidth = MaxWidth;
+    io << eventTime;
 
-    if (initHeight < MinWidthOrHeight)  initHeight = MinWidthOrHeight;
-    else if (initHeight > MaxWidth)     initHeight = MaxWidth;
-}
-
-uint32_t App::getUID { return uid; }
-
-SI4 App::activateWindow (SI4 newWindowIndex)
-{
-    return windows.select (newWindowIndex);
-}
-
-SI4 App::activateWindow (Window& newWindow)
-{
-    if (newWindow == nullptr)
-        return -1;
-
-    activeWindow = newWindow;
-
-    return 0;
-}
-
-ProcessTree& getWindows { return windows; }
-
-SI4 App::show  ()
-{
-    return 0;
-}
-
-SI4 App::hide  ()
-{
-    return 0;
-}
-
-SI4 App::close ()
-{
-    return 0;
-}
-
-_G.::Cell& App::getCell ()
-{
-    return nullptr;
-}
-
-void App::draw (_G::Cell& c)
-{
-
-}
-
-void App::redraw ()
-{
-
-}
-
-void App::print ()
-{
-    printf ("");
+    head->query(io);
+    EventNode* next = head->getNext();
+    if(next != nullptr) next->query(io);
 }
 
 }       //< namespace _

@@ -1,5 +1,5 @@
 /* Kabuki Toolkit @version 0.x
-@file    /kabuki/toolkit/ai/t_agent.h */
+@file    /kabuki_toolkit/ai/t_agent.h */
 
 #ifndef KABUKI_TOOLKIT_AI_AGENT_T
 #define KABUKI_TOOLKIT_AI_AGENT_T 1

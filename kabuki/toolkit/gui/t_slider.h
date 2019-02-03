@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/slider.h -- Fractional slider widget with mouse control
+    /kabuki_toolkit/gui/slider.h -- Fractional slider widget with mouse control
 
     NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.
     The widget drawing code is based on the NanoVG demo application
@@ -22,7 +22,7 @@
 namespace _ {
 
 /*
- * \class Slider slider.h /kabuki/toolkit/gui/slider.h
+ * \class Slider slider.h /kabuki_toolkit/gui/slider.h
  *
  * @brief Fractional slider widget with mouse control.
  */

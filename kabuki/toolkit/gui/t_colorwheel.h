@@ -5,7 +5,7 @@
 
     All rights reserved. Use of this source code is governed by a
     BSD-style license that can be found in the LICENSE.txt file.
-@file /kabuki/toolkit/gui/colorwheel.h
+@file /kabuki_toolkit/gui/colorwheel.h
 @brief Fancy analog widget to select a color value.  This widget was contributed
 by Dmitriy Morozov. */
 

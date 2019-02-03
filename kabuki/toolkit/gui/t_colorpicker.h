@@ -7,7 +7,7 @@
     BSD-style license that can be found in the LICENSE.txt file.
 */
 /*
- * @file /kabuki/toolkit/gui/colorpicker.h
+ * @file /kabuki_toolkit/gui/colorpicker.h
  *
  * @brief Push button with a popup to tweak a color value.  This widget was
  *        contributed by Christian Schueller.

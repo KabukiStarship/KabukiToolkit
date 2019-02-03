@@ -7,7 +7,7 @@
     BSD-style license that can be found in the LICENSE.txt file.
 */
 /*
- * @file /kabuki/toolkit/gui/compat.h
+ * @file /kabuki_toolkit/gui/compat.h
  *
  * @brief Compatibility layer for `snprintf` across platforms.
  */

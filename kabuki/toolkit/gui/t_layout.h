@@ -7,7 +7,7 @@
     BSD-style license that can be found in the LICENSE.txt file.
 */
 /*
- * @file /kabuki/toolkit/gui/layout.h
+ * @file /kabuki_toolkit/gui/layout.h
  *
  * @brief A collection of useful layout managers.  The @ref _::GridLayout
  *        was contributed by Christian Schueller.
@@ -43,7 +43,7 @@ enum class Orientation {
 };
 
 /*
- * \class Layout layout.h /kabuki/toolkit/gui/layout.h
+ * \class Layout layout.h /kabuki_toolkit/gui/layout.h
  *
  * @brief Basic interface of a layout engine.
  */
@@ -82,7 +82,7 @@ protected:
 };
 
 /*
- * \class BoxLayout layout.h /kabuki/toolkit/gui/layout.h
+ * \class BoxLayout layout.h /kabuki_toolkit/gui/layout.h
  *
  * @brief Simple horizontal/vertical box layout
  *
@@ -253,7 +253,7 @@ protected:
 };
 
 /*
- * \class GroupLayout layout.h /kabuki/toolkit/gui/layout.h
+ * \class GroupLayout layout.h /kabuki_toolkit/gui/layout.h
  *
  * @brief Special layout for widgets grouped by labels.
  *
@@ -400,7 +400,7 @@ protected:
 };
 
 /*
- * \class GridLayout layout.h /kabuki/toolkit/gui/layout.h
+ * \class GridLayout layout.h /kabuki_toolkit/gui/layout.h
  *
  * @brief Grid layout.
  *
@@ -666,7 +666,7 @@ public:
 };
 
 /*
- * \class AdvancedGridLayout layout.h /kabuki/toolkit/gui/layout.h
+ * \class AdvancedGridLayout layout.h /kabuki_toolkit/gui/layout.h
  *
  * @brief Advanced Grid layout.
  *
@@ -702,7 +702,7 @@ public:
 class SDK AdvancedGridLayout : public Layout {
 public:
   /*
-   * \struct Anchor layout.h /kabuki/toolkit/gui/layout.h
+   * \struct Anchor layout.h /kabuki_toolkit/gui/layout.h
    *
    * @brief Helper struct to coordinate anchor points for the layout.
    */

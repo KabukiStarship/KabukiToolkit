@@ -1,5 +1,5 @@
 /* Kabuki Toolkit @version 0.x
-@file    /kabuki/toolkit/ai/aiml_mnist_importer.h
+@file    /kabuki_toolkit/ai/aiml_mnist_importer.h
 @author  Cale McCollough <cale.mccollough@gmail.com>
 @license Copyright (C) 2014-19 Cale McCollough <cale@astartup.net>;
 All right reserved (R). Licensed under the Apache License, Version 2.0 (the

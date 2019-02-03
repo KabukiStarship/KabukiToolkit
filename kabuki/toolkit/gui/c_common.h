@@ -7,7 +7,7 @@
     BSD-style license that can be found in the LICENSE.txt file.
 */
 /*
- * @file /kabuki/toolkit/gui/common.h
+ * @file /kabuki_toolkit/gui/common.h
  *
  * @brief Common definitions used by NanoGUI.
  */
@@ -160,7 +160,7 @@ using MatrixXf = Eigen::MatrixXf;
 using MatrixXu = Eigen::Matrix<uint32_t, Eigen::Dynamic, Eigen::Dynamic>;
 
 /*
- * \class Color common.h /kabuki/toolkit/gui/common.h
+ * \class Color common.h /kabuki_toolkit/gui/common.h
  *
  * @brief Stores an RGBA floating point color value.
  *

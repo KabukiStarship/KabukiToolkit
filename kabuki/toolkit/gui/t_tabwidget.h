@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/tabwidget.h -- A wrapper around the widgets TabHeader and StackedWidget
+    /kabuki_toolkit/gui/tabwidget.h -- A wrapper around the widgets TabHeader and StackedWidget
     which hooks the two classes together.
 
     The tab widget was contributed by Stefan Ivanov.

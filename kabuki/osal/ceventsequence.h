@@ -1,5 +1,5 @@
 /* Kabuki Tek
-    @file    $kabuki-toolkit/kabuki/toolkit/app/EventSequence.h
+    @file    $kabuki-toolkit/kabuki_toolkit/app/EventSequence.h
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2017 [Cale McCollough](calemccollough.github.io)
 

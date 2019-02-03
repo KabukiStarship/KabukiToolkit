@@ -1,6 +1,6 @@
 # projects
 
-KT projects are limited to use of C++ on the Universal Windows Platform (UWP) with Script2, Python, HTML5, and JavaScript.
+KT projects are limited to use of C++ on the Universal Windows Platform (UWP) with Script2, Python, HTML5, and JavaScript. Currently most of the demo demo app code is missing in the repo somewhere or the project just got reorganized and that project isn't fleshed out.
 
 1. [projects.experiments](/experiments/readme.md) - **C++** - A project for quickly testing code.
 1. [projects.script2](/script2/readme.md) - **Embedded-C++** - Serial Chinese Room, Interprocess, and Telementry (SCRIPT) Script (Script2).

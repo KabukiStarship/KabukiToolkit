@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/serializer/sparse.h -- serialization support for sparse matrices
+    /kabuki_toolkit/gui/serializer/sparse.h -- serialization support for sparse matrices
 
     NanoGUI was developed by Wenzel Jakob <wenzel@inf.ethz.ch>.
     The widget drawing code is based on the NanoVG demo application

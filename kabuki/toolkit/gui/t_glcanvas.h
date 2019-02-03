@@ -7,7 +7,7 @@
     BSD-style license that can be found in the LICENSE.txt file.
 */
 /*
- * @file /kabuki/toolkit/gui/glcanvas.h
+ * @file /kabuki_toolkit/gui/glcanvas.h
  *
  * @brief Canvas widget for rendering OpenGL content.  This widget was
  *        contributed by Jan Winkler.
@@ -31,7 +31,7 @@
 namespace _ {
 
 /*
- * \class GLCanvas glcanvas.h /kabuki/toolkit/gui/glcanvas.h
+ * \class GLCanvas glcanvas.h /kabuki_toolkit/gui/glcanvas.h
  *
  * @brief Canvas widget for rendering OpenGL content.  This widget was
  *        contributed by Jan Winkler.

@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/popup.h -- Simple popup widget which is attached to another given
+    /kabuki_toolkit/gui/popup.h -- Simple popup widget which is attached to another given
     window (can be nested)
 
     NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.
@@ -22,7 +22,7 @@
 namespace _ {
 
 /*
- * \class Popup popup.h /kabuki/toolkit/gui/popup.h
+ * \class Popup popup.h /kabuki_toolkit/gui/popup.h
  *
  * @brief Popup window for combo boxes, popup buttons, nested dialogs etc.
  *

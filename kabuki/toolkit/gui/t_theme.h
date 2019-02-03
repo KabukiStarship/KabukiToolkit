@@ -9,7 +9,7 @@
     BSD-style license that can be found in the LICENSE.txt file.
 */
 /*
- * @file /kabuki/toolkit/gui/theme.h
+ * @file /kabuki_toolkit/gui/theme.h
  *
  * @brief Storage class for basic theme-related properties.
  */
@@ -26,7 +26,7 @@
 namespace _ {
 
 /*
- * \class Theme theme.h /kabuki/toolkit/gui/theme.h
+ * \class Theme theme.h /kabuki_toolkit/gui/theme.h
  *
  * @brief Storage class for basic theme-related properties.
  */

@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /kabuki/toolkit/osal/test_tree.h
+@file    /kabuki_toolkit/osal/test_tree.h
 @author  Cale McCollough <cale.mccollough@gmail.com>
 @license Copyright (C) 2014-2017 Cale McCollough <calemccollough.github.io>;
 All right reserved (R). Licensed under the Apache License, Version 2.0 (the
@@ -20,16 +20,17 @@ specific language governing permissions and limitations under the License. */
 #include "01_bar.h"
 #endif
 
-namespace kabuki { namespace osal { 
+namespace kabuki {
+namespace osal {
 
-static const CH1* Test(CH1* seam_log, CH1* seam_end,
-                        const CH1* args) {
+static const CH1* Test(CH1* seam_log, CH1* seam_end, const CH1* args) {
   return TTestTree<_0_Foo
 #if SEAM >= KABUKI_OSAL_1
-                    , _1_Bar
+                   ,
+                   _1_Bar
 #endif
-  >(seam_log, seam_end, args);
+                   >(seam_log, seam_end, args);
 }
-}  //< namespace osal
-}  //< namespace toolkit
+}  // namespace osal
+}  // namespace kabuki
 }  //< namespace kabuki

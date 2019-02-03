@@ -13,7 +13,7 @@
  */
 
 /*
- * @file /kabuki/toolkit/gui/entypo.h
+ * @file /kabuki_toolkit/gui/entypo.h
  *
  * @brief This is a list of icon codes for the `entypo.ttf` font by Daniel Bruce.
  *

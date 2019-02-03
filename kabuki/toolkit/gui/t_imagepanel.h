@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/imagepanel.h -- Image panel widget which shows a number of
+    /kabuki_toolkit/gui/imagepanel.h -- Image panel widget which shows a number of
     square-shaped icons
 
     NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.
@@ -20,7 +20,7 @@
 namespace _ {
 
 /*
- * \class ImagePanel imagepanel.h /kabuki/toolkit/gui/imagepanel.h
+ * \class ImagePanel imagepanel.h /kabuki_toolkit/gui/imagepanel.h
  *
  * @brief Image panel widget which shows a number of square-shaped icons.
  */

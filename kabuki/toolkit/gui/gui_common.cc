@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/nanogui.cpp -- Basic initialization and utility routines
+    /kabuki_toolkit/gui/nanogui.cpp -- Basic initialization and utility routines
 
     NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.
     The widget drawing code is based on the NanoVG demo application

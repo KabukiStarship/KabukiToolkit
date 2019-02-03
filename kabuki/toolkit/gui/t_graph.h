@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/graph.h -- Simple graph widget for showing a function plot
+    /kabuki_toolkit/gui/graph.h -- Simple graph widget for showing a function plot
 
     NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.
     The widget drawing code is based on the NanoVG demo application
@@ -19,7 +19,7 @@
 namespace _ {
 
 /*
- * \class Graph graph.h /kabuki/toolkit/gui/graph.h
+ * \class Graph graph.h /kabuki_toolkit/gui/graph.h
  *
  * @brief Simple graph widget for showing a function plot.
  */

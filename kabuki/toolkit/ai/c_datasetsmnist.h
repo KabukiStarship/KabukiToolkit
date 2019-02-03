@@ -1,5 +1,5 @@
 /* Kabuki Toolkit@version 0.x
-@file    /kabuki/toolkit/ai/nmist_importer.h */
+@file    /kabuki_toolkit/ai/nmist_importer.h */
 
 #pragma once
 #include <pch.h>

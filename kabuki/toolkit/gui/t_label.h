@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/label.h -- Text label with an arbitrary font, color, and size
+    /kabuki_toolkit/gui/label.h -- Text label with an arbitrary font, color, and size
 
     NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.
     The widget drawing code is based on the NanoVG demo application
@@ -19,7 +19,7 @@
 namespace _ {
 
 /*
- * \class Label label.h /kabuki/toolkit/gui/label.h
+ * \class Label label.h /kabuki_toolkit/gui/label.h
  *
  * @brief Text label widget.
  *

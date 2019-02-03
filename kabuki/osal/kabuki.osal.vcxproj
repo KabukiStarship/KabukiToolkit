@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <None Include="global_config.inl" />
-    <None Include="readme.md" />
-    <None Include="test_debug.inl" />
-    <None Include="test_footer.inl" />
-    <None Include="test_release.inl" />
+    <ClCompile Include="osal_app.cc" />
+    <ClCompile Include="osal_dllmain.cc" />
+    <ClCompile Include="osal_eventsequence.cc" />
+    <ClCompile Include="osal_processtree.cc" />
+    <ClCompile Include="pch.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="00_foo.h" />
@@ -35,18 +35,18 @@
     <ClInclude Include="cconsole.h" />
     <ClInclude Include="cevent.h" />
     <ClInclude Include="ceventsequence.h" />
+    <ClInclude Include="c_keylistener.h" />
     <ClInclude Include="group.h" />
-    <ClInclude Include="key_listener.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="processtree.h" />
     <ClInclude Include="test_tree.h" />
+    <ClInclude Include="t_processtree.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="app.cc" />
-    <ClCompile Include="app_dllmain.cc" />
-    <ClCompile Include="app_eventsequence.cc" />
-    <ClCompile Include="app_processtree.cc" />
-    <ClCompile Include="pch.cc" />
+    <None Include="global_config.inl" />
+    <None Include="readme.md" />
+    <None Include="test_debug.inl" />
+    <None Include="test_footer.inl" />
+    <None Include="test_release.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

@@ -1,6 +1,6 @@
 /* Kabuki Toolkit
     @version 0.x
-    @file    ~/library/kabuki/toolkit/ai/perceptron_layer.h
+    @file    ~/library/kabuki_toolkit/ai/perceptron_layer.h
     @author  Cale McCollough <cale.mccollough@gmail.com>
     @license Copyright (C) 2014-19-2018 Cale McCollough <calemccollough@gmail.com>;
              All right reserved (R). Licensed under the Apache License, Version

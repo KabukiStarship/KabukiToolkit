@@ -1,5 +1,5 @@
 /*
-    /kabuki/toolkit/gui/imageview.h -- Widget used to display images.
+    /kabuki_toolkit/gui/imageview.h -- Widget used to display images.
 
     The image view widget was contributed by Stefan Ivanov.
 

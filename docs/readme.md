@@ -1,13 +1,19 @@
 # Kabuki Toolkit Documentation
 
-Please **@see** `~/kabuki_toolkit.mdj` using [StarUML](http://staruml.io) for object models. Documents are split between the Wiki and the `~/docs/` folder and additional documents can be found in the [script2 repo](https://github.com/kabuki-starship/script2). 
-
 ## Docs
+
+Please **@see** `~/kabuki_toolkit.mdj` using [StarUML](http://staruml.io) for object models. Documents are split between the Wiki and the `~/docs/` folder and additional documents can be found in the [script2 repo](https://github.com/kabuki-starship/script2). 
 
 * [Script Specification RFC](https://github.com/kabuki-starship/script2) - Serial Chinese Room, Interprocess, and Telemetry (SCRIPT) Specification Release for Comment and SCRIPT Script (Script2).
 * [ASCII C++ Style Guide](https://github.com/ascii_cpp_style_guide) - A combination of the Google C++ Style Guide and the ASCII Data Specificaiton in Markdown format.
 * [Frequently Asked Questions](#faq) - The best place the start.
 * [Quick Start Guide](#quick-start-guide) - The second best place the start.
+* [Contributing] (./CONTRIBUTING.md]
+* Templates
+  * [Bug Report Template](./BUG_REPORT_TEMPLATE.md)
+  * [Feature Request Template](./FEATURE_REQUST_TEMPLATE.md)
+  * [Issue Template](./ISSUE_TEMPLATE.md)
+  * Pull Request Template](./PULL_REQUEST_TEMPLATE.md)
 
 ## Frequently Asked Questions
 
@@ -89,4 +95,8 @@ BOL TestWarn(const CH1* function, const CH1* file, SI4 line);
 
 Copyright 2014-19 (C) Cale Jamison McCollough <<cale@astartup.net>>. All rights reserved (R).
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0). Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+### Justification Behind License Choice
+
+KT exists for one reason: to not have to pay any GNU license fees. One benefit of the GNU license is that it prevents spin offs from people trying to start a startups destined to fail and split your community up, jeopardizing the mission and resulting in a worse product. Some times you want a project to have a billion spin-offs and that is success for that code, other times you need to preserve a standard code base and build a bazillion apps made with it, but by now having a copy-left license you will end up with the core code going different direction and dying from an impossible maintenance burden. The reality of a project is that your code will be better if you contribute back to the project and the license should be setup to discourage the urge to reinvent the wheel; it sounds cool at first but the person writing this was miserable for years attempting to reinvent the wheel by himself. For this reason we have chosen the Mozilla Public License 2 (MPL2), which allows for closed-source but features a weak copy-left license that encourages developers to contribute back to th project and reduces the urge to reinvent the wheel and launch a startup that causes you great misery. In our situation, MPL2 is in our best interests.

@@ -445,7 +445,7 @@ class Util {
         ms--;
         continue;
       }
-      if (key == '\r' || key <= '\n') {
+      if (key == '\r' || key <= kLF) {
         break;
       } else if (key == '\b' || key == 127) {
         auto s = stream.str ();

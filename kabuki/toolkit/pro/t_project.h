@@ -2,14 +2,10 @@
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki/features/pro/t_project.h
 @author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-19 Cale McCollough <cale@astartup.net>;
-All right reserved (R). Licensed under the Apache License, Version 2.0 (the
-"License"); you may not use this file except in compliance with the License.
-You may obtain a copy of the License at www.apache.org/licenses/LICENSE-2.0.
-Unless required by applicable law or agreed to in writing, software distributed
-under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-CONDITIONS OF ANY KIND, either express or implied. See the License for the
-specific language governing permissions and limitations under the License. */
+@license Copyright (C) 2014-2019 Cale McCollough <cale@astartup.net>;
+All right reserved (R). This Source Code Form is subject to the terms of the 
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
 #include <pch.h>
@@ -47,8 +43,8 @@ class Project : public Operand {
       o << "> Exiting application...\n";
       return nullptr;
     }
-    o << "Popping " << stack->project->Key () << '\n'
-      << "new_top: " << new_top->project->Key () << '\n';
+    o << "Popping " << stack->project->Key () << kLF
+      << "new_top: " << new_top->project->Key () << kLF;
     delete stack;
     return new_top;
   }
@@ -58,7 +54,7 @@ class Project : public Operand {
     if (stack == nullptr) return "Null push stack";
     if (stack->project == project)  // Then pop the project off the stack.
       return "";
-    o << "> Pushing " << project->Key () << '\n';
+    o << "> Pushing " << project->Key () << kLF;
     ProjectNode* temp = new ProjectNode (project, stack);
     stack = temp;
     return nullptr;
@@ -138,16 +134,16 @@ class Project : public Operand {
       "| Objs in Scope:\n"
       "|\n"
       "| Projects: "
-      << projects_->count << '\n';
+      << projects_->count << kLF;
     for (SI4 i = 0; i < projects_->count; ++i)
       o << "| " << i << ".) "
-      << StackGet<Project*> (projects_, i)->Key () << '\n';
+      << StackGet<Project*> (projects_, i)->Key () << kLF;
     o << "|\n"
       "| Schedules: "
-      << schedules_->count << '\n';
+      << schedules_->count << kLF;
     for (SI4 i = 0; i < schedules_->count; ++i)
       o << "| " << i << ".) "
-      << schedules_[i]->Key () << '\n';
+      << schedules_[i]->Key () << kLF;
     return o << LineStrand ('_');
   }
 
@@ -237,7 +233,7 @@ class Project : public Operand {
   void Load() {
     /*
     const CH1* error;  //< Error flag.
-    o << "\n\n| Reading from " << key << '\n';
+    o << "\n\n| Reading from " << key << kLF;
     std::ifstream file (key);
     if (!file.is_open ())
     {
@@ -250,7 +246,7 @@ class Project : public Operand {
     SI4 num_categories;
     file >> num_categories;
     //o << num_categories << " categories.\n";
-    file.getline (buffer, MAX_STRING_LENGTH, '\n');
+    file.getline (buffer, MAX_STRING_LENGTH, kLF);
     //< Throw away the rest of the line.
     // Read each of the ItemList categories.
     for (SI4 i = 0; i < num_categories; ++i)
@@ -260,8 +256,8 @@ class Project : public Operand {
     //o << "| key: " << key;
     SI4 num_items;
     file >> num_items;
-    //o << " num_items: " << num_items << '\n';
-    while (file.get () != '\n');  //< Throw away the rest of the line.
+    //o << " num_items: " << num_items << kLF;
+    while (file.get () != kLF);  //< Throw away the rest of the line.
     for (SI4 i = 0; i < num_items; ++i)
     {
     CH1* name = new CH1[MAX_STRING_LENGTH];
@@ -273,7 +269,7 @@ class Project : public Operand {
     file >> quantity;
     while (file.get () != ',');
     file >> price;
-    while (file.get () != '\n');
+    while (file.get () != kLF);
     add (key, name, quantity, price);
     }
     :}
@@ -295,7 +291,7 @@ class Project : public Operand {
     o << "Unable top open file for writing";
     return;
     }
-    file << "Project," << element_count << ',' << get_total () << '\n';
+    file << "Project," << element_count << ',' << get_total () << kLF;
     ItemList** list = lists;
     for (SI4 i = 0; i < element_count; ++i)
     list[i]->write_to_open_file (file);

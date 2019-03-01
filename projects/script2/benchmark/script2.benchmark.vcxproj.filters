@@ -35,7 +35,7 @@
     <ClInclude Include="pch.h">
       <Filter>root</Filter>
     </ClInclude>
-    <ClInclude Include="test_tree.h">
+    <ClInclude Include="module_tests.h">
       <Filter>root</Filter>
     </ClInclude>
   </ItemGroup>
@@ -49,13 +49,13 @@
     <None Include="seam_footer.inl">
       <Filter>root</Filter>
     </None>
-    <None Include="test_debug.inl">
+    <None Include="module_debug.inl">
       <Filter>root</Filter>
     </None>
-    <None Include="test_footer.inl">
+    <None Include="module_footer.inl">
       <Filter>root</Filter>
     </None>
-    <None Include="test_release.inl">
+    <None Include="module_release.inl">
       <Filter>root</Filter>
     </None>
   </ItemGroup>

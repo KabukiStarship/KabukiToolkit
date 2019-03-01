@@ -1,20 +1,16 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki-toolkit.git
+@link    https://github.com/kabuki-starship/kabuki_toolkit.git
 @file    /kabuki/features/camera/00_foo.h
-@author  Cale McCollough <calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <calemccollough.github.io>;
-All right reserved (R). Licensed under the Apache License, Version 2.0 (the
-"License"); you may not use this file except in compliance with the License.
-You may obtain a copy of the License at www.apache.org/licenses/LICENSE-2.0.
-Unless required by applicable law or agreed to in writing, software distributed
-under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-CONDITIONS OF ANY KIND, either express or implied. See the License for the
-specific language governing permissions and limitations under the License. */
+@author  Cale McCollough <https://calemccollough.github.io>
+@license Copyright (C) 2014-2019 Cale McCollough <cale@astartup.net>;
+All right reserved (R). This Source Code Form is subject to the terms of the 
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
 #include <pch.h>
 
-#if SEAM == KABUKI_FEATURES_CAMERA_0
+#if SEAM == KABUKI_FEATURES_WEBCAM_0
 #include "test_debug.inl"
 #else
 #include "test_release.inl"
@@ -22,9 +18,9 @@ specific language governing permissions and limitations under the License. */
 
 using namespace _;
 
-namespace kabuki { namespace features { namespace camera {
+namespace kabuki { namespace features { namespace webcam {
 inline const CH1* _0_Foo (CH1* seam_log, CH1* seam_end, const CH1* args) {
-#if SEAM >= KABUKI_FEATURES_CAMERA_0
+#if SEAM >= KABUKI_FEATURES_WEBCAM_0
   TEST_BEGIN;
 
   PRINT_HEADING ("Testing Foo Fun.");
@@ -32,6 +28,6 @@ inline const CH1* _0_Foo (CH1* seam_log, CH1* seam_end, const CH1* args) {
 #endif
   return 0;
 }
-} //< namespace camera
+} //< namespace webcam
 } //< namespace features
 } //< namespace kabuki

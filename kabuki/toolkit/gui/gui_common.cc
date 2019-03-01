@@ -321,7 +321,7 @@ std::vector<std::string> file_dialog(const std::vector<std::pair<std::string, st
         ;
     pclose(output);
     std::string paths(buffer);
-    paths.erase(std::remove(paths.begin(), paths.end(), '\n'), paths.end());
+    paths.erase(std::remove(paths.begin(), paths.end(), kLF), paths.end());
 
     std::vector<std::string> result;
     while (!paths.empty()) {

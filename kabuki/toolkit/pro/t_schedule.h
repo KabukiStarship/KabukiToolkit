@@ -2,14 +2,10 @@
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki/features/pro/t_schedule.h
 @author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-19 Cale McCollough <cale@astartup.net>;
-All right reserved (R). Licensed under the Apache License, Version 2.0 (the
-"License"); you may not use this file except in compliance with the License.
-You may obtain a copy of the License at www.apache.org/licenses/LICENSE-2.0.
-Unless required by applicable law or agreed to in writing, software distributed
-under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-CONDITIONS OF ANY KIND, either express or implied. See the License for the
-specific language governing permissions and limitations under the License. */
+@license Copyright (C) 2014-2019 Cale McCollough <cale@astartup.net>;
+All right reserved (R). This Source Code Form is subject to the terms of the 
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
 #include <pch.h>
@@ -157,14 +153,14 @@ class Schedule {
     Task* t;
 
     input = SkipSpaces (input);
-    o << "> " << key_ << " > " << input << '\n';
+    o << "> " << key_ << " > " << input << kLF;
     c = *input;
     if (!c) return "No Schedule arguments read";
     // o << "> Schedule ";
     if (c == '-') {
       c = *(input + 1);
       d = *(input + 2);
-      // o << '-' << c << d << '\n';
+      // o << '-' << c << d << kLF;
       if (d && !isspace (d)) return "Invalid Schedule flag";
       input = SkipSpaces (input);
       switch (c) {
@@ -200,7 +196,7 @@ class Schedule {
         if (!isdigit (c)) return "Error scanning index to remove";
         if (!sscanf (input, "%i", &value))  //< This shouldn't happen.
           return "Error scanning index to remove";
-        o << "| Removing task " << value << '\n';
+        o << "| Removing task " << value << kLF;
         if (value > tasks_.GetCount ()) return "Invalid schedule index";
         Remove (value);
         return nullptr;
@@ -240,17 +236,17 @@ class Schedule {
       d = *(input + 1);
       e = *(input + 2);
       o << " >" << key_ << " > \"" << c << d << e << "\" < " << input
-        << '\n';
+        << kLF;
       if (e && !isspace (e)) return "Invalid Project flag";
       input += 3;
       switch (d) {
       case 'S':  // Add to the schedule
       {
         if (!e) return "You must enter a Schedule name";
-        o << "> Adding Schedule: " << input << '\n';
+        o << "> Adding Schedule: " << input << kLF;
         end = TextTokenEnd (input);
         d = *input;
-        // o << "> d: " << d << '\n';
+        // o << "> d: " << d << kLF;
         if (!d || input == end) return "You must enter a valid key";
         if (ScheduleIndex (input) >= 0 || ScheduleIndex (input) >= 0)
           return "Key is in use. Type -l to list the objects in the current "
@@ -262,7 +258,7 @@ class Schedule {
       case 'P':  // Add new Project
       {
         if (!e) return "You must enter a Project name";
-        o << "> Adding Project: " << input << '\n';
+        o << "> Adding Project: " << input << kLF;
         end = TextTokenEnd (input);
         d = *input;
         if (!d || input == end) return Push (stack, this);
@@ -296,7 +292,7 @@ class Schedule {
         if (isdigit (d)) {
           if (!sscanf (input, "%i", &value))  //< Shouldn't happen.
             return "Error scanning index to remove";
-          o << value << '\n';
+          o << value << kLF;
           if (!RemoveSchedule (value)) return "Invalid schedule index";
         } else {
           // Search for a project with the given key.
@@ -322,7 +318,7 @@ class Schedule {
       // negative number!
       if (!sscanf (input, "%i", &value))  // This shouldn't happen.
         return "Could not read Project member index";
-      o << " >" << key_ << " >" << input << '\n';
+      o << " >" << key_ << " >" << input << kLF;
       input = TextTokenEnd (input);  // Scroll past the number.
       SI4 num_subprojects = projects_->count;
       if (value < num_subprojects)
@@ -354,7 +350,7 @@ class Schedule {
     if (*input == 0) return Push (stack, this);
     // Search for key to pass the command CH1 onto.
     end = TextTokenEnd (input);
-    o << " >" << key_ << " >" << input << '\n';
+    o << " >" << key_ << " >" << input << kLF;
     if (*input == 0) return "Invalid key format.";
 
     value = ProjectIndex (input);

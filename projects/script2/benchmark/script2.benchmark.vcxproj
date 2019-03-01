@@ -23,15 +23,15 @@
     <ClInclude Include="01_bar.h" />
     <ClInclude Include="itos\itos_algorithms.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="test_tree.h" />
+    <ClInclude Include="module_tests.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="global_config.inl" />
     <None Include="readme.md" />
     <None Include="seam_footer.inl" />
-    <None Include="test_debug.inl" />
-    <None Include="test_footer.inl" />
-    <None Include="test_release.inl" />
+    <None Include="module_debug.inl" />
+    <None Include="module_footer.inl" />
+    <None Include="module_release.inl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="align\benchmark_align.cc" />

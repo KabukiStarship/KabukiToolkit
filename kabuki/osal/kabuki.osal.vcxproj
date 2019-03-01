@@ -28,15 +28,14 @@
   <ItemGroup>
     <ClInclude Include="00_foo.h" />
     <ClInclude Include="01_bar.h" />
-    <ClInclude Include="capp.h" />
-    <ClInclude Include="capprealtime.h" />
-    <ClInclude Include="cclipboard.h" />
-    <ClInclude Include="ccomparable.h" />
-    <ClInclude Include="cconsole.h" />
-    <ClInclude Include="cevent.h" />
-    <ClInclude Include="ceventsequence.h" />
-    <ClInclude Include="c_keylistener.h" />
-    <ClInclude Include="group.h" />
+    <ClInclude Include="c_app.h" />
+    <ClInclude Include="c_apprealtime.h" />
+    <ClInclude Include="c_clipboard.h" />
+    <ClInclude Include="c_comparable.h" />
+    <ClInclude Include="c_console.h" />
+    <ClInclude Include="c_event.h" />
+    <ClInclude Include="c_eventsequence.h" />
+    <ClInclude Include="c_group.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="test_tree.h" />
     <ClInclude Include="t_processtree.h" />

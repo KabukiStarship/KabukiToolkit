@@ -46,31 +46,28 @@
     <ClInclude Include="01_bar.h">
       <Filter>kabuki\osal</Filter>
     </ClInclude>
-    <ClInclude Include="c_keylistener.h">
+    <ClInclude Include="c_app.h">
       <Filter>kabuki\osal</Filter>
     </ClInclude>
-    <ClInclude Include="capp.h">
+    <ClInclude Include="c_apprealtime.h">
       <Filter>kabuki\osal</Filter>
     </ClInclude>
-    <ClInclude Include="capprealtime.h">
+    <ClInclude Include="c_clipboard.h">
       <Filter>kabuki\osal</Filter>
     </ClInclude>
-    <ClInclude Include="cclipboard.h">
+    <ClInclude Include="c_comparable.h">
       <Filter>kabuki\osal</Filter>
     </ClInclude>
-    <ClInclude Include="ccomparable.h">
+    <ClInclude Include="c_console.h">
       <Filter>kabuki\osal</Filter>
     </ClInclude>
-    <ClInclude Include="cconsole.h">
+    <ClInclude Include="c_event.h">
       <Filter>kabuki\osal</Filter>
     </ClInclude>
-    <ClInclude Include="cevent.h">
+    <ClInclude Include="c_eventsequence.h">
       <Filter>kabuki\osal</Filter>
     </ClInclude>
-    <ClInclude Include="ceventsequence.h">
-      <Filter>kabuki\osal</Filter>
-    </ClInclude>
-    <ClInclude Include="group.h">
+    <ClInclude Include="c_group.h">
       <Filter>kabuki\osal</Filter>
     </ClInclude>
   </ItemGroup>

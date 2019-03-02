@@ -5,7 +5,7 @@
 Please **@see** `~/kabuki_toolkit.mdj` using [StarUML](http://staruml.io) for object models. Documents are split between the Wiki and the `~/docs/` folder and additional documents can be found in the [script2 repo](https://github.com/kabuki-starship/script2). 
 
 * [Script Specification RFC](https://github.com/kabuki-starship/script2) - Serial Chinese Room, Interprocess, and Telemetry (SCRIPT) Specification Release for Comment and SCRIPT Script (Script2).
-* [ASCII C++ Style Guide](https://github.com/ascii_cpp_style_guide) - A combination of the Google C++ Style Guide and the ASCII Data Specificaiton in Markdown format.
+* [ASCII C++ Style Guide](https://github.com/ascii_cpp_style_guide) - A combination of the Google C++ Style Guide and the ASCII Data Specification in Markdown format.
 * [Frequently Asked Questions](#faq) - The best place the start.
 * [Quick Start Guide](#quick-start-guide) - The second best place the start.
 * [Contributing] (./CONTRIBUTING.md]

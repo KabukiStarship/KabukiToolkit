@@ -83,16 +83,14 @@ Kabuki Toolkit (KT) is a modern embedded-C++ toolkit for making intelligent conn
 
 ### projects.kabuki
 
-| Module        | Description |
-|:-------------:|:------------|
-| connect       | Contact list, trading, and chat app. |
-| sloth         | Script2 package manager and code, seam tree, and seam graph refactoring utility. |
-| anyled        | Universal LED controller for PWM and addressable LEDs. |
-| oregon_cooler | Smart-home cooling system and automatic watering system. |
-| player        | A video player app and plugin. |
-| unicontroller | Universal MIDI, DMX, OSC, and Script2 controller, interprocess host, and plugin system with DSP audio effects and synthesis. |
-| autopilot     | Drone autopilot. |
-| igeek         | Interactive Graphical Environment for Evolving KabukiNet. |
+|      Module     | Description |
+|:---------------:|:------------|
+|  kabuki_connect | Contact list, trading, and chat app. |
+|     sloth       | Script2 package manager and code, seam tree, and seam graph refactoring utility. |
+|  kabuki_player  | A video player app and plugin. |
+|  unicontroller  | Universal AnyLED, MIDI, DMX, OSC, and Script2 controller, interprocess host, and plugin system with DSP audio effects and synthesis. |
+| kabuki_autopilot| Drone autopilot. |
+|      igeek      | Interactive Graphical Environment for Evolving KabukiNet. |
 
 ### 3rd Party APIs
 
@@ -107,7 +105,7 @@ Kabuki Toolkit (KT) is a modern embedded-C++ toolkit for making intelligent conn
 * [PortAudio](http://www.portaudio.com/) - Cross-platform audio driver.
 * [RtMIDI](https://github.com/thestk/rtmidi) - Cross-platform MIDI driver.
 * [Eigan](http://eigen.tuxfamily.org) - Math library.
-* [MLPack](https://github.com/mlpack/mlpack) - Machine learning library.
+* [MXNet](https://github.com/mlpack/mlpack) - Machine learning library.
 * [mbed](https://www.mbed.com/en/) - Firmware abstraction layer and real-time OS.
 
 ### Kabuki VM Seam Package Diagram

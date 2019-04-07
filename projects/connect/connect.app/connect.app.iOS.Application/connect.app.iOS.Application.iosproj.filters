@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="connect.app.iOS">
+      <UniqueIdentifier>{5bf11f8e-6f38-415b-895f-655ebf99b7d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="connect.app.iOS\Images.xcassets">
+      <UniqueIdentifier>{1d22b0d4-d1e5-4b18-910e-999e289ec8e4}</UniqueIdentifier>
+      <Extensions>connect.app.iOS\Images.xcassets\*</Extensions>
+    </Filter>
+    <Filter Include="connect.app.iOS\Images.xcassets\AppIcon.appiconset">
+      <UniqueIdentifier>{824a00c2-6169-40e3-85af-05a800bff55e}</UniqueIdentifier>
+      <Extensions>connect.app.iOS\Images.xcassets\AppIcon.appiconset\*</Extensions>
+    </Filter>
+    <Filter Include="connect.app.iOS\Supporting Files">
+      <UniqueIdentifier>{7b2b5149-0136-4c75-bd78-bd6dfeb6713a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="connect.app.iOS\AppDelegate.m">
+      <Filter>connect.app.iOS</Filter>
+    </ClCompile>
+    <ClCompile Include="connect.app.iOS\GameViewController.m">
+      <Filter>connect.app.iOS</Filter>
+    </ClCompile>
+    <ClCompile Include="connect.app.iOS\main.m">
+      <Filter>connect.app.iOS\Supporting Files</Filter>
+    </ClCompile>
+    <ClInclude Include="connect.app.iOS\AppDelegate.h">
+      <Filter>connect.app.iOS</Filter>
+    </ClInclude>
+    <ClInclude Include="connect.app.iOS\GameViewController.h">
+      <Filter>connect.app.iOS</Filter>
+    </ClInclude>
+    <Content Include="connect.app.iOS\Base.lproj\Main.storyboard">
+      <Filter>connect.app.iOS</Filter>
+    </Content>
+    <Content Include="connect.app.iOS\Images.xcassets\AppIcon.appiconset\Contents.json">
+      <Filter>connect.app.iOS\Images.xcassets\AppIcon.appiconset</Filter>
+    </Content>
+    <InfoPlist Include="connect.app.iOS\Info.plist">
+      <Filter>connect.app.iOS\Supporting Files</Filter>
+    </InfoPlist>
+  </ItemGroup>
+</Project>

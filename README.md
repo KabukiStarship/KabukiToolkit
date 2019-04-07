@@ -46,12 +46,11 @@ Kabuki Toolkit (KT) is a modern embedded-C++ toolkit for making intelligent conn
 
 | Module      | Description |
 |:-----------:|:------------|
-|    adsp     | Audio digital signal processing library. |
 |  clipboard  | Copy, cut, and paste library. |
 | filecabinet | Filesystem abstraction library. |
 |   graphics  | Graphics library. |
 |    lights   | DMX and LED lighting library. |
-|     math    | Math library. |
+|     blas    | Basic Linear Algebra System library. |
 |     midi    | Musical instrument digital interface. |
 |    sound    | Sound and audio library. |
 |     tls     | Transport-layer Security. |
@@ -60,39 +59,31 @@ Kabuki Toolkit (KT) is a modern embedded-C++ toolkit for making intelligent conn
 
 ### kabuki.toolkit
 
-| Module   | Description |
-|:--------:|:------------|
-| ai       | Artificial Intelligence library. |
-| av       | Audio-visual library. |
-| data     | Database library. |
-| draw     | Vector drawing library. |
-| gui      | Graphical user interface. |
-| plot     | Plotting library. |
-| orm      | Object Relational Mapping library. |
-| pro      | Project library. |
-| uweb     | HTTP server and web microframework. |
-| video    | Video library. |
-| who      | Identification and authorization library. |
+| Module | Description |
+|:------:|:------------|
+|   av   | Audio-visual library. |
+|  data  | Database library. |
+|  draw  | Vector drawing library. |
+|  gui   | Graphical user interface. |
+|  math  | Math library. |
+|  plot  | Plotting library. |
+|  orm   | Object Relational Mapping library. |
+|  pro   | Project library. |
+|  uweb  | HTTP server and web microframework. |
+|  video | Video library. |
+|  who   | Identification and authorization library. |
 
 ## projects
 
-| Module        | Description |
+|    Module     | Description |
 |:-------------:|:------------|
-| experiments   | A project for quickly testing code. |
-| script2       | Oversight project for Script2. |
-
-### projects.kabuki
-
-| Module        | Description |
-|:-------------:|:------------|
-| connect       | Contact list, trading, and chat app. |
-| sloth         | Script2 package manager and code, seam tree, and seam graph refactoring utility. |
-| anyled        | Universal LED controller for PWM and addressable LEDs. |
-| oregon_cooler | Smart-home cooling system and automatic watering system. |
-| player        | A video player app and plugin. |
-| unicontroller | Universal MIDI, DMX, OSC, and Script2 controller, interprocess host, and plugin system with DSP audio effects and synthesis. |
-| autopilot     | Drone autopilot. |
-| igeek         | Interactive Graphical Environment for Evolving KabukiNet. |
+|    connect    | Contact list, trading, and chat app. |
+|    console    | Script2 console. |
+|  experiments  | A project for quickly testing code. |
+|     igeek     | Interactive Generative Environment for Evolving KabukiNet. |
+|    player     | A video player app and plugin. |
+|     sloth     | Script2 package manager, seam tree build system, UML modeling, and refactoring utility. |
+| unicontroller | Universal LED, MIDI, DMX, OSC, and Script2 controller. |
 
 ### 3rd Party APIs
 
@@ -102,12 +93,11 @@ Kabuki Toolkit (KT) is a modern embedded-C++ toolkit for making intelligent conn
 * [boost filesystem](https://www.boost.org/doc/libs/1_68_0/doc/html/boost_filesystem.html) - Cross-platform filesystem.
 * [NanoVG](https://github.com/memononen/nanovg) - Minimalistic vector drawing toolkit.
 * [NanoGUI](https://github.com/wjakob/nanogui) - Minimalistic vector GUI toolkit.
-* [Assimp](https://github.com/assimp/assimp) - 3D model importer.
+* [Open3D](http://open3d.org) - 3D graphics and computer vision.
 * [cvPlot](https://github.com/PLplot/PLplot) - Math plotting library.
 * [PortAudio](http://www.portaudio.com/) - Cross-platform audio driver.
 * [RtMIDI](https://github.com/thestk/rtmidi) - Cross-platform MIDI driver.
 * [Eigan](http://eigen.tuxfamily.org) - Math library.
-* [MLPack](https://github.com/mlpack/mlpack) - Machine learning library.
 * [mbed](https://www.mbed.com/en/) - Firmware abstraction layer and real-time OS.
 
 ### Kabuki VM Seam Package Diagram

@@ -16,6 +16,8 @@
 
 If you would like to contribute as a developer, way to follow along with development is by viewing the issue commits. Each commit should have a short issue description and #issue_number (@see git commit log). By clicking on the #issue_number it will take you to the issue where the work should be described with some level of detail.
 
+The primary development focus is on Script2 and the Interactive Generative Evolutionary Environment for KabukiNet (IGEEK). Our primary development environment is Visual Studio with an Android or iOS tablet for a target device. The current goal is to get NanoGUI running on Android in OpenGLES. We are re-writing NanoGUI. KT and Script2 use pre-Hungarian notation "c_", "modulename_", and "t_ to alphabetically sort 3-file translation units, so the code needs to get rewritten into the new files from the old files.
+
 ## clang-format
 
 In order to prevent valuable wasted programming hours on formatting, it is required that you run clang-format when you save each C++ source file. For Visual Studio users you will need to install Clang PowerTools or clang-format extensions and set them up to auto-format on save. We're trying to  get a clang-refactor script going to convert all of the code to Google C++  Style Guide.
@@ -24,9 +26,9 @@ In order to prevent valuable wasted programming hours on formatting, it is requi
 
 Seam Tress and graphs are an advanced test and mocking technique. There is a chapter about it in the book `Script^2 and Kabuki Toolkit` but was rapidly evolving over the past year and a half so I'm just doing to give you a one paragraph overview and tell you to ask me questions on Slack:
 
-Seam Tree indexes 1 through N where N is the number of seams, are macros that turn on and off C++ code, and allow us to enumberate work to be done using alphabetical order. Seams are useful for blocking out a lot of code and re-enabling code bit-by-bit to test it. The technique is a best-practice for organizing the order that your software layers stack up and allows you to peal back the layers and issolate paticular seams with quick-and-easy-to-write Seam Tree Tests.
+Seam Tree indexes 1 through N where N is the number of seams, are macros that turn on and off C++ code, and allow us to enumerate work to be done using alphabetical order. Seams are useful for blocking out a lot of code and re-enabling code bit-by-bit to test it. The technique is a best-practice for organizing the order that your software layers stack up and allows you to peal back the layers and isolate particular seams with quick-and-easy-to-write Seam Tree Tests.
 
-The easiest way to learn this is to open up the `/kabuki-toolkit.sln` Visual Studio Solution starting with `0_0_00.script2` and start changing the `SEAM` index in the `/script2/pch.h` file. After you've checked out the Script2 seam tree tests then look at the other projects that start with numbers in `/kabuki-toolkit.sln`, and compare them to the `/projects/` directory. Each demo project has code that relies on different seam, such as a library with console seam tree test that then gets graphics and a GUI layered over top of it. Seam trees are carefully organized to avoid having to perform unneccissary typing to create and modify the seams.
+The easiest way to learn this is to open up the `/kabuki-toolkit.sln` Visual Studio Solution starting with `0_0_00.script2` and start changing the `SEAM` index in the `/script2/pch.h` file. After you've checked out the Script2 seam tree tests then look at the other projects that start with numbers in `/kabuki-toolkit.sln`, and compare them to the `/projects/` directory. Each demo project has code that relies on different seam, such as a library with console seam tree test that then gets graphics and a GUI layered over top of it. Seam trees are carefully organized to avoid having to perform unnecessary typing to create and modify the seams.
 
 Graphs can be created from seam nodes, but trees are required for testing in-order. If a seam is spread across multiple seams, one seam must be designated as a Parent seam, and the the rest must be child seams, such as the `kabuki.features.math library`. Seam tree indexes are positive integers and code can enabled or disabled in a range of values:
 
@@ -49,7 +51,7 @@ void Bar () {}
 #endif
 ```
 
-It's best to think of a child node a slice of that seam, and in which the slices for another sparce seam index list (i.e. non-contiguous seam indexes).
+It's best to think of a child node a slice of that seam, and in which the slices for another sparse seam index list (i.e. non-contiguous seam indexes).
 
 ```C++
 #if SEAM >= KABUKI_TOOLKIT_MATH_1 && SEAM <= KABUKI_TOOLKIT_MATH_4
@@ -57,11 +59,11 @@ void FooBar () {}
 #endif
 ```
 
-Each application created has it's own Seam Tree. Script2 is always going to be `0_0_0` or `0_0_00`. The purpose of the extra zero is to alphabetically sort the seams into enumberated order. The seams are set up to minimze typing. You should be able to instantly understand by comparing the list of seams in the `/README.md` to the `/docs/kabuki_vm_package_diagram.jpg`.
+Each application created has it's own Seam Tree. Script2 is always going to be `0_0_0` or `0_0_00`. The purpose of the extra zero is to alphabetically sort the seams into enumerated order. The seams are set up to minimize typing. You should be able to instantly understand by comparing the list of seams in the `/README.md` to the `/docs/kabuki_vm_package_diagram.jpg`.
 
 ## Seam Trees Commit Logs and Pull Requests
 
-KT uses a practice called Issue-driven Development (IDD) applied to Seam Trees and Seam Graphs. IDD is a practice of only completing one issue at a time and only doing work after or right around when you create an Issue-ticket, and tying of issue tickets to the commit log by copying and pasting the issue ticket headline inlcuding the #TicketNumber (i.e. #1, #2, ...). Please **@see** the KT commit log to examples. The benifit of IDD is that it creates institutionalized knowedge from the clean commit logs and comments.
+KT uses a practice called Issue-driven Development (IDD) applied to Seam Trees and Seam Graphs. IDD is a practice of only completing one issue at a time and only doing work after or right around when you create an Issue-ticket, and tying of issue tickets to the commit log by copying and pasting the issue ticket headline including the #TicketNumber (i.e. #1, #2, ...). Please **@see** the KT commit log to examples. The benefit of IDD is that it creates institutionalized knowledge from the clean commit logs and comments.
 
 ### Steps
 
@@ -119,6 +121,8 @@ git push origin Issue123
 
 ## The License
 
+## The License
+
 Copyright 2014-19 (C) Cale Jamison McCollough <<cale@astartup.net>>. All rights reserved (R).
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0). Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.

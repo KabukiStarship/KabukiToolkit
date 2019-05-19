@@ -1,24 +1,8 @@
-/*
-    NanoGUI was developed by Wenzel Jakob <wenzel.jakob@epfl.ch>.
-    The widget drawing code is based on the NanoVG demo application
-    by Mikko Mononen.
-
-    All rights reserved. Use of this source code is governed by a
-    BSD-style license that can be found in the LICENSE.txt file.
-*/
-/*
- * @file /kabuki_toolkit/gui/compat.h
- *
- * @brief Compatibility layer for `snprintf` across platforms.
- */
-
-#pragma once
-
-#include <cstdio>
-
-#if defined(_MSC_VER) && !defined(DOXYGEN_DOCUMENTATION_BUILD)
-    #define NANOGUI_SNPRINTF _snprintf
-#else
-    // Platform dependent snprintf (`_snprintf` for MSVC, `snprintf` otherwise).
-    #define NANOGUI_SNPRINTF snprintf
-#endif
+/* Kabuki Toolkit @version 0.x
+@link    https://github.com/kabuki-starship/kabuki-toolkit.git
+@file    /kabuki_toolkit/gui/c_compat.h
+@author  Cale McCollough <https://calemccollough.github.io>
+@license Copyright (C) 2014-2019 Cale McCollough <cale@astartup.net>;
+All right reserved (R). This Source Code Form is subject to the terms of the 
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+this file, You can obtain one at https://mozilla.org/MPL/2.0/. */

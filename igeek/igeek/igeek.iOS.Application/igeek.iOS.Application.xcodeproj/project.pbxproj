@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D732ADFC1AD8974300D69854 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D732ADFB1AD8974300D69854 /* main.m */; };
+		D732AE0B1AD8974300D69854 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D732AE0A1AD8974300D69854 /* Images.xcassets */; };
+		D732AE2A1AD89BDB00D69854 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D732AE241AD89BDB00D69854 /* AppDelegate.m */; };
+		D732AE2B1AD89BDB00D69854 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D732AE251AD89BDB00D69854 /* Base */; };
+		D732AE2C1AD89BDB00D69854 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D732AE271AD89BDB00D69854 /* GameViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D732ADF61AD8974300D69854 /* igeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = igeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D732ADFB1AD8974300D69854 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D732AE0A1AD8974300D69854 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D732AE231AD89BDB00D69854 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D732AE241AD89BDB00D69854 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D732AE251AD89BDB00D69854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D732AE261AD89BDB00D69854 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		D732AE271AD89BDB00D69854 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		D732AE291AD89BDB00D69854 /* vcreference.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ../vcreference.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D732ADF31AD8974300D69854 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D732ADED1AD8974300D69854 = {
+			isa = PBXGroup;
+			children = (
+				D732ADF81AD8974300D69854 /* igeek.iOS */,
+				D732ADF71AD8974300D69854 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D732ADF71AD8974300D69854 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D732ADF61AD8974300D69854 /* igeek.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D732ADF81AD8974300D69854 /* igeek.iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D732AE231AD89BDB00D69854 /* AppDelegate.h */,
+				D732AE241AD89BDB00D69854 /* AppDelegate.m */,
+				D732AE251AD89BDB00D69854 /* Base */,
+				D732AE261AD89BDB00D69854 /* GameViewController.h */,
+				D732AE271AD89BDB00D69854 /* GameViewController.m */,
+				D732AE291AD89BDB00D69854 /* vcreference.xcconfig */,
+				D732AE0A1AD8974300D69854 /* Images.xcassets */,
+				D732ADF91AD8974300D69854 /* Supporting Files */,
+			);
+			path = igeek.iOS;
+			sourceTree = "<group>";
+		};
+		D732ADF91AD8974300D69854 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D732ADFB1AD8974300D69854 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D732ADF51AD8974300D69854 /* igeek */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D732AE1D1AD8974300D69854 /* Build configuration list for PBXNativeTarget "igeek" */;
+			buildPhases = (
+				D732ADF21AD8974300D69854 /* Sources */,
+				D732ADF31AD8974300D69854 /* Frameworks */,
+				D732ADF41AD8974300D69854 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = igeek;
+			productName = igeek;
+			productReference = D732ADF61AD8974300D69854 /* igeek.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D732ADEE1AD8974300D69854 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				TargetAttributes = {
+					D732ADF51AD8974300D69854 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+                VC_Properties = {
+                    VC_ProjectGuid = b2d681b7-b161-45e9-add8-505a0756d3b3;
+                    VC_ProjectReferences = {
+                        52c33d2e-8862-4a30-9d0c-10e9e468a8a5="..\\igeek.iOS.StaticLibrary\\igeek.iOS.StaticLibrary.vcxproj";
+                    };
+                };
+			};
+			buildConfigurationList = D732ADF11AD8974300D69854 /* Build configuration list for PBXProject "igeek" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D732ADED1AD8974300D69854;
+			productRefGroup = D732ADF71AD8974300D69854 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D732ADF51AD8974300D69854 /* igeek */,
+			);
+	
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D732ADF41AD8974300D69854 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D732AE2B1AD89BDB00D69854 /* Base in Resources */,
+				D732AE0B1AD8974300D69854 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D732ADF21AD8974300D69854 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D732AE2A1AD89BDB00D69854 /* AppDelegate.m in Sources */,
+				D732AE2C1AD89BDB00D69854 /* GameViewController.m in Sources */,
+				D732ADFC1AD8974300D69854 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D732AE1B1AD8974300D69854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D732AE291AD89BDB00D69854 /* vcreference.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D732AE1C1AD8974300D69854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D732AE291AD89BDB00D69854 /* vcreference.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D732AE1E1AD8974300D69854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = igeek.iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D732AE1F1AD8974300D69854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = igeek.iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D732ADF11AD8974300D69854 /* Build configuration list for PBXProject "igeek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D732AE1B1AD8974300D69854 /* Debug */,
+				D732AE1C1AD8974300D69854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D732AE1D1AD8974300D69854 /* Build configuration list for PBXNativeTarget "igeek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D732AE1E1AD8974300D69854 /* Debug */,
+				D732AE1F1AD8974300D69854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D732ADEE1AD8974300D69854 /* Project object */;
+}

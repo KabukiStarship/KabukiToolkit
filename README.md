@@ -148,7 +148,7 @@ Kabuki Toolkit (KT) is a modern embedded-C++ toolkit for making intelligent conn
 
 The Vision of KT is to provide a bloat-free DLL-friendly Embedded-C++11 Virtual Machine, Firmware-to-Software Development Kit (F2SDK), dynamic functional programming environment, Jupyter Notebooks, and a real-time smartphone operating system that is the quality of Google Fuchsia, JUCE, Java, and Julia but with a commercially-permissive license that encourages contributions and discourages the community from splitting.
 
-The Mission is minimize the code surface area of the project in order to minimize labor and make the cod more secure.
+The Mission is minimize the code surface area of the project in order to minimize labor and make the code more secure.
 
 ## The License
 

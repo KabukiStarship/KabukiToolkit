@@ -13,7 +13,7 @@
 
 ![Under Construction Image](https://github.com/kabuki-starship/kabuki_toolkit/wiki/under_construction.png)
 
-Kabuki Toolkit (KT) is a modern embedded-C++ toolkit for making intelligent connected technologies, apps, plugins, games, servers, firmware, and art with Script2.
+Kabuki Toolkit (KT) is a modern embedded-C++ toolkit for making intelligent connected technologies, apps, plugins, games, servers, firmware, and art.
 
 [![GitHub version](https://badge.fury.io/gh/kabuki-starship%2Fkabuki_toolkit.svg)](https://badge.fury.io/gh/kabuki-starship%2Fkabuki_toolkit)
 
@@ -22,133 +22,6 @@ Kabuki Toolkit (KT) is a modern embedded-C++ toolkit for making intelligent conn
 * [Script2 and the SCRIPT Specification](https://github.com/kabuki-starship/script2) - *Serial Chinese Room, Interprocess, and Telemetry (SCRIPT) Script (Script2) is the foundation of KT so it's the best place to start learning.*
 * [Documents & FAQ](https://github.com/kabuki-starship/kabuki_toolkit.git/blob/master/docs/faq.md) - *Check out the `/docs/readme.md` for answers to Frequently asked questions and other promotional and learning materials.*
 * [Kabuki Starship Website](https://kabuki-starship.github.io/)
-
-## kabuki Modules
-
-| Module    | Description |
-|:---------:|:------------|
-| toolkit   | Software Development Kit. |
-| features  | System features. |
-| hal       | Hardware Abstraction Layer. |
-| osal      | Operating System Abstraction Layer. |
-| platform  | Hardware platform. |
-| tek       | Kabuki tek firmware. |
-
-### kabuki.drivers
-
-| Module     | Description |
-|:----------:|:------------|
-| ethernet   | Basic TCP support. |
-| serial     | UART/Serial driver. |
-| ...        | Many more drivers coming soon. |
-
-### kabuki.features
-
-| Module      | Description |
-|:-----------:|:------------|
-|  clipboard  | Copy, cut, and paste library. |
-| filecabinet | Filesystem abstraction library. |
-|   graphics  | Graphics library. |
-|    lights   | DMX and LED lighting library. |
-|     blas    | Basic Linear Algebra System library. |
-|     midi    | Musical instrument digital interface. |
-|    sound    | Sound and audio library. |
-|     tls     | Transport-layer Security. |
-|    touch    | Human-Machine Interface input library. |
-|    webcam   | Web and video camera library. |
-
-### kabuki.toolkit
-
-| Module | Description |
-|:------:|:------------|
-|   av   | Audio-visual library. |
-|  data  | Database library. |
-|  draw  | Vector drawing library. |
-|  gui   | Graphical user interface. |
-|  math  | Math library. |
-|  plot  | Plotting library. |
-|  orm   | Object Relational Mapping library. |
-|  pro   | Project library. |
-|  uweb  | HTTP server and web microframework. |
-|  video | Video library. |
-|  who   | Identification and authorization library. |
-
-## projects
-
-|    Module     | Description |
-|:-------------:|:------------|
-|    connect    | Contact list, trading, and chat app. |
-|    console    | Script2 console. |
-|  experiments  | A project for quickly testing code. |
-|     igeek     | Interactive Generative Environment for Evolving KabukiNet. |
-|    player     | A video player app and plugin. |
-|     sloth     | Script2 package manager, seam tree build system, UML modeling, and refactoring utility. |
-| unicontroller | Universal LED, MIDI, DMX, OSC, and Script2 controller. |
-
-### 3rd Party APIs
-
-* [ANGLE](https://github.com/google/angle) - Graphics and Windowing System.
-* [boost asio](https://www.boost.org/doc/libs/1_68_0/doc/html/boost_asio.html) - Asynchronous IO.
-* [boost beast](https://www.boost.org/doc/libs/1_69_0/libs/beast/doc/html/index.html) - C++11 web microframework.
-* [boost filesystem](https://www.boost.org/doc/libs/1_68_0/doc/html/boost_filesystem.html) - Cross-platform filesystem.
-* [NanoVG](https://github.com/memononen/nanovg) - Minimalistic vector drawing toolkit.
-* [NanoGUI](https://github.com/wjakob/nanogui) - Minimalistic vector GUI toolkit.
-* [Open3D](http://open3d.org) - 3D graphics and computer vision.
-* [cvPlot](https://github.com/PLplot/PLplot) - Math plotting library.
-* [PortAudio](http://www.portaudio.com/) - Cross-platform audio driver.
-* [RtMIDI](https://github.com/thestk/rtmidi) - Cross-platform MIDI driver.
-* [Eigan](http://eigen.tuxfamily.org) - Math library.
-* [mbed](https://www.mbed.com/en/) - Firmware abstraction layer and real-time OS.
-
-### Kabuki VM Seam Package Diagram
-
-![Kabuki VM Package Diagram](https://raw.githubusercontent.com/kabuki-starship/kabuki_toolkit/master/docs/kabuki_package_diagram.jpg)
-
-**@note** *Package Diagram uses `C++` dependency inclusion, meaning that when a module/namespace is included all of the module/namespace dependencies are also included.*
-
-#### Kabuki VM Seams
-
-##### 0_0 Frontal Cortex
-
-* 0_0_00 script2
-* 0_0_01 kabuki.hal
-* 0_0_02 kabuki.drivers
-* 0_0_03 kabuki.features.filecabinet
-* 0_0_04 kabuki.toolkit.data
-* 0_0_05 kabuki.toolkit.who
-* 0_0_06 kabuki.toolkit.pro
-* 0_0_07 kabuki.features.tls
-* 0_0_08 kabuki.toolkit.uweb
-* 0_0_09 kabuki.toolkit.orm
-* 0_2_10 kabuki.features.midi
-* 0_0_11 kabuki.features.math
-
-##### 0_1 Somatosensory Cortex
-
-* 0_1_00 kabuki.features.touch
-
-##### 0_2 Auditory Cortex
-
-* 0_2_01 kabuki.features.sound
-* 0_2_02 kabuki.features.adsp
-* 0_2_03 kabuki.toolkit.av
-
-##### 0_3 Visual Cortex
-
-* 0_3_00 kabuki.features.lights
-* 0_3_01 kabuki.features.graphics
-* 0_3_02 kabuki.features.camera
-* 0_3_03 kabuki.features.webcam
-* 0_3_04 kabuki.features.draw
-* 0_3_05 kabuki.toolkit.plot
-* 0_3_06 kabuki.toolkit.gui
-* 0_3_07 kabuki.toolkit.video
-
-## Vision and Mission Statement
-
-The Vision of KT is to provide a bloat-free DLL-friendly Embedded-C++11 Virtual Machine, Firmware-to-Software Development Kit (F2SDK), dynamic functional programming environment, Jupyter Notebooks, and a real-time smartphone operating system that is the quality of Google Fuchsia, JUCE, Java, and Julia but with a commercially-permissive license that encourages contributions and discourages the community from splitting.
-
-The Mission is minimize the code surface area of the project in order to minimize labor and make the cod more secure.
 
 ## The License
 

@@ -1,9 +1,5 @@
-# script2
+# Feature Request Template
 
-## Contributing
+## Title: module_id.Request feature ABC.
 
-### Pull Request Template
-
-#### Title: module_id.Add feature ABC.
-
-#### Body: Foo
+## Body: Foo

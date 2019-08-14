@@ -11,38 +11,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="global_config.inl">
-      <Filter>root</Filter>
-    </None>
-    <None Include="readme.md">
-      <Filter>root</Filter>
-    </None>
-    <None Include="test_debug.inl">
-      <Filter>root</Filter>
-    </None>
-    <None Include="test_footer.inl">
-      <Filter>root</Filter>
-    </None>
-    <None Include="test_release.inl">
-      <Filter>root</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="00_foo.h">
-      <Filter>root</Filter>
-    </ClInclude>
-    <ClInclude Include="01_bar.h">
-      <Filter>root</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>root</Filter>
     </ClInclude>
-    <ClInclude Include="test_tree.h">
+    <ClInclude Include="foo.h">
       <Filter>root</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cc">
+      <Filter>root</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cc">
+      <Filter>root</Filter>
+    </ClCompile>
+    <ClCompile Include="foo.cc">
       <Filter>root</Filter>
     </ClCompile>
   </ItemGroup>

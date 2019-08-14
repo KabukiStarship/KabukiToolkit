@@ -1,7 +1,7 @@
 /** Cell Evolutionary Interface
     @version   0.x
     @file      /.../Source/Kabuki_Theater/Cell_IGA-Impl/CellEvolutionaryInterface.cpp
-    @author  Cale McCollough <cale.mccollough@gmail.com>
+    @author  Cale McCollough <http://calemccollough.github.io>
     @license Copyright (C) 2016 Cale McCollough <calemccollough.github.io>
 
                       All right reserved (R).

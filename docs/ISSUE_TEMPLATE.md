@@ -1,9 +1,5 @@
-# script2
+# Issue Template
 
-## Contributing
+## Title: module_id.Add/Remove/Fix feature ABC.
 
-### Pull Request Template
-
-#### Title: module_id.Add/Remove/Fix feature ABC.
-
-#### Body: Foo
+## Body: Foo

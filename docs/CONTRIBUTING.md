@@ -1,8 +1,6 @@
-# Script^2 
+# Contributing
 
-## Contributing
-
-### Bug reports
+## Bug reports
 
 **1.** Ensure the bug was not already reported by by reading the [Issues](https://github.com/kabuki-starship/script2/issues).
 
@@ -10,11 +8,11 @@
 
 **3.** Create an issue, paste the template into the Issue body and fill it out.
 
-### Feature Requests
+## Feature Requests
 
 **1.** Same as the instructions for submitting a bug report except with using `/docs/FEATURE_REQUEST.md`.
 
-### Completing Issues
+## Completing Issues
 
 **1.** Clone the repo and create a branch for the IssueNuber:
 

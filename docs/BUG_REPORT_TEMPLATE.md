@@ -1,10 +1,6 @@
-# script2
+# Bug Report Template
 
-## Contributing
+## Title: module_id.Fix feature ABC.
 
-### Bug Report Template
-
-#### Title: module_id.Fix feature ABC.
-
-#### Body: Foo
+## Body: Foo
 

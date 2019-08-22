@@ -2,7 +2,7 @@
 
 kabuki.toolkit is a Software Development Kit built on top of the Kabuki Virtual Machine (VM).
 
-## The License
+## License
 
 Copyright (C) 2014-2019 Cale McCollough <cale@astartup.net>; All right reserved (R).
 

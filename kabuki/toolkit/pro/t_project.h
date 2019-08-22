@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki/features/pro/t_project.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -23,8 +23,8 @@ their unique key. */
 class Project : public Operand {
  public:
   enum {
-    INIT_NUM_SCHEDULES = 4,           //< Initial number of Schedule(string).
-    MAX_SCHEDULES = 32,               //< Max number of Schedule(string).
+    INIT_NUM_SCHEDULES = 4,           //< Initial number of Schedule(AString).
+    MAX_SCHEDULES = 32,               //< Max number of Schedule(AString).
     MAX_SUMMARY_LENGTH = 256,         //< The max readme CH1 length.
     MAX_DETAIL_LENGTH = 1024 * 1024,  //< The max detail CH1 length.
   };
@@ -240,19 +240,19 @@ class Project : public Operand {
     o << "Unable to open file for reading";
     return;
     }
-    CH1 buffer[MAX_STRING_LENGTH];
-    file.getline (buffer, MAX_STRING_LENGTH, ',');
+    CH1 buffer[MAX_String_LENGTH];
+    file.getline (buffer, MAX_String_LENGTH, ',');
     //< Throw away till the comma..
     SI4 num_categories;
     file >> num_categories;
     //o << num_categories << " categories.\n";
-    file.getline (buffer, MAX_STRING_LENGTH, kLF);
+    file.getline (buffer, MAX_String_LENGTH, kLF);
     //< Throw away the rest of the line.
     // Read each of the ItemList categories.
     for (SI4 i = 0; i < num_categories; ++i)
     {
-    CH1* key = new CH1[MAX_STRING_LENGTH];
-    file.getline (key, MAX_STRING_LENGTH, ',');
+    CH1* key = new CH1[MAX_String_LENGTH];
+    file.getline (key, MAX_String_LENGTH, ',');
     //o << "| key: " << key;
     SI4 num_items;
     file >> num_items;
@@ -260,8 +260,8 @@ class Project : public Operand {
     while (file.get () != kLF);  //< Throw away the rest of the line.
     for (SI4 i = 0; i < num_items; ++i)
     {
-    CH1* name = new CH1[MAX_STRING_LENGTH];
-    file.getline (name, MAX_STRING_LENGTH, ',');
+    CH1* name = new CH1[MAX_String_LENGTH];
+    file.getline (name, MAX_String_LENGTH, ',');
     SI4 quantity;
     FP4 price;
     CH1 c;
@@ -308,7 +308,7 @@ class Project : public Operand {
       "| Schedule - A collection of tasks that can repeat a specified\n"
       "|            number of times.\n"
       "| Project  - A tree structure composed of a collection of\n"
-      "|            Schedule(string) and a collection of sub-projects.\n"
+      "|            Schedule(AString) and a collection of sub-projects.\n"
       "|\n"
       "| To print out the commands for any of the classes, enter:\n"
       "| \"? project\"\n"
@@ -327,9 +327,9 @@ class Project : public Operand {
       "| starts, it is in the root Project scope. The user can enter\n"
       "| the -l command to list the handles in the current scope.\n"
       "|\n"
-      "| Examples: subproject example-schedule -string \"A task\" -b "
+      "| Examples: subproject example-schedule -AString \"A task\" -b "
       "3:30PM'\n"
-      "|           class-schedule -a 1.0 -string \"Homework\" -d \"Program "
+      "|           class-schedule -a 1.0 -AString \"Homework\" -d \"Program "
       "5\n"
       "|           -B @3PM -E @4PM -S @3:30PM -P @6:58PM \n"
       "|           -w 25.0 -A 1.0 -R \"I got it all right!\"\n"
@@ -401,7 +401,7 @@ class Project : public Operand {
   TStrand<> key_,             //< Entity key.
       readme_;                //< Project readme.
   Schedule* task_;            //< Current Schedule being edited.
-  TStack<Project> schedules_; //< Composition of Schedule(string).
+  TStack<Project> schedules_; //< Composition of Schedule(AString).
   TStack<Schedule> projects_; //< Child projects.
 };
 

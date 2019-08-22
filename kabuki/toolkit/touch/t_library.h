@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /kabuki_toolkit/av/t_library.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@file    /toolkit/touch/t_library.h
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -31,7 +31,7 @@ class Library {
 
     /// Check the tags for duplicates and add to tags if no duplicates exist.
     const TStrand<>& category = hit.GetCategory ();
-    std::for_each (TStrand<>& string in tags) if (string == category) return true;
+    std::for_each (TStrand<>& AString in tags) if (AString == category) return true;
     tags.Add (category);
     sort (tags.begin (), tags.end ());
     return true;
@@ -64,7 +64,7 @@ class Library {
   }
 
   /* Loads a patch from a JSON CH1. */
-  void LoadFromJSON(STR json_string) {
+  void LoadFromJSON(STR json_String) {
     /*
     try
     {
@@ -124,16 +124,16 @@ class Library {
   }
 
   /* Gets the subcategory image name. */
-  CH1 GetCategoryImageName(CH1 string) {
-    if (!string || string == "") return nullptr;
-    return "Category" + ::regex_replace (string, "\string+", "");  // + ".png";
+  CH1 GetCategoryImageName(CH1 AString) {
+    if (!AString || AString == "") return nullptr;
+    return "Category" + ::regex_replace (AString, "\AString+", "");  // + ".png";
   }
 
   /* Gets the subcategory image name. */
-  CH1 GetSubcategoryImageName(CH1 string) {
-    if (string == nullptr || string == "") return nullptr;
+  CH1 GetSubcategoryImageName(CH1 AString) {
+    if (AString == nullptr || AString == "") return nullptr;
     return "Subcategory" +
-      ::regex_replace (string, "\string+", "");  // + ".png";
+      ::regex_replace (AString, "\AString+", "");  // + ".png";
   }
 
   /* Prints this object to a Expr. */
@@ -147,7 +147,7 @@ class Library {
   uint64_t num_uids;                   //< Total number of UIDs.
   std::map<const TStrand<>&, Hit> patches;  //< List of patches.
   TArray<CH1> catagories,        //< The list of categories.
-      tags;                            //< List of tag strings.
+      tags;                            //< List of tag Strings.
 
   /* Gets the default library in JSON. */
   CH1& GetDefaultHitLibrary() { return ""; }

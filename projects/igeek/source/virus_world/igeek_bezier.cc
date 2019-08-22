@@ -1,30 +1,30 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki_toolkit.git
 @file    /projects/igeek/library/igeek_bezier.cc
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
-#include <pch.h>
+#include <pch.h"
 
 #include "c_bezier.h"
 
 namespace _ {
 
 
-BezierCurve::BezierCurve (FP8 xPoints[], FP8 yPoints[], SI4 nPoints)
+BezierCurve::BezierCurve (FP8 x_points[], FP8 y_points[], SI4 point_count)
 {
-  DASSERT (yPoints != null) : "Error creating BezierCurve. xPoings is null.";
-  DASSERT (yPoints != null) : "Error creating BezierCurve. yPoints is null.";
+  DASSERT (y_points != null) : "Error creating BezierCurve. xPoings is null.";
+  DASSERT (y_points != null) : "Error creating BezierCurve. y_points is null.";
 
-  SI4 tempX = xPoints.length;
+  SI4 tempX = x_points.length;
 
-  DASSERT (tempX != nPoints) : "Error creating BezierCurve. nPoints doesn't match the length of the point arrays.";
+  DASSERT (tempX != point_count) : "Error creating BezierCurve. point_count doesn't match the length of the point arrays.";
 
 
-  if (yPoints == null || xPoints == null || tempX != yPoints.length || tempX != nPoints)
+  if (y_points == null || x_points == null || tempX != y_points.length || tempX != point_count)
   {
     numPoints = 4;
 
@@ -42,14 +42,14 @@ BezierCurve::BezierCurve (FP8 xPoints[], FP8 yPoints[], SI4 nPoints)
   }
   else
   {
-    numPoints = nPoints;
-    xpoints = new FP8[nPoints];
-    ypoints = new FP8[nPoints];
+    numPoints = point_count;
+    xpoints = new FP8[point_count];
+    ypoints = new FP8[point_count];
 
-    for (SI4 i = 0; i < nPoints; i++)
+    for (SI4 i = 0; i < point_count; i++)
     {
-      xpoints[i] = xPoints[i];
-      ypoints[i] = yPoints[i];
+      xpoints[i] = x_points[i];
+      ypoints[i] = y_points[i];
     }
   }
 }
@@ -149,9 +149,9 @@ SI4 BezierCurve::getNumPoints ()
   return numPoints;
 }
 
-String BezierCurve::toString ()
+AString BezierCurve::ToString ()
 {
-  String returnString = new String ("numPoints = " + numPoints + "\n");
+  AString returnString = new AString ("numPoints = " + numPoints + "\n");
 
   for (SI4 i = 0; i < numPoints; i++)
   {

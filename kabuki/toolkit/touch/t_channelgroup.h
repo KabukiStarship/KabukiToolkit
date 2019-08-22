@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /kabuki_toolkit/av/t_channel_group.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@file    /toolkit/touch/t_channel_group.h
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -55,7 +55,7 @@ class SDK ChannelGroup {
     channels_.erase (channels_.begin () + index, channels_.begin () + index + 1);
   }
 
-  /* Prints this object to a string. */
+  /* Prints this object to a AString. */
   template<typename Printer>
   Printer& Print(Printer& o) const {
     size_t count = channels_.Count ();
@@ -79,5 +79,5 @@ class SDK ChannelGroup {
 
 };
 }  // namespace _
-#endif  //< KABUKI_TOOLKIT_AV_CHANNELGROUP
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

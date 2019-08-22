@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki_toolkit/who/t_uidassigner.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -25,7 +25,7 @@ class TUIDAssigner {
   enum { kInvalidUid = 0 };
 
   /* Constructs object by setting next_id_ to init_uid and copying the
-      filename string. */
+      filename AString. */
   TUIDAssigner(T init_uid = 1, const TStrand<>& filename = "uid")
       : uid_count_((init_uid == kInvalidUid) ? kInvalidUid + 1 : init_uid),
         filename_(StrandClone(filename)) {

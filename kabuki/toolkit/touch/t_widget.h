@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /kabuki_toolkit/av/t_widget.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@file    /toolkit/touch/t_widget.h
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -139,7 +139,7 @@ class SDK TWidget : public Operation {
   /* Gets this TWidget's name. */
   TStrand<>& Name() { return name_; }
 
-  /* Renames this TWidget to the given string. */
+  /* Renames this TWidget to the given AString. */
   const CH1* SetName(const TStrand<>& new_name) {
     return name_.Set (new_name);
   }
@@ -152,7 +152,7 @@ class SDK TWidget : public Operation {
   SI4 GetNumPages() { return page_count_; }
 
   /* Gets true if this TWidget contans a page with a name that matches the search
-  string. */
+  AString. */
   BOL ContainsPage(const CH1* s) {
     if (pagesHead == nullptr) return false;
 
@@ -217,7 +217,7 @@ class SDK TWidget : public Operation {
     return true;
   }
 
-  /* Delete page with entitled by the given string. */
+  /* Delete page with entitled by the given AString. */
   SI4 DeletePage(const CH1* key) {
     // Because our client application stores a copy of the TWidget to edit,
     // and because there can't only be one page with any give name, we only

@@ -1,6 +1,17 @@
-# Bug Report Template
+# Bug Report
 
-## Title: module_id.Fix feature ABC.
+## Problem
 
-## Body: Foo
 
+
+## Solution
+
+
+
+## Mission Details
+
+
+
+## Hierarchy
+
+* Flat

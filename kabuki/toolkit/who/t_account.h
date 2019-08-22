@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki_toolkit/who/t_account.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -55,13 +55,13 @@ class TAccount {
   const TStrand<>& Name() { return name_.GetKey (); }
 
   /* Sets the name to the CH1. */
-  BOL SetName(const TStrand<>& string) { return name_.SetKey (string); }
+  BOL SetName(const TStrand<>& AString) { return name_.SetKey (AString); }
 
   /* Returns true if this account requires a password. */
   BOL RequiresPassword() { return password_.Equals (""); }
 
   /* Sets the password to the new CH1. */
-  void SetPassword(const TStrand<>& string) { password_.SetKey (string); }
+  void SetPassword(const TStrand<>& AString) { password_.SetKey (AString); }
 
   /* Gets a reverence to the user list. */
   TRoster& Users() { return users_; }

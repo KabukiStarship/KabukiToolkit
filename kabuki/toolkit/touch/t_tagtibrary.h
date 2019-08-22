@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /kabuki_toolkit/av/t_taglibrary.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@file    /toolkit/touch/t_taglibrary.h
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -17,8 +17,8 @@ this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 namespace _ {
 
-/* A container of strings sorted alphabetically.
-    This object owns the memory for the strings. Each time a patch is added,
+/* A container of Strings sorted alphabetically.
+    This object owns the memory for the Strings. Each time a patch is added,
     each tag is added, a pointer to the CH1 is passed back.
 */
 class TagLibrary {
@@ -33,8 +33,8 @@ class TagLibrary {
     /*
     if (StringCompare (tag, ""))
         return nullptr;
-    for_each (tags.begin (), tags.end (), [] (TStrand<>& string) {
-        if (string.compare (Tag) == 0) return string;
+    for_each (tags.begin (), tags.end (), [] (TStrand<>& AString) {
+        if (AString.compare (Tag) == 0) return AString;
     });
     */
     return nullptr;
@@ -53,7 +53,7 @@ class TagLibrary {
   Printer& Print(Printer& o) { o << "\nFoo:"; }
 
  private:
-  TArray<Tag*> tags_;  //< Collection of tag strings.
+  TArray<Tag*> tags_;  //< Collection of tag Strings.
 };
 }       // namespace _
 #endif  //< KABUKI_TOOLKIT_AV_TAGLIBRARY

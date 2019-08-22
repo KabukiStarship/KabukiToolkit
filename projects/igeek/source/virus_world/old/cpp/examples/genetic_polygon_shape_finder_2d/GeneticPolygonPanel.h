@@ -1,31 +1,19 @@
-/** Cell Interactive Evolutionary Computation
-    @version   1.x
-    @file      /.../Cell_IEC/GeneticPolygonPanel.h
-    @author  Cale McCollough <http://calemccollough.github.io>
-    @license Copyright (C) 2016 Cale McCollough <calemccollough.github.io>
+/* Kabuki Toolkit @version 0.x
+@link    https://github.com/kabuki-starship/kabuki_toolkit.git
+@file    /projects/igeek/source/lib/geneticpolygonpanel.h
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
+All right reserved (R). This Source Code Form is subject to the terms of the 
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
-                      All right reserved (R).
-
-        Licensed under the Apache License, Version 2.0 (the "License"); you may
-        not use this file except in compliance with the License. You may obtain
-        a copy of the License at
-
-            http:/www.apache.org/licenses/LICENSE-2.0
-
-        Unless required by applicable law or agreed to in writing, software
-        distributed under the License is distributed on an "AS IS" BASIS,
-        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-        See the License for the specific language governing permissions and
-        limitations under the License.
-*/
-
-namespace Cell_IEC {
+namespace igeek {
 
 class GeneticPolygonPanel: public JPanel
 {
     static const int defaultMargin = 30;
     
-    GeneticPolygonPanel (GeneticPolygon thisShape, String thisShapeLabel, int width, int height);
+    GeneticPolygonPanel (GeneticPolygon thisShape, AString thisShapeLabel, int width, int height);
     
     void paintComponent (Graphics g);
     
@@ -40,4 +28,4 @@ class GeneticPolygonPanel: public JPanel
     GeneticPolygon gPoly;
 };
 
-}   /< namespace Cell_IEC {
+}   /< namespace igeek {

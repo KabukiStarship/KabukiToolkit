@@ -1,5 +1,17 @@
-# Issue Template
+# 
 
-## Title: module_id.Add/Remove/Fix feature ABC.
+## Problem
 
-## Body: Foo
+
+
+## Solution
+
+
+
+## Mission Details
+
+
+
+## Hierarchy
+
+* Flat

@@ -1,15 +1,16 @@
-/* Cell Evolutionary Interface
-@version   0.x
-@file      /.../CellEvolutionaryInterface/BezierCurve.h
-@author  Cale McCollough <http://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+/* Kabuki Toolkit @version 0.x
+@link    https://github.com/kabuki-starship/kabuki_toolkit.git
+@file    /projects/igeek/source/lib/c_bezier.h
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
+
 
 #pragma once
 
-namespace CellEvolutionaryInterface {
+namespace igeek {
     
 /* A fourth order BezierCurve.
 */
@@ -25,9 +26,9 @@ class BezierCurve
           * ypoints;
     
     /* Constructor initializes curve with the given points.
-    @warning the length of xPoints and yPoints must equal nPoints or curve will not be created correctly.
+    @warning the length of x_points and y_points must equal point_count or curve will not be created correctly.
     */ 
-    BezierCurve (FP8 xPoints[], FP8 yPoints[], SI4 nPoints);
+    BezierCurve (FP8 x_points[], FP8 y_points[], SI4 point_count);
 
     /* Constructor initializes curve with the given points.
     */
@@ -58,8 +59,8 @@ class BezierCurve
     
     SI4 getNumPoints ();
     
-    String toString ();
+    AString ToString ();
 };
 
-}   //< CellEvolutionaryInterface
+}   //< igeek
 

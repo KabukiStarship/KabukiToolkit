@@ -1,11 +1,11 @@
 ﻿/* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki_toolkit/who/t_address.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -39,18 +39,18 @@ class TAddress {
   const TStrand<>& GetStreet() { return street_; }
 
   /* Sets the street address. */
-  void SetStreet(const TStrand<>& string) {
+  void SetStreet(const TStrand<>& AString) {
     delete street_;
-    street_ = StrandClone (string);
+    street_ = StrandClone (AString);
   }
 
   /* Gets the city. */
   const TStrand<>& GetCity() { return city_; }
 
   /* Sets the city. */
-  void SetCity(const TStrand<>& string) {
+  void SetCity(const TStrand<>& AString) {
     delete city_;
-    city_ = StrandClone (string);
+    city_ = StrandClone (AString);
   }
 
   /* Gets the State. */
@@ -58,9 +58,9 @@ class TAddress {
   
 
   /* Sets the state. */
-  void SetState(const TStrand<>& string) {
+  void SetState(const TStrand<>& AString) {
     delete state_;
-    state_ = StrandClone (string);
+    state_ = StrandClone (AString);
   }
   
 
@@ -68,18 +68,18 @@ class TAddress {
   const TStrand<>& GetZip();
 
   /* Sets the zip code. */
-  void SetZip(const TStrand<>& string) {
+  void SetZip(const TStrand<>& AString) {
     delete zip_;
-    zip_ = StrandClone (string);
+    zip_ = StrandClone (AString);
   }
 
   /* Gets the country. */
   const TStrand<>& GetCountry() { return country_; }
 
   /* Sets the country. */
-  void SetCountry(const TStrand<>& string) {
+  void SetCountry(const TStrand<>& AString) {
     delete country_;
-    country_ = StrandClone (string);
+    country_ = StrandClone (AString);
   }
 
   /* Gets the address type.

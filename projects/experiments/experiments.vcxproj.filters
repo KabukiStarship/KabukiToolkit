@@ -29,4 +29,7 @@
       <Filter>root</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\kabuki_cards\lib\kabuki_cards.library.vcxproj" />
+  </ItemGroup>
 </Project>

@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki_toolkit/who/t_entitygroup.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -28,8 +28,8 @@ class TEntityGroup {
   const TStrand<>& GetName() { return name_; }
 
   /* Sets the name of the entity group. */
-  void SetName(const TStrand<>& string) {
-    name_ = StrandClone (string);
+  void SetName(const TStrand<>& AString) {
+    name_ = StrandClone (AString);
   }
 
   /* Applies privileges to the entity group. */
@@ -39,7 +39,7 @@ class TEntityGroup {
   }
 
   /* Returns true if this list of entities contains the given CH1. */
-  virtual SI4 Search(const TStrand<>& string) { return 0; }
+  virtual SI4 Search(const TStrand<>& AString) { return 0; }
 
   template<typename Printer>
   Printer& Print (Printer& o) { 
@@ -49,7 +49,7 @@ class TEntityGroup {
 
  private:
   TStrand<> name_,             //< The name of the entity group.
-       privileges_;            //< A string of privileges the group has.
+       privileges_;            //< A AString of privileges the group has.
   TArray<TEntity*>* entities_;  //< A TArray if Entity pointers.
 };
 

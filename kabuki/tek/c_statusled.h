@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /firmware/c_statusled.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright 2014-19 (C) Cale Jamison McCollough <<http://calemccollough.github.io>>. 
-This Source Code Form is subject to the terms of the Mozilla Public License, 
-v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain 
-one at https://mozilla.org/MPL/2.0/. */
+@file    /c_statusled.h
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
+All right reserved (R). This Source Code Form is subject to the terms of the 
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -25,7 +25,7 @@ one at https://mozilla.org/MPL/2.0/. */
 namespace _ {
 
 /* Outputs the firmware status using the LED on the mbed board.
-This class works by using strings with ASCII Mores Code. Each CH1 in a
+This class works by using Strings with ASCII Mores Code. Each CH1 in a
 represents a pulse split into 4 lengths.
     
 | Frame | ASCII | Index | Duty Cycle |
@@ -42,8 +42,8 @@ they look like the pulse widths.
 ## Terminology
 * Frame    - Each character in a CH1 sequence represents 3 timer
 interrupts.
-* Pattern  - A null-terminated string of frames.
-* Sequence - A null-terminated string of const CH1*.
+* Pattern  - A null-terminated AString of frames.
+* Sequence - A null-terminated AString of const CH1*.
 @code
 StatusLED<0, 1> stausLED ();        //< Use <0, 1> if you're LED is active
 low. StatusLED<1, 0> stausLED  (LED_2);   //< Use <0, 1> if you're LED is
@@ -175,9 +175,9 @@ class StatusLED {
   CH1 count,             //< Counter counts from 1-3.
       period;             //< The current period CH1.
   FP4 frequency;          //< The period length.
-  const CH1** sequence;  //< Null-terminated string of pointers.
-  const CH1 *pattern,    //< The current string in the sequence.
-      *cursor;            //< The current CH1 in the current string.
+  const CH1** sequence;  //< Null-terminated AString of pointers.
+  const CH1 *pattern,    //< The current AString in the sequence.
+      *cursor;            //< The current CH1 in the current AString.
   DigitalOut pin;         //< Red LED on the mbed board.
   Ticker blinker;         //< Ticker for blinking the LEDs.
 

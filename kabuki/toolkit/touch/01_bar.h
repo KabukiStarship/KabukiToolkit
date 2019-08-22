@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki_toolkit.git
 @file    /kabuki_toolkit/av/t_01_bar.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -139,14 +139,14 @@ inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
 
   PRINTF("Testing InsertPage  (const CH1*&)\n");
 
-  const CH1* page_name_string;
+  const CH1* page_name_String;
   CH1 pageIndex = '1';
 
   for (SI4 i = 0; i < 6; ++i) {
-    page_name_string = "Page " + pageIndex;
-    PRINTF("Inserting Page %s...", page_name_string);
-    CHECK(!w.InsertPage(page_name_string),
-          "Error: Failed to insert page " + page_name_string + "!\n");
+    page_name_String = "Page " + pageIndex;
+    PRINTF("Inserting Page %s...", page_name_String);
+    CHECK(!w.InsertPage(page_name_String),
+          "Error: Failed to insert page " + page_name_String + "!\n");
     ++pageIndex;
   }
 
@@ -207,7 +207,7 @@ inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
 
   WidgetPage p("Test Page");
 
-  PRINTF("Testing const CH1* toString ()");
+  PRINTF("Testing const CH1* ToString ()");
   p.Print();
 
   PRINTF("Testing copy constructor...");
@@ -265,41 +265,41 @@ inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
 
   PRINTF("_::Label Class.\n");
 
-  const CH1 *invalid_string = "Invalid label ~",
-             *valid_string_1 = "Valid label 1",
-             *valid_string_2 = "Valid label !@%^",
-             *valid_string_3 = "Valid label &* ()";
+  const CH1 *invalid_String = "Invalid label ~",
+             *valid_String_1 = "Valid label 1",
+             *valid_String_2 = "Valid label !@%^",
+             *valid_String_3 = "Valid label &* ()";
 
-  Label valid_label_1(valid_string_1);
-  Label valid_label_2(valid_string_1);
-  Label valid_label_3(valid_string_3);
-  Label invalid_label(invalid_string);
+  Label valid_label_1(valid_String_1);
+  Label valid_label_2(valid_String_1);
+  Label valid_label_3(valid_String_3);
+  Label invalid_label(invalid_String);
 
-  PRINTF("Testing valid string input.");
+  PRINTF("Testing valid AString input.");
 
   PRINTF("Testing SI4 IsValid  (const CH1* &)");
-  PRINTF("isValidString(valid_string_1): %b", is_valid_label(valid_string_1));
-  CHECK(is_valid_label(valid_string_1) == Valid);
-  PRINTF("Testing invalid string input.");
-  CHECK(is_valid_label(invalid_string) != Valid);
+  PRINTF("isValidString(valid_String_1): %b", is_valid_label(valid_String_1));
+  CHECK(is_valid_label(valid_String_1) == Valid);
+  PRINTF("Testing invalid AString input.");
+  CHECK(is_valid_label(invalid_String) != Valid);
   CHECK(is_valid_label("") != 0);
   CHECK(is_valid_label("123456789012345678901") != 0);
 
   PRINTF("Testing SI4 compare  (const CH1* &)\n");
   invalid_label.Print();
   PRINTF("Testing valid comparisons...");
-  CHECK(!valid_label_1.Compare(valid_string_1));
+  CHECK(!valid_label_1.Compare(valid_String_1));
   PRINTF("Testing invalid comparisons...");
-  CHECK(valid_label_1.Compare(valid_string_2) != Comperable);
-  CHECK(valid_label_2.Compare(valid_string_3) != Comperable);
+  CHECK(valid_label_1.Compare(valid_String_2) != Comperable);
+  CHECK(valid_label_2.Compare(valid_String_3) != Comperable);
 
-  PRINTF("Attempting to SetLabel to the invalid_string");
-  // auto expectedLabel = "Test string 1";
-  valid_label_1.SetLabel(invalid_string);
+  PRINTF("Attempting to SetLabel to the invalid_String");
+  // auto expectedLabel = "Test AString 1";
+  valid_label_1.SetLabel(invalid_String);
   CHECK(!valid_label_1.Compare(invalid_label));
-  PRINTF("Setting the label to valid_string_3");
-  valid_label_1.SetLabel(valid_string_3);
-  CHECK(valid_label_1.Label() == valid_string_3);
+  PRINTF("Setting the label to valid_String_3");
+  valid_label_1.SetLabel(valid_String_3);
+  CHECK(valid_label_1.Label() == valid_String_3);
 
   PRINTF("Done testing Label class SDK.");
 

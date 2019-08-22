@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki_toolkit/who/t_entity.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -28,19 +28,19 @@ class TEntity {
   /* Gets the entity first name. */
   const TStrand<>& GetFirstName() { return first_name_; }
 
-  /* Attempts to set the name to the one given string. */
-  void SetFirstName(const TStrand<>& string) {
+  /* Attempts to set the name to the one given AString. */
+  void SetFirstName(const TStrand<>& AString) {
     delete first_name_;
-    first_name_ = StrandClone (string);
+    first_name_ = StrandClone (AString);
   }
 
   /* Gets the entity last name. */
   const TStrand<>& GetLastName() { return last_name_; }
 
-  /* Attempts to set the last name to the given string. */
-  void SetLastName(const TStrand<>& string) {
+  /* Attempts to set the last name to the given AString. */
+  void SetLastName(const TStrand<>& AString) {
     delete last_name_;
-    last_name_ = StrandClone (string);
+    last_name_ = StrandClone (AString);
   }
 
   TStrand<>
@@ -48,9 +48,9 @@ class TEntity {
   /* Returns true if this entity contains the search query. */
   BOL Query(const TStrand<>& query) {
     /*
-    for_each (tags.begin (), tags.end (), [](CH1& string(
+    for_each (tags.begin (), tags.end (), [](CH1& AString(
     {
-        if (string == query) return 1;
+        if (AString == query) return 1;
     });
 
     for_each (tags.begin (), tags.end (), [](Address& a(
@@ -68,9 +68,9 @@ class TEntity {
         if (p == query) return 1;
     });
 
-    for_each (tags.begin (), tags.end (), [](CH1& string(
+    for_each (tags.begin (), tags.end (), [](CH1& AString(
     {
-        if (string == query) return 1;
+        if (AString == query) return 1;
     });
     */
     return false;
@@ -96,5 +96,5 @@ class TEntity {
 };
 
 }       // namespace _
-#endif  //< KABUKI_TOOLKIT_WHO_ENTITY
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_WHO_1
+#endif
+#endif

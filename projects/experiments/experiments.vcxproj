@@ -35,6 +35,9 @@
     <ClCompile Include="main.cc" />
     <ClCompile Include="pch.cc" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\kabuki_cards\lib\kabuki_cards.library.vcxproj" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{F04694AC-C73A-47D4-A5EC-075D73A9CD45}</ProjectGuid>

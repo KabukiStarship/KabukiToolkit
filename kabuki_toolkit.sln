@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "0_0_00.experiments", "projects\experiments\experiments.vcxproj", "{F04694AC-C73A-47D4-A5EC-075D73A9CD45}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "experiments", "projects\experiments\experiments.vcxproj", "{F04694AC-C73A-47D4-A5EC-075D73A9CD45}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kabuki_docs", "projects\kabuki_docs\kabuki_docs.vcxproj", "{8A30F3B5-7C35-4849-BA1A-77C78E923E3C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "script2", "script2\script2.vcxproj", "{7A3DF7FC-3A68-41FB-A4A2-F96C92C1362A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kabuki_cards.library", "projects\kabuki_cards\lib\kabuki_cards.library.vcxproj", "{685AADEC-4758-429A-93CD-DF62D126379E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,26 @@ Global
 		{7A3DF7FC-3A68-41FB-A4A2-F96C92C1362A}.Release|x64.Build.0 = Release|x64
 		{7A3DF7FC-3A68-41FB-A4A2-F96C92C1362A}.Release|x86.ActiveCfg = Release|Win32
 		{7A3DF7FC-3A68-41FB-A4A2-F96C92C1362A}.Release|x86.Build.0 = Release|Win32
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug Script2|ARM.ActiveCfg = Release|x64
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug Script2|ARM.Build.0 = Release|x64
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug Script2|ARM64.ActiveCfg = Release|x64
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug Script2|ARM64.Build.0 = Release|x64
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug Script2|x64.ActiveCfg = Debug|x64
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug Script2|x64.Build.0 = Debug|x64
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug Script2|x86.ActiveCfg = Debug|Win32
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug Script2|x86.Build.0 = Debug|Win32
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug|ARM.ActiveCfg = Debug|Win32
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug|x64.ActiveCfg = Debug|x64
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug|x64.Build.0 = Debug|x64
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug|x86.ActiveCfg = Debug|Win32
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Debug|x86.Build.0 = Debug|Win32
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Release|ARM.ActiveCfg = Release|Win32
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Release|ARM64.ActiveCfg = Release|Win32
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Release|x64.ActiveCfg = Release|x64
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Release|x64.Build.0 = Release|x64
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Release|x86.ActiveCfg = Release|Win32
+		{685AADEC-4758-429A-93CD-DF62D126379E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

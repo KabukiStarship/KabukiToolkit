@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /kabuki_toolkit/av/t_buttonmacro.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@file    /toolkit/touch/t_buttonmacro.h
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -157,7 +157,7 @@ class SDK ButtonMacro : public Parameter<SI4>, public Button {
   TStrand<>& Label() const override { return label; }
 
   /* Sets the label to the new label.
-  @return Nil upon success or an error string upon failure. */
+  @return Nil upon success or an error AString upon failure. */
   const CH1* SetLabel(const TStrand<>& new_label) override {
     return label_.Set (new_label);
   }
@@ -183,7 +183,7 @@ class SDK ButtonMacro : public Parameter<SI4>, public Button {
   /* Triggered when a user "FP8 clicks" a button. */
   void Depress() override {}
 
-  /* Prints a string of the row strings of the list. */
+  /* Prints a AString of the row Strings of the list. */
   template<typename Printer>
   Printer& PrintListString(Printer& o) const {
     o << LineStrand ('#', Parameter<SI4>::kMacroHeaderLength);

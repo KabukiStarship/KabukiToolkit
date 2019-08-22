@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /kabuki_toolkit/av/t_component.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@file    /toolkit/touch/t_component.h
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -24,13 +24,13 @@ typedef enum {
 //< The non-alpha-numeric characters allowed in a label.
 const CH1* GetAllowedSymbols();
 
-/* Sets the allowed symbols to the given string. */
+/* Sets the allowed symbols to the given AString. */
 void SetAllowedSymbols(const CH1* s);
 
 /* Checks the given CH1 c to see if any of the chars contain it. */
 inline BOL ContainsChar(const CH1* chars, CH1 c);
 
-/* Checks the given string s to see if any of the chars are in it. */
+/* Checks the given AString s to see if any of the chars are in it. */
 inline BOL ContainsChar(const CH1* chars, const CH1* s);
 
 /* Verifies if thisLabel is a valid label.
@@ -80,13 +80,13 @@ class SDK HmiComponent {
   /* Gets the unique ID for the object. */
   UID Uid () { return uid_;  }
 
-  /* Gets the unique string of the component type. */
+  /* Gets the unique AString of the component type. */
   const CH1* GetHMIComponentType();
 
   /* Gets the label. */
   const CH1* Label() const { return label_; }
 
-  /* Sets the label to the given string.
+  /* Sets the label to the given AString.
   @return Returns 0 upon success and 1 if the new label is too uint32_t.
   @see    HmiComponent::IsValid (CH1). */
   virtual SI4 SetLabel(const CH1* label) {
@@ -100,14 +100,14 @@ class SDK HmiComponent {
     return 0;
   }
 
-  /* Compares this label to the given string.
+  /* Compares this label to the given AString.
   @return Returns 0 if they are identical and1 if the other CH1* is too
   uint32_t. */
   SI4 Compare(const CH1* s) const {
     return label_.Compare (s);
   }
 
-  /* Prints this object to a string. */
+  /* Prints this object to a AString. */
   template<typename Printer>
   Printer& Print (Printer& o) const { return label_->Print (o); }
 
@@ -117,5 +117,5 @@ class SDK HmiComponent {
   const CH1* label_;  //< This object's text label.
 };                     //< class HmiComponent
 }  // namespace _
-#endif  //< KABUKI_TOOLKIT_AV_HMICOMPONENT
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif 
+#endif

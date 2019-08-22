@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki/features/pro/t_schedule.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -17,15 +17,15 @@ this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 namespace _ {
 
-/* A group of Task(string) in temporal order that may repeat.
+/* A group of Task(AString) in temporal order that may repeat.
 A Schedule contains a collection of Task objects. It has a starting date,
-and it can repeat x number of times. Multiple Schedule(string) can be
+and it can repeat x number of times. Multiple Schedule(AString) can be
 combined to create a Calendar. Schedules are designed to minimize the human
 time to insert and manipulate the calendar.
 
 The average person will have no more than a handful of Tasks on any given
 day. Given 100 years in a life and 365 days in a year, 5*100*365 < 200K
-Tasks in a normal person's lifetime. Maybe 1M Task(string) tops per
+Tasks in a normal person's lifetime. Maybe 1M Task(AString) tops per
 lifetime.
 
 Where does the Calendar live?
@@ -94,7 +94,7 @@ class Schedule {
   /* Searches for an event with the given time and creates one if it doesn't
   exist.
   @return Returns a pointer to an Event that starts at the given time, and
-  a new Task if no containing Event(string) match the event_time.
+  a new Task if no containing Event(AString) match the event_time.
    */
   Task* Find(Tss event_time) {
     // @todo Replace me with std::map!
@@ -115,7 +115,7 @@ class Schedule {
       "\n|"
       "\n| Schedule Commands:"
       "\n|   -a    Add a new Task."
-      "\n|         Example: -a -string \"Header\" -d \"Details\" -b 3:30"
+      "\n|         Example: -a -AString \"Header\" -d \"Details\" -b 3:30"
       "\n|                  -e 4:30 -w 10.0"
       "\n|"
       "\n|   -p    Prints the Schedule."
@@ -251,8 +251,8 @@ class Schedule {
         if (ScheduleIndex (input) >= 0 || ScheduleIndex (input) >= 0)
           return "Key is in use. Type -l to list the objects in the current "
           "scope.";
-        Schedule* string = new Schedule (input);
-        StackPush<Schedule*> (schedules_, string);
+        Schedule* AString = new Schedule (input);
+        StackPush<Schedule*> (schedules_, AString);
         return nullptr;
       }
       case 'P':  // Add new Project

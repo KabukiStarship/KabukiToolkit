@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki_toolkit/who/t_symbol.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -73,19 +73,19 @@ class TSymbol {
   /* Clones the given object. */
   void Clone(const Word* grammar);
 
-  /* Verifies the given string to see if it has proper grammar. */
-  BOL IsValid(const TStrand<>& string) {
+  /* Verifies the given AString to see if it has proper grammar. */
+  BOL IsValid(const TStrand<>& AString) {
     /*
-    SI4 stringLength = StrandLength (thisstring);
+    SI4 StringLength = StrandLength (thisString);
 
-    if (stringLength  < min_length_ || stringLength > max_length_)
+    if (StringLength  < min_length_ || StringLength > max_length_)
     return false;
 
     SI4 i, j; // Looping variables
     for (i = 0; i < ; ++i)
     {
     for (j = 0; j < num_illegal_char_ranges_; ++j)
-    if (thisstring[i])
+    if (thisString[i])
     }
     */
     return true;
@@ -123,7 +123,7 @@ class TSymbol {
   @pre thisChar  must be > 0.
   @param thisChar The illegal CH1 to add.
   */
-  BOL MakeIllegal(CH1 thisChar, const TStrand<>& descstring) {
+  BOL MakeIllegal(CH1 thisChar, const TStrand<>& descString) {
     // if (!isprint (thisChar))
     //   return false;
     return true;
@@ -134,7 +134,7 @@ class TSymbol {
   @param startIndex The starting ASCII CH1 index.
   @param stopIndex  The stopping ASCII CH1 index. */
   BOL MakeIllegal(SI4 startIndex, SI4 stopIndex, 
-                   const TStrand<>& descstring) {
+                   const TStrand<>& descString) {
     return true;
   }
 
@@ -146,7 +146,7 @@ class TSymbol {
   @param stop_index  The stopping ASCII CH1 index.
   @param num_instances  The number of times the symbol range must occur. */
   BOL MakeMandatory(SI4 startIndex, SI4 stopIndex, SI4 numInstances,
-                     const TStrand<>& descstring) {
+                     const TStrand<>& descString) {
     return true;
   }
 
@@ -168,14 +168,14 @@ class TSymbol {
     Range<char_t> mandatory_chars_,   //< A 3 column table of ints that
     represents all of mandatory CH1 ranges and how many are mandatory.
     Range<char_t> mustStartWithChars; //< A 2 column table of ints that
-    represents the range (string) of chars that the symbol must start with.
+    represents the range (AString) of chars that the symbol must start with.
                                  
     const TStrand<>& illegal_chars_desc,     
-    //< An array of strings that describes what illegal CH1 (string) are.                               
+    //< An array of Strings that describes what illegal CH1 (AString) are.                               
     mandatory_chars_desc,   //< An array of
-    strings that describes what the mandatory CH1 (string) are.
-                mustStartWithCharsDesc; //< An array of strings that describes
-    what mandatory first CH1 (string) are.
+    Strings that describes what the mandatory CH1 (AString) are.
+                mustStartWithCharsDesc; //< An array of Strings that describes
+    what mandatory first CH1 (AString) are.
     */
 };
 

@@ -2,7 +2,7 @@
 
 Toolkit to identify users and entities.
 
-# The License
+# License
 
 Copyright (C) 2014-2019 Cale McCollough <cale@astartup.net>; All right reserved (R).
 

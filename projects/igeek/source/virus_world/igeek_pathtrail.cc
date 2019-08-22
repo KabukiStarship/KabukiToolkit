@@ -1,13 +1,13 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki_toolkit.git
 @file    /projects/igeek/library/igeek_pathtrail.cc
-@author  Cale McCollough <http://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
-#include <pch.h>
+#include <pch.h"
 
 #include "igeek_pathtrail"
 
@@ -70,7 +70,7 @@ Color PathTrail::getTrailColor ()
 
 void PathTrail::draw (Graphics g)
 {
-  //Print (toString ());
+  //Print (ToString ());
   g.setColor (trailColor);
 
   for (SI4 i = startPoint; i < stopPoint - 1; ++i)
@@ -109,12 +109,12 @@ void PathTrail::addPoint (SI4 x, SI4 y)
   if (startPoint >= maxNumPoints)
     startPoint = 0;
 
-  //Print (toString ());
+  //Print (ToString ());
 }
 
-String PathTrail::toString ()
+AString PathTrail::ToString ()
 {
-  String returnString = "PathTrail: numPoints = " + numPoints + ", startPoint = " + startPoint + ", stopPoint = " + stopPoint + "\n";
+  AString returnString = "PathTrail: numPoints = " + numPoints + ", startPoint = " + startPoint + ", stopPoint = " + stopPoint + "\n";
 
   for (SI4 i = 0; i < numPoints; i++)
     returnString += i + ".) x = " + xpoints[i] + ", y = " + ypoints[i] + "\n";

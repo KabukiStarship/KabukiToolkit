@@ -278,7 +278,7 @@ function REPRODUCE(x , y) returns an individual
     inputs: x , y, parent individuals
 
     n←LENGTH(x ); c←random number from 1 to n
-    return APPEND(SUBSTRING(x, 1, c), SUBSTRING(y, c + 1, n))
+    return APPEND(SUBString(x, 1, c), SUBString(y, c + 1, n))
 @endcode
 */
 

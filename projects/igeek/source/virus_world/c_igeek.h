@@ -1,19 +1,19 @@
-/* Cell Evolutionary Interface
-@version   0.x
-@file      /.../CellEvolutionaryInterface/CellEvolutionaryInterface.h
-@author  Cale McCollough <http://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+/* Kabuki Toolkit @version 0.x
+@link    https://github.com/kabuki-starship/kabuki_toolkit.git
+@file    /projects/igeek/source/lib/c_igeek.h
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
-namespace CellEvolutionaryInterface {
+namespace igeek {
 
-class CellEvolutionaryInterface: public App
+class igeek: public App
 {
-    CellEvolutionaryInterface ();
+    igeek ();
     
-    static void main (String[] args);
+    static void main (AString[] args);
 };
 
-}   //< CellEvolutionaryInterface {
+}   //< igeek {

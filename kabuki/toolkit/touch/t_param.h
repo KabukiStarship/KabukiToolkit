@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /kabuki_toolkit/av/t_param.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@file    /toolkit/touch/t_param.h
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -97,7 +97,7 @@ class SDK Parameter : public HmiComponent {
     channel_count_ = 0x7fffffff;
   }
 
-  /* Gets a string that says what type of Parameter this is. */
+  /* Gets a AString that says what type of Parameter this is. */
   const CH1* GetTypeString() const {
     switch (type_) {
     case ControlDMX:
@@ -282,15 +282,15 @@ class SDK Parameter : public HmiComponent {
   Printer& PrintRow(Printer& o) const {
     return o << '|' << Centered (label (), Parameter::MaxLabelLength) 
       << "|" << Centered (typeString (), 12)
-      << "|" << Centered (string (wordSize), 4)
-      << "|" << Centered (string (init_value_), 5)
-      << "|" << Centered (string (min_value_), 5)
-      << "|" << Centered (string (max_value_), 5)
-      << "|" << Centered (string (value_), 5)
-      << "|" << Centered (string (channel), 3)
+      << "|" << Centered (AString (wordSize), 4)
+      << "|" << Centered (AString (init_value_), 5)
+      << "|" << Centered (AString (min_value_), 5)
+      << "|" << Centered (AString (max_value_), 5)
+      << "|" << Centered (AString (value_), 5)
+      << "|" << Centered (AString (channel), 3)
   }
 
-  /* Prints this object to a string. */
+  /* Prints this object to a AString. */
   template<typename Printer>
   Printer& Print (Printer& o) const {
     o << "\nParameter:" << index <<

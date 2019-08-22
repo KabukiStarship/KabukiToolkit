@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki_toolkit/who/t_userlist.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -74,13 +74,13 @@ class TRoster {
   template<typename Printer>
    Printer& Print (Printer& o) {
      /// This method creates a CH1 of the users.Print (Log& log)
-     /// strings separated by spaces
+     /// Strings separated by spaces
 
      o << "Number of Users: " << users_.GetCount () << "\n";
 
      for (SI4 index = 0; index < users_.GetCount (); index++) {
        /// Iterated through the indexes array and write the
-       /// Print (Log& log) strings to the returnString
+       /// Print (Log& log) Strings to the returnString
        o << "User " << (index + 1) << ": "
          << users_[index]->GetUsername ().GetKey () << "\n";
      }

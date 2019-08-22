@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki_toolkit/who/t_handle.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -46,7 +46,7 @@ class THandle {
     key_ = StrandClone (key);
   }
 
-  /* Gets a reference to the handle string. */
+  /* Gets a reference to the handle AString. */
   const TStrand<>& GetKey() { return key_; }
 
   /* Gets true if this password is value. */
@@ -77,7 +77,7 @@ class THandle {
   template<typename Printer> Printer& Print (Printer& o) { return txt << "\nHandle: " << key_; }
 
  private:
-  TStrand<>& key_;        //< Unique string key.
+  TStrand<>& key_;        //< Unique AString key.
   TAuthenticator* auth_;   //< Handle authenticator.
   SI4 type_;              //< The validation type.
 

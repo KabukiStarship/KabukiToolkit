@@ -1,13 +1,13 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki_toolkit.git
-@file    /projects/igeek/library/igeek_.cc
-@author  Cale McCollough <http://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@file    /projects/igeek/library/igeek_virus.cc
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
-#include <pch.h>
+#include <pch.h"
 
 #include "c_virus.h"
 
@@ -97,7 +97,7 @@ void Virus::collideWith (Virus thatVirus)
   // Well guess what, were going to use it!
 
   // Research more about elastic collisions on Wikipedia 
-  // http://en.wikipedia.org/wiki/Elastic_collision
+  // https://en.wikipedia.org/wiki/Elastic_collision
 
   // First we need to find the angle betwen the two movement vectors.
 

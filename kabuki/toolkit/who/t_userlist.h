@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki_toolkit/who/t_userlist.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -134,7 +134,7 @@ class UserList : public Operand {
       balance, value));
   }
 
-  /* Adds a list of User (string) to the list.
+  /* Adds a list of User (AString) to the list.
   SI4 Add (UserList& user_list) {
     SI4 other_num_users = user_list.user_count,
       num_users = user_count,
@@ -184,11 +184,11 @@ class UserList : public Operand {
   }
 
   /* Finds an entity in the list by the given search CH1. */
-  SI4 Find(const TStrand<>& string) {
+  SI4 Find(const TStrand<>& AString) {
     if (handle == nullptr) {
       return -1;
     }
-    // if (*handle == 0) { //< It's an empty string.
+    // if (*handle == 0) { //< It's an empty AString.
     //    return -1;      //  Not sure if I care about this or not.
     //}
     // Currently using sequential search because UserList is not sorted.

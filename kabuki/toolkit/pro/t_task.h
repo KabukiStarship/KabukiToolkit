@@ -1,11 +1,11 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
 @file    /kabuki/features/pro/c_task.h
-@author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-2019 Cale McCollough <http://calemccollough.github.io>;
+@author  Cale McCollough <<https://calemccollough.github.io>>
+@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the 
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
-this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
@@ -15,10 +15,10 @@ this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 namespace _ {
 
-/* An abstract task in a set of Task(string). */
+/* An abstract task in a set of Task(AString). */
 class Task {
  public:
-  /* Creates a task with the given fields and clones the strings. */
+  /* Creates a task with the given fields and clones the Strings. */
   Task(const CH1* summary = "", const CH1* details = "", FP4 weight_ = 0.0f,
        SI4 time_testimate_min = 60 * 60)
     : summary_ (StrandClone (summary)),
@@ -35,7 +35,7 @@ class Task {
     time_stopped_ (0),
     collisions_ (nullptr) {}
 
-  /* Creates a task with the given fields from strings this object now
+  /* Creates a task with the given fields from Strings this object now
       owns and must delete. */
   Task(CH1* summary, CH1* details, FP4 weight_, SI4 time_estimate_min)
     : summary_ (summary),
@@ -252,7 +252,7 @@ class Task {
       "|     -a    Assessment\n"
       "|     -d    Details\n"
       "|     -g    Grade\n"
-      "|     -string    Header\n"
+      "|     -AString    Header\n"
       "|     -v    Review\n"
       "|     -w    Weight\n";
   }
@@ -291,7 +291,7 @@ class Task {
     CH1 c,        //< The first CH1.
       d;         //< The second CH1.
     CH1 *end,     //< Used to detect the result of parsing.
-      *buffer;   //< String buffer.
+      *buffer;   //< AString buffer.
     SI4 value;     //< Value to (possibly) be parsed and temp value.
     FP4 number;  //< A number to (possibly) be parsed.
     TM8 time;      //< Time to (possibly) be parsed.

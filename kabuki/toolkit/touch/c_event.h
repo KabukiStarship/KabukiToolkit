@@ -3,8 +3,8 @@
 @file    /kabuki_toolkit/av/t_event.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
-All right reserved (R). This Source Code Form is subject to the terms of the 
-Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+All right reserved (R). This Source Code Form is subject to the terms of the
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
@@ -15,7 +15,9 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #include "t_config.h"
 
-namespace _ {
+namespace kabuki {
+namespace toolkit {
+namespace touch {
 
 /* A event with an ASCII TSS (Time Subsecond) timestamp. */
 class Event {
@@ -33,13 +35,13 @@ class Event {
   virtual void Trigger() = 0;
 
   /* Prints this object to a AString. */
-  template<typename Printer> 
+  template <typename Printer>
   virtual Printer& Print(Printer& o) const = 0;
 
  private:
   timestamp_t timestamp;  //< Event timestamp in microseconds.
 };
 
-}  // namespace _
+}  // namespace touch
 #endif  //< KABUKI_TOOLKIT_AV_EVENT
 #endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1

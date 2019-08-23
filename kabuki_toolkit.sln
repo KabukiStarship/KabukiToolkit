@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "script2", "script2\script2.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kabuki_cards.library", "projects\kabuki_cards\lib\kabuki_cards.library.vcxproj", "{685AADEC-4758-429A-93CD-DF62D126379E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kabuki.toolkit", "kabuki\toolkit\kabuki.toolkit.vcxproj", "{66D306D2-1972-4293-9C77-2168D9B3DF64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Script2|ARM = Debug Script2|ARM
@@ -103,6 +105,26 @@ Global
 		{685AADEC-4758-429A-93CD-DF62D126379E}.Release|x64.Build.0 = Release|x64
 		{685AADEC-4758-429A-93CD-DF62D126379E}.Release|x86.ActiveCfg = Release|Win32
 		{685AADEC-4758-429A-93CD-DF62D126379E}.Release|x86.Build.0 = Release|Win32
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug Script2|ARM.ActiveCfg = Release|x64
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug Script2|ARM.Build.0 = Release|x64
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug Script2|ARM64.ActiveCfg = Release|x64
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug Script2|ARM64.Build.0 = Release|x64
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug Script2|x64.ActiveCfg = Debug|x64
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug Script2|x64.Build.0 = Debug|x64
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug Script2|x86.ActiveCfg = Debug|Win32
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug Script2|x86.Build.0 = Debug|Win32
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug|ARM.ActiveCfg = Debug|Win32
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug|x64.ActiveCfg = Debug|x64
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug|x64.Build.0 = Debug|x64
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug|x86.ActiveCfg = Debug|Win32
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug|x86.Build.0 = Debug|Win32
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Release|ARM.ActiveCfg = Release|Win32
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Release|ARM64.ActiveCfg = Release|Win32
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Release|x64.ActiveCfg = Release|x64
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Release|x64.Build.0 = Release|x64
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Release|x86.ActiveCfg = Release|Win32
+		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

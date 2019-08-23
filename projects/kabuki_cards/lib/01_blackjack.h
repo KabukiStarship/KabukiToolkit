@@ -10,19 +10,21 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 #pragma once
 #include <pch.h>
 
-#include "t_string.h"
+#if SEAM >= KABUKI_BLACKJACK_CONSOLE
+#include <script2/t_string.h>
 
-#if SEAM == SCRIPT2_UNIPRINTER
-#include "module_debug.inl"
+#if SEAM == KABUKI_BLACKJACK_CONSOLE
+#include <script2/module_debug.inl>
 #else
-#include "module_release.inl"
+#include <script2/module_release.inl>
 #endif
 
 using namespace _;
 
-namespace kabuki_cards {
+namespace kabuki {
+namespace blackjack {
 
-inline const CH1* Uniprinter(const CH1* args) {
+inline const CH1* Blackjack(const CH1* args) {
 #if SEAM >= SCRIPT2_UNIPRINTER
   A_TEST_BEGIN;
 
@@ -34,26 +36,22 @@ inline const CH1* Uniprinter(const CH1* args) {
   BlackjackDealer dealer;
 
   //
-  bool again = true;
+  BOL again = true;
   string input = "";
 
   do {
     dealer.startNewGame();
 
     do {
-      cout << dealer.PrintTo<Printer>(cout);
+      cout << dealer.PrintTo<Printer>(cout) << Linef("\n~~~");
 
-      cout << Linef("\n~~~");
+      cout << dealer.GetPlayer(1).PrintTo<COut>(cout) << Linef("\n~~~");
 
-      cout << dealer.GetPlayer(1).PrintTo<COut>(cout);
-
-      cout << Linef("\n~~~");
-
-      bool invalid_input = false;
+      BOL invalid_input = false;
 
       do {
         cout << "Hit or hold?";
-        getline(cin, input);
+        CIn(input);
 
         if (input == "hit") {
           invalid_input = true;
@@ -97,4 +95,6 @@ inline const CH1* Uniprinter(const CH1* args) {
 #endif
   return 0;
 }
-}  // namespace kabuki_cards
+}  // namespace blackjack
+}  // namespace kabuki
+#endif

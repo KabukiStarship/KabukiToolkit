@@ -22,7 +22,7 @@ namespace _ {
 
 
 */
-class SDK ControlMidi : public Parameter<SI4> {
+class LIB_MEMBER ControlMidi : public Parameter<SI4> {
  public:
   enum {
     NumChannels = 16  //< Number of MIDI channels.

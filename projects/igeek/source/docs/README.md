@@ -2,7 +2,7 @@
 
 ## 1 Overview
 
-<a href="http://2.bp.blogspot.com/--Iak2F2MpPE/U38Yahs0UyI/AAAAAAAACDM/i6iG1TPTZ4g/s1600/Robot+L-V+Logo.1.png" imageanchor="1"><img src="http://2.bp.blogspot.com/--Iak2F2MpPE/U38Yahs0UyI/AAAAAAAACDM/i6iG1TPTZ4g/s1600/Robot+L-V+Logo.1.png" /></a>
+<a href="https://2.bp.blogspot.com/--Iak2F2MpPE/U38Yahs0UyI/AAAAAAAACDM/i6iG1TPTZ4g/s1600/Robot+L-V+Logo.1.png" imageanchor="1"><img src="https://2.bp.blogspot.com/--Iak2F2MpPE/U38Yahs0UyI/AAAAAAAACDM/i6iG1TPTZ4g/s1600/Robot+L-V+Logo.1.png" /></a>
 
 The Interactive Genetic Evolutionary Environment for Kabuki Toolkit is an application of biomimicry in computer science. It is abstract simulation of the human body immune system on the cellular level with quasi-robotic white blood cells that fight off genetically modified retroviruses. The goal of the simulation is for either the viruses to kill the host, the host to kill the viruses, or for the two to maintain a symbiotic relationship.
 
@@ -15,7 +15,7 @@ Currently there isn't a whole lot to see at the moment. There is a non-working 2
 1.  [Overview](#1-overview)
     1. [Content Table](#11-content-table)
 	2. [Components](#12-components)
-2.  [Biomimicry](#2-biomimicry)
+2.  [biomimicry](#2-biomimicry)
 
 ### 1.2 Components
 
@@ -28,40 +28,40 @@ There are four primary entities in the simulation.
 
 In order to understand the way the simulation works you need to know some relevant background information about how the human body immune system and viruses work. Please watch the videos bellow so you will have a better understanding of what the simulation behaves the way it does.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=Rpj0emEGShQ
-" target="_blank"><img src="http://img.youtube.com/vi/Rpj0emEGShQ/0.jpg" 
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=Rpj0emEGShQ
+" target="_blank"><img src="https://img.youtube.com/vi/Rpj0emEGShQ/0.jpg" 
 alt="YouTube video on how the immune system work." width="560" height="315" border="10" /></a>
 
-![Early alpha screenshot.](http://2.bp.blogspot.com/-Mw2orosoLzA/U7Gq4H9nbXI/AAAAAAAACEA/3Z2eJgz7-9M/s1600/alpha_screenshot_1.small.png)
+![Early alpha screenshot.](https://2.bp.blogspot.com/-Mw2orosoLzA/U7Gq4H9nbXI/AAAAAAAACEA/3Z2eJgz7-9M/s1600/alpha_screenshot_1.small.png)
 
-## 2 Biomimicry
+## 2 biomimicry
 
 ### 2.1 Immune System
 
 This is a short video series that goes more in depth over how the human body immune system works.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=HUa_I7ZjSYs
-" target="_blank"><img src="http://img.youtube.com/vi/HUa_I7ZjSYs/0.jpg" 
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=HUa_I7ZjSYs
+" target="_blank"><img src="https://img.youtube.com/vi/HUa_I7ZjSYs/0.jpg" 
 alt="Blood and the Immune System Overview" width="560" height="315" border="10" /></a>
 
 #### Cell Components
-<img src="http://employees.csbsju.edu/hjakubowski/classes/ch250/CellImageMapB.jpg" />
+<img src="https://employees.csbsju.edu/hjakubowski/classes/ch250/CellImageMapB.jpg" />
 
 #### T Cell Receptors
-The first thing to understand for this simulation is how viruses are brought into the cell. You can read the Wikipedia page on <a href="http://en.wikipedia.org/wiki/T-cell_receptor" target="_blank">T cell Receptors</a> for more information.
+The first thing to understand for this simulation is how viruses are brought into the cell. You can read the Wikipedia page on <a href="https://en.wikipedia.org/wiki/T-cell_receptor" target="_blank">T cell Receptors</a> for more information.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=kIxmiTuRydw" target="_blank"><img src="http://img.youtube.com/vi/kIxmiTuRydw/0.jpg" 
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=kIxmiTuRydw" target="_blank"><img src="https://img.youtube.com/vi/kIxmiTuRydw/0.jpg" 
 alt="YouTube video about how T cells work." width="560" height="315" border="10" /></a>
 
 #### Stem Cells
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=ntk8XsxVDi0" target="_blank"><img src="http://img.youtube.com/vi/ntk8XsxVDi0/0.jpg" 
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=ntk8XsxVDi0" target="_blank"><img src="https://img.youtube.com/vi/ntk8XsxVDi0/0.jpg" 
 alt="YouTube video about how stem cells work." width="560" height="315" border="10" /></a>
 
 #### White Blood Cells
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=RO6qmpApyDM
-" target="_blank"><img src="http://img.youtube.com/vi/RO6qmpApyDM/0.jpg" 
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=RO6qmpApyDM
+" target="_blank"><img src="https://img.youtube.com/vi/RO6qmpApyDM/0.jpg" 
 alt="YouTube video about how T cells work." width="560" height="315" border="10" /></a>
 
 ##### Leukocytes Classes
@@ -78,8 +78,8 @@ alt="YouTube video about how T cells work." width="560" height="315" border="10"
 
 ###### Neutrophil
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=0TvTyj5FAaQ
-" target="_blank"><img src="http://img.youtube.com/vi/0TvTyj5FAaQ/0.jpg" 
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=0TvTyj5FAaQ
+" target="_blank"><img src="https://img.youtube.com/vi/0TvTyj5FAaQ/0.jpg" 
 alt="YouTube video about how T cells work." width="560" height="315" border="10" /></a>
 
 ###### T & B Cells
@@ -94,46 +94,46 @@ alt="YouTube video about how T cells work." width="560" height="315" border="10"
 </ul>
 
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=HNP1EAYLhOs
-" target="_blank"><img src="http://img.youtube.com/vi/HNP1EAYLhOs/0.jpg" 
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=HNP1EAYLhOs
+" target="_blank"><img src="https://img.youtube.com/vi/HNP1EAYLhOs/0.jpg" 
 alt="YouTube video about how Natural Killer Cell work in the human immune system." width="560" height="315" border="10" /></a>
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=Rpj0emEGShQ
-" target="_blank"><img src="http://img.youtube.com/vi/Rpj0emEGShQ/0.jpg" 
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=Rpj0emEGShQ
+" target="_blank"><img src="https://img.youtube.com/vi/Rpj0emEGShQ/0.jpg" 
 alt="YouTube video on how the immune system work." width="560" height="315" border="10" /></a>
 
 ### 2.2 Cells
 
 ### Cell Components
 
-<img src="http://employees.csbsju.edu/hjakubowski/classes/ch250/CellImageMapB.jpg" />
+<img src="https://employees.csbsju.edu/hjakubowski/classes/ch250/CellImageMapB.jpg" />
 
 #### T Cell Receptors
 
-The first thing to understand for this simulation is how viruses are brought into the cell. You can read the Wikipedia page on <a href="http://en.wikipedia.org/wiki/T-cell_receptor" target="_blank">T cell Receptors</a> for more information.
+The first thing to understand for this simulation is how viruses are brought into the cell. You can read the Wikipedia page on <a href="https://en.wikipedia.org/wiki/T-cell_receptor" target="_blank">T cell Receptors</a> for more information.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=RO6qmpApyDM
-" target="_blank"><img src="http://img.youtube.com/vi/RO6qmpApyDM/0.jpg" 
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=RO6qmpApyDM
+" target="_blank"><img src="https://img.youtube.com/vi/RO6qmpApyDM/0.jpg" 
 alt="YouTube video about how T cells work." width="560" height="315" border="10" /></a>
 
 #### Stem Cells
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=jF2iXpoG5j8
-" target="_blank"><img src="http://img.youtube.com/vi/jF2iXpoG5j8/0.jpg" 
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=jF2iXpoG5j8
+" target="_blank"><img src="https://img.youtube.com/vi/jF2iXpoG5j8/0.jpg" 
 alt="YouTube video about how stem cells work." width="560" height="315" border="10" /></a>
 
 ### 2.3 Viruses
 
 #### 2.3.a Virus Shape
 
-Most viruses that effect animals have <a href="http://en.wikipedia.org/wiki/Icosahedron">Icosahedral</a> shell structures. An icosohedron is a polygon with 12 vertexes and 20 faces.
+Most viruses that effect animals have <a href="https://en.wikipedia.org/wiki/Icosahedron">Icosahedral</a> shell structures. An icosohedron is a polygon with 12 vertexes and 20 faces.
 
-![From Wikipedia: Icosahedron vertexes form three orthogonal golden rectangles](http://upload.wikimedia.org/wikipedia/commons/9/9c/Icosahedron-golden-rectangles.svg)
+![From Wikipedia: Icosahedron vertexes form three orthogonal golden rectangles](https://upload.wikimedia.org/wikipedia/commons/9/9c/Icosahedron-golden-rectangles.svg)
 
 #### 2.3.b Viral Replication
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=PHp6iYDi9ko
-" target="_blank"><img src="http://img.youtube.com/vi/PHp6iYDi9ko/0.jpg" 
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=PHp6iYDi9ko
+" target="_blank"><img src="https://img.youtube.com/vi/PHp6iYDi9ko/0.jpg" 
 alt="Introduction to viral replication on YouTube." width="560" height="315" border="10" /></a>
 
 ##### Replication Methods
@@ -146,17 +146,17 @@ There are three distinct types of virus replication methods based on how they  i
 <td>Example</td>
 </tr>
 <tr>
-<td><a href="http://en.wikipedia.org/wiki/DNA_virus">DNA Viruses</a></td>
+<td><a href="https://en.wikipedia.org/wiki/DNA_virus">DNA Viruses</a></td>
 <td>Replication Occurs inside of the nucleolus.</td>
 <td>Herpes Viruses, smallpox, chickenpox</td>
 </tr>
 <tr>
-<td><a href="http://en.wikipedia.org/wiki/RNA_virus">RNA viruses</a></td>
+<td><a href="https://en.wikipedia.org/wiki/RNA_virus">RNA viruses</a></td>
 <td>RNA Replication occurs inside of the cytoplasm. </td>
 <td>SARS, influenza, hepatitis C, West Nile fever, polio and measles.</td>
 </tr>
-<td><a href="http://en.wikipedia.org/wiki/Retrovirus">Retrovirus</a></td>
-<td><a href="http://en.wikipedia.org/wiki/Obligate_parasite">Obligate parasitic</a> RNA virus that takes over the cell.</td>
+<td><a href="https://en.wikipedia.org/wiki/Retrovirus">Retrovirus</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Obligate_parasite">Obligate parasitic</a> RNA virus that takes over the cell.</td>
 <td>HIV</td>
 </tr>
 </table>
@@ -165,12 +165,12 @@ RNA Viruses can make 500 viral copies of themselves after infecting a cell.
 
 ##### HIV Virus
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=odRyv7V8LAE
-" target="_blank"><img src="http://img.youtube.com/vi/odRyv7V8LAE/0.jpg" 
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=odRyv7V8LAE
+" target="_blank"><img src="https://img.youtube.com/vi/odRyv7V8LAE/0.jpg" 
 alt="YouTube video about the HIV Virus work." width="560" height="315" border="10" /></a>
 
 ### Simulation Scales
-Here is a list of approximate size scales of use in the simulation that was <a href="http://en.wikibooks.org/wiki/Cell_Biology/Introduction/Cell_size">borrowed from Wikibooks</a>. The sizes don't have to be exact but are meant to serve as a scale reference.
+Here is a list of approximate size scales of use in the simulation that was <a href="https://en.wikibooks.org/wiki/Cell_Biology/Introduction/Cell_size">borrowed from Wikibooks</a>. The sizes don't have to be exact but are meant to serve as a scale reference.
 
 <table>
 <tr><td><b>Width(Diameter)</b></td><td><b>Object</b></td></tr>
@@ -215,6 +215,6 @@ Here is a list of approximate size scales of use in the simulation that was <a h
 
 ## License
 
-Copyright (C) 2014-9 Cale McCollough <http://calemccollough.github.io/>; All right reserved (R).
+Copyright (C) 2014-9 [Cale McCollough](https://calemccollough.github.io); all right reserved (R).
 
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0/>.

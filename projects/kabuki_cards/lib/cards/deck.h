@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki_toolkit.git
-@file    /projects/kabuki_cards/source/lib/deck.h
+@file    /projects/kabuki::cards/source/lib/deck.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the
@@ -12,7 +12,8 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #include "card.h"
 
-namespace kabuki_cards {
+namespace kabuki {
+namespace cards {
 
 /* Class that reprents a Deck of Cards.
 A Deck of cards usually has 52 cards, but can also have 2 jokers, a kBlack
@@ -20,8 +21,8 @@ one, and a kRed one. Not all card games have this many cards, so this class is
 setup for you to create decks of cards for just about any card game you can
 think of. */
 class Deck {
-  BOL has_jokers_;             //< Variable represents if this deck has Jokers.
-  Card::SuitCulture culture_;  //< The culture of the suits.
+  BOL has_jokers_;         //< Variable represents if this deck has Jokers.
+  Card::Culture culture_;  //< The culture of the suits.
   /* Variable represeents if this deck is aces high, low, or neighter.
   Aces high (aces_high > 0) means that an ace is worth   14 points. Aces low
   (aces_high == 0) means that it is  worth 1.   In some games, like blackjack,
@@ -79,7 +80,7 @@ class Deck {
   @param  card_suit_culture This paramter is used to determine what suites
   we are using. */
   Deck(BOL deck_contains_jokers = kHasNoJokers, SIN aces_are_high = kAcesHigh,
-       Card::SuitCulture card_suit_culture = Card::kFrench,
+       Card::Culture card_suit_culture = Card::kFrench,
        const CH1* rear_deck_image_filename = kDefaultRearDeckImage),
        const CH1* deck_art_folder = kDefaultDeckArtDirectory);
 
@@ -147,7 +148,7 @@ class Deck {
 
  private:
   /* Function initializes the deck with a traditional set of playing cards. */
-  void Initialise(const CHR* rear_deck_image_filename,
+  void Initialize(const CHR* rear_deck_image_filename,
                   const CHR* deck_art_folder);
 
   /* Function that checks the artFolder to see if the it has 54 Images in
@@ -155,6 +156,7 @@ class Deck {
   SIN CheckDeckArtFolder(const CHR* deck_art_folder);
 };
 
-}  // namespace kabuki_cards
+}  // namespace cards
+}  // namespace kabuki
 
 #endif

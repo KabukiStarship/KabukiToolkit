@@ -18,7 +18,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 namespace _ {
 
 /* A mixer channel Operation. */
-class SDK MixerChannel : public Op {
+class LIB_MEMBER MixerChannel : public Op {
   NONCOPYABLE(MixerChannel)
  public:
   enum {

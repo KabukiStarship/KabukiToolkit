@@ -19,7 +19,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 namespace _ {
 
 /* A ADSR filter. */
-class SDK ADSR : public Op {
+class LIB_MEMBER ADSR : public Op {
  public:
   /* Constructs an ADSR with all zeroed out controls. */
   ADSR();

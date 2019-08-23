@@ -20,7 +20,7 @@ namespace _ {
 /* A set of Parameter<T> that can be addressed by index.
  */
 template <typename T>
-class SDK ParamSet {
+class LIB_MEMBER ParamSet {
  public:
   enum {
     kMinNumElements = 2,    //< The minimum number of columns.

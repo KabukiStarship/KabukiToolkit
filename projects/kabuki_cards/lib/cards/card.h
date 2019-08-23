@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki_toolkit.git
-@file    /projects/kabuki_cards/source/lib/card.h
+@file    /projects/kabuki::cards/source/lib/card.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the
@@ -12,7 +12,8 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #include <pch.h>
 
-namespace kabuki_cards {
+namespace kabuki {
+namespace cards {
 
 /* Class that represents a card in a card game.
 Cards as we know them originated in Europe. We traditionally think of cards as
@@ -26,8 +27,8 @@ class Card {
   /* An enumerated list of different European-style playing card suites.
   Piacentine, Napoletane, Spagnole, Bergamasche suits are also known as Latin
   suites, because they are from countries that speak Romantic languages. */
-  enum class SuitCulture {
-    kFrench = 1,
+  enum class Culture {
+    kFrench = 0,
     kGerman,
     kSwissGerman,
     kPiacentine,
@@ -56,13 +57,13 @@ class Card {
   };
 
  private:
-  SIN pip_value_,    //< The value of this Card from 0-13.
-      face_value_,   //< The face value of this Card from 1-14.
-      point_value_,  //< The number of points this Card is worth from 0-10.
-      suit_value_;   //< The value of this suit.
-  Suit suit_;        //< The suit of this Card.
-  SuitCulture suit_culture_;  //< The culture of this Card.
-  const CH1* suit_String_;    //< A AString that stores the suit.
+  SIN pip_value_,         //< The value of this Card from 0-13.
+      face_value_,        //< The face value of this Card from 1-14.
+      point_value_,       //< The number of points this Card is worth from 0-10.
+      suit_value_;        //< The value of this suit.
+  Suit suit_;             //< The suit of this Card.
+  Culture suit_culture_;  //< The culture of this Card.
+  const CH1* suit_string_;  //< A AString that stores the suit.
   // Image card_image_;        //< The Image of this Card.
 
  public:
@@ -83,21 +84,21 @@ class Card {
   /* An enumberated list of the different Latin playing cards suites. */
   enum class LatinSuits { kClub = 1, kCoin, kCup, kSword } LatinSuit;
 
-  /* A list of the Strings "Clubs", "Diamonds", "Hearts", "Spades" */
-  const CH1** FrenchSuitss();
-
-  /* A list of the Strings "Acorns", "Bells", "Hearts", "Lieves" */
-  const CH1** GermanSuits();
-
-  /* A list of the Strings "Acorns", "Bells", "Roses", "Shields" */
-  const CH1** SwissGermanSuits();
-
-  /* A list of the Strings "Clubs", "Coins", "Cups", "Swords" */
-  const CH1** LatinSuits();
-
   /* An array of Strings that represnet the 7 different directories for the suit
   icon file */
-  const CH1** SuitCultureStrings();
+  static const CH1** Cultures();
+
+  /* A list of the Strings "Clubs", "Diamonds", "Hearts", "Spades" */
+  static const CH1** FrenchSuits();
+
+  /* A list of the Strings "Acorns", "Bells", "Hearts", "Lieves" */
+  static const CH1** GermanSuits();
+
+  /* A list of the Strings "Acorns", "Bells", "Roses", "Shields" */
+  static const CH1** SwissGermanSuits();
+
+  /* A list of the Strings "Clubs", "Coins", "Cups", "Swords" */
+  static const CH1** LatinSuits();
 
   /* Creates a simple card with no image. The face_value will equal the
   point_value. */
@@ -105,13 +106,13 @@ class Card {
 
   /* Verbose constructor. */
   Card(SIN pip_value, Suit suit, SIN face_value, SIN point_value,
-       SIN suit_value, SuitCulture culture, const CHR* image_directory);
+       SIN suit_value, Culture culture, const CHR* image_directory);
 
   /* Copy constructor. */
   Card(const Card& other);
 
-  /* Virtual destructor just incase we want to make a sub-class later.
-  virtual ~Card () {}
+  /* Virtual destructor just incase we want to make a sub-class later. */
+  virtual ~Card() {}
 
   /* Operator= overlaoder deeps copies the other Card. */
   Card& operator=(const Card& other);
@@ -150,19 +151,15 @@ class Card {
 
   /* Returns the Card::Culture of this Deck.
   Function sets the suit_culture to the newCardCulture. */
-  SuitCulture SuitCulture();
+  Culture Culture();
 
-  void SetSuitCulture(SuitCulture culture);
+  void SetSuitCulture(Culture culture);
 
   /* Returns the suitString. */
   const CH1* SuitString();
 
-  /* Loads and sets the card_image to the on in the given directory.
-  @return Returns 0 upon succes;
-  returns -1 if the directory was actually a file;
-  returns 1 if the directory doesn't exist;
-  returns 2 if the file doesn't; or
-  retruns 3 if the image didn't load right. */
+  /* Loads and sets the card_image to the given directory.
+  @return Returns 0 upon succes and -1 upon failure. */
   SIN SetCardImage(const CHR* directory);
 
   /* Returns the address of this Card's image.
@@ -175,12 +172,13 @@ class Card {
  private:
   /* Sets the values of the cards. */
   void SetVCard(SIN pip_value, SIN face_value, SIN point_value, SIN suit_value,
-                SuitCulture suit_culture, const CHR* image_directory);
+                Culture suit_culture, const CHR* image_directory);
 
   /* Loads the card_image from the specified directory.
   Image LoadCardImage(const CHR* directory); */
 };
 
-}  // namespace kabuki_cards
+}  // namespace cards
+}  // namespace kabuki
 
 #endif

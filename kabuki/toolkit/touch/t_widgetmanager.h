@@ -16,8 +16,8 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 #include "t_config.h"
 
 #include "t_widget.h";
-class SDK ControlsPage;
-class SDK Controller;
+class LIB_MEMBER ControlsPage;
+class LIB_MEMBER Controller;
 
 namespace _ {
 
@@ -27,9 +27,9 @@ namespace _ {
 
     There is one main global instance of the WidgetManager. Through the GUI, a
    user can edit only one parameter on either ControlLayer through a drop
-   down/up menu on either the top or bottom of the screen. The separation of SDK
+   down/up menu on either the top or bottom of the screen. The separation of LIB_MEMBER
    from GUI allows the GUI to be programmed much easier by simply having them
-   wrap the functions to the SDK. Because of this separation, there is not going
+   wrap the functions to the LIB_MEMBER. Because of this separation, there is not going
    to be any checking to see if a template has been saved in before applying any
    changes that this classes functions might make.
 
@@ -37,7 +37,7 @@ namespace _ {
     The data for the Template file will be in the same order as the data
    declarations in this object followed by a packed array of the ControlsPage.
 */
-class SDK WidgetManager {
+class LIB_MEMBER WidgetManager {
  public:
   /* Default constructor. */
   WidgetManager(Controller* controller = nullptr);

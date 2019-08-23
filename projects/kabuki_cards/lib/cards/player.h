@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /projects/kabuki_cards/include/player.h
+@file    /projects/kabuki::cards/include/player.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the
@@ -15,7 +15,8 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 #include "cardstack.h"
 #include "hand.h"
 
-namespace kabuki_cards {
+namespace kabuki {
+namespace cards {
 
 class Player {
   AStrand<> name;   //< Player's name.
@@ -82,6 +83,7 @@ class Player {
   }
 };
 
-}  // namespace kabuki_cards
+}  // namespace cards
+}  // namespace kabuki
 
 #endif

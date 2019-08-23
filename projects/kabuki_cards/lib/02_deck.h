@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/script2.git
-@file    /projects/kabuki_cards/source/lib/00_card.cc
+@file    /projects/kabuki::cards/source/lib/00_card.cc
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the
@@ -20,7 +20,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 using namespace _;
 
-namespace kabuki_cards {
+namespace kabuki { namespace cards {
 
 inline const CH1* Uniprinter(const CH1* args) {
 #if SEAM >= SCRIPT2_UNIPRINTER
@@ -32,7 +32,7 @@ inline const CH1* Uniprinter(const CH1* args) {
 
   for (SIN i = 0; i < 7; ++i) {
     D_COUT("Creating " + Deck::SuitCultureStrings[i] + " Deck...");
-    Deck testDeck((Deck::SuitCulture)i, Deck::kAcesLow,
+    Deck testDeck((Deck::Culture)i, Deck::kAcesLow,
                   Deck::kDoesNotContainJokers);
     D_COUT(testDeck.PrintTo<COut>(cout));
   }
@@ -40,4 +40,4 @@ inline const CH1* Uniprinter(const CH1* args) {
 #endif
   return 0;
 }
-}  // namespace kabuki_cards
+} }  //< namespace kabuki

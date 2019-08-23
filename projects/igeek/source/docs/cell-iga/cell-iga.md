@@ -1,6 +1,6 @@
 <a href="http://2.bp.blogspot.com/--Iak2F2MpPE/U38Yahs0UyI/AAAAAAAACDM/i6iG1TPTZ4g/s1600/Robot+L-V+Logo.1.png" imageanchor="1"><img src="http://2.bp.blogspot.com/--Iak2F2MpPE/U38Yahs0UyI/AAAAAAAACDM/i6iG1TPTZ4g/s1600/Robot+L-V+Logo.1.png" /></a>
 
-The Cell Interactive Genetic Alogithm is an application of biomimicry in computer science. It is abstract simulation of the human body immune system on the cellular level with quasi-robotic white blood cells that fight off genetically modified retroviruses. The goal of the simulation is for either the viruses to kill the host, the host to kill the viruses, or for the two to maintain a symbiotic relationship.
+The Cell Interactive Genetic Algorithm is an application of biomimicry in computer science. It is abstract simulation of the human body immune system on the cellular level with quasi-robotic white blood cells that fight off genetically modified retroviruses. The goal of the simulation is for either the viruses to kill the host, the host to kill the viruses, or for the two to maintain a symbiotic relationship.
 
 Currently there isn't a whole lot to see. I am developing a 2D genetic shape matching algorithm. The Cells and White Blood Cells have not been implemented. I do have a simple software rendered 3D graphics engine that I will be implementing sometime in the near future. The goal is then to move from 2D into 3D, and then from 3D into solving complex mathematical equations. If you would like to know more, please check out the [[Simulation Overview]].
 

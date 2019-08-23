@@ -18,7 +18,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 namespace _ {
 
 /*  */
-class SDK Workspace {
+class LIB_MEMBER Workspace {
  public:
   /* Constructor. */
    Workspace () {}

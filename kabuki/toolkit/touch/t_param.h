@@ -19,7 +19,7 @@ namespace _ {
 
 /* A parameter with upper and lower bounds.
 */
-class SDK Parameter : public HmiComponent {
+class LIB_MEMBER Parameter : public HmiComponent {
  public:
   typedef enum {
     ControlMidi = 0,

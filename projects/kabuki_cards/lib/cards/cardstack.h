@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki_toolkit.git
-@file    /projects/kabuki_cards/source/lib/cards/card_stack.h
+@file    /projects/kabuki::cards/source/lib/cards/card_stack.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the
@@ -14,14 +14,15 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 #include "card.h"
 #include "deck.h"
 
-namespace kabuki_cards {
+namespace kabuki {
+namespace cards {
 
 /* Class that represents a stack of playing cards.
 A CardStack stores pointers to the Card objects in the Deck. When a card is
 removed from the stack, the pointer is deleted, and not the actual Card
 object in the Deck. You can extend the CardStack class to program the
 various elements of a card game use as a Hand and discard stack. */
-class CardStack {
+class LIB_MEMBER CardStack {
   SIN min_num_cards_,  //< The minimum number of cards in a CardStack.
       max_num_cards_;  //< The number of cards in the cardstack.
   BOL is_visible_;     //< Flags if the CardStack is visible.
@@ -85,11 +86,9 @@ class CardStack {
   to this Stack.
   @pre cardsToTakeFrom.getNuMCards () must be > cards_to_take.
   @pre cards_to_take must be less than the maximum number of cards allowed.
-  @return Returns 0 upon success.
-  @return Returns -1 if the cards_to_take is < 0.
-  @return Returns 1 if the cards_to_take is greater than the
-  cardsToTakeFrom.CardCount ()
-  @return Returns 2 if the cards_to_take would put the user over the
+  @return Returns 0 upon success; Returns -1 if the cards_to_take is < 0;
+  Returns 1 if the cards_to_take is greater than the cardsToTakeFrom.CardCount
+  (); Returns 2 if the cards_to_take would put the user over the
   card_count_max_. */
   SIN AddCardStack(CardStack& cards);
 
@@ -144,4 +143,5 @@ class CardStack {
   }
 };
 
-}  // namespace kabuki_cards
+}  // namespace cards
+}  // namespace kabuki

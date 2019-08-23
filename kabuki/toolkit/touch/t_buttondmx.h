@@ -18,7 +18,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 namespace _ {
 
-class SDK DMXButton : public Parameter<SI4>, public Button {
+class LIB_MEMBER DMXButton : public Parameter<SI4>, public Button {
  public:
   /* Default constructor. */
    DMXButton (const CH1* label = "", SI4 channel = 0, SI4 init_value = 0,

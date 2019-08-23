@@ -18,10 +18,10 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 namespace _ {
 
-class SDK ControlMidi;
+class LIB_MEMBER ControlMidi;
 
 /* A button that triggers a MIDIEvent. */
-class SDK TButtonMIDI : public ControlMidi, public Button {
+class LIB_MEMBER TButtonMIDI : public ControlMidi, public Button {
  public:
   /* Constructor. */
   TButtonMIDI(AString newLabel = "", SI4 cc = 0, SI4 channel = 0, SI4 value = 0,

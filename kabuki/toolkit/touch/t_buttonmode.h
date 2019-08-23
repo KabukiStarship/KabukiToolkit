@@ -17,16 +17,16 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 namespace _ {
 
-class SDK ButtonMacro;
-class SDK MacroEvent;
-class SDK Device;
-class SDK ControlsPage;
+class LIB_MEMBER ButtonMacro;
+class LIB_MEMBER MacroEvent;
+class LIB_MEMBER Device;
+class LIB_MEMBER ControlsPage;
 
 /* A ModeButton is a ButtonMacro that has the ability to change the Device on a
    ControlSurfaces. A Device button is capable of changing the Device on a
    ControlSurface and triggering a MacroEvent.
 */
-class SDK ModeButton : public Button {
+class LIB_MEMBER ModeButton : public Button {
  public:
   /* Constructor. */
   ModeButton(const CH1* label = "", const MacroEvent& macro = MacroEvent(),

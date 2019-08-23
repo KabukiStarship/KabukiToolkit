@@ -19,11 +19,11 @@ namespace _ {
 
 /* A grid of Controls.
     Each Parameter<SI4> Layer on the Symmetry Live can either have 8 pots or
-   encoders, or can have 4 pots and 4 encoders. This class SDK helps us swap
+   encoders, or can have 4 pots and 4 encoders. This class LIB_MEMBER helps us swap
    the values out quickly and efficiently.
 
     A TControlMatrix must have the option of being bifurcated. */
-class SDK TControlMatrix {
+class LIB_MEMBER TControlMatrix {
  public:
   enum {
     kMinNumRows = 1,                             //< The min number of rows.

@@ -15,14 +15,14 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 namespace _ {
 
-class SDK MixerChannel;
+class LIB_MEMBER MixerChannel;
 
 /* A generic parameter mixer.
 
 
 */
 template <typename T>
-class SDK Mixer {
+class LIB_MEMBER Mixer {
  public:
   typedef enum {
     MIDI = 0,

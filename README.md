@@ -17,16 +17,16 @@ Kabuki Toolkit (KT) is a modern Embedded-C++ toolkit for making intelligent conn
 
 ## Quick Links
 
+* [FAQ & Quickstart](https://github.com/kabuki-starship/kabuki_toolkit.git/blob/master/docs/readme.md) - *Answers to frequently asked questions the Quickstart Guide can be found in the `/docs/readme.md` file.*
 * [Script2 and the SCRIPT Specification](https://github.com/kabuki-starship/script2) - *Serial Chinese Room, Interprocess, and Telemetry (SCRIPT) Script (Script2) is the foundation of KT so it's the best place to start learning.*
-* [Documents & FAQ](https://github.com/kabuki-starship/kabuki_toolkit.git/blob/master/docs/faq.md) - *Check out the `/docs/readme.md` for answers to Frequently asked questions and other promotional and learning materials.*
 * [Kabuki Starship Website](https://kabuki-starship.github.io/)
 
 ## Third-party Libraries
 
-* [Nuklear](https://github.com/vurtun/nuklear)
+* [Nuklear](https://github.com/vurtun/nuklear) - Modular C98 GUI toolkit we're porting to Modern Embedded-C++.
 
 ## License
 
-Copyright 2014-9 (C) Cale Jamison McCollough <<https://calemccollough.github.io>>. All rights reserved (R).
+Copyright 2014-9 (C) [Cale McCollough](https://calemccollough.github.io); all rights reserved (R).
 
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0/>.

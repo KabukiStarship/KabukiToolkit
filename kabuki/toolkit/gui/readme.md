@@ -1,3 +1,3 @@
 # GUI Toolkit
 
-The Kabuki GUI Toolkit is about to be based on an Embedded-C++ port of the Nuklear GUI.
+We are currently in the process of porting the Nuklear GUI to Modern Embedded-C++. Please join us as a contributor on GitHub is the kind of project you're interested in contributing to.

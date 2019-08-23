@@ -1,19 +1,20 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/script2.git
-@file    /projects/kabuki_cards/source/lib/blackjack/deck_.cc
+@file    /projects/kabuki::cards/source/lib/blackjack/deck_.cc
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
+#include "deck.h"
+//
 #include "cardstack.h"
-#include "deck_.h"
 
 #include <script2/t_strand.h>
 
 using namespace _;
-using namespace kabuki_cards;
+using namespace kabuki::cards;
 
 const SIN* SuitValuesDefault() {
   static const SIN kDefaultSuitValues[4] = {1, 2, 3, 4};
@@ -28,36 +29,34 @@ const CH1* Deck::DefaultRearDeckImage() {
   return "../../../images/rear_deck_art/default_deck_rear_image.svg";
 }
 
-const Deck Deck::Standard = Deck();
-const Deck Deck::StandardWithJokers = Deck(false);
-
 Deck::Deck(BOL deck_contains_jokers, SIN aces_are_high,
-           Card::SuitCulture suit_culture, const CHR* read_deck_image_filename,
+           Card::Culture suit_culture, const CHR* read_deck_image_filename,
            const CHR* deck_art_folder)
     : has_jokers_(deck_contains_jokers),
       aces_high_(aces_are_high),
       suit_culture_(suit_culture),
       card_count_(deck_contains_jokers ? defaultNumCardsWithJokers
-                                       : defaultNumCards),
+                                       : kDefaultCardCount),
       lowest_card_value_(aces_are_high == 0 ? 1 : 2),
       highest_card_value_(aces_are_high == 0 ? 13 : 14) {
-  Initialise(read_deck_image_filename, deck_art_folder);
+  Initialize(read_deck_image_filename, deck_art_folder);
 }
 
-void Deck::Initialise(const CHR* rear_deck_image_filename,
+void Deck::Initialize(const CHR* rear_deck_image_filename,
                       const CHR* deck_art_folder) {
   if (deck_.Size() == 0) deck_.clear();
   // Depending on if aces are high, the value of an Ace will be either 1
   // followed by the 2 card, or 14.
   SIN startValue = aces_high_ ? 1 : 2;
-  const CHR* suitCulturestringAddress = Card::SuitCultureStrings[suit_culture_];
+  const CHR* suit_culturestring_address =
+      Card::SuitCultureStrings[suit_culture_];
 
   // First we want to start by creating the Aces because their pip_value is 1,
   // but might have a face_value of 14.
   SIN ace_value = aces_high ? 14 : 1;
 
   for (SIN suit = 1; suit <= 4; ++suit) {
-    deck_.Add (new Card (1, 1, ace_value, suit_values_[suit], (Card::Suit) suit, 
+    deck_.Add (Card (1, 1, ace_value, suit_values_[suit], (Card::Suit) suit, 
        Card::SuitCultureStrings()[suit], deck_art_folder);
   }
   // This is a nested for loop. It makes it so that our deck_ will be sorted by
@@ -68,34 +67,26 @@ void Deck::Initialise(const CHR* rear_deck_image_filename,
     for (SIN cardValue = 2; cardValue <= 13; ++cardValue) {
       // There are 13 different face values { 2,3,4,5,6,7,8,9,10,J,Q,K,A }
       // The (Card::Suit) "casts" the suit_value to a Card::Suit.
-      deck_.add(new Card(cardValue, (Card::Suit)suit, this));
+      deck_.Add(new Card(cardValue, (Card::Suit)suit, this));
     }
   }
   // rear_image_ = ImageCache::GetFromFile (rear_deck_image_filename);
 
-  // if (rear_image_.isNull ())
+  // if (rear_image_.IsNull ())
   //    ImageCache::GetFromFile (DefaultRearDeckImage ());
 }
 
 Deck& Deck::operator=(const Deck& other) {}
 
-SIN Deck::SetSuitValues(SIN value_1, SIN value_2, SIN value_3, SIN value_4) {
-  if (value_1 < 1) return -1;
-  if (value_1 > 4) return 1;
+BOL Deck::SetSuitValues(SIN value_1, SIN value_2, SIN value_3, SIN value_4) {
+  if (value_1 < 1 || value_1 > 4 || value_2 < 1 || value_2 > 4 || value_3 < 1 ||
+      value_3 > 4 || value_4 < 1 || value_4 > 4)
+    return false;
 
-  if (value_2 < 1) return -2;
-  if (value_2 > 4) return 2;
-
-  if (value_3 < 1) return -3;
-  if (value_3 > 4) return 3;
-
-  if (value_4 < 1) return -4;
-  if (value_4 > 4) return 4;
-
-  suit_values_[1] = value_1;
-  suit_values_[2] = value_2;
-  suit_values_[3] = value_3;
-  suit_values_[4] = value_4;
+  suit_values_[0] = value_1;
+  suit_values_[1] = value_2;
+  suit_values_[2] = value_3;
+  suit_values_[3] = value_4;
 }
 
 SIN Deck::SuitValue(SIN suit) {
@@ -115,9 +106,9 @@ Card* Deck::GetCard(SIN index) {
 }
 
 SIN Deck::SetRearImage(const File& file) {
-  Image tempImage = ImageCache::GetFromFile(file);
-  if (tempImage.isNull) return 0;
-  rear_image_ = tempImage;
+  Image temp_image = ImageCache::GetFromFile(file);
+  if (temp_image.IsNull) return 0;
+  rear_image_ = temp_image;
   return 1;
 }
 

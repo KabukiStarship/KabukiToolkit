@@ -28,7 +28,7 @@ class TControlMatrix;
 /* A page of controls in a TWidget.
     A WidgetPage is composed of multiple groups of controls.
 */
-class SDK WidgetPage {
+class LIB_MEMBER WidgetPage {
  public:
   enum {
     MinControlPairs = 6,   //< Min number of control pairs allowed per Page.

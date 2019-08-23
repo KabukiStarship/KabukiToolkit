@@ -60,7 +60,7 @@ characters or less for a normal label, and 16 characters or less for a short
 label. 2.) Labels must contain printable ASCII characters that are HUI
 compatible.
 */
-class SDK HmiComponent {
+class LIB_MEMBER HmiComponent {
  public:
   enum {
     MaxLabelLength = 20,  //< The max label length of a label.

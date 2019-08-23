@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/script2.git
-@file    /projects/kabuki_cards/source/lib/blackjack/blackjack_card_combo.cc
+@file    /projects/kabuki::cards/source/lib/blackjack/blackjack_card_combo.cc
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the
@@ -11,10 +11,10 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 //
 #include "blackjack_cardcombo.h"
 
-using namespace kabuki_cards;
+using namespace kabuki::cards;
 
 BlackjackHand::BlackjackHand(CardStack& startingCards)
-    : Hand(startingCards, 2, Deck::defaultNumCards) {}
+    : Hand(startingCards, 2, Deck::kDefaultCardCount) {}
 
 AStack<CardCombo> BlackjackHand::getHandCombos() {
     auto low_score = BlackjackCardCombo (,

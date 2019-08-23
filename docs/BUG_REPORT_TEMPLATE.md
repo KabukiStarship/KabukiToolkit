@@ -8,10 +8,6 @@
 
 
 
-## Mission Details
-
-
-
 ## Hierarchy
 
 * Flat

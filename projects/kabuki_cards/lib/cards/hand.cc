@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/script2.git
-@file    /projects/kabuki_cards/source/lib/blackjack/hand.cc
+@file    /projects/kabuki::cards/source/lib/blackjack/hand.cc
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the
@@ -10,7 +10,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 #include "Hand.h"
 
 using namespace _;
-using namespace kabuki_cards;
+using namespace kabuki::cards;
 
 Hand::Hand(CardStack& stack, SIN min_cards, SIN card_count_max_)
     : card_count_min_(min_cards),

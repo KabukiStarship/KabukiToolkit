@@ -16,7 +16,7 @@ KDP compresses your converted content into a .zip file which contains an HTML fi
 
 ## Text guidelines
 
-### Normal text
+### Normal Text
 
 The "normal" text in a Kindle book must be all defaults. We encourage content creators to use creative styles for headings, special paragraphs, footnotes, tables of contents and so on but not "normal" text. The reason is that any styling on "normal" text in the HTML would override the user's preferred default reading settings. Users tend to report such behavior as a poor experience.
 

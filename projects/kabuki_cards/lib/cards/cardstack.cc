@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/script2.git
-@file    /projects/kabuki_cards/source/lib/blackjack/card_stack.cc
+@file    /projects/kabuki::cards/source/lib/blackjack/card_stack.cc
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the
@@ -11,7 +11,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 //
 #include <script2/t_stack.h>
 
-using namespace kabuki_cards;
+using namespace kabuki::cards;
 
 CardStack::CardStack()
     : card_count_min_(0),
@@ -54,7 +54,7 @@ SIN CardStack::Compare(CardStack& other) {
 
 SIN CardStack::PointValue() {
   SIN total = 0;
-  for (auto currentCard : cards_) total += currentCard->PointValue();
+  for (auto current_card : cards_) total += current_card->PointValue();
   return total;
 }
 

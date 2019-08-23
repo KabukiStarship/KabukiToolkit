@@ -26,7 +26,7 @@ namespace _ {
     Controls are stored as pointers in a linear linked list to optimize for
    speed.
 */
-class SDK ButtonMacro : public Parameter<SI4>, public Button {
+class LIB_MEMBER ButtonMacro : public Parameter<SI4>, public Button {
  public:
   /* Default constructor creates a ButtonMacro with no controls.
       A ButtonMacro without any controls triggers system functions only.*/

@@ -18,7 +18,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 namespace _ {
 
 /* A collection of shared objects, . */
-class SDK Set {
+class LIB_MEMBER Set {
  public:
   /* Constructor. */
    Set (const CH1* name, UID uid) 

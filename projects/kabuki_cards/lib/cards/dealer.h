@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki_toolkit.git
-@file    /projects/kabuki_cards/source/lib/dealer.h
+@file    /projects/kabuki::cards/source/lib/dealer.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the
@@ -13,7 +13,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 #include "hand.h"
 #include "player.h"
 
-namespace kabuki_cards {
+namespace kabuki { namespace cards {
 
 /* A class that represnts a dealer in a card game.
     A dealer has the Deck of cards, but is not neccissaraly a player. A dealer
@@ -148,6 +148,6 @@ class Dealer {
   }
 };
 
-}  // namespace kabuki_cards
+} }  //< namespace kabuki
 
 #endif  //< KABUKI_CARDS_DEALER_H

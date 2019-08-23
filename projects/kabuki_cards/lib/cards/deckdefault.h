@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki_toolkit.git
-@file    /projects/kabuki_cards/source/lib/deck_default.h
+@file    /projects/kabuki::cards/source/lib/deck_default.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the
@@ -14,7 +14,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #include "deck.h"
 
-namespace kabuki_cards {
+namespace kabuki { namespace cards {
 
 class DeckDefault : public Deck {
   Suit suit_;            //< The suit of this Card.
@@ -121,6 +121,6 @@ class DeckDefault : public Deck {
   }
 };
 
-}  // namespace kabuki_cards
+} }  //< namespace kabuki
 
 #endif

@@ -2,7 +2,7 @@
 
 ## Docs
 
-Please **@see** `~/kabuki_toolkit.mdj` using [StarUML](http://staruml.io) for object models. Documents are split between the Wiki and the `~/docs/` folder and additional documents can be found in the [script2 repo](https://github.com/kabuki-starship/script2). 
+Please **@see** `~/kabuki_toolkit.mdj` using [StarUML](https://staruml.io) for object models. Documents are split between the Wiki and the `~/docs/` folder and additional documents can be found in the [script2 repo](https://github.com/kabuki-starship/script2). 
 
 * [Script Specification RFC](https://github.com/kabuki-starship/script2) - Serial Chinese Room, Interprocess, and Telemetry (SCRIPT) Specification Release for Comment and SCRIPT Script (Script2).
 * [ASCII C++ Style Guide](https://github.com/ascii_cpp_style_guide) - A combination of the Google C++ Style Guide and the ASCII Data Specification in Markdown format.
@@ -29,7 +29,7 @@ __/\\\\\\\\\\\\\\\_____/\\\\\\\\\___________/\\\_______
         _\///______________\///________\///__________\//////___
 ```
 
-The Doxyfile is used to create the [Kabuki Starship API Docs](https://kabuki.github.io/api/). You may build these yourself for offline viewing. The UML diagrams can be found in the "Kabuki Toolkit Diagrams.mdj" file.
+The Doxyfile is used to create the [Kabuki Starship API Docs](https://kabuki-starship.github.io/api/). You may build these yourself for offline viewing. The UML diagrams can be found in the "Kabuki Toolkit Diagrams.mdj" file.
 
 ---
 
@@ -44,7 +44,7 @@ The Doxyfile is used to create the [Kabuki Starship API Docs](https://kabuki.git
 ---
 
 * What is the documentation and documentation process?
-  * This SDK uses [Doxygen](http://www.stack.nl/~dimitri/doxygen/). The project is currently setup using D:\Workpace. API docs get exported to the [Kabuki Theater website].
+  * This SDK uses [Doxygen](https://www.stack.nl/~dimitri/doxygen/). The project is currently setup using D:\Workpace. API docs get exported to the [Kabuki Theater website].
 
 ---
 
@@ -59,7 +59,7 @@ The Doxyfile is used to create the [Kabuki Starship API Docs](https://kabuki.git
 ---
 
 * Is there any UML?
-  * We're using [StarUML 2.x](http://staruml.io/). The models can be found in the file "~/Documents/Kabuki Starship.mdj". Most of the included modules were not documented correctly and will need to be back annotated. This is a back burner project and is only done when needed. Please feel free to help us write use cases and scenario.
+  * We're using [StarUML 2.x](https://staruml.io/). The models can be found in the file "~/Documents/Kabuki Starship.mdj". Most of the included modules were not documented correctly and will need to be back annotated. This is a back burner project and is only done when needed. Please feel free to help us write use cases and scenario.
 
 ---
 
@@ -93,6 +93,6 @@ BOL TestWarn(const CH1* function, const CH1* file, SI4 line);
 
 ## License
 
-Copyright (C) 2014-9 Cale McCollough <http://calemccollough.github.io/>; All right reserved (R).
+Copyright (C) 2014-9 [Cale McCollough](https://calemccollough.github.io); all right reserved (R).
 
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0/>.

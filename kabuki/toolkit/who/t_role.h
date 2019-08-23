@@ -24,7 +24,7 @@ namespace _ {
     4. Employee
     5. Volunteer
 */
-struct SDK TRole {
+struct LIB_MEMBER TRole {
   UID GetRole() = 0;
 };
 }       // namespace _

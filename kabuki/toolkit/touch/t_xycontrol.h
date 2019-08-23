@@ -17,7 +17,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 namespace _ {
 
-class SDK XyTouchpad : public Component {
+class LIB_MEMBER XyTouchpad : public Component {
  public:
   /* Constructor. */
   XyTouchpad(SI4 x = 0, SI4 y = 0, SI4 left_bounds = 0,

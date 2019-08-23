@@ -18,7 +18,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 namespace _ {
 
 /* A group of */
-class SDK ChannelGroup {
+class LIB_MEMBER ChannelGroup {
  public:
   /* Constructs a group of channels. */
    ChannelGroup () {}

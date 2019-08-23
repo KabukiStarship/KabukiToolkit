@@ -19,7 +19,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 namespace _ {
 
 /* A scrollable array Button (s). */
-class SDK ButtonScroller : public HmiComponent {
+class LIB_MEMBER ButtonScroller : public HmiComponent {
  public:
   enum {
     kDefaultNumVisibleButtons = 5,  //< Default number of visible numbers.

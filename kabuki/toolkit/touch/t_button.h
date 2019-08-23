@@ -27,7 +27,7 @@ button, or both. A button can serve one of the following functions:
 - Switch modes.
 - Do nothing.
 */
-class SDK Button {
+class LIB_MEMBER Button {
   public:
 
     /* An enumerated list of the different types of actions ButtonControls can

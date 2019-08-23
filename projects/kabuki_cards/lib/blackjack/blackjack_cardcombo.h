@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki_toolkit.git
-@file    /projects/kabuki_cards/source/lib/cards/blackjack_cardcombo.h
+@file    /projects/kabuki::cards/source/lib/cards/blackjack_cardcombo.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough
 <<calemccollough.github.io>>; All right reserved (R). This Source Code
@@ -10,12 +10,14 @@ the MPL was not distributed with this file, You can obtain one at
 
 #pragma once
 
-#ifndef KABUKI_CARDS__BLACKJACK__BLACKJACKCARDCOMBO_H_INCLUDED
-#define KABUKI_CARDS__BLACKJACK__BLACKJACKCARDCOMBO_H_INCLUDED
+#ifndef KABUKI_BLACKJACK_CARDCOMBO_HEADER
+#define KABUKI_BLACKJACK_CARDCOMBO_HEADER
+
+#if SEAM >= KABUKI_BLACKJACK_CONSOLE
 
 #include <pch.h>
 
-namespace kabuki_cards {
+namespace kabuki { namespace cards {
 /* Class that represents a CardCombo in a game.
     There are two major things that will effect a combination's rank besides
    suit rank; the presence of jokers, and if aces are high or low.
@@ -27,7 +29,8 @@ class BlackjackCardCombo : public CardCombo {
   BlackjackCardCombo(CardStack& copyStack, SIN acesHighLowORNA);
 
   SIN PointValue();  //< Function that returns the point value based on the
-                        // ace value.
+                     // ace value.
 };
-}  // namespace kabuki_cards
+} }  //< namespace kabuki
+}  //< namespace kabuki
 #endif

@@ -19,7 +19,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 namespace _ {
 
 /* Cummy Button does nothing. */
-class SDK ButtonDummy : public Button {
+class LIB_MEMBER ButtonDummy : public Button {
  public:
   /* Creates a ButtonDummy with the given label. */
   ButtonDummy(const CH1* label = "") :

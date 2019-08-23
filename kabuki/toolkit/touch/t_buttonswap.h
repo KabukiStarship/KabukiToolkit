@@ -23,7 +23,7 @@ modes.
 you have a Knob that has a Button that you can press that changes the
 functionality of the knob through a cycle of different parameters.
 */
-class SDK ButtonSwap : public Button {
+class LIB_MEMBER ButtonSwap : public Button {
  public:
   /* Constructor. */
   ButtonSwap(const CH1* init_name = StrandEmpty ()) 

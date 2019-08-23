@@ -18,16 +18,16 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 namespace _ {
 
 /*
-class SDK ButtonMacro;
-class SDK MacroEvent;
-class SDK Widget;
-class SDK ControlsPage; */
+class LIB_MEMBER ButtonMacro;
+class LIB_MEMBER MacroEvent;
+class LIB_MEMBER Widget;
+class LIB_MEMBER ControlsPage; */
 
 /* A ButtonWidget is a ButtonMacro that has the ability to change the Widget
 on a ControlSurfaces.
 A Widget button is capable of changing the Widget on a ControlSurface and
 triggering a MacroEvent. */
-class SDK ButtonWidget : public ButtonMacro {
+class LIB_MEMBER ButtonWidget : public ButtonMacro {
  public:
   /* Constructor. */
   ButtonWidget(const CH1* HmiComponent = const CH1* ::empty,

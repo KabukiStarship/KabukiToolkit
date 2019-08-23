@@ -24,7 +24,7 @@ The difference between a page and a macro button is that a page button
 swtiches between pages in a template and a PageButton will be able to
 perform other tasks in a virtual instrument such as loading one of the
 sub-menus. Not sure if this class is neccissary yet. */
-class SDK PageButton : public Button {
+class LIB_MEMBER PageButton : public Button {
  public:
   /* Constructor. */
   PageButton(const WidgetPage& thePage = WidgetPage())

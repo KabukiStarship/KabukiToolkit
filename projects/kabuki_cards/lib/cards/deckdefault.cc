@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki-toolkit.git
-@file    /projects/kabuki_cards/
+@file    /projects/kabuki::cards/
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the
@@ -9,7 +9,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #include "card.h"
 
-namespace kabuki_cards {
+namespace kabuki { namespace cards {
 
 KabukiCard::Card() : face_value_(0), suit_(0), suit_string_("Empty") {}
 
@@ -106,4 +106,4 @@ void KabukiCard::Draw(Component g, Graphics page) {
   }
 }*/
 
-}  // namespace kabuki_cards
+} }  //< namespace kabuki

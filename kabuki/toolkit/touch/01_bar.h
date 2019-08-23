@@ -3,8 +3,8 @@
 @file    /kabuki_toolkit/av/t_01_bar.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
-All right reserved (R). This Source Code Form is subject to the terms of the 
-Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+All right reserved (R). This Source Code Form is subject to the terms of the
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
@@ -18,24 +18,26 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 using namespace _;
 
-namespace kabuki { namespace toolkit { 
-inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
-#if SEAM >= KABUKI_TOOLKIT_AV_0
+namespace kabuki {
+namespace toolkit {
+namespace touch {
+inline const CH1* _1_Bar(CH1* seam_log, CH1* seam_end, const CH1* args) {
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_0
   TEST_BEGIN;
   control_array a();
 
-  PRINTF("Testing const CH1* print (_::Expr& slot)...");
+  D_COUT("Testing const CH1* print (_::Expr& slot)...");
   a.Print();
 
   DMXControl c1("Control 1", 50, 33);
   MIDIControl c2("Control 2", 11, 102);
 
-  PRINTF("testing void setControl  (Control*)");
+  D_COUT("testing void setControl  (Control*)");
 
   a.SetControl(0, &c1);
   a.SetControl(1, &c2);
 
-  PRINTF("Added 2 controls to a:\n");
+  D_COUT("Added 2 controls to a:\n");
   a.Print();
 
   DMXControl c3("Control 3", 27, 66);
@@ -44,7 +46,7 @@ inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
   a.AddControl(&c3);
   a.AddControl(&c4);
 
-  PRINTF("Attempted to add 2 more controls a:\n");
+  D_COUT("Attempted to add 2 more controls a:\n");
   a.Print();
 
   DMXButton c5("Control 5", 27, 66);
@@ -64,37 +66,37 @@ inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
   PRINT("Attempted to add some buttons:\n");
   a.Print();
 
-  PRINTF("_::control_array tests completed successfully. :-)");
+  D_COUT("_::control_array tests completed successfully. :-)");
 
-  PRINTF("_::DMXButton class SDK\n");
+  D_COUT("_::DMXButton class LIB_MEMBER\n");
 
   DMXButton a("DMX Button A");
 
-  PRINTF("Testing const CH1* print (_::Expr& slot)...");
+  D_COUT("Testing const CH1* print (_::Expr& slot)...");
   a.Print();
 
-  PRINTF("Testing void processPress () and void processDepress ()");
+  D_COUT("Testing void processPress () and void processDepress ()");
   a.Press();
   CHECK(a.isPressed());
   a.Depress();
   CHECK(!a.isPressed());
 
-  PRINTF("Testing void toggle ()");
+  D_COUT("Testing void toggle ()");
   a.SetButtonAction(ButtonAction::Latching);
   a.Toggle();
   CHECK(a.GetValue() == a.GetMaxValue());
   a.Toggle();
   CHECK(a.GetValue() == a.GetMinValue());
 
-  PRINTF("\n\n_Theater::ProjectTests completed.\n\n");
+  D_COUT("\n\n_Theater::ProjectTests completed.\n\n");
 
-  PRINTF("Testing TControlMatrix class.");
+  D_COUT("Testing TControlMatrix class.");
 
-  PRINTF("Testing const CH1* print (_::Expr& slot):\n");
+  D_COUT("Testing const CH1* print (_::Expr& slot):\n");
   TControlMatrix cm(5, 2);
   cm.Print();
 
-  PRINTF("Testing setControl ()");
+  D_COUT("Testing setControl ()");
 
   DMXControl testControl0_0("DMX Control 1");
   MIDIControl testControl1_0("MIDI Control 1");
@@ -122,41 +124,41 @@ inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
 
   cm.Print();
 
-  PRINTF("Done testing TControlMatrix class SDK! :-)");
+  D_COUT("Done testing TControlMatrix class LIB_MEMBER! :-)");
 
-  PRINTF("\n\n_Theater::ProjectTests completed.\n\n");
+  D_COUT("\n\n_Theater::ProjectTests completed.\n\n");
 
-  PRINTF("Running TWidget tests...");
+  D_COUT("Running TWidget tests...");
 
-  PRINTF("Testing TWidget class SDK\n");
+  D_COUT("Testing TWidget class LIB_MEMBER\n");
   PRINT_LINE('~');
 
   TWidget w("Test TWidget");
 
-  PRINTF("Testing const CH1* ToString ()\n");
+  D_COUT("Testing const CH1* ToString ()\n");
 
   w.Print();
 
-  PRINTF("Testing InsertPage  (const CH1*&)\n");
+  D_COUT("Testing InsertPage  (const CH1*&)\n");
 
   const CH1* page_name_String;
   CH1 pageIndex = '1';
 
   for (SI4 i = 0; i < 6; ++i) {
     page_name_String = "Page " + pageIndex;
-    PRINTF("Inserting Page %s...", page_name_String);
+    D_COUT("Inserting Page %s...", page_name_String);
     CHECK(!w.InsertPage(page_name_String),
           "Error: Failed to insert page " + page_name_String + "!\n");
     ++pageIndex;
   }
 
-  PRINTF(w.ToString());
+  D_COUT(w.ToString());
 
-  PRINTF("Testing contains  (const CH1*&)...");
+  D_COUT("Testing contains  (const CH1*&)...");
 
   CHECK(!w.contains("Page 1"), "Error: w does not contains \"Page 1\"");
 
-  PRINTF("Testing DeletePage  (SI4)... ");
+  D_COUT("Testing DeletePage  (SI4)... ");
 
   SI4 debug_code;
 
@@ -179,170 +181,170 @@ inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
   w.DeletePage(1);
   w.Print();
 
-  PRINTF("Testing inserting duplicate page names...");
+  D_COUT("Testing inserting duplicate page names...");
 
   for (SI4 i = 0; i < 5; ++i) {
     debug_code = w.InsertPage("Untitled");
-    PRINTF((i + 1) + ".) Debug code: " + debug_code);
+    D_COUT((i + 1) + ".) Debug code: " + debug_code);
   }
   debug_code = w.InsertPage("Untitled");
 
   w.DeletePage("Untitled 4");
   debug_code = w.InsertPage("Untitled");
 
-  PRINTF(w.ToString());
+  D_COUT(w.ToString());
 
-  PRINTF("Testing copy constructor...");
+  D_COUT("Testing copy constructor...");
   TWidget wc(w);
   wc.Print();
 
-  PRINTF("Done testing TWidget class SDK");
+  D_COUT("Done testing TWidget class LIB_MEMBER");
 
-  PRINTF("\n\nRunning TWidget tests completed.\n\n");
+  D_COUT("\n\nRunning TWidget tests completed.\n\n");
 
-  PRINTF("Testing WidgetPage");
+  D_COUT("Testing WidgetPage");
 
-  PRINTF("Testing Page class\n");
+  D_COUT("Testing Page class\n");
   PRINT_LINE('~');
 
   WidgetPage p("Test Page");
 
-  PRINTF("Testing const CH1* ToString ()");
+  D_COUT("Testing const CH1* ToString ()");
   p.Print();
 
-  PRINTF("Testing copy constructor...");
+  D_COUT("Testing copy constructor...");
   WidgetPage pc(p);
   pc.Print();
 
-  PRINTF("Done testing Page class");
+  D_COUT("Done testing Page class");
 
-  PRINTF("\n\nRunning WidgetPage tests completed.\n\n");
+  D_COUT("\n\nRunning WidgetPage tests completed.\n\n");
 
-  PRINTF("Testing MIDIControl\n");
+  D_COUT("Testing MIDIControl\n");
 
   MIDIControl a("MIDI Control A");
   a.Print();
 
-  PRINTF("Testing setCC ()");
+  D_COUT("Testing setCC ()");
   a.SetCC(127);
   CHECK(a.GetCC() == 127);
   a.SetCC(128);
   CHECK(a.GetCC() == 127);
   a.SetCC(-1);
-  PRINTF("a:\n");
+  D_COUT("a:\n");
   a.Print();
   CHECK(a.GetCC() == 0);
 
-  PRINTF("Done testing MIDIControl class SDK. :-)\n");
+  D_COUT("Done testing MIDIControl class LIB_MEMBER. :-)\n");
 
-  PRINTF("_::TButtonMIDI...\n");
+  D_COUT("_::TButtonMIDI...\n");
 
   TButtonMIDI a("MIDI Button A");
 
-  PRINTF("Testing const CH1* print (_::Expr& slot)");
+  D_COUT("Testing const CH1* print (_::Expr& slot)");
   a.Print();
 
-  PRINTF("\n\n_Theater::TButtonMIDI tests completed.\n\n");
+  D_COUT("\n\n_Theater::TButtonMIDI tests completed.\n\n");
 
-  PRINTF("Testing MacroButton class SDK:\n");
+  D_COUT("Testing MacroButton class LIB_MEMBER:\n");
 
   auto macroA = MacroButton("Macro Button A");
 
-  PRINTF("Testing const CH1* print (_::verifier&)...");
-  PRINTF(macroA.Print(_::Expr & slot));
-  PRINTF("Testing add  (Parameter<SI4>*)");
+  D_COUT("Testing const CH1* print (_::verifier&)...");
+  D_COUT(macroA.Print(_::Expr & slot));
+  D_COUT("Testing add  (Parameter<SI4>*)");
   macroA.add(new DMXControl("Macro 1"));
   macroA.add(new MIDIControl("Macro 2"));
   macroA.add(new DMXButton("Macro 3"));
   macroA.add(new TButtonMIDI("Macro 4"));
-  PRINTF("Added " + const CH1*(macroA.numControls()) + " test controls.\n" +
+  D_COUT("Added " + const CH1*(macroA.numControls()) + " test controls.\n" +
          macroA.Print(_::Expr & slot));
-  PRINTF("Testing void trigger ()");
+  D_COUT("Testing void trigger ()");
   macroA.trigger();
-  PRINTF("Testing Parameter<SI4>* remove  (index);");
+  D_COUT("Testing Parameter<SI4>* remove  (index);");
 
-  PRINTF("\n\n_Theater::ProjectTests completed.\n\n");
+  D_COUT("\n\n_Theater::ProjectTests completed.\n\n");
 
-  PRINTF("_::Label Class.\n");
+  D_COUT("_::Label Class.\n");
 
   const CH1 *invalid_String = "Invalid label ~",
-             *valid_String_1 = "Valid label 1",
-             *valid_String_2 = "Valid label !@%^",
-             *valid_String_3 = "Valid label &* ()";
+            *valid_String_1 = "Valid label 1",
+            *valid_String_2 = "Valid label !@%^",
+            *valid_String_3 = "Valid label &* ()";
 
   Label valid_label_1(valid_String_1);
   Label valid_label_2(valid_String_1);
   Label valid_label_3(valid_String_3);
   Label invalid_label(invalid_String);
 
-  PRINTF("Testing valid AString input.");
+  D_COUT("Testing valid AString input.");
 
-  PRINTF("Testing SI4 IsValid  (const CH1* &)");
-  PRINTF("isValidString(valid_String_1): %b", is_valid_label(valid_String_1));
+  D_COUT("Testing SI4 IsValid  (const CH1* &)");
+  D_COUT("isValidString(valid_String_1): %b", is_valid_label(valid_String_1));
   CHECK(is_valid_label(valid_String_1) == Valid);
-  PRINTF("Testing invalid AString input.");
+  D_COUT("Testing invalid AString input.");
   CHECK(is_valid_label(invalid_String) != Valid);
   CHECK(is_valid_label("") != 0);
   CHECK(is_valid_label("123456789012345678901") != 0);
 
-  PRINTF("Testing SI4 compare  (const CH1* &)\n");
+  D_COUT("Testing SI4 compare  (const CH1* &)\n");
   invalid_label.Print();
-  PRINTF("Testing valid comparisons...");
+  D_COUT("Testing valid comparisons...");
   CHECK(!valid_label_1.Compare(valid_String_1));
-  PRINTF("Testing invalid comparisons...");
+  D_COUT("Testing invalid comparisons...");
   CHECK(valid_label_1.Compare(valid_String_2) != Comperable);
   CHECK(valid_label_2.Compare(valid_String_3) != Comperable);
 
-  PRINTF("Attempting to SetLabel to the invalid_String");
+  D_COUT("Attempting to SetLabel to the invalid_String");
   // auto expectedLabel = "Test AString 1";
   valid_label_1.SetLabel(invalid_String);
   CHECK(!valid_label_1.Compare(invalid_label));
-  PRINTF("Setting the label to valid_String_3");
+  D_COUT("Setting the label to valid_String_3");
   valid_label_1.SetLabel(valid_String_3);
   CHECK(valid_label_1.Label() == valid_String_3);
 
-  PRINTF("Done testing Label class SDK.");
+  D_COUT("Done testing Label class LIB_MEMBER.");
 
-  PRINTF("\n\n_Theater::ProjectTests completed.\n\n");
+  D_COUT("\n\n_Theater::ProjectTests completed.\n\n");
 
-  PRINTF("Testing IsymmetricController class _KabukiToolkit\n");
+  D_COUT("Testing IsymmetricController class _KabukiToolkit\n");
   PRINT_LINE('~');
 
   IsymmetricController controller();
 
-  PRINTF("Testing ToString ().");
-  PRINTF(controller.Print());
+  D_COUT("Testing ToString ().");
+  D_COUT(controller.Print());
 
   // testISCS.addTemplate ();
 
-  PRINTF("Done testing IsymmetricController class _KabukiToolkit");
+  D_COUT("Done testing IsymmetricController class _KabukiToolkit");
 
-  PRINTF("\n\n_Theater::ProjectTests completed.\n\n");
+  D_COUT("\n\n_Theater::ProjectTests completed.\n\n");
 
-  PRINTF("_::DMXControl");
+  D_COUT("_::DMXControl");
 
   PRINT_LINE('-');
   DMXControl control_a("DMX Control A");
 
-  PRINTF("Printing control_a.Print (_::Expr& slot)\n");
+  D_COUT("Printing control_a.Print (_::Expr& slot)\n");
   control_a.Print();
 
-  PRINTF("Testing copy constructor\n");
+  D_COUT("Testing copy constructor\n");
   DMXControl control_b(control_a);
-  PRINTF("Printing control_b.Print (_::Expr& slot)\n");
+  D_COUT("Printing control_b.Print (_::Expr& slot)\n");
   control_b.Print();
-  PRINTF("Testing SI4 Compare  (const Control&)");
+  D_COUT("Testing SI4 Compare  (const Control&)");
 
   CHECK(control_a.Compare(control_b) == 0);
   SI4 compare_value = control_a.Compare(control_b);
-  PRINTF("Testing SI4 Compare  (const Control&): " + compare_value);
+  D_COUT("Testing SI4 Compare  (const Control&): " + compare_value);
   CHECK(compare_value == 0);
 
-  PRINTF("Testing valid inputs...");
+  D_COUT("Testing valid inputs...");
 
   control_a = DMXControl("", 1, 1, 0, 255, 8);
 
-  PRINTF("Printing control_a.Print (_::Expr& slot)...\n");
+  D_COUT("Printing control_a.Print (_::Expr& slot)...\n");
   control_a.Print();
 
   control_a.SetLabel("DMX Control B");
@@ -356,16 +358,16 @@ inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
   control_a.SetMinValue(70);
   CHECK(control_a.GetMinValue() == 70);
 
-  PRINTF("Retesting copy constructor");
+  D_COUT("Retesting copy constructor");
 
   control_b = DMXControl(control_a);
   compare_value = control_a.Compare(control_b);
   CHECK(!compare_value);
 
-  PRINTF("Testing invalid input...");
+  D_COUT("Testing invalid input...");
 
   control_a.SetWordSize(5);
-  PRINTF("control_a.WordSize (): %i\n", control_a.WordSize());
+  D_COUT("control_a.WordSize (): %i\n", control_a.WordSize());
   CHECK(control_a.GetWordSize() == 7);
   control_a.SetChannel(555);
   CHECK(control_a.GetChannel() == DMXControl::NumChannels);
@@ -374,33 +376,33 @@ inline const CH1* _1_Bar (CH1* seam_log, CH1* seam_end, const CH1* args) {
   control_a.SetChannel(1);
   CHECK(control_a.GetChannel() == 1);
 
-  PRINTF("Done testing DMXControl class SDK");
+  D_COUT("Done testing DMXControl class LIB_MEMBER");
 
-  PRINTF("_::DMXButton class SDK\n");
+  D_COUT("_::DMXButton class LIB_MEMBER\n");
 
   DMXButton a("DMX Button A");
 
-  PRINTF("Testing const CH1* print (_::Expr& slot)...");
+  D_COUT("Testing const CH1* print (_::Expr& slot)...");
   a.Print();
 
-  PRINTF("Testing void processPress () and void processDepress ()");
+  D_COUT("Testing void processPress () and void processDepress ()");
   a.Press();
   CHECK(a.IsPressed());
   a.Depress();
   CHECK(!a.IsPressed());
 
-  PRINTF("Testing void toggle ()");
+  D_COUT("Testing void toggle ()");
   a.SetButtonAction(ButtonAction::Latching);
   a.Toggle();
   CHECK(a.GetValue() == a.GetMaxValue());
   a.Toggle();
   CHECK(a.GetValue() == a.GetMinValue());
 
-  PRINTF("\n\n_Theater::ProjectTests completed.\n\n");
+  D_COUT("\n\n_Theater::ProjectTests completed.\n\n");
 
 #endif
   return 0;
 }
-} //< namespace touch
-} //< namespace toolkit
-} //< namespace kabuki
+}  // namespace touch
+}  // namespace toolkit
+}  // namespace kabuki

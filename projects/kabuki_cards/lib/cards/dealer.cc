@@ -1,6 +1,6 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/script2.git
-@file    /projects/kabuki_cards/source/lib/blackjack/dealer.cc
+@file    /projects/kabuki::cards/source/lib/blackjack/dealer.cc
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
 All right reserved (R). This Source Code Form is subject to the terms of the
@@ -9,7 +9,7 @@ this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #include "dealer.h"
 
-namespace kabuki_cards {
+namespace kabuki { namespace cards {
 
 Dealer::Dealer(SIN starting_ante, SIN min_bit, SIN min_cards_per_hand,
                SIN max_cards_per_hand, SIN max_player_count)
@@ -157,4 +157,4 @@ void Dealer::Redeal() {
     currentPlayer->dealHand(Hand(stock, 2, Deck::defaultNumCardsWithJokers));
 }
 
-}  // namespace kabuki_cards
+} }  //< namespace kabuki

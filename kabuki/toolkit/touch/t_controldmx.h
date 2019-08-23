@@ -19,7 +19,7 @@ namespace _ {
 
 /* A DMX Control.
  */
-class SDK ControlDMX : public Parameter<SI4> {
+class LIB_MEMBER ControlDMX : public Parameter<SI4> {
  public:
   enum {
     NumChannels = 512  //< The number of DMX512 channels.

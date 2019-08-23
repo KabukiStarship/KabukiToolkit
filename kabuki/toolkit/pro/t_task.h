@@ -3,15 +3,18 @@
 @file    /kabuki/features/pro/c_task.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
-All right reserved (R). This Source Code Form is subject to the terms of the 
-Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+All right reserved (R). This Source Code Form is subject to the terms of the
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
 #include <pch.h>
+
 #if SEAM >= KABUKI_TOOLKIT_PRO_1
 #ifndef KABUKI_TOOLKIT_PRO_TASK
 #define KABUKI_TOOLKIT_PRO_TASK
+
+#include <script2/t_string.h>
 
 namespace _ {
 
@@ -21,56 +24,54 @@ class Task {
   /* Creates a task with the given fields and clones the Strings. */
   Task(const CH1* summary = "", const CH1* details = "", FP4 weight_ = 0.0f,
        SI4 time_testimate_min = 60 * 60)
-    : summary_ (StrandClone (summary)),
-    details_ (StrandClone (details)),
-    result_ (nullptr),
-    review_ (nullptr),
-    weight_ (weight_),
-    assessment_ (0.0f),
-    grade_ (0.0f),
-    time_estimate_ (time_estimate_min * 60),
-    time_begins_ (0),
-    time_ends_ (0),
-    time_started_ (0),
-    time_stopped_ (0),
-    collisions_ (nullptr) {}
+      : summary_(TSTRClone<CH1>(summary)),
+        details_(StrandClone(details)),
+        result_(nullptr),
+        review_(nullptr),
+        weight_(weight_),
+        assessment_(0.0f),
+        grade_(0.0f),
+        time_estimate_(time_estimate_min * 60),
+        time_begins_(0),
+        time_ends_(0),
+        time_started_(0),
+        time_stopped_(0),
+        collisions_(nullptr) {}
 
   /* Creates a task with the given fields from Strings this object now
-      owns and must delete. */
+  owns and must delete. */
   Task(CH1* summary, CH1* details, FP4 weight_, SI4 time_estimate_min)
-    : summary_ (summary),
-    details_ (details),
-    result_ (nullptr),
-    review_ (nullptr),
-    weight_ (weight_),
-    assessment_ (0.0f),
-    grade_ (0.0f),
-    time_estimate_ (time_estimate_min * 60),
-    time_begins_ (0),
-    time_ends_ (0),
-    time_started_ (0),
-    time_stopped_ (0),
-    collisions_ (nullptr) {}
+      : summary_(summary),
+        details_(details),
+        result_(nullptr),
+        review_(nullptr),
+        weight_(weight_),
+        assessment_(0.0f),
+        grade_(0.0f),
+        time_estimate_(time_estimate_min * 60),
+        time_begins_(0),
+        time_ends_(0),
+        time_started_(0),
+        time_stopped_(0),
+        collisions_(nullptr) {}
 
   /* Destructor. */
-  ~Task () {}
+  ~Task() {}
 
   /* Gets the summary. */
   const CH1* GetHeader() { return summary_; }
 
   /* Sets the summary. */
   void SteadHeader(CH1* new_summary) {
-    ASSERT (new_summary)
-      summary_ = new_summary;
+    D_ASSERT(new_summary);
+    summary_ = new_summary;
   }
 
   /* Gets the details. */
   const CH1* GetDetails() { return details_; }
 
   /* Sets the details. */
-  void SetDetails(CH1* new_details) {
-      details_ = new_details;
-  }
+  void SetDetails(CH1* new_details) { details_ = new_details; }
 
   /* Gets the result. */
   const CH1* GetResults() { return result_; }
@@ -179,24 +180,25 @@ class Task {
   @return Returns null upon success and a pointer to an error CH1 upon
   failure. */
   const CH1* SetTimeStopped(TM8 time) {
-    if (time <= time_started_) return "time_stopped_ must be after time_started_";
+    if (time <= time_started_)
+      return "time_stopped_ must be after time_started_";
     time_stopped_ = time;
     return 0;
   }
 
   /* Starts the task and saves the start time. */
-  void Start() { ClockTimestamp (&time_started_); }
+  void Start() { ClockTimestamp(&time_started_); }
 
   /* Stopped the task. */
   void Stop(CH1* result, FP4 result_grade = 1.0f) {
     result_ = new_result;
     assessment_ = new_assessment;
-    time (&time_stopped_);
+    time(&time_stopped_);
   }
 
   /* Stopped the task. */
   void Stop(const CH1* result, FP4 result_grade = 1.0f) {
-    Stop (StrandClone (new_result), new_assessment);
+    Stop(StrandClone(new_result), new_assessment);
   }
 
   /* Returns true if the task is complete.
@@ -215,7 +217,7 @@ class Task {
   Task* Collision() { return collisions_; }
 
   /* Returns true if the event contains the given time. */
-  BOL Contains(TM8 t) {
+  BOL Contains(SI8 t) {
     if (t < time_begins_) return false;
     if (time_stopped_ != 0) {
       if (t > time_stopped_) return false;
@@ -230,164 +232,154 @@ class Task {
   /* Prints the help menu. */
   static const CH1* GetHelpString() {
     return "| Task: A general purpose schedule task.\n"
-      "| Data Members\n:"
-      "| Header    - A brief summary of the task.\n"
-      "| Details    - Specific details about the task.\n"
-      "| Weight     - A floating-point graph node weight.\n"
-      "| Assessment - A floating-point between 0.0 and 1.0 that\n"
-      "|              is a self assessment of the percent of the\n"
-      "|              weight completed.\n"
-      "| Result     - A brief self review of the completed task.\n"
-      "| Grade      - A floating-point between 0.0 and 1.0 that\n"
-      "|              is a reviewed assessment of the percent of the\n"
-      "|              weight completed.\n"
-      "| Review     - A post-task review of the work performed.\n"
-      "|\n"
-      "| Task Commands:\n"
-      "|     -?    Print Help\n"
-      "|     -B    Time Begins\n"
-      "|     -E    Time Ends\n"
-      "|     -S    Time Started\n"
-      "|     -P    Time Stopped\n"
-      "|     -a    Assessment\n"
-      "|     -d    Details\n"
-      "|     -g    Grade\n"
-      "|     -AString    Header\n"
-      "|     -v    Review\n"
-      "|     -w    Weight\n";
+           "| Data Members\n:"
+           "| Header    - A brief summary of the task.\n"
+           "| Details    - Specific details about the task.\n"
+           "| Weight     - A floating-point graph node weight.\n"
+           "| Assessment - A floating-point between 0.0 and 1.0 that\n"
+           "|              is a self assessment of the percent of the\n"
+           "|              weight completed.\n"
+           "| Result     - A brief self review of the completed task.\n"
+           "| Grade      - A floating-point between 0.0 and 1.0 that\n"
+           "|              is a reviewed assessment of the percent of the\n"
+           "|              weight completed.\n"
+           "| Review     - A post-task review of the work performed.\n"
+           "|\n"
+           "| Task Commands:\n"
+           "|     -?    Print Help\n"
+           "|     -B    Time Begins\n"
+           "|     -E    Time Ends\n"
+           "|     -S    Time Started\n"
+           "|     -P    Time Stopped\n"
+           "|     -a    Assessment\n"
+           "|     -d    Details\n"
+           "|     -g    Grade\n"
+           "|     -AString    Header\n"
+           "|     -v    Review\n"
+           "|     -w    Weight\n";
   }
 
   /* Prints the Task to the console. */
   void Out(SI4 indentation = 0, SI4 index = 0);
 
-  template<typename Printer>
-  Printer& Print (Printer& o) {
+  template <typename Printer>
+  Printer& Print(Printer& o) {
     o << "\nTask:";
-      << LineStrand ()
-      << "| Task (" << weight_ << "): " << summary_
-      << LineStrand ('-')
-      << "| Begins: "
-      << TimeDate (o, time_begins_)
-      << "       Ends: "
-      << TimeDate (o, time_ends_)
-      << LineStrand ('-')
-      << "| Details: " << details_
-      << LineStrand ('-')
-      << "| Assessment: " << assessment_
-      << " Result: " << (result_ == nullptr ? "N/A" : result_)
-      << "\n| Started: "
-      << TimeDate (o, time_started_)
-      << "       Stopped: "
-      << TimeDate (o, time_started_)
-      << LineStrand ('-');
-      << "|  Grade: " << grade_
-      << " Review: " << (review_ == nullptr ? "N/A" : review_)
-      << LineStrand ('_');
+    << LineStrand() << "| Task (" << weight_ << "): " << summary_
+    << LineStrand('-') << "| Begins: " << TimeDate(o, time_begins_)
+    << "       Ends: " << TimeDate(o, time_ends_) << LineStrand('-')
+    << "| Details: " << details_ << LineStrand('-')
+    << "| Assessment: " << assessment_
+    << " Result: " << (result_ == nullptr ? "N/A" : result_)
+    << "\n| Started: " << TimeDate(o, time_started_)
+    << "       Stopped: " << TimeDate(o, time_started_) << LineStrand('-');
+    << "|  Grade: " << grade_
+    << " Review: " << (review_ == nullptr ? "N/A" : review_) << LineStrand('_');
     return o;
   }
 
   /* Parse a text command stream (possibly from the user). */
   const CH1* Command(CH1* input) {
     CH1 c,        //< The first CH1.
-      d;         //< The second CH1.
+        d;        //< The second CH1.
     CH1 *end,     //< Used to detect the result of parsing.
-      *buffer;   //< AString buffer.
-    SI4 value;     //< Value to (possibly) be parsed and temp value.
-    FP4 number;  //< A number to (possibly) be parsed.
-    TM8 time;      //< Time to (possibly) be parsed.
+        *buffer;  //< AString buffer.
+    SI4 value;    //< Value to (possibly) be parsed and temp value.
+    FP4 number;   //< A number to (possibly) be parsed.
+    TM8 time;     //< Time to (possibly) be parsed.
     if (input == nullptr) return "Task input was null";
-    input = SkipSpaces (input);
+    input = SkipSpaces(input);
     c = *input;
     if (c == 0) {
       o << "\n| c == 0\n";
       return nullptr;
     }
-    o << "< " << summary_ << " < " << input << kLF;
+    o << "< " << summary_ << " < " << input << '\n';
     if (c == '-') {
       c = *(input + 1);
       d = *(input + 2);
       input += 3;
-      if (d && !isspace (d)) return "Invalid Task flag";
+      if (d && !isspace(d)) return "Invalid Task flag";
       switch (c) {
-      case '?':  // Print Help
-        o << GetHelpString ();
-        return nullptr;
-      case 'B':  // Time Begins
-                 // o << "> Begins\n";
-        if (!(end = ParseUnixTime (input, time))) return "Error parsing time";
-        SetTimeBegins (time);
-        return Command (end + 1);
-      case 'E':  // Time Ends
-                 // o << "> Ends\n";
-        if (!(end = ParseUnixTime (input, time))) return "Error parsing time";
-        SetTimeEnds (time);
-        return Command (end + 1);
-      case 'S':  // Time Started
-                 // o << "> Started\n";
-        if (!(end = ParseUnixTime (input, time))) return "Error parsing time";
-        SetTimeStarted (time);
-        return Command (end);
-      case 'P':  // Time Stopped
-                 // o << "> Stopped\n";
-        if (!(end = ParseUnixTime (input, time))) return "Error parsing time";
-        SetTimeStopped (time);
-        return Command (end);
-      case 'a':  // Assessment
-                 // o << "> Assessment\n";
-        end = ParseFloat (input, &number);
-        if (input == end) return "Invalid self assessment entered";
-        if (!SetAssessment (number))
-          return "Assessment must be in the range of 0.0 to 1.0";
-        return Command (end);
-      case 'd':  // Details
-                 // o << "> Details\n";
-        value = StringLength (input + 1, '\"') + 1;
-        buffer = new CH1[value];
-        end = Parse (input + 1, &buffer[0], value, '\"');
-        if (end == nullptr) return "Invalid details CH1";
-        SetDetails (buffer);
-        if (*end == 0) {
-          o << "\n> Task done\n";
+        case '?':  // Print Help
+          o << GetHelpString();
           return nullptr;
-        }
-        return Command (end + 1);
-      case 'g':  // Grade
-                 // o << "> Grade\n";
-        end = ParseFloat (input, &number);
-        if (input == end) return "Invalid grade entered";
-        SetGrade (number);
-        return Command (end + 1);
-      case 's':  // Header
-                 // o << "> Header\n";
-        value = StringLength (input + 1, '\"') + 1;
-        buffer = new CH1[value];
-        end = Parse (input + 1, &buffer[0], value, '\"');
-        if (end == nullptr) return "Invalid summary CH1";
-        SteadHeader (buffer);
-        if (*end == 0) {
-          o << "\n> Task done\n";
-          return nullptr;
-        }
-        return Command (end + 1);
-      case 'v':  // Review
-                 // o << "> Review\n";
-        value = StringLength (input + 1, '\"') + 1;
-        buffer = new CH1[value];
-        end = Parse (input + 1, &buffer[0], value, '\"');
-        if (end == nullptr) return "Invalid review CH1";
-        StealReview (buffer);
-        if (*end == 0)  //< This might be a '\"' or '\0'
-        {
-          o << "\n> Task done\n";
-          return nullptr;
-        }
-        return Command (end + 1);
-      case 'w':  // Weight
-                 // o << "> Weight\n";
-        end = ParseFloat (input, &number);
-        if (input == end) return "Invalid weight entered";
-        if (!SetWeight (number)) return "Invalid weight entered";
-        return Command (end);
+        case 'B':  // Time Begins
+                   // o << "> Begins\n";
+          if (!(end = ParseUnixTime(input, time))) return "Error parsing time";
+          SetTimeBegins(time);
+          return Command(end + 1);
+        case 'E':  // Time Ends
+                   // o << "> Ends\n";
+          if (!(end = ParseUnixTime(input, time))) return "Error parsing time";
+          SetTimeEnds(time);
+          return Command(end + 1);
+        case 'S':  // Time Started
+                   // o << "> Started\n";
+          if (!(end = ParseUnixTime(input, time))) return "Error parsing time";
+          SetTimeStarted(time);
+          return Command(end);
+        case 'P':  // Time Stopped
+                   // o << "> Stopped\n";
+          if (!(end = ParseUnixTime(input, time))) return "Error parsing time";
+          SetTimeStopped(time);
+          return Command(end);
+        case 'a':  // Assessment
+                   // o << "> Assessment\n";
+          end = ParseFloat(input, &number);
+          if (input == end) return "Invalid self assessment entered";
+          if (!SetAssessment(number))
+            return "Assessment must be in the range of 0.0 to 1.0";
+          return Command(end);
+        case 'd':  // Details
+                   // o << "> Details\n";
+          value = StringLength(input + 1, '\"') + 1;
+          buffer = new CH1[value];
+          end = Parse(input + 1, &buffer[0], value, '\"');
+          if (end == nullptr) return "Invalid details CH1";
+          SetDetails(buffer);
+          if (*end == 0) {
+            o << "\n> Task done\n";
+            return nullptr;
+          }
+          return Command(end + 1);
+        case 'g':  // Grade
+                   // o << "> Grade\n";
+          end = ParseFloat(input, &number);
+          if (input == end) return "Invalid grade entered";
+          SetGrade(number);
+          return Command(end + 1);
+        case 's':  // Header
+                   // o << "> Header\n";
+          value = StringLength(input + 1, '\"') + 1;
+          buffer = new CH1[value];
+          end = Parse(input + 1, &buffer[0], value, '\"');
+          if (end == nullptr) return "Invalid summary CH1";
+          SteadHeader(buffer);
+          if (*end == 0) {
+            o << "\n> Task done\n";
+            return nullptr;
+          }
+          return Command(end + 1);
+        case 'v':  // Review
+                   // o << "> Review\n";
+          value = StringLength(input + 1, '\"') + 1;
+          buffer = new CH1[value];
+          end = Parse(input + 1, &buffer[0], value, '\"');
+          if (end == nullptr) return "Invalid review CH1";
+          StealReview(buffer);
+          if (*end == 0)  //< This might be a '\"' or '\0'
+          {
+            o << "\n> Task done\n";
+            return nullptr;
+          }
+          return Command(end + 1);
+        case 'w':  // Weight
+                   // o << "> Weight\n";
+          end = ParseFloat(input, &number);
+          if (input == end) return "Invalid weight entered";
+          if (!SetWeight(number)) return "Invalid weight entered";
+          return Command(end);
       }
       return "Invalid Task argument";
     }
@@ -395,20 +387,20 @@ class Task {
   }
 
  private:
-  CH1 *summary_,          //< Task summary.
-      *details_,          //< Task details.
-      *result_,           //< Task results log entry.
-      *review_;           //< An after-incident review of the Event.
-  FP4 weight_,            //< Weight of the task.
-      assessment_,        //< User's self-assessed grade.
-      grade_;             //< Reviewed grade.
-  TM8 time_estimate_,     //< Amount of time it is estimated this will take.
-      time_begins_,       //< Time the task begins.
-      time_ends_,         //< Time the task was finished ends.
-      time_started_,      //< Time the user started the task.
-      time_stopped_;      //< Time the user stopped the task.
-  Task* collisions_;      //< Pointer to the collision node (if any).
+  CH1 *summary_,       //< Task summary.
+      *details_,       //< Task details.
+      *result_,        //< Task results log entry.
+      *review_;        //< An after-incident review of the Event.
+  FP4 weight_,         //< Weight of the task.
+      assessment_,     //< User's self-assessed grade.
+      grade_;          //< Reviewed grade.
+  SI8 time_estimate_,  //< Amount of time it is estimated this will take.
+      time_begins_,    //< Time the task begins.
+      time_ends_,      //< Time the task was finished ends.
+      time_started_,   //< Time the user started the task.
+      time_stopped_;   //< Time the user stopped the task.
+  Task* collisions_;   //< Pointer to the collision node (if any).
 };
-} //< namespace _
+}  // namespace _
 #endif
 #endif

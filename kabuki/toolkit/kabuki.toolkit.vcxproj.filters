@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="resources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Lib\script2">
+      <UniqueIdentifier>{f2815d1d-2a7c-48f1-9195-e31f40ce6e2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\kabuki">
+      <UniqueIdentifier>{55b2cd4b-dfb8-4161-abf6-857076876ea4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\kabuki\toolkit">
+      <UniqueIdentifier>{9df9d183-f50b-4993-b7c5-0dac57e1da7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\kabuki\toolkit\gui">
+      <UniqueIdentifier>{5fb357f4-2ac2-4ba7-a977-69eb61532338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\kabuki\toolkit\pro">
+      <UniqueIdentifier>{083bf669-03f1-49a6-9bed-7db6aa52b956}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\kabuki\toolkit\touch">
+      <UniqueIdentifier>{c5c9248c-e50e-44cd-8bbc-24ca9aa3fc6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\kabuki\toolkit\who">
+      <UniqueIdentifier>{2c8a4c67-b00c-4027-9cd4-772d598c9244}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="kabuki.toolkit.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\pch.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_array.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_bin.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_bout.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_bsq.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_cin.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_clock.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_cout.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_crabs.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_error.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_event.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_floor.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_interrupts.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_morsecode.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_op.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_operand.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_puff.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_rng.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_room.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_slot.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_string.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_test.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_typevalue.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\script2\script2_vk.cc">
+      <Filter>Lib\script2</Filter>
+    </ClCompile>
+    <ClCompile Include="who\pch.cc">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClCompile>
+    <ClCompile Include="touch\pch.cc">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClCompile>
+    <ClCompile Include="pro\pch.cc">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\script2\module_seams.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\pch.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\pch_header.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\public.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_array.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_avalue.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_benchmark.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_binary.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_book.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_clock.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_dic.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_dictionary.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_door.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_library.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_list.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_loom.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_map.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_matrix.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_puff.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_set.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_stack.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_strand.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_string.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_table.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_test.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_typevalue.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_uniprinter.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\t_wall.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\00_uniprinter.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\01_itos.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\01_rng.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\02_itos.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\02_socket.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\03_ftos.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\04_sprinter.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\04_utf.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\05_clock.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\06_stack.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\07_matrix.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\08_strand.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\09_loom.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\10_list.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\11_book.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\12_map.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\13_table.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\14_dictionary.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\15_expr.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\16_door.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\17_room.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_address.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_args.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_array.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_autoject.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_bin.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_bout.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_bsq.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_buffer.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_cin.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_clock.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_cout.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_crabs.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_error.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_event.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_floor.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_interrupts.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_iterator.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_language.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_mirror.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_op.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_operand.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_puff.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_rng.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_room.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_slot.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_string.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_test.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_typevalue.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_varint.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_vk.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\c_wall.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\script2\global.h">
+      <Filter>Lib\script2</Filter>
+    </ClInclude>
+    <ClInclude Include="who\01_bar.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\global.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\pch.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_account.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_address.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_addressemail.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_authenticator.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_authenticatordefault.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_entity.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_entitygroup.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_entitylist.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_handle.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_name.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_organization.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_password.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_person.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_privilege.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_profile.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_registrar.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_relationship.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_role.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_roster.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_symbol.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_uidassigner.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_user.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_userlist.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\test_tree.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\00_foo.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonmode.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonpage.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonradio.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonscroller.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonswap.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonwidget.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_channelgroup.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_component.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_controldmx.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_controller.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_controlmaster.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_controlmatrix.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_controlmidi.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_isymmetriccontroller.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_library.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_mixer.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_mixerchannel.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_mixerpage.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_param.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_paramset.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_set.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_tag.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_tagtibrary.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_widget.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_widgetmanager.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_widgetmidi.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_widgetpage.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_xycontrol.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\test_tree.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\00_foo.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\01_bar.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\c_event.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\global_config.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\pch.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_adsr.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_button.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttondmx.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttondummy.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonevent.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonmacro.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonmidi.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\pch.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\t_git.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\t_project.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\t_schedule.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\t_task.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\t_workspace.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\test_tree.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\00_foo.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\01_bar.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\c_doxygen.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\global.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\script2\pch_footer.inl">
+      <Filter>Lib\script2</Filter>
+    </None>
+    <None Include="..\..\script2\pch_header.inl">
+      <Filter>Lib\script2</Filter>
+    </None>
+    <None Include="..\..\script2\17_seam.s2">
+      <Filter>Lib\script2</Filter>
+    </None>
+    <None Include="..\..\script2\module_debug.inl">
+      <Filter>Lib\script2</Filter>
+    </None>
+    <None Include="..\..\script2\module_footer.inl">
+      <Filter>Lib\script2</Filter>
+    </None>
+    <None Include="..\..\script2\module_release.inl">
+      <Filter>Lib\script2</Filter>
+    </None>
+    <None Include="who\global_config.inl">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </None>
+    <None Include="who\test_debug.inl">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </None>
+    <None Include="who\test_footer.inl">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </None>
+    <None Include="who\test_release.inl">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </None>
+    <None Include="touch\test_debug.inl">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </None>
+    <None Include="touch\test_footer.inl">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </None>
+    <None Include="touch\test_release.inl">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </None>
+    <None Include="touch\global_config.inl">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </None>
+    <None Include="pro\global_config.inl">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </None>
+    <None Include="pro\test_debug.inl">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </None>
+    <None Include="pro\test_footer.inl">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </None>
+    <None Include="pro\test_release.inl">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\script2\CMakeLists.txt">
+      <Filter>Lib\script2</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

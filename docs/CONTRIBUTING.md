@@ -1,6 +1,6 @@
 # Contributing
 
-## Bug reports
+## Bug Reports
 
 **1.** Ensure the bug was not already reported by by reading the [Issues](https://github.com/kabuki-starship/script2/issues).
 

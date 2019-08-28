@@ -3,8 +3,8 @@
 @file    /c_unicontroller.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
-All right reserved (R). This Source Code Form is subject to the terms of the 
-Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+All right reserved (R). This Source Code Form is subject to the terms of the
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
@@ -119,21 +119,21 @@ class Unicontroller {
   SI4 GetTimerCount();
 
  private:
-  UI1 brightness_,       //< Monochrome LED brightness.
-      red_mix_,          //< Red LED mix.
-      green_mix_,        //< Green LED mix.
-      blue_mix_;         //< Blue LED mix.
-  SI2 pulse_count_,  //< PWM counter.
-      num_pulses_;       //< PWM pulses per cycle(rows * 256).
-  ch_t spi_index_,       //< Index of the current SPI UI1.
-      longest_chain_,    //< Longest SPI chain length.
-      channel_count_,     //< Number of channels.
-      num_leds_,         //< Number of Led(s).
-      num_rgb_leds_,     //< Number of LEDRGB(s).
-      num_buttons_,      //< Number of Button(s).
-      num_pots_,         //< Number of Pot(s).
-      num_knobs_,        //< Number of RotoaryKnob(s).
-      num_knob_banks_,   //< Number of RotoaryKnobBank(s).
+  UI1 brightness_,      //< Monochrome LED brightness.
+      red_mix_,         //< Red LED mix.
+      green_mix_,       //< Green LED mix.
+      blue_mix_;        //< Blue LED mix.
+  SI2 pulse_count_,     //< PWM counter.
+      num_pulses_;      //< PWM pulses per cycle(rows * 256).
+  ch_t spi_index_,      //< Index of the current SPI UI1.
+      longest_chain_,   //< Longest SPI chain length.
+      channel_count_,   //< Number of channels.
+      num_leds_,        //< Number of Led(s).
+      num_rgb_leds_,    //< Number of LEDRGB(s).
+      num_buttons_,     //< Number of Button(s).
+      num_pots_,        //< Number of Pot(s).
+      num_knobs_,       //< Number of RotoaryKnob(s).
+      num_knob_banks_,  //< Number of RotoaryKnobBank(s).
       // num_ports_in_,  //< Number of PortIn(s).
       num_expanders_;                  //< Number of IoExpander(s).
   Ticker ticker_;                      //< Controls update Ticker.
@@ -150,4 +150,4 @@ class Unicontroller {
 };              //< class Unicontroller
 
 }  // namespace _
-#endif  //< INCLUDED_KABUKI_FEATURE_TEK_UNICONTROLLER_H
+#endif

@@ -31,6 +31,10 @@ bld/
 # Visual Studio cache/options directory
 .vs/
 
+# Jekyll files
+.sass-cache/
+_site/
+
 # CMake Build Files
 CMakeFiles/
 

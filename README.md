@@ -24,6 +24,7 @@ Kabuki Toolkit (KT) is a modern Embedded-C++ toolkit for making intelligent conn
 ## Third-party Libraries
 
 * [Nuklear](https://github.com/vurtun/nuklear) - Modular C98 GUI toolkit we're porting to Modern Embedded-C++.
+* [Eigen](https://bitbucket.org/eigen/eigen) - A C++ template library for linear algebra: vectors, matrices, and related algorithms.
 
 ## License
 

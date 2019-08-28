@@ -1,5 +1,5 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki-toolkit.git
+@link    https://github.com/kabuki-starship/kabuki_toolkit.git
 @file    /tek/tek_.cc
 @author  Cale McCollough <https://calemccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;

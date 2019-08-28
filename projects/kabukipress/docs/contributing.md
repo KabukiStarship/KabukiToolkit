@@ -6,4 +6,4 @@ KabukiPress is build on [Script2](https://github.com/kabuki-starship/script2) an
 
 ### Issues
 
-* For specific Script2 issues holding up the show please visit <https://github.com/kabuki-starship/script2/blob/master/docs/contributing.md>.
+* Changes.Toolkit.AddModule Hypertext MVP; Changes.AddProject Puff. #141

@@ -24,6 +24,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>kabukitoolkit</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>KabukiToolkit</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -176,7 +177,6 @@
     <ClCompile Include="..\..\script2\script2_test.cc" />
     <ClCompile Include="..\..\script2\script2_typevalue.cc" />
     <ClCompile Include="..\..\script2\script2_vk.cc" />
-    <ClCompile Include="kabuki.toolkit.cpp" />
     <ClCompile Include="pro\pch.cc" />
     <ClCompile Include="touch\pch.cc" />
     <ClCompile Include="who\pch.cc" />
@@ -263,6 +263,7 @@
     <ClInclude Include="..\..\script2\t_typevalue.h" />
     <ClInclude Include="..\..\script2\t_uniprinter.h" />
     <ClInclude Include="..\..\script2\t_wall.h" />
+    <ClInclude Include="pch.h" />
     <ClInclude Include="pro\00_foo.h" />
     <ClInclude Include="pro\01_bar.h" />
     <ClInclude Include="pro\c_doxygen.h" />

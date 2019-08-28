@@ -1,10 +1,10 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki-toolkit.git
+@link    https://github.com/kabuki-starship/kabuki_toolkit.git
 @file    /c_rgbstatusled.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
-All right reserved (R). This Source Code Form is subject to the terms of the 
-Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+All right reserved (R). This Source Code Form is subject to the terms of the
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
@@ -44,17 +44,17 @@ Some boards have PWM on the RGB LED, some don't. This class uses
 DigitalOut (s). There are 8 potential combinations of color without PWM
 (@wiki:"Color Space"), Black, Red, Yellow, Green, Cyan, Blue, Magenta, and
 White.
-    
+    
 
 @code
 RGBStatusLED<0, 1> stausLED  (RED_LED, GREEN_LED, BLUE_LED);
 //< Use <0, 1> if you're LED is active low.
 RGBStatusLED<1, 0> stausLED  (p0, p1, p2);
 //< Use <0, 1> if you're LED is active high.
-    
+    
 
 status_led.SetColorA  (Color::);
-    
+    
 
 @endcode
 */
@@ -209,7 +209,7 @@ class RGBStatusLED {
 
 // _D_e_m_o_____________________________________________________________________
 
-#if 0   //< Set to non-zero to run this demo.
+#if 0  //< Set to non-zero to run this demo.
 
 using namespace kabuki - tek;
 
@@ -240,5 +240,5 @@ SI4 main () {
 
     while (true);
 }
-#endif  //< #if _Demo
-#endif  //< INCLUDED_KABUKI_FEATURE_TEK_LEDS_RGBSTATUSLED
+#endif
+#endif

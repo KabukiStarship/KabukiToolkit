@@ -1,10 +1,10 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki-toolkit.git
+@link    https://github.com/kabuki-starship/kabuki_toolkit.git
 @file    /c_ledrgb.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
-All right reserved (R). This Source Code Form is subject to the terms of the 
-Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+All right reserved (R). This Source Code Form is subject to the terms of the
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
@@ -64,11 +64,11 @@ class LEDRGB {
   offset_t GetBlueOffset();
 
  private:
-  CRGBAUI4 color_;     //< RGBA color where A is additive brightness.
+  CRGBAUI4 color_;    //< RGBA color where A is additive brightness.
   ch_t red_offset_,   //< Red LED bit offset.
       green_offset_,  //< Green LED bit offset.
       blue_offset_,   //< Blue LED bit offset.
       reserved_;      //< Reserved for memory alignment.
 };
 }  // namespace _
-#endif  //< INCLUDED_KABUKI_FEATURE_TEK_LEDS_RGBLED
+#endif

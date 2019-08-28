@@ -1,10 +1,10 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki-toolkit.git
+@link    https://github.com/kabuki-starship/kabuki_toolkit.git
 @file    /c_flowcontroller.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
-All right reserved (R). This Source Code Form is subject to the terms of the 
-Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+All right reserved (R). This Source Code Form is subject to the terms of the
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
@@ -54,15 +54,15 @@ class FlowController {
   const _::Operation* Star(char_t index, _::Expr* expr);
 
  private:
-  InterruptIn sensor_;      //< Flow sensor pin.
-  DigitalOut valve_;        //< Solenoid valve pin.
-  AnalogIn pot_;            //< Potentiometer pin.
-  volatile UI2 count_;      //< Flow sensor pulse count_.
-  UI2 flow_rate_ml_;        //< Flow rate in milliliters.
-  UI4 total_flow_ml_,  //< Total flow in mL.
-      target_flow_ml_,      //< Target flow in mL per cycle.
-      max_flow_ml_;         //< Maximum target flow in mL per cycle.
-  UI2 last_sample_;         //< Last pot value read.
+  InterruptIn sensor_;  //< Flow sensor pin.
+  DigitalOut valve_;    //< Solenoid valve pin.
+  AnalogIn pot_;        //< Potentiometer pin.
+  volatile UI2 count_;  //< Flow sensor pulse count_.
+  UI2 flow_rate_ml_;    //< Flow rate in milliliters.
+  UI4 total_flow_ml_,   //< Total flow in mL.
+      target_flow_ml_,  //< Target flow in mL per cycle.
+      max_flow_ml_;     //< Maximum target flow in mL per cycle.
+  UI2 last_sample_;     //< Last pot value read.
 };
 
 class FlowControllerOp : public _::Operand {
@@ -77,4 +77,4 @@ class FlowControllerOp : public _::Operand {
   FlowController* flow_co_;  //< The FlowController.
 };
 }  // namespace _
-#endif  //< INCLUDED_KABUKI_FEATURE_TEK_FLOW_CONTROLLER
+#endif

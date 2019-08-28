@@ -1,10 +1,10 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki-toolkit.git
+@link    https://github.com/kabuki-starship/kabuki_toolkit.git
 @file    /c_ioexpander.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
-All right reserved (R). This Source Code Form is subject to the terms of the 
-Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+All right reserved (R). This Source Code Form is subject to the terms of the
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
@@ -25,7 +25,7 @@ chain of all the SPI ports and a counter that increments in a loop. This
 index is checked to see if it is greater than the number of input and output
 shift registers, and data is only sent and received on the correct UI1
 indexes.
-    
+    
 @code
 CH1 OutputData[5];
 SPIPort controller8 (D11, D12, D13, D10, 1, &OutputData[5], 4,
@@ -65,4 +65,4 @@ class IoExpander {
       *out_bytes_;     //< Output buffer.
 };
 }  // namespace _
-#endif  //< INCLUDED_KABUKI_FEATURE_TEK_IO_EXPANDER
+#endif

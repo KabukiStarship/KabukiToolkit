@@ -1,10 +1,10 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki-toolkit.git
+@link    https://github.com/kabuki-starship/kabuki_toolkit.git
 @file    /c_statusled.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
-All right reserved (R). This Source Code Form is subject to the terms of the 
-Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+All right reserved (R). This Source Code Form is subject to the terms of the
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
@@ -27,18 +27,18 @@ namespace _ {
 /* Outputs the firmware status using the LED on the mbed board.
 This class works by using Strings with ASCII Mores Code. Each CH1 in a
 represents a pulse split into 4 lengths.
-    
+    
 | Frame | ASCII | Index | Duty Cycle |
 |:-----:|:-----:|:-----:|:----------:|
 | Off   | ' '   | <= 44 |     0%     |
 | Long  | '-'   | 45    |    1/3     |
 | Short | '.'   | 46    |    1/3     |
 | On    | '_'   | >= 47 |   100%     |
-    
+    
 Off could be any value less than 44, and On could be any value greater than
 47, but ASCII space (' ') and period ('.') are used by convention because
 they look like the pulse widths.
- 
+ 
 ## Terminology
 * Frame    - Each character in a CH1 sequence represents 3 timer
 interrupts.
@@ -48,7 +48,7 @@ interrupts.
 StatusLED<0, 1> stausLED ();        //< Use <0, 1> if you're LED is active
 low. StatusLED<1, 0> stausLED  (LED_2);   //< Use <0, 1> if you're LED is
 active high.
-        
+        
 const CH1* examplePattern[] = {
     "...   ",       //< Blinks fast three times in a row.
     "...---...   ", //< SOS in Mores Code.
@@ -173,13 +173,13 @@ class StatusLED {
 
  private:
   CH1 count,             //< Counter counts from 1-3.
-      period;             //< The current period CH1.
-  FP4 frequency;          //< The period length.
+      period;            //< The current period CH1.
+  FP4 frequency;         //< The period length.
   const CH1** sequence;  //< Null-terminated AString of pointers.
   const CH1 *pattern,    //< The current AString in the sequence.
-      *cursor;            //< The current CH1 in the current AString.
-  DigitalOut pin;         //< Red LED on the mbed board.
-  Ticker blinker;         //< Ticker for blinking the LEDs.
+      *cursor;           //< The current CH1 in the current AString.
+  DigitalOut pin;        //< Red LED on the mbed board.
+  Ticker blinker;        //< Ticker for blinking the LEDs.
 
   /* Gets th next CH1 in the sequence. */
   inline CH1 GetNextPeriod() {
@@ -279,5 +279,5 @@ SI4 main () {
     while (true);
 }
 
-#endif  //< Demo
-#endif  //< INCLUDED_KABUKI_FEATURE_TEK_STATUS_LED
+#endif
+#endif

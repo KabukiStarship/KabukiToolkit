@@ -2,10 +2,11 @@
 
 ## Projects
 
-1. [Experiments](/experiments/readme.md) - A project for quickly testing code.
-1. [IGEEK](/kabuki/igeek/readme.md) - Interactive Generative Evolutionary Environment for KabukiNet.
-1. [Kabuki Cards]() - 
-1. [Script2 Benchmark](/script2_benchmark/readme.md) - Benchmark for [Script2](https://github.com/kabuki-starship/script2).
+1. [Experiments](./experiments/readme.md) - A project for quickly testing code.
+1. [Kabuki Benchmark](/script2_benchmark/readme.md) - An IoT benchmarking utility.
+1. [Kabuki Graph](./graph/readme.md) - This is the root repository folder for Kabuki Graph, an IMUL graphing calculator with deep AI integration.
+1. [Kabuki Cards](./kabuki_cards/readme.md) - A playing card game.
+1. [KabukiPress](./kabukipress/readme.md) - An Embedded-C++ hybrid of WordPress, 
 
 ## License
 

@@ -1,10 +1,10 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki-toolkit.git
+@link    https://github.com/kabuki-starship/kabuki_toolkit.git
 @file    /c_rotaryknobbank.h
 @author  Cale McCollough <<https://calemccollough.github.io>>
 @license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
-All right reserved (R). This Source Code Form is subject to the terms of the 
-Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with 
+All right reserved (R). This Source Code Form is subject to the terms of the
+Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
@@ -23,7 +23,7 @@ typedef enum { kNoButtons = 0, kButtonsTop, kButtonsBottom } LedRingConfig;
 Rotary encoder groups can have one or more banks of controls such as Aux
 sends, etc. Banks are sequentially in the mixer starting at the
 startChannel.
-    
+    
 
 Switching Banks
 ---------------
@@ -31,7 +31,7 @@ Switching banks can be done using a single button that cycles through the
 banks, or there can be a dedicated button per bank, or there can be no
 buttons at all. The user inputs the number of buttons, and if it is one and
 then numButtons is more than one, then that mode is chosen. If there is no
-    
+    
 
 Wiring Configuration
 --------------------
@@ -39,7 +39,7 @@ All Blue-Storm LED Encoder
 Rings use 15 segments. All LED encoder rings use the same wiring patterns
 that makes multiplexing code simple. ColA has 8 rows, and ColB has 7 rows.
 The design can also include a 16th LED either on top or on bottom.
-    
+    
 
 LEDRingConfig.kNoButtons
 ```
@@ -55,17 +55,17 @@ Col 1__________/___/_________________________/____/
 Col 2__________/___/_________________________/
 Col 2K________/___/
 Col (2k + 1)__/
-``` 
+```
 
 @todo There are three configurations of the LED encoder ring, the
 ButtonsOnTop, and ButtonsOnBottom configurations.
-    
+    
 
 The power for the LED comes from the shift register, so only one LED per
 column may be on at one time. The rows will always be the same on every
 control surface, but the columns will vary significantly. The rows will
 always be on a single shift register but the columns will be stored as a
-    
+    
 
 There will be both monochrome and RGB LEDs on the same buss, so the UI1
 array will be shared by multiple.
@@ -97,40 +97,39 @@ class KABUKI RotaryKnobBank {
               UI1* spi_out_bytes, SI2 row, int8_t count);
 
   /* Prints this object to a terminal. */
-   Printer& Print (Printer& o) {
+  Printer& Print(Printer& o) {
+    /* Script operations. */
+    const Operation* Star(char_t index, Expr * expr);
 
-  /* Script operations. */
-  const Operation* Star(char_t index, Expr* expr);
+   private:
+    ch_t channel_count_,   //< Number of knobs  (rotary encoders).
+        start_channel_,    //< Start channel in the mixer.
+        num_banks_,        //< Number of banks.
+        num_buttons_,      //< Number of buttons.
+        current_bank_,     //< Currently selected bank.
+        current_channel_,  //< Current bank start channel in the mixer.
+        wiring_config_;    //< RotaryEncoderBank wiring configuration.
+    const UI1 *rows_,      //< Pointer to the array of columns bits.
+        *columns_;         //< Pointer to the array of columns bits.
+    Button* buttons_;      //< Pointer to the array of buttons.
+    Led* lights_;          //< Pointer to the array of LEDs.
 
- private:
-  ch_t channel_count_,    //< Number of knobs  (rotary encoders).
-      start_channel_,    //< Start channel in the mixer.
-      num_banks_,        //< Number of banks.
-      num_buttons_,      //< Number of buttons.
-      current_bank_,     //< Currently selected bank.
-      current_channel_,  //< Current bank start channel in the mixer.
-      wiring_config_;    //< RotaryEncoderBank wiring configuration.
-  const UI1 *rows_,      //< Pointer to the array of columns bits.
-      *columns_;         //< Pointer to the array of columns bits.
-  Button* buttons_;      //< Pointer to the array of buttons.
-  Led* lights_;          //< Pointer to the array of LEDs.
+    /* Updates the mixer channel number LED ring. */
+    void UpdateChannel(UI2 index, SI2 * channels, SI2 * min_values,
+                       SI2 * max_values, UI1 * spi_out_bytes, UI2 row,
+                       UI1 count);
+  };
 
-  /* Updates the mixer channel number LED ring. */
-  void UpdateChannel(UI2 index, SI2* channels, SI2* min_values,
-                     SI2* max_values, UI1* spi_out_bytes, UI2 row,
-                     UI1 count);
-};
+  class RotaryEncoderBankOp : public Operand {
+   public:
+    /* Constructs a RotaryEncoderBank Operation. */
+    RotaryEncoderBankOp(RotaryKnobBank* object);
 
-class RotaryEncoderBankOp : public Operand {
- public:
-  /* Constructs a RotaryEncoderBank Operation. */
-  RotaryEncoderBankOp(RotaryKnobBank* object);
+    /* Script operations. */
+    virtual const Operation* Star(char_t index, Expr* expr);
 
-  /* Script operations. */
-  virtual const Operation* Star(char_t index, Expr* expr);
-
- private:
-  RotaryKnobBank* object_;  //< The RotaryEncoderBank.
-};
+   private:
+    RotaryKnobBank* object_;  //< The RotaryEncoderBank.
+  };
 }  // namespace _
-#endif  //< INCLUDED_KABUKI_FEATURE_TEK_ROTARYENCODERBANK
+#endif

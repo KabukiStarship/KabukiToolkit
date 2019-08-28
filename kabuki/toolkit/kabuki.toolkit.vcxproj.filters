@@ -32,9 +32,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="kabuki.toolkit.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\script2\pch.cc">
       <Filter>Lib\script2</Filter>
     </ClCompile>
@@ -600,6 +597,9 @@
     </ClInclude>
     <ClInclude Include="pro\global.h">
       <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Lib</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

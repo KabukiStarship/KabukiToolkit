@@ -34,7 +34,7 @@ The Doxyfile is used to create the [Kabuki Starship API Docs](https://kabuki-sta
 ---
 
 * Where should I start?
-  * The best place to start is with the [Quickstart Guide](#quick-start-guide).
+  * The best place to start is with the [Quickstart Guide](#quick-start-guide) followed by the [Kabuki Cookbook](https://github.com/kabuki-starship/kabuki.cookbook).
 
 ---
 
@@ -76,7 +76,7 @@ __  / / /  / / /_  /_  ___/_  //_/   __  ___/  __/  __ `/_  ___/  __/
 **1.** Clone the kabuki_toolkit and script2 repos into your workspace or project 3rd-party dependencies directory:
 
 ```Console
-git clone https://github.com/kabuki-starship/kabuki_toolkit.git
+git clone https://github.com/kabuki-starship/kabuki.toolkit.git
 cd kabuki_toolkit
 git clone https://github.com/kabuki-starship/script2.git
 ```
@@ -93,6 +93,6 @@ BOL TestWarn(const CH1* function, const CH1* file, SI4 line);
 
 ## License
 
-Copyright (C) 2014-9 [Cale McCollough](https://calemccollough.github.io); all right reserved (R).
+Copyright 2014-9 (C) [Cale McCollough](https://calemccollough.github.io); all rights reserved (R).
 
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0/>.

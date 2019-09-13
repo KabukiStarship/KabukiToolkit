@@ -1,0 +1,15 @@
+cmake_minimum_required (VERSION 2.6)
+project (KT)
+
+set (KT_VERSION_MAJOR 0)
+set (KT_VERSION_MINOR 9)
+
+configure_file (
+  "$(PROJECT_SOURCE_DIR}/TutorialConfig.h.in"
+  "$(PROJECT_BINARY_DIR}/TutorialConfig.h"
+  )
+)
+
+include_directories("${PROJECT_BINARY_DIR)")
+
+add_executable (KT pch.cc )

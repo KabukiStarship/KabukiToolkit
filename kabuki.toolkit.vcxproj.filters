@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="resources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Lib\script2">
+      <UniqueIdentifier>{f2815d1d-2a7c-48f1-9195-e31f40ce6e2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\kabuki">
+      <UniqueIdentifier>{55b2cd4b-dfb8-4161-abf6-857076876ea4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\kabuki\toolkit">
+      <UniqueIdentifier>{9df9d183-f50b-4993-b7c5-0dac57e1da7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\kabuki\toolkit\gui">
+      <UniqueIdentifier>{5fb357f4-2ac2-4ba7-a977-69eb61532338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\kabuki\toolkit\pro">
+      <UniqueIdentifier>{083bf669-03f1-49a6-9bed-7db6aa52b956}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\kabuki\toolkit\touch">
+      <UniqueIdentifier>{c5c9248c-e50e-44cd-8bbc-24ca9aa3fc6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\kabuki\toolkit\who">
+      <UniqueIdentifier>{2c8a4c67-b00c-4027-9cd4-772d598c9244}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="who\pch.cc">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClCompile>
+    <ClCompile Include="touch\pch.cc">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClCompile>
+    <ClCompile Include="pro\pch.cc">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="who\01_bar.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\global.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\pch.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_account.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_address.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_addressemail.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_authenticator.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_authenticatordefault.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_entity.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_entitygroup.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_entitylist.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_handle.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_name.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_organization.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_password.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_person.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_privilege.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_profile.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_registrar.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_relationship.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_role.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_roster.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_symbol.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_uidassigner.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_user.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\t_userlist.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\test_tree.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="who\00_foo.h">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonmode.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonpage.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonradio.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonscroller.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonswap.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonwidget.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_channelgroup.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_component.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_controldmx.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_controller.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_controlmaster.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_controlmatrix.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_controlmidi.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_isymmetriccontroller.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_library.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_mixer.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_mixerchannel.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_mixerpage.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_param.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_paramset.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_set.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_tag.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_tagtibrary.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_widget.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_widgetmanager.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_widgetmidi.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_widgetpage.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_xycontrol.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\test_tree.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\00_foo.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\01_bar.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\c_event.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\global_config.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\pch.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_adsr.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_button.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttondmx.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttondummy.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonevent.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonmacro.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="touch\t_buttonmidi.h">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\pch.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\t_git.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\t_project.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\t_schedule.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\t_task.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\t_workspace.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\test_tree.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\00_foo.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\01_bar.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\c_doxygen.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pro\global.h">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="who\global_config.inl">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </None>
+    <None Include="who\test_debug.inl">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </None>
+    <None Include="who\test_footer.inl">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </None>
+    <None Include="who\test_release.inl">
+      <Filter>Lib\kabuki\toolkit\who</Filter>
+    </None>
+    <None Include="touch\test_debug.inl">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </None>
+    <None Include="touch\test_footer.inl">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </None>
+    <None Include="touch\test_release.inl">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </None>
+    <None Include="touch\global_config.inl">
+      <Filter>Lib\kabuki\toolkit\touch</Filter>
+    </None>
+    <None Include="pro\global_config.inl">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </None>
+    <None Include="pro\test_debug.inl">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </None>
+    <None Include="pro\test_footer.inl">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </None>
+    <None Include="pro\test_release.inl">
+      <Filter>Lib\kabuki\toolkit\pro</Filter>
+    </None>
+  </ItemGroup>
+</Project>

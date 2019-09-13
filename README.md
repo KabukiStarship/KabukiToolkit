@@ -11,20 +11,24 @@
    /         \                    ♫♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪
 ```
 
-Kabuki Toolkit (KT) is a modern Embedded-C++ toolkit for making intelligent connected technologies, apps, plugins, games, servers, firmware, and art with Script2.
+Kabuki Toolkit (KT) is a Modern Embedded-C++ Software Development Kit (SDK) for making intelligent connected technologies, apps, plugins, games, servers, and art.
 
 [![GitHub version](https://badge.fury.io/gh/kabuki-starship%2Fkabuki_toolkit.svg)](https://badge.fury.io/gh/kabuki-starship%2Fkabuki_toolkit)
 
-## Quick Links
+## Getting Started
 
 * [FAQ & Quickstart](https://github.com/kabuki-starship/kabuki_toolkit.git/blob/master/docs/readme.md) - *Answers to frequently asked questions the Quickstart Guide can be found in the `/docs/readme.md` file.*
+* [Kabuki Toolkit Cookbook](https://github.com/kabuki-edu/kabuki.tool.cookbook) - An open-source book .
 * [Script2 and the SCRIPT Specification](https://github.com/kabuki-starship/script2) - *Serial Chinese Room, Interprocess, and Telemetry (SCRIPT) Script (Script2) is the foundation of KT so it's the best place to start learning.*
-* [Kabuki Starship Website](https://kabuki-starship.github.io/)
+* [Kabuki Starship Website](https://kabuki-starship.github.io/) - We will have a new website up and running very soon.
 
-## Third-party Libraries
+## Mission and Vision
 
-* [Nuklear](https://github.com/vurtun/nuklear) - Modular C98 GUI toolkit we're porting to Modern Embedded-C++.
-* [Eigen](https://bitbucket.org/eigen/eigen) - A C++ template library for linear algebra: vectors, matrices, and related algorithms.
+The mission of Kabuki Toolkit and to help developers by making it easier and faster to make high-performance applications in Embedded-C++. Our vision is too eliminate wasted time, resources, and money in computer software throughout the product lifecycle.
+
+## Third-party APIs
+
+* [SFML](https://www.sfml-dev.org/) - We are currently creating our own version of SFML based on Script2.
 
 ## License
 

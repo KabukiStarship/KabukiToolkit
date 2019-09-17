@@ -1,23 +1,23 @@
-# Contributing
+# [Markdown Software Engineering](../readme.md)
 
-## Bug Reports
+## Contributing Guide
 
-**1.** Ensure the bug was not already reported by by reading the [Issues](https://github.com/kabuki-starship/script2/issues).
+**1.** Ensure the bug was not already reported by by reading the [Issues](https://github.com/abc_org/xyz_project/issues).
 
 **2.** Open `/docs/BUG_REPORT_TEMPLATE.md` and copy it's contents to the clipboard.
 
 **3.** Create an issue, paste the template into the Issue body and fill it out.
 
-## Feature Requests
+### Feature Requests
 
 **1.** Same as the instructions for submitting a bug report except with using `/docs/FEATURE_REQUEST.md`.
 
-## Completing Issues
+### Completing Issues
 
 **1.** Clone the repo and create a branch for the IssueNuber:
 
 ```Console
-git clone https://github.com/kabuki-starship/script2.git
+git clone https://github.com/abc_org/xyz_project.git
 cd script2
 git checkout -b Issue123
 ```

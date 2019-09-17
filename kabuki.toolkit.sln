@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KabukiToolkit", "kabuki.toolkit.vcxproj", "{66D306D2-1972-4293-9C77-2168D9B3DF64}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kabuki.toolkit", "kabuki.toolkit.vcxproj", "{3455ED00-6B42-4E54-9CA3-6210FA459E00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug|x64.ActiveCfg = Debug|x64
-		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug|x64.Build.0 = Debug|x64
-		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug|x86.ActiveCfg = Debug|Win32
-		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Debug|x86.Build.0 = Debug|Win32
-		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Release|x64.ActiveCfg = Release|x64
-		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Release|x64.Build.0 = Release|x64
-		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Release|x86.ActiveCfg = Release|Win32
-		{66D306D2-1972-4293-9C77-2168D9B3DF64}.Release|x86.Build.0 = Release|Win32
+		{3455ED00-6B42-4E54-9CA3-6210FA459E00}.Debug|x64.ActiveCfg = Debug|x64
+		{3455ED00-6B42-4E54-9CA3-6210FA459E00}.Debug|x64.Build.0 = Debug|x64
+		{3455ED00-6B42-4E54-9CA3-6210FA459E00}.Debug|x86.ActiveCfg = Debug|Win32
+		{3455ED00-6B42-4E54-9CA3-6210FA459E00}.Debug|x86.Build.0 = Debug|Win32
+		{3455ED00-6B42-4E54-9CA3-6210FA459E00}.Release|x64.ActiveCfg = Release|x64
+		{3455ED00-6B42-4E54-9CA3-6210FA459E00}.Release|x64.Build.0 = Release|x64
+		{3455ED00-6B42-4E54-9CA3-6210FA459E00}.Release|x86.ActiveCfg = Release|Win32
+		{3455ED00-6B42-4E54-9CA3-6210FA459E00}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

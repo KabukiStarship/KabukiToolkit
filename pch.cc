@@ -1,40 +1,30 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /pch.cc
+@file    /tests/pch.cc
 @author  Cale McCollough <https://calemccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough <<calemccollough.github.io>>;
-All right reserved (R). This Source Code Form is subject to the terms of the
-Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
-this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
+@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R).
+This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file, You can
+obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
+
 #include <pch.h>
 
-#include <script2/global.h>
+#if SEAM != SEAM_N
 
-/*
-#include <kabuki/toolkit/adsp/global.h"
-#include <kabuki/toolkit/ai/global.h"
-#include <kabuki/toolkit/data/global.h"
-#include <kabuki/toolkit/drawing/global.h"
-#include <kabuki/toolkit/gui/global.h"
-#include <kabuki/toolkit/music/global.h"
-#include <kabuki/toolkit/orm/global.h"
-#include <kabuki/toolkit/plotting/global.h"
-#include <kabuki/toolkit/pro/global.h"
-#include <kabuki/toolkit/uweb/global.h"
-#include <kabuki/toolkit/video/global.h"
-#include <kabuki/toolkit/who/global.h"
+#include "gui/tests/all.inl"
+#include "hypertext/tests/all.inl"
+#include "pro/tests/all.inl"
+#include "tek/tests/all.inl"
+#include "touch/tests/all.inl"
+#include "who/tests/all.inl"
 
-using namespace _;
+using kabuki::toolkit;
 
 int main(int arg_count, char** args) {
   enum { kSize = 1024 };
   char _log[kSize];
-  return SeamTreeTest<_0_0_0_F2>(arg_count, args, _log, kSize); */
-
-int main(int arg_count, char** args) {
-  enum { kSize = 1024 };
-  char _log[kSize];
-  return ::_::TestTree<TestKT>(arg_count, args, _log, kSize);
+  return ::_::TestTree<who::Test>(arg_count, args, _log, kSize);
 }
+#endif

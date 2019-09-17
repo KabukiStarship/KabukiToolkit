@@ -1,6 +1,4 @@
-# [Kabuki Toolkit](../readme.md)
-
-## Code of Conduct
+# Code of Conduct
 
 The following standards are enforced in this repository and organization and you are required to read the files in order to contribute to this repository:
 

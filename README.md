@@ -11,7 +11,7 @@
    /         \                    ♫♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪
 ```
 
-Kabuki Toolkit (KT) is a Modern Embedded-C++ Firmware-to-Software Development Kit (F2SDK) for making intelligent connected technologies, apps, plugins, games, servers, firmware, and art.
+Kabuki Toolkit (KT) is a [Modern Embedded-C++](https://github.com/kabuki-starship/kabuki.toolkit.cookbook/blob/master/introduction/modern_embedded_cpp.md) Software Development Kit (SDK) for making intelligent connected software with Script2.
 
 [![GitHub version](https://badge.fury.io/gh/kabuki-starship%2Fkabuki_toolkit.svg)](https://badge.fury.io/gh/kabuki-starship%2Fkabuki_toolkit)
 

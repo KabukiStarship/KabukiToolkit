@@ -8,7 +8,7 @@ v. 2.0. If a copy of the MPL was not distributed with this file, You can
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <pch.h>
+#include <module_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_WIDGETPAGE
 #define KABUKI_TOOLKIT_AV_WIDGETPAGE

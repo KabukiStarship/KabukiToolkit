@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/widget.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_WIDGET
 #define KABUKI_TOOLKIT_AV_WIDGET
@@ -44,7 +44,7 @@ class LIB_MEMBER TWidget : public Operation {
   enum Types { Touchscreen = 0, Keyboard, DrumPad, Controller, DMXWidget };
 
   /* Default contrctor. */
-  TWidget(const CH1* name = "")
+  TWidget(const CHA* name = "")
     : HmiComponent (initLabel), page_count_ (1) {
     // We have to have at least one blank page.
     pages.add (ControlsPage ());
@@ -53,7 +53,7 @@ class LIB_MEMBER TWidget : public Operation {
   /* Copy constructor. */
   TWidget(const TWidget& o)
     : WidgetName (o.WidgetName), page_count_ (1) {
-    SI4 i;
+    ISC i;
 
     for (i = 0; i < size (); ++i) {
       InsertPage (D[i]);
@@ -84,7 +84,7 @@ class LIB_MEMBER TWidget : public Operation {
 
   /* Compairs this TWidget to the given one.
   @return Gets true if the two objects are the identical. */
-  SI4 Compare(const TWidget& o) {
+  ISC Compare(const TWidget& o) {
     if (WidgetName.Compare (o.name_) ||
       page_count_ != o.page_count_)
       return false;
@@ -140,20 +140,20 @@ class LIB_MEMBER TWidget : public Operation {
   TStrand<>& Name() { return name_; }
 
   /* Renames this TWidget to the given AString. */
-  const CH1* SetName(const TStrand<>& new_name) {
+  const CHA* SetName(const TStrand<>& new_name) {
     return name_.Set (new_name);
   }
 
   /* Gets what type TWidget this is.
   This is the index of this TWidget's mode. */
-  SI4 GetType();
+  ISC GetType();
 
   /* Gets the number of pages in the Array. */
-  SI4 GetNumPages() { return page_count_; }
+  ISC GetNumPages() { return page_count_; }
 
   /* Gets true if this TWidget contans a page with a name that matches the search
   AString. */
-  BOL ContainsPage(const CH1* s) {
+  BOL ContainsPage(const CHA* s) {
     if (pagesHead == nullptr) return false;
 
     WidgetPage* current = pagesHead;
@@ -168,7 +168,7 @@ class LIB_MEMBER TWidget : public Operation {
 
   /* Inserts a new blank page into the Array.
   @param s The name for the new page. */
-  SI4 InsertPage(const CH1* s) {  // This function inserts a new TWidget page in d
+  ISC InsertPage(const CHA* s) {  // This function inserts a new TWidget page in d
     TStrand<> trimmed_name;
 
     if (name.Compare (""))
@@ -199,7 +199,7 @@ class LIB_MEMBER TWidget : public Operation {
   
   /* Inserts and deep copies an already existing page into the Array.
   @param newPage The page to deep copy. */
-  SI4 InsertPage(const TControlMatrix& page) {
+  ISC InsertPage(const TControlMatrix& page) {
     if (contains (P->Label ()))  { // See if page already exists
       InsertDuplicate (P->Label ());
       page (P->Label ())->copy (page.Label ());
@@ -209,16 +209,16 @@ class LIB_MEMBER TWidget : public Operation {
   }
 
   /* Deletes Page at thisIndex from this TWidget. */
-  SI4 DeletePage(SI4 index) {
+  ISC DeletePage(ISC index) {
     if (index > page_count_ || index < 1) return 0;
     WidgetPage* currentPage = pagesHead;
-    for (SI4 i = 0; i <= pageIndex; ++i) currentPage = currentPage->next ();
+    for (ISC i = 0; i <= pageIndex; ++i) currentPage = currentPage->next ();
     DeletePage (currentPage);
     return true;
   }
 
   /* Delete page with entitled by the given AString. */
-  SI4 DeletePage(const CH1* key) {
+  ISC DeletePage(const CHA* key) {
     // Because our client application stores a copy of the TWidget to edit,
     // and because there can't only be one page with any give name, we only
     // want the client to be able to delete by a given name.
@@ -255,7 +255,7 @@ class LIB_MEMBER TWidget : public Operation {
   }
 
   /* Gets the page with this name. */
-  TControlMatrix* GetPage(const CH1* name) {
+  TControlMatrix* GetPage(const CHA* name) {
     if (pagesHead == nullptr) return nullptr;
 
     WidgetPage* current = pagesHead;
@@ -269,7 +269,7 @@ class LIB_MEMBER TWidget : public Operation {
   }
 
   /* Sets the filename of this TWidget to the newFilename. */
-  const CH1* SetFile (const CH1* new_name) {
+  const CHA* SetFile (const CHA* new_name) {
     return filename_.Set (new_name);
   }
 
@@ -299,7 +299,7 @@ class LIB_MEMBER TWidget : public Operation {
   /* Prints this object to a Printer. */
   template<typename Printer>
   Printer& Print(Printer& o) const {
-    const CH1* namesFormater = " -> ";
+    const CHA* namesFormater = " -> ";
     o << "\nWidget: " << WidgetName <<  << " PageCount: " << page_count_ 
       << "\n" << LineStrand ('-');
     if (page_count_ == 0) {
@@ -321,8 +321,8 @@ class LIB_MEMBER TWidget : public Operation {
  private:
   TStrand<> widget_name_,       //< This TWidget's name.
       filename_;                //< Filename of this widget.
-  SI4 num_pages_;               //< Number of pages this TWidget has.
-  Parameter<SI4>*masterKnob_a_, //< Master knob for Layer A.
+  ISC num_pages_;               //< Number of pages this TWidget has.
+  Parameter<ISC>*masterKnob_a_, //< Master knob for Layer A.
       *master_knob_b_,          //< Master knob for Layer B.
       *master_bttn_a_,          //< Master button for Layer A.
       *master_bttn_b_;          //< Master button for Layer B.
@@ -351,12 +351,12 @@ class LIB_MEMBER TWidget : public Operation {
   }
 
   /* Inserts the given page into the list. */
-  SI4 InsertPage (TControlMatrix page) {
+  ISC InsertPage (TControlMatrix page) {
     return matrixs_.Insert (page)
   }
 
   /* Inserts a page that has been tested for duplicate names. */
-  SI4 InsertDuplicate(const CH1* page_key) {
+  ISC InsertDuplicate(const CHA* page_key) {
     // If there is a duplicate name already, we want to do 2 things...
     // 1.) check to see if there is a trailing value at the end. If there is a
     // value,
@@ -365,7 +365,7 @@ class LIB_MEMBER TWidget : public Operation {
     //     insert it. If The value is less than zero, then it will start the
     //     process over from 1.
 
-    SI4 trailingValue;
+    ISC trailingValue;
     TStrand<> name;
 
     trailingValue = name.GetTrailingIntValue ();

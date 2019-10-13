@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/controlmidi.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_MIDICONTROL
 #define KABUKI_TOOLKIT_AV_MIDICONTROL
@@ -22,24 +22,24 @@ namespace _ {
 
 
 */
-class LIB_MEMBER ControlMidi : public Parameter<SI4> {
+class LIB_MEMBER ControlMidi : public Parameter<ISC> {
  public:
   enum {
     NumChannels = 16  //< Number of MIDI channels.
   };
 
   /* Constructor. */
-  ControlMidi(const TStrand<>& label = "", SI4 cc = 0, SI4 channel = 0,
-              SI4 init_value = 0, SI4 newMinValue = 0, SI4 min_value = 127,
-              SI4 word_size = 7, SI4 type = Parameter<SI4>::ControlMidi)
-    : Parameter<SI4> (type, label, channel, init_value, min_value, max_value,
+  ControlMidi(const TStrand<>& label = "", ISC cc = 0, ISC channel = 0,
+              ISC init_value = 0, ISC newMinValue = 0, ISC min_value = 127,
+              ISC word_size = 7, ISC type = Parameter<ISC>::ControlMidi)
+    : Parameter<ISC> (type, label, channel, init_value, min_value, max_value,
       word_size) {
     SetCC (cc);
   }
 
   /* Copy constructor. */
   ControlMidi(const ControlMidi& o)
-    : Parameter<SI4> (other) {
+    : Parameter<ISC> (other) {
     // Nothing to do here. :-)
   }
 
@@ -47,10 +47,10 @@ class LIB_MEMBER ControlMidi : public Parameter<SI4> {
   virtual ~ControlMidi() {}
 
   /* gets the MIDI control change (CC) parameter. */
-  SI4 CC() const { return cc_; }
+  ISC CC() const { return cc_; }
 
   /* sets the control change (CC) parameter. */
-  void SetCC(SI4 value) {
+  void SetCC(ISC value) {
     if (value < 0)
       cc_ = 0;
     else if (value > 127)
@@ -60,24 +60,24 @@ class LIB_MEMBER ControlMidi : public Parameter<SI4> {
   }
 
   /* Sets the min and max values. */
-  void SetMinMaxValues(SI4 newMin, SI4 newMax) override {
-    Parameter<SI4>::SetMinMaxValues (newMin, newMax);
+  void SetMinMaxValues(ISC newMin, ISC newMax) override {
+    Parameter<ISC>::SetMinMaxValues (newMin, newMax);
     SetCc (cc_);
   }
 
   /* sets the min value to the value. */
-  void SetMinValue(SI4 value) override {
-    Parameter<SI4>::SetMinValue (value);
+  void SetMinValue(ISC value) override {
+    Parameter<ISC>::SetMinValue (value);
     SetCc (cc_);
   }
 
   /* sets the max value to the value. */
-  void SetMaxValue(SI4 value) override {
-    Parameter<SI4>::SetMaxValue (value);
+  void SetMaxValue(ISC value) override {
+    Parameter<ISC>::SetMaxValue (value);
     SetCc (cc_);
   }
 
-  /* Triggers the Parameter<SI4> to fire. */
+  /* Triggers the Parameter<ISC> to fire. */
   virtual void Trigger () {}
 
   /* gets the header for toStringRow (). */
@@ -89,7 +89,7 @@ class LIB_MEMBER ControlMidi : public Parameter<SI4> {
 
   /* gets a column of the values without the labels. */
   void PrintRow() const override {
-    return Parameter<SI4>::PrintRow ();
+    return Parameter<ISC>::PrintRow ();
     Printf ("%3i|", cc_);
   }
 
@@ -100,7 +100,7 @@ class LIB_MEMBER ControlMidi : public Parameter<SI4> {
   }
 
  private:
-  SI2 cc_;  //< Control change (CC) parameter.
+  ISB cc_;  //< Control change (CC) parameter.
 };
 
 }  // namespace _

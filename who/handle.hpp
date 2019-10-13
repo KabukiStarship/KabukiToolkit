@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /who/handle.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_HANDLE
 #define KABUKI_TOOLKIT_WHO_HANDLE
@@ -17,7 +17,7 @@ obtain one at https://mozilla.org/MPL/2.0/. */
 
 namespace _ {
 
-/* A handle like a CH1 or UID.
+/* A handle like a CHA or IUD.
 */
 class THandle {
  public:
@@ -27,14 +27,14 @@ class THandle {
     kMaxLength = 255        //< Max length of a Handle range.
   };
 
-  static const CH1* Default ();
+  static const CHA* Default ();
 
-  /* Constructor creates a standard CH1. */
+  /* Constructor creates a standard CHA. */
   THandle(TAuthenticator* authenticator, const TStrand<>& key,
-         SI4 min_length = kDefaultMinLength, SI4 max_length = kMaxLength)
+         ISC min_length = kDefaultMinLength, ISC max_length = kMaxLength)
     : auth_ (authenticator), type_ (kValidation) {
     if (min_length >= max_length) {
-      SI4 temp = min_length;
+      ISC temp = min_length;
       min_length = max_length;
       max_length = temp;
     }
@@ -79,7 +79,7 @@ class THandle {
  private:
   TStrand<>& key_;        //< Unique AString key.
   TAuthenticator* auth_;   //< Handle authenticator.
-  SI4 type_;              //< The validation type.
+  ISC type_;              //< The validation type.
 
 };  //< class Handle
 

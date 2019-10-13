@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /who/entity.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_ENTITY
 #define KABUKI_TOOLKIT_WHO_ENTITY
@@ -48,7 +48,7 @@ class TEntity {
   /* Returns true if this entity contains the search query. */
   BOL Query(const TStrand<>& query) {
     /*
-    for_each (tags.begin (), tags.end (), [](CH1& AString(
+    for_each (tags.begin (), tags.end (), [](CHA& AString(
     {
         if (AString == query) return 1;
     });
@@ -68,7 +68,7 @@ class TEntity {
         if (p == query) return 1;
     });
 
-    for_each (tags.begin (), tags.end (), [](CH1& AString(
+    for_each (tags.begin (), tags.end (), [](CHA& AString(
     {
         if (AString == query) return 1;
     });

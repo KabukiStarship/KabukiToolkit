@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /who/symbol.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_GRAMMAR
 #define KABUKI_TOOLKIT_WHO_GRAMMAR
@@ -42,9 +42,9 @@ class TSymbol {
     : num_illegal_char_ranges_ (initState.num_illegal_char_ranges_),
       num_mandatory_char_ranges_ = initState.num_mandatory_char_ranges_) {
     /*
-    SI4 i;
+    ISC i;
     if (num_illegal_char_ranges_) {
-      illegal_chars_ = new CH1[num_illegal_char_ranges_][2];
+      illegal_chars_ = new CHA[num_illegal_char_ranges_][2];
       for (i = 0; i < num_illegal_char_ranges_; ++i) {
         illegal_chars_[i][1] = initState.illegal_chars_[i][1];
         illegal_chars_[i][2] = initState.illegal_chars_[i][2];
@@ -55,7 +55,7 @@ class TSymbol {
     }
 
     if (num_mandatory_char_ranges_) {
-      illegaChars = new CH1[num_illegal_char_ranges_][2];
+      illegaChars = new CHA[num_illegal_char_ranges_][2];
       for (i = 0; i < num_illegal_char_ranges_; ++i {
         illegal_chars_[i][1] = initState.illegal_chars_[i][1];
         illegal_chars_[i][2] = initState.illegal_chars_[i][2];
@@ -76,12 +76,12 @@ class TSymbol {
   /* Verifies the given AString to see if it has proper grammar. */
   BOL IsValid(const TStrand<>& AString) {
     /*
-    SI4 StringLength = StrandLength (thisString);
+    ISC StringLength = StrandLength (thisString);
 
     if (StringLength  < min_length_ || StringLength > max_length_)
     return false;
 
-    SI4 i, j; // Looping variables
+    ISC i, j; // Looping variables
     for (i = 0; i < ; ++i)
     {
     for (j = 0; j < num_illegal_char_ranges_; ++j)
@@ -92,20 +92,20 @@ class TSymbol {
   }
 
   /* Gets the min length of a valid symbol. */
-  SI4 GetMinLength() { return min_length_; }
+  ISC GetMinLength() { return min_length_; }
 
   /* Sets the min length of a valid symbol. */
-  BOL SetMinLength(SI4 value) {
+  BOL SetMinLength(ISC value) {
     if (value < min_length_) return false;
     max_length_ = value;
     return true;
   }
 
   /* Gets the max length. */
-  SI4 GetMaxLength() { return max_length_; }
+  ISC GetMaxLength() { return max_length_; }
 
   /* Gets the max length. */
-  BOL SetMaxLength (SI4 value) {
+  BOL SetMaxLength (ISC value) {
 
   }
 
@@ -116,36 +116,36 @@ class TSymbol {
     format_ = StrandClone (format);*/
   }
 
-  /* Checks to see if thisChar is an illegal CH1. */
-  BOL IsIllegal(CH1 aChar) { return true; }
+  /* Checks to see if thisChar is an illegal CHA. */
+  BOL IsIllegal(CHA aChar) { return true; }
 
-  /* Adds CH1 index of illegal chars.
+  /* Adds CHA index of illegal chars.
   @pre thisChar  must be > 0.
-  @param thisChar The illegal CH1 to add.
+  @param thisChar The illegal CHA to add.
   */
-  BOL MakeIllegal(CH1 thisChar, const TStrand<>& descString) {
+  BOL MakeIllegal(CHA thisChar, const TStrand<>& descString) {
     // if (!isprint (thisChar))
     //   return false;
     return true;
   }
 
-  /* Adds CH1 or range of indexes of illegal chars.
-  @pre startIndex and stopIndex must be a printable CH1.
-  @param startIndex The starting ASCII CH1 index.
-  @param stopIndex  The stopping ASCII CH1 index. */
-  BOL MakeIllegal(SI4 startIndex, SI4 stopIndex, 
+  /* Adds CHA or range of indexes of illegal chars.
+  @pre startIndex and stopIndex must be a printable CHA.
+  @param startIndex The starting ASCII CHA index.
+  @param stopIndex  The stopping ASCII CHA index. */
+  BOL MakeIllegal(ISC startIndex, ISC stopIndex, 
                    const TStrand<>& descString) {
     return true;
   }
 
-  /* Adds a CH1 or set of range of CH1 indexes that must be included in a
+  /* Adds a CHA or set of range of CHA indexes that must be included in a
   valid symbol.
-  @pre   start_index and stopIndex must be a printable CH1 and numInstances
+  @pre   start_index and stopIndex must be a printable CHA and numInstances
   must be > 0 and < max_length_.
-  @param start_index The starting ASCII CH1 index.
-  @param stop_index  The stopping ASCII CH1 index.
+  @param start_index The starting ASCII CHA index.
+  @param stop_index  The stopping ASCII CHA index.
   @param num_instances  The number of times the symbol range must occur. */
-  BOL MakeMandatory(SI4 startIndex, SI4 stopIndex, SI4 numInstances,
+  BOL MakeMandatory(ISC startIndex, ISC stopIndex, ISC numInstances,
                      const TStrand<>& descString) {
     return true;
   }
@@ -158,24 +158,24 @@ class TSymbol {
   }
 
  private:
-  SI4 num_illegal_char_ranges_,    //< The number of illegal CH1 ranges.
-      num_mandatory_char_ranges_,  //< The number of mandatory CH1 ranges.
+  ISC num_illegal_char_ranges_,    //< The number of illegal CHA ranges.
+      num_mandatory_char_ranges_,  //< The number of mandatory CHA ranges.
       min_length_,                 //< The min length of a valid symbol.
       max_length_;                 //< The max length of a valid symbol.
     /*
     Range<char_t> illegal_chars_,     //< A 2 column table of ints that
-    represents all of illegal CH1 ranges.
+    represents all of illegal CHA ranges.
     Range<char_t> mandatory_chars_,   //< A 3 column table of ints that
-    represents all of mandatory CH1 ranges and how many are mandatory.
+    represents all of mandatory CHA ranges and how many are mandatory.
     Range<char_t> mustStartWithChars; //< A 2 column table of ints that
     represents the range (AString) of chars that the symbol must start with.
                                  
     const TStrand<>& illegal_chars_desc,     
-    //< An array of Strings that describes what illegal CH1 (AString) are.                               
+    //< An array of Strings that describes what illegal CHA (AString) are.                               
     mandatory_chars_desc,   //< An array of
-    Strings that describes what the mandatory CH1 (AString) are.
+    Strings that describes what the mandatory CHA (AString) are.
                 mustStartWithCharsDesc; //< An array of Strings that describes
-    what mandatory first CH1 (AString) are.
+    what mandatory first CHA (AString) are.
     */
 };
 

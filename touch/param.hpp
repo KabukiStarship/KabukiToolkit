@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/param.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_PARAMETER
 #define KABUKI_TOOLKIT_AV_PARAMETER
@@ -26,9 +26,9 @@ class LIB_MEMBER Parameter : public HmiComponent {
   };
 
   /* Default constructor. */
-  Parameter(UI2 newType, const CH1* label = "", SI4 channel = 0,
-            UI2 init_value = 0, UI2 min_value = 0,
-            UI2 max_value_ = 1)
+  Parameter(IUB newType, const CHA* label = "", ISC channel = 0,
+            IUB init_value = 0, IUB min_value = 0,
+            IUB max_value_ = 1)
     : Parameter (label) {
     setType (type);
     setWordSize (word_size);
@@ -58,10 +58,10 @@ class LIB_MEMBER Parameter : public HmiComponent {
   virtual ~Parameter() {}
 
   /* Gets what type of control this is. */
-  UI2 GetType() const { return type_; }
+  IUB GetType() const { return type_; }
 
   /* Sets the type to the new value*/
-  void SetType (UI2 value) {
+  void SetType (IUB value) {
     if (value < ControlDMX)
       value = ControlDMX;
     else if (value > ButtonMacro)
@@ -98,7 +98,7 @@ class LIB_MEMBER Parameter : public HmiComponent {
   }
 
   /* Gets a AString that says what type of Parameter this is. */
-  const CH1* GetTypeString() const {
+  const CHA* GetTypeString() const {
     switch (type_) {
     case ControlDMX:
       return "DMX Control";
@@ -118,40 +118,40 @@ class LIB_MEMBER Parameter : public HmiComponent {
   }
 
   /* Gets the output channel of this control. */
-  SI4 GetChannel() const { return channel; }
+  ISC GetChannel() const { return channel; }
 
   /* Gets the number of channels. */
-  SI4 GetNumChannels() const { return channel_count_; }
+  ISC GetNumChannels() const { return channel_count_; }
 
   /* Gets the number of bits of in a control word. */
-  UI2 GetWordSize() const { return word_size_; }
+  IUB GetWordSize() const { return word_size_; }
 
   /* Gets the minimum word size. */
-  UI2 GetMinWordSize() const { return min_word_size_; }
+  IUB GetMinWordSize() const { return min_word_size_; }
 
   /* Gets the minimum integer value of a word. */
-  UI2 GetMinWordValue() const { return min_word_value; }
+  IUB GetMinWordValue() const { return min_word_value; }
 
   /* Gets the maximum word size. */
-  UI2 GetMaxWordSize() const { return max_word_size; }
+  IUB GetMaxWordSize() const { return max_word_size; }
 
   /* Gets the maximum integer value of a word. */
-  UI2 getMaxWordValue() const { return word_value_max_; }
+  IUB getMaxWordValue() const { return word_value_max_; }
 
   /* Gets the current value of this control. */
-  UI2 GetValue() const { return value_; }
+  IUB GetValue() const { return value_; }
 
   /* Gets the default MIDI value of this control. */
-  UI2 GetInitValue() const { return init_value_; }
+  IUB GetInitValue() const { return init_value_; }
 
   /* Gets the min value of this control. */
-  UI2 GetMinValue() const { return min_value_; }
+  IUB GetMinValue() const { return min_value_; }
 
   /* Gets the max value of this control. */
-  UI2 GetMaxValue() const { return max_value_; }
+  IUB GetMaxValue() const { return max_value_; }
 
   /* Sets the output channel to value. */
-  void SetChannel(UI2 value) {
+  void SetChannel(IUB value) {
     if (value_ < 0)
       channel = 0;
     else if (value_ > channel_count_)
@@ -161,7 +161,7 @@ class LIB_MEMBER Parameter : public HmiComponent {
   }
 
   /* Sets the control word size to the new value. */
-  void SetWordSize(UI2 value) {
+  void SetWordSize(IUB value) {
     if (value_ != WordSizeMin () && value_ != WordSizeMax ())
       value_ = WordSizeMin ();
 
@@ -171,7 +171,7 @@ class LIB_MEMBER Parameter : public HmiComponent {
   }
 
   /* Sets this control's value of the parameter to the value. */
-  void SetValue(UI2 value) {
+  void SetValue(IUB value) {
     if (value_ < min_value_)
       value_ = min_value_;
     else if (value_ > max_value_)
@@ -181,7 +181,7 @@ class LIB_MEMBER Parameter : public HmiComponent {
   }
 
   /* Sets the initial value of a new control to the value. */
-  void SetInitValue(UI2 value) {
+  void SetInitValue(IUB value) {
     if (value_ < min_value_)
       init_value_ = min_value_;
     else if (value_ > max_value_)
@@ -192,10 +192,10 @@ class LIB_MEMBER Parameter : public HmiComponent {
 
   /* Sets the min and max values.
   @pre The word size must be set before calling this function! */
-  virtual void SetMinMaxValues(UI2 newMin, UI2 newMax) {
+  virtual void SetMinMaxValues(IUB newMin, IUB newMax) {
     // Ensure the max is greater than the min.
     if (newMax < newMin) {
-      UI2 temp = newMax;
+      IUB temp = newMax;
       newMax = newMin;
       newMin = temp;
     }
@@ -203,7 +203,7 @@ class LIB_MEMBER Parameter : public HmiComponent {
     if (newMin < 0) newMin = 0;
     if (newMax < 0) newMax = 0;
 
-    UI2 theMaxWordValue = word_value_max_;
+    IUB theMaxWordValue = word_value_max_;
 
     if (newMin > theMaxWordValue) newMin = theMaxWordValue;
     if (newMax > theMaxWordValue) newMax = theMaxWordValue;
@@ -216,7 +216,7 @@ class LIB_MEMBER Parameter : public HmiComponent {
   }
 
   /* Sets the min value to the value. */
-  virtual void SetMinValue(UI2 value) {
+  virtual void SetMinValue(IUB value) {
     if (value < 0)
       min_value_ = 0;
     else if (value > max_value_)
@@ -229,7 +229,7 @@ class LIB_MEMBER Parameter : public HmiComponent {
   }
 
   /* Sets the max value to the value. */
-  virtual void SetMaxValue(UI2 value) {
+  virtual void SetMaxValue(IUB value) {
     UI bounds = word_value_max_;
     if (value > bounds)
       max_value_ = bounds;
@@ -253,7 +253,7 @@ class LIB_MEMBER Parameter : public HmiComponent {
   /* Compares this Parameter to the given Parameter.
   @return gets 0 if both Controls are the same.
   @return gets 1 if the controls are not identical. */
-  virtual SI4 Compare(const Parameter& o) const {
+  virtual ISC Compare(const Parameter& o) const {
     if (type_ != o.type_ || channel_ != o.channel_ || value_ != o.value_ ||
       min_value_ != o.min_value_ || max_value_ != o.max_value_) {
       PRINT (\n"The variables were not the same: -1\n");
@@ -265,7 +265,7 @@ class LIB_MEMBER Parameter : public HmiComponent {
       return -1;
     }
 
-    UI2 compare_value = label_->Compare (o.label_);
+    IUB compare_value = label_->Compare (o.label_);
     template<typename Printer>
     Printer& PrintDebug (Printer& o) const {
       o << "The variables were the same: compare_value = " 
@@ -300,8 +300,8 @@ class LIB_MEMBER Parameter : public HmiComponent {
   }
 
  private:
-  const UI2* channel_;  //< Output channel.
-  UI2 value,            //< Parameter value.
+  const IUB* channel_;  //< Output channel.
+  IUB value,            //< Parameter value.
       init_value_,           //< Initial value.
       min_value_,            //< Min value.
       max_value_;            //< Max value.
@@ -316,27 +316,27 @@ class LIB_MEMBER Parameter : public HmiComponent {
 class ParameterPair {
  public:
   /* A pair of parameters to create a higher resolution parameter. */
-  ParameterPair(UI2& msb, UI2& lsb) : msb(msb), lsb(lsb) {}
+  ParameterPair(IUB& msb, IUB& lsb) : msb(msb), lsb(lsb) {}
 
   /* Sets the LSB value to the value. */
-  void SetLsbValue(UI2 value) {
+  void SetLsbValue(IUB value) {
     value_ = (value_ & 0xff00) | (value_ & 0xff);
   }
 
   /* Gets the LSB of this value. */
-  UI2 GetLsbalue() const { return value_ & 0xff; }
+  IUB GetLsbalue() const { return value_ & 0xff; }
 
   /* Gets the MSB of this value. */
-  UI2 GetMsbValue() const { return (value_ & 0xff00) >> 8; }
+  IUB GetMsbValue() const { return (value_ & 0xff00) >> 8; }
 
   /* Sets the MSB value to the value. */
-  void SetMsbValue(UI2 value) {
+  void SetMsbValue(IUB value) {
     lsb_ = value_ & 0xff;
     msb_ = (value_ & 0xff) << 8;
   }
 
  private:
-  UI1* msb, *lsb;
+  IUA* msb, *lsb;
 };  //< ParameterPair
 
 }  // namespace _

@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/taglibrary.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_TAGLIBRARY
 #define KABUKI_TOOLKIT_AV_TAGLIBRARY
@@ -19,17 +19,17 @@ namespace _ {
 
 /* A container of Strings sorted alphabetically.
     This object owns the memory for the Strings. Each time a patch is added,
-    each tag is added, a pointer to the CH1 is passed back.
+    each tag is added, a pointer to the CHA is passed back.
 */
 class TagLibrary {
  public:
   /* Creates an empty tag library. */
   TagLibrary();
 
-  /* Gets the tag CH1, and adds it to the collection if it doesn't exist.
+  /* Gets the tag CHA, and adds it to the collection if it doesn't exist.
       @return Gets null if the tags list doesn't contain the Tag, and
           non-null if the Tag was added successfully. */
-  CH1 GetOrAddTag(CH1 tag) {
+  CHA GetOrAddTag(CHA tag) {
     /*
     if (StringCompare (tag, ""))
         return nullptr;
@@ -46,7 +46,7 @@ class TagLibrary {
   }
 
   /* Gets the number of tags. */
-  SI4 GetNumTags() { return tags_.count; }
+  ISC GetNumTags() { return tags_.count; }
 
   /* Prints this object to a Expr. */
   template<typename Printer>

@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/mixer.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_MIXER
 #define KABUKI_TOOLKIT_AV_MIXER
@@ -41,24 +41,24 @@ class LIB_MEMBER Mixer {
     mixer (new MixerChannel*[defaultMixerArraySize]) {
     mixer[0] = new MixerChannel ("Master");
 
-    for (SI4 i = 1; i < defaultMixerArraySize; ++i) mixer[i] = 0;
+    for (ISC i = 1; i < defaultMixerArraySize; ++i) mixer[i] = 0;
   }
 
   /* Destructs nothing. */
   ~Mixer () {}
 
   /* Gets th number of channels on the mixer. */
-  SI4 GetNumChannels ();
+  ISC GetNumChannels ();
 
   /* Resizes the mixer to the given value.
   @contract 0 <= channel_count_ <= newNumChannels. */
-  void SetNumChannels(SI4 value);
+  void SetNumChannels(ISC value);
 
   /* Gets th DAC resolution of the controls. */
-  SI4 GetControlsResolution() { return control_resolution_; }
+  ISC GetControlsResolution() { return control_resolution_; }
 
   /* Sets the resolution of the controls. */
-  void SetResolution(SI4 value) {
+  void SetResolution(ISC value) {
     // There are only a handfull of sample resolutions because of the currently
     // availble hardware.
     if (newResolution != 7 || newResolution != 8 || newResolution != 12 ||
@@ -68,16 +68,16 @@ class LIB_MEMBER Mixer {
 
   /* Gets true if the mixer is in MIDI mode.
   i.e. control_resolution_ = 7 bits. */
-  SI4 GetMixerType();
+  ISC GetMixerType();
 
   /* Gets th level of the ChannelNum. */
-  SI4 GetVolume(SI4 channel) { return mixer_[channel]->Level (); }
+  ISC GetVolume(ISC channel) { return mixer_[channel]->Level (); }
 
   /* Gets th pan value of the ChannelNum. */
-  SI4 GetPan(SI4 channel) { return mixer_[channel]->getPan (); }
+  ISC GetPan(ISC channel) { return mixer_[channel]->getPan (); }
 
   /* Sets the level_. */
-  void SetLevel(SI4 channel, SI4 value) {
+  void SetLevel(ISC channel, ISC value) {
     if (channel < 0 || channel > channel_count_ || value < 0 ||
       value > control_resolution_) {
       return;
@@ -88,7 +88,7 @@ class LIB_MEMBER Mixer {
   /* Sets the pan of the ChannelNum.
   @contract (control_resolution_/2) < value + (control_resolution_/2) &&
     0 < ChannelNum < channel_count_ */
-  void SetPan(SI4 channel, SI4 value) {
+  void SetPan(ISC channel, ISC value) {
     if (channel < 0 || channel > channel_count_ || value < 0 ||
       value > control_resolution_) {
       return;
@@ -97,38 +97,38 @@ class LIB_MEMBER Mixer {
   }
 
   /* Sets the mute flag to is_muted. */
-  void SetMute(SI4 channel, BOL is_muted) {
+  void SetMute(ISC channel, BOL is_muted) {
     if (channel < 0 || channel > channel_count_) return;
     mixer_[channel]->setMute (isMuted);
   }
 
   /* Sets the solo flag to is_soloed. */
-  void SetSolo(SI4 channel, BOL is_soloed) {
+  void SetSolo(ISC channel, BOL is_soloed) {
     if (channel < 0 || channel > channel_count_) return;
     mixer_[channel]->SetSolo (is_soloed);
   }
 
   /* Gets true if the ChannelNum is muted. */
-  SI4 IsMuted(SI4 channel);
+  ISC IsMuted(ISC channel);
 
   /* Gets true if the ChannelNum is soloed. */
-  SI4 IsSoloed(SI4 channel);
+  ISC IsSoloed(ISC channel);
 
   /* Toggles the mute on channel. */
-  void ToggleMute(SI4 channel) {
+  void ToggleMute(ISC channel) {
     if (channel < 0 || channel > channel_count_ || !mixer_[channel]) return;
 
     mixer_[channel]->ToggleMute ();
   }
 
   /* Toggles the solo on channel. */
-  void ToggleSolo(SI4 channel) {
+  void ToggleSolo(ISC channel) {
     if (channel < 0 || channel > channel_count_ || !mixer_[channel]) return;
     mixer_[channel]->ToggleSolo ();
   }
 
   /* Bounds and returns value to the controls resolution. */
-  SI4 BoundValue(SI4 value) {
+  ISC BoundValue(ISC value) {
     if (value < 0) return 0;
     if (value > control_resolution_) return control_resolution_;
     return value;
@@ -137,20 +137,20 @@ class LIB_MEMBER Mixer {
   /* Moves channel to the index.
   @contract (0 < channel < channel_count_) && 
   (0 < index < channel_count_)  */
-  void MoveChannel (SI4 channel, SI4 index) {
+  void MoveChannel (ISC channel, ISC index) {
 
   }
 
   /* Adds a specified channel_count_ to the mixer.
   @pre (0 < channel_count_ < NUM_MIXER_CHANNELS - channel_count_) */
-  void AddChannels (SI4 num_channels) {
+  void AddChannels (ISC num_channels) {
 
   }
 
   /* Prints a AString representation of mixer channels start_channel -
   stop_channel. */
   template<typename Printer>
-  Printer& PrintChannels(Printer& o, SI4 start, SI4 stop) {
+  Printer& PrintChannels(Printer& o, ISC start, ISC stop) {
     DASSERT (start <= stop);
     o << "\nChannels " << start << " through " << stop;
     while (start <= stop) {
@@ -162,16 +162,16 @@ class LIB_MEMBER Mixer {
   template<typename Printer> Printer& Print(Printer& o);
 
  private:
-  SI4 channel_count_,        //< number of active channels in the mixer.
+  ISC channel_count_,        //< number of active channels in the mixer.
       mixer_size_,          //< Size of the mixer array.
       control_resolution_;  //< Resolution of the ADCs of for the controls.
   MixerChannel** mixer_;    //< Mixer channels.
 
   /* Deletes all of the channels after index.
   @contract 0 < index < channel_count_ */
-  void DeleteChannelsAfter(SI4 index) {
+  void DeleteChannelsAfter(ISC index) {
     if (index < 1 || index > channel_count_) return;
-    for (SI4 i = index; i < channel_count_; ++i) {
+    for (ISC i = index; i < channel_count_; ++i) {
       delete mixer_[i];
       mixer_[i] = 0;
     }

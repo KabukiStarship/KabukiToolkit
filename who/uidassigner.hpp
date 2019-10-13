@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /who/uidassigner.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R).
 This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file, You can
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_UIDSERVER
 #define KABUKI_TOOLKIT_WHO_UIDSERVER
@@ -18,7 +18,7 @@ namespace _ {
 /* A uid server that can save and load the uid from a file.
 Unique ids are indexed using only positive integers. 0 is hence used to
 flag when the server doesn't contain a uid. */
-template <typename T = UID>
+template <typename T = IUD>
 class TUIDAssigner {
  public:
   enum { kInvalidUid = 0 };

@@ -1,6 +1,0 @@
-cmake_minimum_required (VERSION 2.6)
-project (kabuki)
-
-include_directories("${PROJECT_BINARY_DIR)")
-
-add_executable (kabuki pch.cpp)

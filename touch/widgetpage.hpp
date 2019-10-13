@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/widgetpage.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_WIDGETPAGE
 #define KABUKI_TOOLKIT_AV_WIDGETPAGE
@@ -35,10 +35,10 @@ class LIB_MEMBER WidgetPage {
     MaxControlPairs = 16,  //< Max number of control pairs allowed per Page.
   };
 
-  static const CH1* TypeText;  //< TStrand<> that reads "Page".
+  static const CHA* TypeText;  //< TStrand<> that reads "Page".
 
   /* Default constructor. */
-  WidgetPage(const CH1* initName = "", SI4 initNumControlPairs = 0)
+  WidgetPage(const CHA* initName = "", ISC initNumControlPairs = 0)
     : pageLabel (TStrand<> (initName)),
     numControlPairs (initNumControlPairs),
     mstrControlsEnabled (false) {
@@ -91,7 +91,7 @@ class LIB_MEMBER WidgetPage {
 
   /* C++ operator= overlaoder for copy constructor. */
   WidgetPage& operator= (const WidgetPage& other) {
-    SI4 i;
+    ISC i;
 
     delete knobsArray;
     delete bttnsArray;
@@ -114,16 +114,16 @@ class LIB_MEMBER WidgetPage {
   }
 
   /* Gets the num_control_pairs_. */
-  SI4 GetNumControlPairs () { return numControlPairs; }
+  ISC GetNumControlPairs () { return numControlPairs; }
 
   /* Gets a pointer to the specified groupNumber.
       @return Gets nullptr if the groupNumber is invalid. */
-  TControlMatrix* GetControlGroup(SI4 groupNumber);
+  TControlMatrix* GetControlGroup(ISC groupNumber);
 
   /* Gets the knob at the specified index.
       @return Gets nullptr if thisIndex is greater than the num_control_pairs.
    */
-  ControlMidi* GetKnob(SI4 index) {
+  ControlMidi* GetKnob(ISC index) {
     if (index >= numControlPairs) return nullptr;
 
     return knobsArray[index];
@@ -131,7 +131,7 @@ class LIB_MEMBER WidgetPage {
 
   /* Gets the button at the specified index.
       @return Gets 0 thisIndex is greater than the num_control_pairs. */
-  Button* GetButton(SI4 index) {
+  Button* GetButton(ISC index) {
     if (index >= num_control_pairs_) return nullptr;
 
     return bttnsArray[index];
@@ -141,19 +141,19 @@ class LIB_MEMBER WidgetPage {
   const TStrand<>& Label() { return label_; }
 
   /* Sets the label_ to the label. */
-  void SetLabel (const CH1* label) { return label_.Set (label); }
+  void SetLabel (const CHA* label) { return label_.Set (label); }
 
   /* Compares this control to thatControl.
   @return Gets true if this control and thatControl are identical. */
-  SI4 Compare(const WidgetPage& thatPage) {
-    SI4 i;
+  ISC Compare(const WidgetPage& thatPage) {
+    ISC i;
 
     if (page_label_ != page.label_ ||
       num_control_pairs_ != page.num_control_pairs_)
       return -1;
 
     for (i = 0; i < numControlPairs; ++i) {
-      SI4 comparisonValue;
+      ISC comparisonValue;
 
       comparisonValue = knobs_array_[i]->compare (*page.knobsArray[i]);
       if (!comparisonValue) return comparisonValue;
@@ -190,7 +190,7 @@ class LIB_MEMBER WidgetPage {
 
  private:
    TStrand<> label_;    
-  SI4 num_control_pairs_;       //< Number of BoundedControl/Button pairs.
+  ISC num_control_pairs_;       //< Number of BoundedControl/Button pairs.
   BOL mstr_controls_enabled_;  //< Stores if knob 9 is page specific or is the
                                 // master controls.
   TArray<ControlMidi*> knobs_;  //< Knob controls.

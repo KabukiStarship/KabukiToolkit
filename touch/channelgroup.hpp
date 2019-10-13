@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/channelgroup.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_CHANNELGROUP
 #define KABUKI_TOOLKIT_AV_CHANNELGROUP
@@ -35,7 +35,7 @@ class LIB_MEMBER ChannelGroup {
     size_t l_size = channels_.size ();
     if (channel > l_size) return;
     if (channel == l_size) {
-      channels_.push_back (address);
+      channels_.Push (address);
       return;
     }
     channels_[channel] = address;
@@ -44,7 +44,7 @@ class LIB_MEMBER ChannelGroup {
   /* Adds a new channel to the group. */
   uint_t AddChannel(const byte* address) {
     if (address == nullptr) return ~0;
-    channels_.push_back (address);
+    channels_.Push (address);
     return channels_.size () - 1;
   }
 
@@ -61,10 +61,10 @@ class LIB_MEMBER ChannelGroup {
     size_t count = channels_.Count ();
     o << "ChannelGroup: Size:" << count;
 
-    for (SI4 i = 0; i < count; ++i) {
+    for (ISC i = 0; i < count; ++i) {
       o << Right("", 9);
       const byte* ch = channels_[i];
-      CH1 c;
+      CHA c;
       do {
         c = *ch;
         o << c << ' ';
@@ -75,7 +75,7 @@ class LIB_MEMBER ChannelGroup {
   }
 
  private:
-  TArray<const UI1*> channels_;  //< List of Script address for the channels.
+  TArray<const IUA*> channels_;  //< List of Script address for the channels.
 
 };
 }  // namespace _

@@ -3,13 +3,13 @@
 This module contains the reference implementation for I am You Language (IMUL) and the IMUL Specification.
 
 * [IMUL Specification](./spec/readme.md) - The official specification for I am You Language (IMUL).
-* [Astartup Cookbook](https://github.com/kabuki-starship/astartup.cookbook) - The official documentation for IMUL.
+* [Astartup™ Cookbook](https://github.com/kabuki-starship/Astartup™.cookbook) - The official documentation for IMUL.
 
 ## Roadmap
 
 ### Status
 
-Currently, there is no code and I've just been writing IMUL on paper, which is **REALLY** useful because I know exactly what issues every part of my notes on Script2 and KT are about.
+Currently, there is no code and I've just been writing IMUL on paper, which is **REALLY** useful because I know exactly what issues every part of my notes on Script2™ and KT are about.
 
 ### Milestones
 
@@ -32,10 +32,10 @@ Currently, there is no code and I've just been writing IMUL on paper, which is *
 |       Phase Name       | Is Complete | Description |
 |:----------------------:|:-----------:|:------------|
 |   MXNet Integration    |      No     | IMUL has been integrated into an AI system using [MXNet](https://mxnet.apache.org/). |
-|  KabukiNet Integration |      No     | IMUL has been used to create the KabukiNet, an advanced neutral network built with the [Interactive Gym Environment and Education Kit](https://github.com/kabuki-starship/igeek). |
+|  KabukiNet Integration |      No     | IMUL has been used to create the KabukiNet, an advanced neutral network built with the [Interactive Gym Environment and Education Kit](https://github.com/kabuki-starship/IGEEK™). |
 
 ## License
 
-Copyright 2014-9 (C) [Cale McCollough](https://calemccollough.github.io); all rights reserved (R).
+Copyright 2014-9 © [Kabuki Starship™](https://kabukistarship.com); all rights reserved.
 
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0/>.

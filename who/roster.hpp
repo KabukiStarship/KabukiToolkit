@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /who/userlist.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_USERLIST
 #define KABUKI_TOOLKIT_WHO_USERLIST
@@ -25,7 +25,7 @@ class TRoster {
   TRoster() {}
 
   /* Gets the number of users in the list. */
-  SI4 GetNumUsers() { return users_.GetCount (); }
+  ISC GetNumUsers() { return users_.GetCount (); }
 
   /* Adds the new user to the list. */
   BOL Add(const TUser& new_user) {
@@ -34,11 +34,11 @@ class TRoster {
   }
 
   /* Gets the number of users in the Roster. */
-  SI4 GetCount();
+  ISC GetCount();
 
   /* Returns true if this list contains the given user query result. */
   BOL Contains(const TStrand<>& username) {
-    for (SI4 index = 0; index < users_.GetCount (); index++) {
+    for (ISC index = 0; index < users_.GetCount (); index++) {
       if (users_[index]->Equals (username)) return true;
     }
     return false;
@@ -46,7 +46,7 @@ class TRoster {
 
   /* Returns true if this list contains the given user. */
   BOL Contains(const TUser& user) {
-    for (SI4 index = 0; index < users_.GetCount (); index++) {
+    for (ISC index = 0; index < users_.GetCount (); index++) {
       if (users_[index]->Equals (user)) return true;
     }
     return false;
@@ -61,7 +61,7 @@ class TRoster {
       return nullptr;  // static website guest account
     }
 
-    for (SI4 index = 0; index < users_.GetCount (); index++) {
+    for (ISC index = 0; index < users_.GetCount (); index++) {
       TUser* user = users_.Element (index);
       if (users_[index]->Equals (username)) {
         return user;
@@ -73,12 +73,12 @@ class TRoster {
   /* Prints this object to a expression. */
   template<typename Printer>
    Printer& Print (Printer& o) {
-     /// This method creates a CH1 of the users.Print (Log& log)
+     /// This method creates a CHA of the users.Print (Log& log)
      /// Strings separated by spaces
 
      o << "Number of Users: " << users_.GetCount () << "\n";
 
-     for (SI4 index = 0; index < users_.GetCount (); index++) {
+     for (ISC index = 0; index < users_.GetCount (); index++) {
        /// Iterated through the indexes array and write the
        /// Print (Log& log) Strings to the returnString
        o << "User " << (index + 1) << ": "

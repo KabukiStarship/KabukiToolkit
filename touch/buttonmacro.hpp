@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/buttonmacro.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_BUTTONMACRO
 #define KABUKI_TOOLKIT_AV_BUTTONMACRO
@@ -22,19 +22,19 @@ obtain one at https://mozilla.org/MPL/2.0/. */
 
 namespace _ {
 
-/* Parameter<SI4> and Button that can trigger multiple events.
+/* Parameter<ISC> and Button that can trigger multiple events.
     Controls are stored as pointers in a linear linked list to optimize for
    speed.
 */
-class LIB_MEMBER ButtonMacro : public Parameter<SI4>, public Button {
+class LIB_MEMBER ButtonMacro : public Parameter<ISC>, public Button {
  public:
   /* Default constructor creates a ButtonMacro with no controls.
       A ButtonMacro without any controls triggers system functions only.*/
   ButtonMacro(const TStrand<>& name = "")
-    : Parameter<SI4> (Parameter<SI4>::ButtonMacro, label, 0, 0, 0, 0, 0),
+    : Parameter<ISC> (Parameter<ISC>::ButtonMacro, label, 0, 0, 0, 0, 0),
     control_count_ (0),
     controls (nullptr) {
-    // Nothing to do here! :-)
+    
   }
 
   /* Copy constructor. */
@@ -44,7 +44,7 @@ class LIB_MEMBER ButtonMacro : public Parameter<SI4>, public Button {
   ~ButtonMacro();
 
   /* Gets the number of controls. */
-  SI4 ControlCount() const { return control_count_; }
+  ISC ControlCount() const { return control_count_; }
 
   /* Clears all of the controls from the list. */
   void ClearControls() { ClearList (controls_); }
@@ -52,18 +52,18 @@ class LIB_MEMBER ButtonMacro : public Parameter<SI4>, public Button {
   /* Adds an Event to the event list.
   @return gets Success upon success.
   @return gets -1 if the event is null. */
-  SI4 Add(Parameter<SI4>* e) {
+  ISC Add(Parameter<ISC>* e) {
     if (control == nullptr) return -1;
-    controls = new LinearNode<Parameter<SI4>*> (control, controls);
+    controls = new LinearNode<Parameter<ISC>*> (control, controls);
     ++control_count_;
     return Success;
   }
 
   /* Adds an array of newEvents to the list. */
-  SI4 Add(_::Array<Parameter<SI4>*>& events) {
-    SI4 numFails = 0;
+  ISC Add(_::Array<Parameter<ISC>*>& events) {
+    ISC numFails = 0;
 
-    for (SI4 i = 0; i < events.size (); ++i) {
+    for (ISC i = 0; i < events.size (); ++i) {
       if (add (events[i])) {
         ++numFails;
       }
@@ -72,12 +72,12 @@ class LIB_MEMBER ButtonMacro : public Parameter<SI4>, public Button {
   }
 
   /* sets the Event at the given index to the event. */
-  SI4 Set(SI4 index, Parameter<SI4>* event) {
+  ISC Set(ISC index, Parameter<ISC>* event) {
     if (index < 0) return -1;
     if (index >= control_count_) return 1;
 
     if (control_count_ == 0) {
-      controls = new LinearNode<Parameter<SI4>*> (control);
+      controls = new LinearNode<Parameter<ISC>*> (control);
       return Success;
     }
     auto currentNode = controls;
@@ -87,7 +87,7 @@ class LIB_MEMBER ButtonMacro : public Parameter<SI4>, public Button {
   }
 
   /* Removes the first removes in the list. */
-  Parameter<SI4>* Remove() {
+  Parameter<ISC>* Remove() {
     if (controls == nullptr) return nullptr;
     --control_count_;
     auto temp = controls->next;
@@ -99,7 +99,7 @@ class LIB_MEMBER ButtonMacro : public Parameter<SI4>, public Button {
   /* Removes the oldEvent from the list.
   @return gets nullptr if the index was out of
   bounds. */
-  Parameter<SI4>* Remove(SI4 index) {
+  Parameter<ISC>* Remove(ISC index) {
     if (index < 0 || index >= control_count_ || control_count_ == 0) 
       return nullptr;
 
@@ -118,7 +118,7 @@ class LIB_MEMBER ButtonMacro : public Parameter<SI4>, public Button {
   /* Removes the oldEvent from the list.
       @return gets nullptr if the oldEvent was null or if
           it not in the list. */
-  Parameter<SI4>* Remove(Parameter<SI4>* param) {
+  Parameter<ISC>* Remove(Parameter<ISC>* param) {
     auto c = controls;
 
     while (c != nullptr) {
@@ -130,7 +130,7 @@ class LIB_MEMBER ButtonMacro : public Parameter<SI4>, public Button {
 
   /* Gets the event at the given index.
   @return gets nullptr if the index is invalid. */
-  Parameter<SI4>* GetControl(SI4 index) {
+  Parameter<ISC>* GetControl(ISC index) {
     if (control_count_ == 0) return nullptr;
 
     if (index < 0 || index >= control_count_) return nullptr;
@@ -145,20 +145,20 @@ class LIB_MEMBER ButtonMacro : public Parameter<SI4>, public Button {
 
   /* Gets the first event in the list.
   @return gets nullptr if list is empty. */
-  Parameter<SI4>* GetFirstControl() {
+  Parameter<ISC>* GetFirstControl() {
     if (controls == nullptr) return nullptr;
     return controls->data;
   }
 
-  /* Gets the max value of a Parameter<SI4> word. */
-  SI4 GetMaxWordValue() const override;
+  /* Gets the max value of a Parameter<ISC> word. */
+  ISC GetMaxWordValue() const override;
 
   /* Gets the label. */
   TStrand<>& Label() const override { return label; }
 
   /* Sets the label to the new label.
   @return Nil upon success or an error AString upon failure. */
-  const CH1* SetLabel(const TStrand<>& new_label) override {
+  const CHA* SetLabel(const TStrand<>& new_label) override {
     return label_.Set (new_label);
   }
 
@@ -180,33 +180,33 @@ class LIB_MEMBER ButtonMacro : public Parameter<SI4>, public Button {
   /* Triggered when a mode button is depressed. */
   void Depress() override {}
 
-  /* Triggered when a user "FP8 clicks" a button. */
+  /* Triggered when a user "FPD clicks" a button. */
   void Depress() override {}
 
   /* Prints a AString of the row Strings of the list. */
   template<typename Printer>
   Printer& PrintListString(Printer& o) const {
-    o << LineStrand ('#', Parameter<SI4>::kMacroHeaderLength);
+    o << LineStrand ('#', Parameter<ISC>::kMacroHeaderLength);
 
     auto node = controls;
     while (node) {
       o << node->data->PrintStringRow (o) << kLF;
       node = node->next;
     }
-    return o << LineStrand ('#', Parameter<SI4>::kMacroHeaderLength);
+    return o << LineStrand ('#', Parameter<ISC>::kMacroHeaderLength);
   }
 
   /* Prints the header for toStringRow (). */
   template<typename Printer>
   Printer& PrintHeaderString(Printer& o) const override {
-    return o << "\n|    Parameter<SI4>    |Action|Step | CC  | Ch  |Value"
+    return o << "\n|    Parameter<ISC>    |Action|Step | CC  | Ch  |Value"
                 "| min | max |Init |# Bits|";
   }
 
   /* Prints a column of the values without the labels. */
   template<typename Printer>
   Printer& PrintRow(Printer& o) const override {
-    Parameter<SI4>::PrintRow (o);
+    Parameter<ISC>::PrintRow (o);
     o << "   | " << Right (ActionString (), 10) << " | " 
       << Right (ListString, 5) << " |";
     return PrintListString (o);
@@ -215,31 +215,31 @@ class LIB_MEMBER ButtonMacro : public Parameter<SI4>, public Button {
   /* Prints this object to a terminal. */
   template<typename Printer>
   Printer& Print(Printer& o) const {
-    o << LineStrand ('~', Parameter<SI4>::kMacroHeaderLength)
+    o << LineStrand ('~', Parameter<ISC>::kMacroHeaderLength)
       << "Macro Control:\n "
-      << LineStrand ('~', Parameter<SI4>::kMacroHeaderLength)
-      << Parameter<SI4>::MacroHeader << kLF
-      << LineStrand ('~', Parameter<SI4>::kMacroHeaderLength)
+      << LineStrand ('~', Parameter<ISC>::kMacroHeaderLength)
+      << Parameter<ISC>::MacroHeader << kLF
+      << LineStrand ('~', Parameter<ISC>::kMacroHeaderLength)
       << PrintStringRow (o);
     return o << PrintListString (o);
   }
 
  private:
-  TArray<Parameter<SI4>*> controls;  //< A TArray of Parameter<SI4> points.
+  TArray<Parameter<ISC>*> controls;  //< A TArray of Parameter<ISC> points.
 
-  Parameter<SI4>* RemoveAfter (
-    LinearNode<Parameter<SI4>*>* node) {
+  Parameter<ISC>* RemoveAfter (
+    LinearNode<Parameter<ISC>*>* node) {
     if (node == nullptr) return nullptr;
     auto nodeToDelete = node->next;
     if (nodeToDelete == nullptr) return nullptr;
     // else we are safe to delete the node.
-    Parameter<SI4>* removedNodesControl = nodeToDelete->data;
+    Parameter<ISC>* removedNodesControl = nodeToDelete->data;
     node->next = nodeToDelete->next;
     delete nodeToDelete;
     return removedNodesControl;
   }
 
-  void ClearList (LinearNode<Parameter<SI4>*>* node) {
+  void ClearList (LinearNode<Parameter<ISC>*>* node) {
     if (!node) return;
     ClearList (node->next);
     delete node;

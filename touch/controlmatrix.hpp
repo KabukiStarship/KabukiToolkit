@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/controlmatrix.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_CONTROLMATRIX
 #define KABUKI_TOOLKIT_AV_CONTROLMATRIX
@@ -18,7 +18,7 @@ obtain one at https://mozilla.org/MPL/2.0/. */
 namespace _ {
 
 /* A grid of Controls.
-    Each Parameter<SI4> Layer on the Symmetry Live can either have 8 pots or
+    Each Parameter<ISC> Layer on the Symmetry Live can either have 8 pots or
    encoders, or can have 4 pots and 4 encoders. This class LIB_MEMBER helps us swap
    the values out quickly and efficiently.
 
@@ -34,13 +34,13 @@ class LIB_MEMBER TControlMatrix {
   };
 
   /* Default constructor. */
-  TControlMatrix(SI4 column_count = 8, SI4 num_rows = 6) {
+  TControlMatrix(ISC column_count = 8, ISC num_rows = 6) {
     col_count_ = BoundRange (column_count, kMinNumColumns, kMaxNumColumns);
     num_rows = BoundRange (num_rows, kMinNumRows, kMaxNumRows);
 
     rows = new ParamSet[num_rows];
 
-    for (SI4 i = 0; i < num_rows; ++i) rows[i] = ParamSet (column_count);
+    for (ISC i = 0; i < num_rows; ++i) rows[i] = ParamSet (column_count);
   }
 
   /* Copy constructor. */
@@ -53,13 +53,13 @@ class LIB_MEMBER TControlMatrix {
   virtual ~TControlMatrix () {}
 
   /* Gets the number of rows. */
-  SI4 GetNumRows() const { return row_count_; }
+  ISC GetNumRows() const { return row_count_; }
 
   /* Gets the number of columns. */
-  SI4 GetNumColumns() const { return col_count_; }
+  ISC GetNumColumns() const { return col_count_; }
 
   /* Sets the pointer to knobs[index] pointer to the newKnob. */
-  void SetParameter(SI4 column, SI4 row, Parameter<SI4>* control) {
+  void SetParameter(ISC column, ISC row, Parameter<ISC>* control) {
     if (row < 0 || column < 0 || row >= row_count_ || column >= col_count_)
       return;
     rows[row].SetControl (column, control);
@@ -67,7 +67,7 @@ class LIB_MEMBER TControlMatrix {
 
   /* Gets the row at the given index.
   @return gets nullptr if the index is invalid. */
-  ParamSet* GetRow(SI4 row) {
+  ParamSet* GetRow(ISC row) {
     if (row < 0 || row >= row_count_) return nullptr;
     return rows[row];
   }
@@ -75,24 +75,24 @@ class LIB_MEMBER TControlMatrix {
   /* Prints this object to a AString. */
   template<typename Printer>
   Printer& Print(Printer& o) const {
-    o << LineStrand ('-', Parameter<SI4>::kMacroHeaderLength)
+    o << LineStrand ('-', Parameter<ISC>::kMacroHeaderLength)
       << "Control Grid: rows:" << row_count_
       << " columns:" << col_count_
-      << LineStrand('-', Parameter<SI4>::kMacroHeaderLength);
+      << LineStrand('-', Parameter<ISC>::kMacroHeaderLength);
     PrintMacroHeader (o);
-    o << LineStrand ('-', Parameter<SI4>::kMacroHeaderLength)
+    o << LineStrand ('-', Parameter<ISC>::kMacroHeaderLength)
       << "\n!!!!row_count_" << row_count_;
 
-    for (SI4 i = 0; i < row_count_; ++i) {
+    for (ISC i = 0; i < row_count_; ++i) {
       o << "Row:" << i;
       rows[i].Print (o);
     }
 
-    return o << LineStrand ('-', Parameter<SI4>::kMacroHeaderLength);
+    return o << LineStrand ('-', Parameter<ISC>::kMacroHeaderLength);
   }
 
  private:
-  SI4 row_count_,       //< Number of rows.
+  ISC row_count_,       //< Number of rows.
       col_count_;       //< Number of columns.
   ParamSet* rows_;  //< Rows of control array columns.
 };

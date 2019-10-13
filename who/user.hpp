@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /who/user.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_USER
 #define KABUKI_TOOLKIT_WHO_USER
@@ -28,13 +28,13 @@ class TUser {
     kMaxStatusLength = 63,             //< Default max display name length.
     kDefaultValue = 0,                 //< Default abstract user value.
   };
-  static const FP8 kDefaultBalance;  //< Default account balance.
+  static const FPD kDefaultBalance;  //< Default account balance.
 
   /* Creates a user with the given handle, password, and status. */
-  TUser(TAuthenticator* authenticator, UID uid = 0,
+  TUser(TAuthenticator* authenticator, IUD uid = 0,
        const TStrand<>& handle = THandle::kDefault,
        const TStrand<>& password = TPassword::kDefault,
-       FP8 balance = kDefaultBalance, int64_t v-alue = kDefaultValue)
+       FPD balance = kDefaultBalance, int64_t v-alue = kDefaultValue)
     : handle_ (authenticator, handle),
     status_ (StrandClone ("")),
     password_ (authenticator, password),
@@ -100,7 +100,7 @@ class TUser {
   TPassword& GetPassword() { return password_; }
 
   /* Gets the user's uid. */
-  UID GetUid() { return uid_; }
+  IUD GetUid() { return uid_; }
 
   /* Gets the session uid. */
   int32_t GetSession() { return session_; }
@@ -113,31 +113,31 @@ class TUser {
   }
 
   /* Gets the session uid. */
-  UID GetSessionKey();
+  IUD GetSessionKey();
 
   /* Gets the abstract response code. */
-  UID GetResponse();
+  IUD GetResponse();
 
   /* Sets the abstract response code. */
-  virtual const TStrand<>& SetResponse(UID response) {
+  virtual const TStrand<>& SetResponse(IUD response) {
     response_ = response;
     return nullptr;
   }
 
   /* Gets the abstract balance. */
-  FP8 GetBalance() { return balance_; }
+  FPD GetBalance() { return balance_; }
 
   /* Sets the abstract balance. */
-  virtual const TStrand<>& SetBalance(FP8 balance) {
+  virtual const TStrand<>& SetBalance(FPD balance) {
     balance_ = balance;
     return nullptr;
   }
 
   /* Attempts to buy the given points.
       @returns false if the balance_ is too low. */
-  BOL BuyValue(int64_t num_coins, FP8 point_cost) {
+  BOL BuyValue(int64_t num_coins, FPD point_cost) {
     // Right now we're not checking how much money the player has.
-    FP8 cost = point_cost * (FP8)num_coins;
+    FPD cost = point_cost * (FPD)num_coins;
 
     if (cost > balance_) {
       cout << "\n| Can't buy coins because your ass is broke.";
@@ -149,8 +149,8 @@ class TUser {
   }
 
   /* Increase the balance_ by the given amount. */
-  BOL AddBalance(FP8 amount) {
-    FP8 balance = balance_;
+  BOL AddBalance(FPD amount) {
+    FPD balance = balance_;
     balance_ = balance + amount;
     return balance;
   }
@@ -192,7 +192,7 @@ class TUser {
 
   /* Returns true if this session and cypher match the same as the given
       one.  */
-  BOL IsAuthentic(int32_t session, UID public_key) {
+  BOL IsAuthentic(int32_t session, IUD public_key) {
     if (session_ != session) {
       return false;
     }
@@ -216,9 +216,9 @@ class TUser {
       kMessageLength = 141,
     };
     const TStrand<>& token;
-    FP8 balance;
+    FPD balance;
     int64_t value;
-    CH1 input[kMessageLength];
+    CHA input[kMessageLength];
 
     text = TextSkipSpaces(text, strand_end);
     if (!text) {
@@ -293,10 +293,10 @@ class TUser {
   TPassword password_;     //< User's password.
   TAuthenticator* auth_;  //< Handle and Password authenticator.
   int32_t session_;       //< Session index.
-  UID uid_,             //< Index of user in the UserList.
+  IUD uid_,             //< Index of user in the UserList.
       public_key_,        //< Fake session encryption key.
       response_;          //< Gets user abstract response code.
-  FP8 balance_;           //< Abstract user account balance or money.
+  FPD balance_;           //< Abstract user account balance or money.
   int64_t value_;         //< Abstract account value, points, or coins.
   Expr* slot_;            //< Portal to User's machine.
 

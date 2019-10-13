@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/library.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_LIBRARY
 #define KABUKI_TOOLKIT_AV_LIBRARY
@@ -63,7 +63,7 @@ class Library {
         new Hit ("Trombone", "Default trombone patch.", { "Brass", "Trombone" }));
   }
 
-  /* Loads a patch from a JSON CH1. */
+  /* Loads a patch from a JSON CHA. */
   void LoadFromJSON(STR json_String) {
     /*
     try
@@ -82,11 +82,11 @@ class Library {
     */
   }
 
-  /* Converts a patch to a JSON CH1. */
-  CH1 ToJson() {
-    CH1 json = new CH "[";
-    SI4 count = patches.size ();
-    for (SI4 i = 0; i < count; i++) {
+  /* Converts a patch to a JSON CHA. */
+  CHA ToJson() {
+    CHA json = new CH "[";
+    ISC count = patches.size ();
+    for (ISC i = 0; i < count; i++) {
       json += patches[i].ToJson ();
       if (i < count - 1) json += ", ";
     }
@@ -94,21 +94,21 @@ class Library {
   }
 
   /* Gets true if their is a duplicate patch name. */
-  BOL FindDuplicateName(CH1 value) {
+  BOL FindDuplicateName(CHA value) {
     foreach (Hit a in patches)
       if (a.Name == value) return true;
     return false;
   }
 
   /* Gets the category name at the given index. */
-  CH1 GetCategoryName(SI4 index) {
+  CHA GetCategoryName(ISC index) {
     if (index >= catagories.size ()) return nullptr;
 
     return catagories[index];
   }
 
   /* Searches for hits with the given search query. */
-  Library Find(CH1 tag) {
+  Library Find(CHA tag) {
     Library TArray<Hit> Library = new TArray<Hit> ();
     for_each (patches.begin (), patches.end (), [](Hit& p) {
       if (patch.ContainsTags (tags)) Library.add (patch);
@@ -124,13 +124,13 @@ class Library {
   }
 
   /* Gets the subcategory image name. */
-  CH1 GetCategoryImageName(CH1 AString) {
+  CHA GetCategoryImageName(CHA AString) {
     if (!AString || AString == "") return nullptr;
     return "Category" + ::regex_replace (AString, "\AString+", "");  // + ".png";
   }
 
   /* Gets the subcategory image name. */
-  CH1 GetSubcategoryImageName(CH1 AString) {
+  CHA GetSubcategoryImageName(CHA AString) {
     if (AString == nullptr || AString == "") return nullptr;
     return "Subcategory" +
       ::regex_replace (AString, "\AString+", "");  // + ".png";
@@ -145,15 +145,15 @@ class Library {
 
  private:
   uint64_t num_uids;                   //< Total number of UIDs.
-  std::map<const TStrand<>&, Hit> patches;  //< List of patches.
-  TArray<CH1> catagories,        //< The list of categories.
+  _::ADic<const TStrand<>&, Hit> patches;  //< List of patches.
+  TArray<CHA> catagories,        //< The list of categories.
       tags;                            //< List of tag Strings.
 
   /* Gets the default library in JSON. */
-  CH1& GetDefaultHitLibrary() { return ""; }
+  CHA& GetDefaultHitLibrary() { return ""; }
 
   /* Gets the number 0 at this point in time. */
-  SI4 InitHitCount() { return 0; }
+  ISC InitHitCount() { return 0; }
 };
 
 }       // namespace _

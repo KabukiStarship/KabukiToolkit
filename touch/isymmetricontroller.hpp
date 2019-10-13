@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/isymmetricController.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_ISYMMETRICCONTROLLER
 #define KABUKI_TOOLKIT_AV_ISYMMETRICCONTROLLER
@@ -53,7 +53,7 @@ class IsymmetricController : public Controller {
     kNumControlsPerGroup = 4,
    // Number of controls per layer that can.
     kNumControlsPerLayer = 8,
-   // Default amount of time for a FP8 click.
+   // Default amount of time for a FPD click.
     kDefaultDoubleClickTime = 100,
    // Flag for ControlGroup is flipped.
     kFlippedControlGroup = 0,
@@ -91,7 +91,7 @@ class IsymmetricController : public Controller {
 
     widgets_ = new Device *[MaxTemplates];
 
-    for (SI4 i = 0; i < MaxTemplates; ++i) widgets_[i] = nullptr;
+    for (ISC i = 0; i < MaxTemplates; ++i) widgets_[i] = nullptr;
   }
 
   /* Destructor. */
@@ -104,11 +104,11 @@ class IsymmetricController : public Controller {
   }
 
   /* Checks to see if thisWidget is currently loaded in to the SL! and if the
-  states are the same. */
-  SI4 Compare(const TWidget& o) {
+  states_ are the same. */
+  ISC Compare(const TWidget& o) {
     // First, find template with same name
     TStrand<> label(o.Label ());
-    for (SI4 i = 0; i < device_count_; ++i) {
+    for (ISC i = 0; i < device_count_; ++i) {
       if (widgets_[i]->Label ().Compare (label)) {
         return true;
       }
@@ -118,7 +118,7 @@ class IsymmetricController : public Controller {
 
   /* The event that happens when a macro button is pressed.
   @contract 0 <= index <= 4 */
-  void PressMacro(SI4 index);
+  void PressMacro(ISC index);
 
   /* The event that happens when a macro button is pressed. */
   void PressMacro(MacroControl* macro);
@@ -174,16 +174,16 @@ class IsymmetricController : public Controller {
   }
 
   /* Switches the mode on layer to the newMode. */
-  void SwitchMode (ParamSet* layer, SI4 newMode) {}
+  void SwitchMode (ParamSet* layer, ISC newMode) {}
 
-  /* Determines if the press was a single click or a FP8 click. */
-  void PressModeButton(ParamSet* layer, SI4 modeIndex) {
+  /* Determines if the press was a single click or a FPD click. */
+  void PressModeButton(ParamSet* layer, ISC modeIndex) {
     // Nothing happens until you release the mode button.
     layer->PressModeButton ();
   }
 
   /* Stores when the last time a mode button was depressed. */
-  void DepressModeButton(ParamSet* layer, SI4 modeIndex) {
+  void DepressModeButton(ParamSet* layer, ISC modeIndex) {
     // this function switches layer's current mode
 
     TSS time = time (nullptr), delta_click;
@@ -199,7 +199,7 @@ class IsymmetricController : public Controller {
     /*
     if  (mode == layer->mode->type ()) // same mode pressed
     {//
-        if ((time  (nullptr) - layer->LastModePress ()) <= _doubleClickTime) { // Then its a FP8-click and the swap sticks.
+        if ((time  (nullptr) - layer->LastModePress ()) <= _doubleClickTime) { // Then its a FPD-click and the swap sticks.
             layer->modeBttnPressed = false;
         }
         else { // Then hold down button
@@ -219,7 +219,7 @@ class IsymmetricController : public Controller {
 
   /* Gets the template at index in templatesArray.
    @return if index < 0 or > num_Widgets */
-  TWidget* GetWidget(SI4 index) {
+  TWidget* GetWidget(ISC index) {
     if (index < 0) return widgets_[0];
     if (index > device_count_) return widgets_[device_count_ - 1];
     return widgets_[index - 1];
@@ -227,9 +227,9 @@ class IsymmetricController : public Controller {
 
   /* Gets a pointer to thisWidget if thisTempalte is loaded.
   @return Gets 0 if thisWidget is loaded */
-  TWidget* FindWidget(const CH1* s) {
-    for (SI4 i = 0; i < device_count_; ++i)
-      if (StrandCompare (device, widgets_[i]->Label ()->getText ()))
+  TWidget* FindWidget(const CHA* s) {
+    for (ISC i = 0; i < device_count_; ++i)
+      if (StrandCompare (device, widgets_[i]->Label ()->Text ()))
         return widgets_[i];
     return nullptr;
   }
@@ -241,9 +241,9 @@ class IsymmetricController : public Controller {
   BOL AddWidget (TWidget& w) {
     // Check precondiditions
     if (w == nullptr || device_count_ == MaxTemplates) return false;
-    CH1 *newDeviceName = w->Label ()->getText ();
-    for (SI4 i = 0; i < device_count_; ++i) {
-      if (StrandCompare (widgets_[i]->Label ()->getText (), newDeviceName) == 0) {
+    CHA *newDeviceName = w->Label ()->Text ();
+    for (ISC i = 0; i < device_count_; ++i) {
+      if (StrandCompare (widgets_[i]->Label ()->Text (), newDeviceName) == 0) {
         return false;
       }
     }
@@ -254,9 +254,9 @@ class IsymmetricController : public Controller {
 
   /* Checks to see if a template by thisName is loaded
   @return Gets true if so. */
-  BOL ContainsWidget(const CH1* name) {
-    for (SI4 i = 0; i < device_count_; ++i) {
-      if (!StrandCompare (widgets_[i]->Label ()->getText (), name)) {
+  BOL ContainsWidget(const CHA* name) {
+    for (ISC i = 0; i < device_count_; ++i) {
+      if (!StrandCompare (widgets_[i]->Label ()->Text (), name)) {
         return true;
       }
     }
@@ -264,41 +264,41 @@ class IsymmetricController : public Controller {
   }
 
   /* Gets the number of currently loaded templates. */
-  SI4 WidgetCount();
+  ISC WidgetCount();
 
   /* Gets the number of templates currently loaded. */
-  SI4 WidgetCount();
+  ISC WidgetCount();
 
   /* Gets how fast the encoders accelerate. */
-  SI4 EncoderAcceleration();
+  ISC EncoderAcceleration();
 
   /* Gets the common MIDI Channel (0). */
-  SI4 ChannelCommon() { return channel_commone_; }
+  ISC ChannelCommon() { return channel_commone_; }
 
   /* Gets the keyboard MIDI out channel. */
-  SI4 ChannelKeyboard() { return channel_keyboard_; }
+  ISC ChannelKeyboard() { return channel_keyboard_; }
 
   /* Sets the channel_keyboard_ to the new value. */
-  BOL SetChannelKeyboard (SI4 value) {
+  BOL SetChannelKeyboard (ISC value) {
     if (value < 1 || value >= 16) return false;
     channel_keyboard_ = value;
     return true;
   }
 
   /* Gets the drums MIDI out channel. */
-  SI4 GetChannelDrums() { return drums_channel_; }
+  ISC GetChannelDrums() { return drums_channel_; }
 
   /* Sets the drums_channel_ to the new value. */
-  BOL SetChannelDrums (SI4 value) {
+  BOL SetChannelDrums (ISC value) {
     if (value < 1 || value >= 16) return false;
     drums_channel_ = value;
     return true;
   }
 
   /* Gets the number of MIDI ticks per quarter note beat. */
-  SI4 TicksPerBeat () { return ticks_per_beat_; }
+  ISC TicksPerBeat () { return ticks_per_beat_; }
 
-  void SetTicksPerBeat (SI4 newNumTicksPerBeat) {
+  void SetTicksPerBeat (ISC newNumTicksPerBeat) {
     if (newNumTicksPerBeat <= MinTicksPerBeat ||
       newNumTicksPerBeat >= MaxTicksPerBeat)
       return;
@@ -307,15 +307,15 @@ class IsymmetricController : public Controller {
   }
 
   /* Gets the current index of the quarter note subdivisions. */
-  SI4 TickCount () { return tick_count_; }
+  ISC TickCount () { return tick_count_; }
 
   /* Gets the MIDI tempo. */
-  SI4 Tempo () {
+  ISC Tempo () {
     return tempo_;
   }
   
   /* Sets the tempo_ in beats-per-minute. */
-  void SetTempo (FP8 tempo) {
+  void SetTempo (FPD tempo) {
     if (tempo < 0 || tempo > tempo_max_) return;
     // uint32_t microsecondsPerSecond = 60000000/newTempo;
     tempo_ = tempo;
@@ -372,7 +372,7 @@ class IsymmetricController : public Controller {
       *macros_mixer_,             //< Mixer macros.
       *macros_aux_,               //< Aux send macros.
       *macros_device_;            //< Device macros.
-  SI4 widget_count_,               //< Number of templates currently loaded.
+  ISC widget_count_,               //< Number of templates currently loaded.
       encoder_acceleration_,      //< How fast the encoders accelerate.
       channel_commone_,            //< Common MIDI Channel  (0).
       channel_keyboard_,          //< Keyboard MIDI out channel.
@@ -382,11 +382,11 @@ class IsymmetricController : public Controller {
       tempo_,                //< MIDI tempo.
       state_swap_flip_;  //< Represents if the controls are swapped
   //_::Array<MIDIDevice> devices; //< array of all of the MIDI devices currently
-  // attached to this system. SI4 numMIDIInDev,            //< Number of MIDI
+  // attached to this system. ISC numMIDIInDev,            //< Number of MIDI
   // input devices attached to the system.
   //     numMIDIOutDev;          //< Number of MIDI output devices attached to
   //     the system.
-  UI4 double_press_ticks_;        //< TArray of the FP8 click time.
+  IUC double_press_ticks_;        //< TArray of the FPD click time.
 
   /* Switches the mode or current page on Layer A and Layer B.
   @contract state_swap_flip_ must be true */

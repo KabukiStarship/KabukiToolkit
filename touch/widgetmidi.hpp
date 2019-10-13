@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/widgetmidi.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_MIDIWIDGET
 #define KABUKI_TOOLKIT_AV_MIDIWIDGET
@@ -25,7 +25,7 @@ class WidgetMidi : public TWidget {
     kPressDoubleTicksMax = 1000 //<  ASCII TSS ticks offset min.
   };
 
-  WidgetMidi(UI1 common_channel, UI1 keyboard_channel, UI1 drums_channel)
+  WidgetMidi(IUA common_channel, IUA keyboard_channel, IUA drums_channel)
     : common_channel_ (common_channel_),
       channel_keyboard_ (channel_keyboard_),
       drums_channel_ (drums_channel_),
@@ -38,9 +38,9 @@ class WidgetMidi : public TWidget {
 
   virtual ~WidgetMidi () {}
 
-  UI1 GetKeyboardChannel() { return channel_keyboard_; }
+  IUA GetKeyboardChannel() { return channel_keyboard_; }
 
-  void SetKeyboardChannel(UI1 channel) {
+  void SetKeyboardChannel(IUA channel) {
     if (channel == 0)
       channel_keyboard_ = 1;
     else if (channel >= 16)
@@ -49,7 +49,7 @@ class WidgetMidi : public TWidget {
       channel_keyboard_ = channel;
   }
 
-  SI1 GetDrumsChannel() {
+  ISA GetDrumsChannel() {
     if (channel == 0)
       drums_channel_ = 1;
     else if (channel >= 16)
@@ -58,11 +58,11 @@ class WidgetMidi : public TWidget {
       drums_channel_ = channel;
   }
 
-  void SetDrumsChannel(UI1 channel);
+  void SetDrumsChannel(IUA channel);
 
-  UI4 GetDoublePressTime() { return double_press_ticks_; }
+  IUC GetDoublePressTime() { return double_press_ticks_; }
 
-  SI4 SetDoublePressTime(UI4 new_time) {
+  ISC SetDoublePressTime(IUC new_time) {
     if (newTime < minDoubleClickTime) return -1;
 
     if (newTime > maxDoubleClickTime) return 1;
@@ -77,10 +77,10 @@ class WidgetMidi : public TWidget {
   }
 
 private:
-  SI1 common_channel_,  //< Channel 
+  ISA common_channel_,  //< Channel 
     channel_keyboard_,
     drums_channel_;
-  UI4 double_press_ticks_;
+  IUC double_press_ticks_;
 };
 }  // namespace _
 

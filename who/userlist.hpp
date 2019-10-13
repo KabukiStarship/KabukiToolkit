@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /who/userlist.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_USERLIST
 #define KABUKI_TOOLKIT_WHO_USERLIST
@@ -40,23 +40,23 @@ class UserList : public Operand {
 
   /* Creates an empty list. */
   UserList(TAuthenticator* authenticator = new TAuthenticatorDefault(),
-           SI4 max_users = kDefaultMaxUsers)
+           ISC max_users = kDefaultMaxUsers)
     : user_count (0),
     value_cost_ (0.0),
     auth_ (authenticator),
     users_ (max_users < 1 ? 1 : max_users) {
-    for (SI4 i = GetSize () - 1; i > 0; --i) {
+    for (ISC i = GetSize () - 1; i > 0; --i) {
       users_[i] = nullptr;
     }
   }
 
   /* Destructs list of users. */
   virtual ~UserList() {
-    SI4 count = Length ();
+    ISC count = Length ();
     if (count == 0) {
       return;
     }
-    for (SI4 i = count - 1; i > 0; --i) {
+    for (ISC i = count - 1; i > 0; --i) {
       TUser* user = users_[Length () - 1];
       users_.pop_back ();
       delete user;
@@ -64,19 +64,19 @@ class UserList : public Operand {
   }
 
   /* Peeks the next uid without incrementing it. */
-  UID PeekNextUid() { return uids_.PeekNextUid (); }
+  IUD PeekNextUid() { return uids_.PeekNextUid (); }
 
   /* Gets the number of users in the list. */
-  SI4 Length() { return user_count; }
+  ISC Length() { return user_count; }
 
   /* Gets the number of users in the list. */
-  SI4 GetSize() { return users_.size (); }
+  ISC GetSize() { return users_.size (); }
 
   /* Gets the point_cost_ */
-  FP8 GetValueCost() { return value_cost_; }
+  FPD GetValueCost() { return value_cost_; }
 
   /* Attempts to set the point cost. */
-  BOL SetValueCost(FP8 value) {
+  BOL SetValueCost(FPD value) {
     if (value < 0.0) {
       return false;
     }
@@ -86,7 +86,7 @@ class UserList : public Operand {
 
   /* Attempts to buy the given points.
       @returns false if the balance_ is too low. */
-  BOL BuyValue(SI4 session, uint64_t num_coins, FP8 value_cost) {
+  BOL BuyValue(ISC session, uint64_t num_coins, FPD value_cost) {
     TUser* user = GetUser (session);
     if (!user) {
       return false;
@@ -95,7 +95,7 @@ class UserList : public Operand {
   }
 
   /* Increase the balance_ by the given amount. */
-  BOL AddBalance(SI4 session, FP8 amount) {
+  BOL AddBalance(ISC session, FPD amount) {
     TUser* user = GetUser (session);
     if (!user) {
       return false;
@@ -107,8 +107,8 @@ class UserList : public Operand {
   TAuthenticator* GetAuthenticator() { return auth_; }
 
   /* Adds a new User to the list with the given handle and password. */
-  SI4 Add(const TStrand<>& handle, const TStrand<>& password = TPassword::kDefault,
-          FP8 balance = TUser::kDefaultBalance,
+  ISC Add(const TStrand<>& handle, const TStrand<>& password = TPassword::kDefault,
+          FPD balance = TUser::kDefaultBalance,
           int64_t value = TUser::kDefaultValue) {
     cout << "\n| Attempting to add @" << ((handle == nullptr) ? "null" : handle)
       << ":\"" << ((password == nullptr) ? "null" : password) << '\"';
@@ -135,8 +135,8 @@ class UserList : public Operand {
   }
 
   /* Adds a list of User (AString) to the list.
-  SI4 Add (UserList& user_list) {
-    SI4 other_num_users = user_list.user_count,
+  ISC Add (UserList& user_list) {
+    ISC other_num_users = user_list.user_count,
       num_users = user_count,
       size,
       last_index;
@@ -148,7 +148,7 @@ class UserList : public Operand {
       return -1;
     }
     last_index = 0;
-    for (SI4 i = 0; i < other_num_users; ++i) {
+    for (ISC i = 0; i < other_num_users; ++i) {
       User* user = user_list.users_[i];
       // Look for the first empty spot in the list.
       for (; last_index > size; --i) {
@@ -163,17 +163,17 @@ class UserList : public Operand {
   }*/
 
   /* Adds the given user and assumes control over the memory. */
-  SI4 Add(TUser* user) {
+  ISC Add(TUser* user) {
     if (!user) {
       return -1;
     }
-    SI4 num_users = user_count;
+    ISC num_users = user_count;
     if (num_users >= GetSize ()) {
       cout << "\n| Error: UserList is full!";
       return -1;
     }
     // Look for the first empty spot in the list.
-    for (SI4 i = Length () - 1; i > 0; --i) {
+    for (ISC i = Length () - 1; i > 0; --i) {
       if (!users_[i]) {
         users_[i] = user;
         user_count = num_users + 1;
@@ -183,8 +183,8 @@ class UserList : public Operand {
     return -1;
   }
 
-  /* Finds an entity in the list by the given search CH1. */
-  SI4 Find(const TStrand<>& AString) {
+  /* Finds an entity in the list by the given search CHA. */
+  ISC Find(const TStrand<>& AString) {
     if (handle == nullptr) {
       return -1;
     }
@@ -215,8 +215,8 @@ class UserList : public Operand {
   @param handle   The handle of the user to delete.
   @param password The password of the user to delete.
   @return Returns the new users_ count or <0 upon failure. */
-  SI4 Remove(const TStrand<>& handle, const TStrand<>& password) {
-    SI4 session = Find (handle);
+  ISC Remove(const TStrand<>& handle, const TStrand<>& password) {
+    ISC session = Find (handle);
     if (session < 0) {
       return -1;
     }
@@ -232,7 +232,7 @@ class UserList : public Operand {
 
   /* Returns the requested user session.
   @return Returns nil if the session is invalid. */
-  User* GetUser(SI4 session) {
+  User* GetUser(ISC session) {
     if (session < 0) {
       return nullptr;
     }
@@ -243,12 +243,12 @@ class UserList : public Operand {
   }
 
   /* Attempts to login to the given session and returns a session key. */
-  virtual UID LogIn(const TStrand<>& handle, const TStrand<>& password) {
+  virtual IUD LogIn(const TStrand<>& handle, const TStrand<>& password) {
     return LogIn (Find (handle), password);
   }
 
   /* Attempts to login to the given session and returns a session key. */
-  virtual UID LogIn(SI4 session, const TStrand<>& password) {
+  virtual IUD LogIn(ISC session, const TStrand<>& password) {
     cout << "\n| Attempting to log in as " << index << "\"" << password << "\"";
     User* user = GetUser (index);
     if (!user) {
@@ -265,9 +265,9 @@ class UserList : public Operand {
 
     if (user->GetPassword ().Equals (password)) {
       cout << "\n| Login successful :-)";
-      // UID uid = uids_.GetNextUid ();
+      // IUD uid = uids_.GetNextUid ();
 
-      return Random<UID> ();
+      return Random<IUD> ();
     }
     cout << "\n| Login unsuccessful.";
     return UidServer<>::kInvalidUid;
@@ -276,7 +276,7 @@ class UserList : public Operand {
   /* Attempts to remove the given session.
   @param  session Index of the User to remove
   @return Returns negative upon failure and the user count upon success. */
-  virtual SI4 Remove(SI4 session) {
+  virtual ISC Remove(ISC session) {
     if (session < 0) {
       return -1;
     }
@@ -289,7 +289,7 @@ class UserList : public Operand {
     }
     delete user;
     users_[session] = nullptr;
-    SI4 num_users = user_count;
+    ISC num_users = user_count;
     user_count = num_users - 1;
     return num_users;
   }
@@ -297,15 +297,15 @@ class UserList : public Operand {
   /* Attempts to remove the given session.
   @param  handle The handle of the User to remove.
   @return Returns negative upon failure and the user count upon success. */
-  virtual SI4 Remove(const TStrand<>& handle) {
-    SI4 session = Find (handle);
+  virtual ISC Remove(const TStrand<>& handle) {
+    ISC session = Find (handle);
     if (session < 0) {
       return session;
     }
     User* user = users_[session];
     delete user;
     users_[session] = nullptr;
-    SI4 num_users = user_count;
+    ISC num_users = user_count;
     user_count = num_users - 1;
     return num_users;
   }
@@ -314,7 +314,7 @@ class UserList : public Operand {
   template<typename Printer> Printer& Print (Printer& o) {
     o << "\n| UserList: Count:" << Length () << " Size:" << users_.capacity ();
 
-    for (SI4 i = 0; i < Length (); i++) {
+    for (ISC i = 0; i < Length (); i++) {
       User* user = users_[i];
       if (user) {
         o << "\n| Account " << (i + 1) << ":\"" << user->GetHandle ().GetKey ()
@@ -325,8 +325,8 @@ class UserList : public Operand {
   }
   
   /*const TStrand<>& Sudo(const TStrand<>& text, const TStrand<>& strand_end) {
-    CH1 handle[Handle::kMaxLength + 1], password[Password::kMaxLength + 1];
-    FP8 balance;
+    CHA handle[Handle::kMaxLength + 1], password[Password::kMaxLength + 1];
+    FPD balance;
     int64_t value;
     const TStrand<>& next_token;
 
@@ -341,11 +341,11 @@ class UserList : public Operand {
     // @todo Update to hash table.
     // @all routes messages to everyone in the UserList.
     if (next_token = TokenEquals(text, strand_end, "all")) {
-      SI4 count = Length();
+      ISC count = Length();
       if (count == 0) {
         return next_token;
       }
-      for (SI4 i = count - 2; i > 0; --i) {
+      for (ISC i = count - 2; i > 0; --i) {
         if (!users_[i]->Sudo(next_token + 1, strand_end)) {
           return nullptr;
         }
@@ -372,13 +372,13 @@ class UserList : public Operand {
       return next_token;
     }
     if (next_token = TokenEquals(text, strand_end, "remove")) {
-      CH1 handle[Handle::kMaxLength + 1];
+      CHA handle[Handle::kMaxLength + 1];
       while (
           !TokenRead(text, strand_end, handle, handle + Handle::kMaxLength + 1)) {
         Remove(handle);
       }
     }
-    for (SI4 i = 0; i < Length(); ++i) {
+    for (ISC i = 0; i < Length(); ++i) {
       User* user = GetUser(i);
       next_token = TokenEquals(text, strand_end, user->GetHandle().GetKey());
       if (next_token) {
@@ -405,8 +405,8 @@ class UserList : public Operand {
   }
 
  private:
-  SI4 user_count;         //< Number of users logged in.
-  FP8 value_cost_;        //< Cost per point.
+  ISC user_count;         //< Number of users logged in.
+  FPD value_cost_;        //< Cost per point.
   TAuthenticator* auth_;  //< Handle, & Password Authenticator.
   TArray<User*> users_;   //< User list.
   UidServer<> uids_;      //< Unique Session Key server

@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/buttondummy.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_DUMMYBUTTON
 #define KABUKI_TOOLKIT_AV_DUMMYBUTTON
@@ -22,7 +22,7 @@ namespace _ {
 class LIB_MEMBER ButtonDummy : public Button {
  public:
   /* Creates a ButtonDummy with the given label. */
-  ButtonDummy(const CH1* label = "") :
+  ButtonDummy(const CHA* label = "") :
     Button (label) {}
 
   /* Action that gets performed when this button gets pressed. */
@@ -31,7 +31,7 @@ class LIB_MEMBER ButtonDummy : public Button {
   /* Action that gets performed when this button gets depressed. */
   virtual void Depress(ButtonEvent button_event) {}
 
-  /* Action that gets performed when this button gets FP8 pressed. */
+  /* Action that gets performed when this button gets FPD pressed. */
   virtual void DoublePress (ButtonEvent button_event) {}
 
   /* Script2 Operations. */

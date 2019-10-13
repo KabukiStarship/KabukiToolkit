@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/button.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KT_HMI_BUTTON
 #define KT_HMI_BUTTON
@@ -40,18 +40,18 @@ class LIB_MEMBER Button {
     } Actions;
 
     enum {
-      // The min FP8 click time period in seconds.
+      // The min FPD click time period in seconds.
       DefaultMinDoublePressTime = 100, 
-      // The max FP8 click time period in seconds.
+      // The max FPD click time period in seconds.
       DefaultMaxDoublePressTime = 2000,
-      // The default FP8 press time period in seconds.
+      // The default FPD press time period in seconds.
       kDefaultDoublePressTicks = (DefaultMinDoublePressTime +
       DefaultMaxDoublePressTime) / 2,
     };
 
     /* Default constructor. */
-    Button (Action buttonAction = Momentary, SI4 stepSize = 0, 
-            SI4 double_press_ticks_ = kDefaultDoublePressTicks)
+    Button (Action buttonAction = Momentary, ISC stepSize = 0, 
+            ISC double_press_ticks_ = kDefaultDoublePressTicks)
       : action (action),
       pressed (false),
       stepSize (stepSize),
@@ -77,7 +77,7 @@ class LIB_MEMBER Button {
     virtual void Press() {
       pressed = true;
 
-      SI4 currentTime = _System::GetTimestamp ();
+      ISC currentTime = _System::GetTimestamp ();
       if (currentTime - last_time_pressed_ <= double_press_ticks_) {
         doublePress ();
         return;
@@ -91,7 +91,7 @@ class LIB_MEMBER Button {
       Depress ();
     }
 
-    /* Triggered when a user "FP8 clicks" a button. */
+    /* Triggered when a user "FPD clicks" a button. */
     virtual void DoublePress() = 0;
 
     /* gets true if the button is in a pressed state. */
@@ -101,20 +101,20 @@ class LIB_MEMBER Button {
     virtual void SetButtonState(BOL state) = 0;
 
     /* gets the last time the button was pressed. */
-    virtual SI4 GetLastTimePressed() const { return last_time_pressed_; }
+    virtual ISC GetLastTimePressed() const { return last_time_pressed_; }
 
-    /* Gets the FP8 press time in microseconds. */
-    virtual SI4 GetDoublePressTime() const = 0;
+    /* Gets the FPD press time in microseconds. */
+    virtual ISC GetDoublePressTime() const = 0;
 
     /* Gets this buttons step_Size.
         The step size is the increment that is added to the
-        Parameter<SI4>::value () every time the button is pressed. When
-        the value goes over the Parameter<SI4>::max_value_ (), it is reset to
-        the Parameter<SI4>::mixValue (). */
-    virtual SI4 GetStepSize () const { return stepSize; }
+        Parameter<ISC>::value () every time the button is pressed. When
+        the value goes over the Parameter<ISC>::max_value_ (), it is reset to
+        the Parameter<ISC>::mixValue (). */
+    virtual ISC GetStepSize () const { return stepSize; }
 
     /* Sets the stepSize to the value. */
-    virtual void SetStepSize(SI4 value) {
+    virtual void SetStepSize(ISC value) {
       if (value < 0)
         stepSize = 0;
       else if (value >= getMaxWordValue ())
@@ -134,14 +134,14 @@ class LIB_MEMBER Button {
     /* The type of action this button performs: Momentary or latching. */
     virtual Action GetButtonAction () const { return action_; }
 
-    const CH1* GetActionString () const {
-      static const CH1 * kStrings[] = {
+    const CHA* GetActionString () const {
+      static const CHA * kStrings[] = {
         "Momentary",
         "Latching",
         "Pressure Sensitive",
         "Invalid Button.Action",
       };
-      SI4 type = type_;
+      ISC type = type_;
       if (type < 0 || type >= 4) type = 3;
       return kStrings[type];
     }
@@ -149,13 +149,13 @@ class LIB_MEMBER Button {
     /* sets the button Action to the newAction. */
     virtual void SetButtonAction (Action newAction) { action = newAction; }
 
-    /* gets the max value of a Parameter<SI4> word. */
-    virtual SI4 GetMaxWordValue() const = 0;
+    /* gets the max value of a Parameter<ISC> word. */
+    virtual ISC GetMaxWordValue() const = 0;
 
   private:
 
     Action action_;
-    SI4 type_;
+    ISC type_;
 };
 
 }  //< namespace _

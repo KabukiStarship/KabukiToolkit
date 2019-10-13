@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /pro/project.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
-obtain one at https://mozilla.org/MPL/2.0/. */
+obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_PRO_1
 #ifndef KABUKI_PRO_PROJECT
 #define KABUKI_PRO_PROJECT
@@ -25,12 +25,12 @@ class Project : public Operand {
   enum {
     INIT_NUM_SCHEDULES = 4,           //< Initial number of Schedule(AString).
     MAX_SCHEDULES = 32,               //< Max number of Schedule(AString).
-    MAX_SUMMARY_LENGTH = 256,         //< The max readme CH1 length.
-    MAX_DETAIL_LENGTH = 1024 * 1024,  //< The max detail CH1 length.
+    MAX_SUMMARY_LENGTH = 256,         //< The max readme CHA length.
+    MAX_DETAIL_LENGTH = 1024 * 1024,  //< The max detail CHA length.
   };
 
   /* Pops a Project pointer off the stack. */
-  static Project* Pop (Stack<Project*>* stack, const CH1* result) {
+  static Project* Pop (Stack<Project*>* stack, const CHA* result) {
     ASSERT (stack)
       ASSERT (result == nullptr)
       if (strcmp ("", result)) {
@@ -50,7 +50,7 @@ class Project : public Operand {
   }
 
   /* Pushes a Project pointer onto the stack. */
-  static const CH1* Push (ProjectNode*& stack, Project* project) {
+  static const CHA* Push (ProjectNode*& stack, Project* project) {
     if (stack == nullptr) return "Null push stack";
     if (stack->project == project)  // Then pop the project off the stack.
       return "";
@@ -61,13 +61,13 @@ class Project : public Operand {
   }
 
   /* Default constructor initializes list with the given or left key. */
-  Project(const CH1* key = "Unnamed", const CH1* readme = "")
+  Project(const CHA* key = "Unnamed", const CHA* readme = "")
     : key_ (key == nullptr ? StrandClone ("") : key),
     readme_ (readme == nullptr ? StrandClone ("") : readme),
     task_ (nullptr) {}
 
   /* Constructor initializes with stolen key and readme. */
-  Project(CH1* key, CH1* readme)
+  Project(CHA* key, CHA* readme)
     : key_ (key), readme_ (readme), task_ (nullptr) {}
 
   /* Destructor. */
@@ -77,23 +77,23 @@ class Project : public Operand {
   const TStrand<>& Key() { return key_; }
 
   /* Sets the key. */
-  void StealKey(CH1* new_key);
+  void StealKey(CHA* new_key);
 
   /* Clones the given key. */
-  void SetKey (const CH1* new_key) { key_.Set (new_key); }
+  void SetKey (const CHA* new_key) { key_.Set (new_key); }
 
   /* Gets the readme. */
   const TStrand<>& GetReadMe() { return readme_; }
 
   /* Sets the readme to a clone of the new_readme and deletes the old one.. */
-  void SetReadme (const CH1* new_readme) {
+  void SetReadme (const CHA* new_readme) {
     readme_.Set (new_readme);
   }
 
   /* Adds a Project.
   @param project The project to add.
   @return Returns false if the key is not a token. */
-  BOL AddProject(const CH1* key) {
+  BOL AddProject(const CHA* key) {
     if (!IsToken (key)) return false;
     StackPush<Project*> (projects_, new Project (key));
     return true;
@@ -111,7 +111,7 @@ class Project : public Operand {
   /* Adds a Schedule.
   @param key The key of the new schedule to add.
   @return Returns false if the key is not a token. */
-  BOL AddSchedule(const CH1* key) {
+  BOL AddSchedule(const CHA* key) {
     if (!IsToken (key)) return false;
     StackPush<Schedule*> (schedules_, new Schedule (key));
     return true;
@@ -135,23 +135,23 @@ class Project : public Operand {
       "|\n"
       "| Projects: "
       << projects_->count << kLF;
-    for (SI4 i = 0; i < projects_->count; ++i)
+    for (ISC i = 0; i < projects_->count; ++i)
       o << "| " << i << ".) "
       << StackGet<Project*> (projects_, i)->Key () << kLF;
     o << "|\n"
       "| Schedules: "
       << schedules_->count << kLF;
-    for (SI4 i = 0; i < schedules_->count; ++i)
+    for (ISC i = 0; i < schedules_->count; ++i)
       o << "| " << i << ".) "
       << schedules_[i]->Key () << kLF;
     return o << LineStrand ('_');
   }
 
   /* Searches for a Schedule with the given key. */
-  SI4 ScheduleIndex(const CH1* key) {
+  ISC ScheduleIndex(const CHA* key) {
     if (key == nullptr) return false;
     //  Search for an already existing key to add it to:
-    for (SI4 i = 0; i < schedules_->count; ++i)
+    for (ISC i = 0; i < schedules_->count; ++i)
       if (CompareTokenString (key, StackGet<Schedule*> (schedules_, i)->Key ()))
         return i;
     return -1;
@@ -160,7 +160,7 @@ class Project : public Operand {
   /* Gets the Schedule with the given key.
   @param key The key of the Schedule to search for.
   @return Returns null if calendar does not contain the given key. */
-  Schedule* GetSchedule(SI4 index) {
+  Schedule* GetSchedule(ISC index) {
     if (index < 0) return nullptr;
     if (index >= schedules_->count) return nullptr;
     return schedules_[index];
@@ -169,25 +169,25 @@ class Project : public Operand {
   /* Gets the Schedule with the given key.
   @param key The key of the Schedule to search for.
   @return Returns null if calendar does not contain the given key. */
-  Schedule* GetSchedule(const CH1* key) {
+  Schedule* GetSchedule(const CHA* key) {
     return schedules_[ScheduleIndex (key)];
   }
 
   /* Attempts to remove the Schedule at the given index. */
-  BOL RemoveSchedule(SI4 index) {
+  BOL RemoveSchedule(ISC index) {
     return StackRemove<Schedule*> (schedules_, index);
   }
 
   /* Attempts to remove the Schedule at the given index. */
-  BOL RemoveSchedule(const CH1* key) {
+  BOL RemoveSchedule(const CHA* key) {
     return RemoveSchedule (ScheduleIndex (key));
   }
 
   /* Searches for a Project with the given key. */
-  SI4 ProjectIndex(const CH1* key) {
+  ISC ProjectIndex(const CHA* key) {
     if (key == nullptr) return -1;
     //  Search for an already existing key to add it to:
-    for (SI4 i = 0; i < projects_->count; ++i)
+    for (ISC i = 0; i < projects_->count; ++i)
       if (CompareTokenString (key, StackGet<Project*> (projects_, i)->Key ()))
         return i;
     return -1;
@@ -196,7 +196,7 @@ class Project : public Operand {
   /* Gets the Project with the given key.
   @param key The key of the Project to search for.
   @return Returns null if calendar does not contain the given key. */
-  Project* GetProject(SI4 index) {
+  Project* GetProject(ISC index) {
     if (index < 0) return nullptr;
     if (index >= projects_->count) return nullptr;
     return StackGet<Project*> (projects_, index);
@@ -205,22 +205,22 @@ class Project : public Operand {
   /* Searches for the given project key.
   @param  key The key of the Project to search for.
   @return Returns null if calendar does not contain the given key. */
-  Project* GetProject(const CH1* key) {
+  Project* GetProject(const CHA* key) {
     return StackGet<Project*> (projects_, ProjectIndex (key));
   }
 
   /* Attempts to remove the Project at the given index. */
-  BOL RemoveProject(SI4 index) {
+  BOL RemoveProject(ISC index) {
     return StackRemove<Project*> (projects_, index);
   }
 
   /* Attempts to remove the Project at the given index. */
-  BOL RemoveProject(const CH1* key) {
+  BOL RemoveProject(const CHA* key) {
     return RemoveProject (ProjectIndex (key));
   }
 
   /* Selects the task at the given index. */
-  BOL Select(SI4 index) {
+  BOL Select(ISC index) {
     if (index < 0) return false;
     if (index >= schedules_->count) return false;
     task_ = StackGet<Schedule*> (schedules_, index);
@@ -228,11 +228,11 @@ class Project : public Operand {
   }
 
   /* De-serializes the file with the stored key.
-  @return Returns 0 upon success and a pointer to an error CH1 upon
+  @return Returns 0 upon success and a pointer to an error CHA upon
   failure. */
   void Load() {
     /*
-    const CH1* error;  //< Error flag.
+    const CHA* error;  //< Error flag.
     o << "\n\n| Reading from " << key << kLF;
     std::ifstream file (key);
     if (!file.is_open ())
@@ -240,31 +240,31 @@ class Project : public Operand {
     o << "Unable to open file for reading";
     return;
     }
-    CH1 buffer[MAX_String_LENGTH];
+    CHA buffer[MAX_String_LENGTH];
     file.getline (buffer, MAX_String_LENGTH, ',');
     //< Throw away till the comma..
-    SI4 num_categories;
+    ISC num_categories;
     file >> num_categories;
     //o << num_categories << " categories.\n";
     file.getline (buffer, MAX_String_LENGTH, kLF);
     //< Throw away the rest of the line.
     // Read each of the ItemList categories.
-    for (SI4 i = 0; i < num_categories; ++i)
+    for (ISC i = 0; i < num_categories; ++i)
     {
-    CH1* key = new CH1[MAX_String_LENGTH];
+    CHA* key = new CHA[MAX_String_LENGTH];
     file.getline (key, MAX_String_LENGTH, ',');
     //o << "| key: " << key;
-    SI4 num_items;
+    ISC num_items;
     file >> num_items;
     //o << " num_items: " << num_items << kLF;
     while (file.get () != kLF);  //< Throw away the rest of the line.
-    for (SI4 i = 0; i < num_items; ++i)
+    for (ISC i = 0; i < num_items; ++i)
     {
-    CH1* name = new CH1[MAX_String_LENGTH];
+    CHA* name = new CHA[MAX_String_LENGTH];
     file.getline (name, MAX_String_LENGTH, ',');
-    SI4 quantity;
-    FP4 price;
-    CH1 c;
+    ISC quantity;
+    FPC price;
+    CHA c;
     //file >> quantity >> c >> price >> c;
     file >> quantity;
     while (file.get () != ',');
@@ -278,29 +278,29 @@ class Project : public Operand {
   }
 
   /* Serializes the list to the given file.
-  @return Returns 0 upon success and a pointer to an error CH1 upon
+  @return Returns 0 upon success and a pointer to an error CHA upon
   failure. */
   void Save() {
     /*
     o << "\n\n| Writing to " << key << "...\n";
-    const CH1* error;
+    const CHA* error;
     std::ofstream file;
     file.open (key);
     if (!file.is_open ())
     {
-    o << "Unable top open file for writing";
+    o << "Unable Top open file for writing";
     return;
     }
     file << "Project," << element_count << ',' << get_total () << kLF;
     ItemList** list = lists;
-    for (SI4 i = 0; i < element_count; ++i)
+    for (ISC i = 0; i < element_count; ++i)
     list[i]->write_to_open_file (file);
     file.close ();
     */
   }
 
-  /* Gets the help CH1. */
-  static const CH1* GetAppHelpString() {
+  /* Gets the help CHA. */
+  static const CHA* GetAppHelpString() {
     return "\n| kabuki.toolkit.pro.Project Help:\n"
       "| There are three primary classes for use:\n"
       "|\n"
@@ -343,14 +343,14 @@ class Project : public Operand {
       "|\n";
   }
 
-  /* Gets the help CH1. */
-  static const CH1* GetHelpString() {
+  /* Gets the help CHA. */
+  static const CHA* GetHelpString() {
     return "\n| Project Commands: \n"
       "|    -S  Adds a new Schedule and selects it.\n"
       "|        Examples: > -S new-schedule\n"
       "|\n"
       "|    -P  Adds a new Project and pushes it onto the stack.\n"
-      "|        Args: key:CH1\n"
+      "|        Args: key:CHA\n"
       "|        Examples: > -P new-project\n"
       "|\n"
       "|    -l  Lists the current item's in scope to the console.\n"
@@ -360,7 +360,7 @@ class Project : public Operand {
       "|        Example: > task_name -p\n"
       "|\n"
       "|    -r  Removes the object at the given index\n"
-      "|        Args: index:SI4 or key:CH1\n"
+      "|        Args: index:ISC or key:CHA\n"
       "|        Examples: > -r 1\n"
       "|                  > -r project-name\n"
       "|\n"
@@ -377,16 +377,16 @@ class Project : public Operand {
   letters, lower case letters, stars, dashes etc.
   @param spaces_per_tab The number of spaces in a tab. */
   template<typename Printer>
-  Printer& Print(Printer& o, SI4 indent_level = 0, CH1 bullet_type = '1',
-           SI4 spaces_per_tab = 4) {
+  Printer& Print(Printer& o, ISC indent_level = 0, CHA bullet_type = '1',
+           ISC spaces_per_tab = 4) {
     o << LineStrand ()
       << "\nProject: " << key_
       << "\n| Projects: " << projects_->count << "|\n";
-    for (SI4 i = 0; i < projects_->count; ++i) {
+    for (ISC i = 0; i < projects_->count; ++i) {
       Ar4Get<Project*> (projects_, i)->Print (o);
     }
     o << "| Schedules: " << schedules_->count << "|\n";
-    for (SI4 i = 0; i < schedules_->count; ++i) {
+    for (ISC i = 0; i < schedules_->count; ++i) {
       Ar4Get<Schedule*> (schedules_, i)->Print (o);
     }
     return o << LineStrand ('_');

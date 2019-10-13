@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/paramset.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_PARAMETERSET
 #define KABUKI_TOOLKIT_AV_PARAMETERSET
@@ -28,30 +28,30 @@ class LIB_MEMBER ParamSet {
   };
 
   /* Default constructor. */
-  ParamSet(SI4 newNumControls = kMinNumElements) {
+  ParamSet(ISC newNumControls = kMinNumElements) {
     newNumControls = BoundRange (newNumControls, 0, ParamSet::kMaxNumElements);
     ParamCount() = newNumControls;
     controls = new Parameter<T>*[newNumControls];
-    for (SI4 i = 0; i < newNumControls; ++i) controls[i] = nullptr;
+    for (ISC i = 0; i < newNumControls; ++i) controls[i] = nullptr;
   }
 
   /* Constructor creates a row with pointers to the newControls. */
   ParamSet(const TArray<Parameter<T>*>& params) {
-    SI4 newNumControls = o.size ();
+    ISC newNumControls = o.size ();
 
     if (newNumControls < kMinNumElements) {
-      SI4 i;
-      for (i = 0; i < newNumControls; ++i) controls.push_back (params[i]);
-      for (; i < kMinNumElements; ++i) controls.push_back (nullptr);
+      ISC i;
+      for (i = 0; i < newNumControls; ++i) controls.Push (params[i]);
+      for (; i < kMinNumElements; ++i) controls.Push (nullptr);
       return;
     }
 
-    for (SI4 i = 0; i < newNumControls; ++i) controls[i] = params[i];
+    for (ISC i = 0; i < newNumControls; ++i) controls[i] = params[i];
   }
 
   /* Clones the other object. */
   ParamSet(const ParamSet& o) {
-    for (SI4 i = 0; i < o.ParamCount (); ++i)
+    for (ISC i = 0; i < o.ParamCount (); ++i)
       o.Push (c.controls[i]);
   }
 
@@ -60,13 +60,13 @@ class LIB_MEMBER ParamSet {
 
   /* Adds a new control to the array. */
   void AddParam(Parameter<T>& c) {
-    for (SI4 i = 0; i < params.ParamCount (); ++i)
-      newArray.push_back (controls[i]);
+    for (ISC i = 0; i < params.ParamCount (); ++i)
+      newArray.Push (controls[i]);
   }
 
   /* Adds a new control to the array.
   @return Returns 0 upon success, and index if it was out of bounds. */
-  SI4 SetParam(SI4 index, Parameter<T>& c) {
+  ISC SetParam(ISC index, Parameter<T>& c) {
     if (index < 0) return -1;
     if (index > getCount ()) return 1;
 
@@ -74,7 +74,7 @@ class LIB_MEMBER ParamSet {
   }
 
   /* Deletes the Parameter<T> at the given index. */
-  SI4 Remove(SI4 index) {
+  ISC Remove(ISC index) {
     if (index < 0) return nullptr;
     if (index >= getCount ()) return nullptr;
 
@@ -85,14 +85,14 @@ class LIB_MEMBER ParamSet {
 
   /* Gets the parameter at the given index.
   @return gets nullptr if the index if out of bounds. */
-  Parameter<T>* Param(SI4 index) {
+  Parameter<T>* Param(ISC index) {
     if (index < 0 || index >= getCount ()) return nullptr;
 
     return controls[index];
   }
 
   //< gets the number of parameters in the set.
-  SI4 ParamCount() const { return params_.Count (); }
+  ISC ParamCount() const { return params_.Count (); }
 
   /* Prints this object to a Printer. */
   template<typename Printer>
@@ -102,7 +102,7 @@ class LIB_MEMBER ParamSet {
       << Parameter<T>::MacroHeader << kLF
       << LineStrand ('-')
       << "ParamCount():", ParamCount());
-    for (SI4 i = 0; i < ParamCount(); ++i) {
+    for (ISC i = 0; i < ParamCount(); ++i) {
       auto control = controls[i];
       if (!control) {
         o << "|  nil    |      |      |      |     |     |       |    "
@@ -119,7 +119,7 @@ class LIB_MEMBER ParamSet {
  private:
   TArray<Parameter<T>> params;  //< An array of Parameter<T> pointers.
 
-  inline SI4 BoundRange (SI4 value, SI4 min, SI4 max) {
+  inline ISC BoundRange (ISC value, ISC min, ISC max) {
     if (value < min) return min;
     if (value > max) return max;
     return value;

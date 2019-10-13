@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/controller.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_CONTROL
 #define KABUKI_TOOLKIT_AV_CONTROL
@@ -39,8 +39,8 @@ class LIB_MEMBER Controller {
   };
 
   /* Contrustor. */
-  Controller(SI4 initCommonChannel = 0, SI4 initKeyboardChannel = 1,
-             SI4 initDrumsChannel = 7);
+  Controller(ISC initCommonChannel = 0, ISC initKeyboardChannel = 1,
+             ISC initDrumsChannel = 7);
 
   /* Copy constructor. */
   Controller(const Controller& o);
@@ -55,16 +55,16 @@ class LIB_MEMBER Controller {
   void ProcessMIDIQuaterNote();
 
   /* Gets the number of ticks per MIDI quarter note beat. */
-  SI4 GetTicksPerBeat();
+  ISC GetTicksPerBeat();
 
   /* Sets the ticksPerBeat to the newNumTicks. */
-  void SetTicksPerBeat(SI4 newNumTicksPerBeat);
+  void SetTicksPerBeat(ISC newNumTicksPerBeat);
 
   /* Gets the current tempo. */
-  SI4 Tempo();
+  ISC Tempo();
 
   /* Sets the tempo to the newTempo. */
-  void SetTempo(FP8 newTempo);
+  void SetTempo(FPD newTempo);
 
   /* Starts the MIDI engine. */
   void Start();
@@ -78,22 +78,22 @@ class LIB_MEMBER Controller {
   /* Processes a rewind button press. */
   void Backward();
 
-  /* Gets the FP8 press time in seconds. */
-  FP8 GetDoublePressTime();
+  /* Gets the FPD press time in seconds. */
+  FPD GetDoublePressTime();
 
   /* sets the double_press_ticks to the newTime in seconds.
       @return gets -1 if the newTime is to small, 1 if it is to
           big, and 0 upon success */
-  SI4 SetDoublePressTime(FP8 newTime);
+  ISC SetDoublePressTime(FPD newTime);
 
   /* Prints this object to a AString. */
   template<typename Printer> Printer& Print(Printer& o) const;
 
  private:
-  SI4 common_channel_,     //< Common MIDI Channel  (0)
+  ISC common_channel_,     //< Common MIDI Channel  (0)
       channel_keyboard_,   //< Keyboard MIDI out channel
       drums_channel_,      //< Drums MIDI out channel
-      double_press_ticks_;  //< "Double press", or "FP8 click" time.
+      double_press_ticks_;  //< "Double press", or "FPD click" time.
 
 };
 }  // namespace _

@@ -1,6 +1,0 @@
-#include "../script2/module_seams.inl"
-#include "gui/module_seams.inl"
-#include "hypertext/module_seams.inl"
-#include "pro/module_seams.inl"
-#include "touch/module_seams.inl"
-#include "who/module_seams.inl"

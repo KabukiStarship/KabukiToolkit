@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /pro/task.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
-obtain one at https://mozilla.org/MPL/2.0/. */
+obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 
 #if SEAM >= KABUKI_TOOLKIT_PRO_1
 #ifndef KABUKI_TOOLKIT_PRO_TASK
@@ -22,9 +22,9 @@ namespace _ {
 class Task {
  public:
   /* Creates a task with the given fields and clones the Strings. */
-  Task(const CH1* summary = "", const CH1* details = "", FP4 weight_ = 0.0f,
-       SI4 time_testimate_min = 60 * 60)
-      : summary_(TSTRClone<CH1>(summary)),
+  Task(const CHA* summary = "", const CHA* details = "", FPC weight_ = 0.0f,
+       ISC time_testimate_min = 60 * 60)
+      : summary_(TSTRClone<CHA>(summary)),
         details_(StrandClone(details)),
         result_(nullptr),
         review_(nullptr),
@@ -40,7 +40,7 @@ class Task {
 
   /* Creates a task with the given fields from Strings this object now
   owns and must delete. */
-  Task(CH1* summary, CH1* details, FP4 weight_, SI4 time_estimate_min)
+  Task(CHA* summary, CHA* details, FPC weight_, ISC time_estimate_min)
       : summary_(summary),
         details_(details),
         result_(nullptr),
@@ -59,53 +59,53 @@ class Task {
   ~Task() {}
 
   /* Gets the summary. */
-  const CH1* GetHeader() { return summary_; }
+  const CHA* GetHeader() { return summary_; }
 
   /* Sets the summary. */
-  void SteadHeader(CH1* new_summary) {
+  void SteadHeader(CHA* new_summary) {
     D_ASSERT(new_summary);
     summary_ = new_summary;
   }
 
   /* Gets the details. */
-  const CH1* GetDetails() { return details_; }
+  const CHA* GetDetails() { return details_; }
 
   /* Sets the details. */
-  void SetDetails(CH1* new_details) { details_ = new_details; }
+  void SetDetails(CHA* new_details) { details_ = new_details; }
 
   /* Gets the result. */
-  const CH1* GetResults() { return result_; }
+  const CHA* GetResults() { return result_; }
 
   /* Sets the post_result. */
-  void SetResults(CH1* new_result) {
+  void SetResults(CHA* new_result) {
     if (new_result == nullptr) return;
     result_ = new_result;
   }
 
   /* Gets the review. */
-  const CH1* GetReview() { return review_; }
+  const CHA* GetReview() { return review_; }
 
   /* Sets the post_result. */
-  void StealReview(CH1* new_review) {
+  void StealReview(CHA* new_review) {
     if (new_review == nullptr) return;
     review_ = new_review;
   }
 
   /* Gets the weight. */
-  FP4 GetWeight() { return weight_; }
+  FPC GetWeight() { return weight_; }
 
   /* Sets the weight. */
-  BOL SetWeight(FP4 new_value) {
+  BOL SetWeight(FPC new_value) {
     if (new_weight < 0.0f) return false;
     weight_ = new_weight;
     return true;
   }
 
   /* Gets the assessment. */
-  FP4 GetAssessment() { return assessment_; }
+  FPC GetAssessment() { return assessment_; }
 
   /* Sets the self assessment. */
-  BOL SetAssessment(FP4 new_value) {
+  BOL SetAssessment(FPC new_value) {
     if (new_assessment < 0.0f) return false;
     if (new_assessment > 1.0f) return false;
     assessment_ = new_assessment;
@@ -113,10 +113,10 @@ class Task {
   }
 
   /* Gets the grade. */
-  FP4 GetGrade() { return grade_; }
+  FPC GetGrade() { return grade_; }
 
   /* Sets the grade. */
-  BOL SetGrade(FP4 new_value) {
+  BOL SetGrade(FPC new_value) {
     if (new_grade < 0.0f) return false;
     if (new_grade > 1.0f) return false;
     grade_ = new_grade;
@@ -128,7 +128,7 @@ class Task {
 
   /* Sets the time_estimate.
   @param time The new time_estimate.
-  @return Returns null upon success and a pointer to an error CH1 upon
+  @return Returns null upon success and a pointer to an error CHA upon
   failure. */
   void SetTimeEstimate(TM8 time) { time_estimate_ = time; }
 
@@ -137,9 +137,9 @@ class Task {
 
   /* Sets the time_begins.
   @param time The new time_begins.
-  @return Returns null upon success and a pointer to an error CH1 upon
+  @return Returns null upon success and a pointer to an error CHA upon
   failure. */
-  const CH1* SetTimeBegins(TM8 time) {
+  const CHA* SetTimeBegins(TM8 time) {
     if (time >= time_ends_ && time_ends_ != 0)
       return "time_begins_ must be before time_ends_";
     time_begins_ = time;
@@ -151,9 +151,9 @@ class Task {
 
   /* Sets the time_ends.
   @param time The new time_ends.
-  @return Returns null upon success and a pointer to an error CH1 upon
+  @return Returns null upon success and a pointer to an error CHA upon
   failure. */
-  const CH1* SetTimeEnds(TM8 time) {
+  const CHA* SetTimeEnds(TM8 time) {
     if (time < time_ends_) return "time_ends_ must be after time_begans";
     time_ends_ = time;
     return 0;
@@ -164,9 +164,9 @@ class Task {
 
   /* Sets the time_started.
   @param time The new time_started.
-  @return Returns null upon success and a pointer to an error CH1 upon
+  @return Returns null upon success and a pointer to an error CHA upon
   failure. */
-  const CH1* SetTimeStarted(TM8 time) {
+  const CHA* SetTimeStarted(TM8 time) {
     if (time < time_stopped_) return "Start time must be before stop time";
     time_stopped_ = time;
     return 0;
@@ -177,9 +177,9 @@ class Task {
 
   /* Sets the time_stopped.
   @param time The new time_stopped.
-  @return Returns null upon success and a pointer to an error CH1 upon
+  @return Returns null upon success and a pointer to an error CHA upon
   failure. */
-  const CH1* SetTimeStopped(TM8 time) {
+  const CHA* SetTimeStopped(TM8 time) {
     if (time <= time_started_)
       return "time_stopped_ must be after time_started_";
     time_stopped_ = time;
@@ -190,20 +190,20 @@ class Task {
   void Start() { ClockTimestamp(&time_started_); }
 
   /* Stopped the task. */
-  void Stop(CH1* result, FP4 result_grade = 1.0f) {
+  void Stop(CHA* result, FPC result_grade = 1.0f) {
     result_ = new_result;
     assessment_ = new_assessment;
     time(&time_stopped_);
   }
 
   /* Stopped the task. */
-  void Stop(const CH1* result, FP4 result_grade = 1.0f) {
+  void Stop(const CHA* result, FPC result_grade = 1.0f) {
     Stop(StrandClone(new_result), new_assessment);
   }
 
   /* Returns true if the task is complete.
-  A Task is considered complete if the result CH1 is null.
-  @return Returns true if the result CH1 is not null. */
+  A Task is considered complete if the result CHA is null.
+  @return Returns true if the result CHA is not null. */
   BOL IsDone() { return summary_ != 0; }
 
   /* Adds a Task that collides with this time slot. */
@@ -217,7 +217,7 @@ class Task {
   Task* Collision() { return collisions_; }
 
   /* Returns true if the event contains the given time. */
-  BOL Contains(SI8 t) {
+  BOL Contains(ISD t) {
     if (t < time_begins_) return false;
     if (time_stopped_ != 0) {
       if (t > time_stopped_) return false;
@@ -230,7 +230,7 @@ class Task {
   }
 
   /* Prints the help menu. */
-  static const CH1* GetHelpString() {
+  static const CHA* GetHelpString() {
     return "| Task: A general purpose schedule task.\n"
            "| Data Members\n:"
            "| Header    - A brief summary of the task.\n"
@@ -260,7 +260,7 @@ class Task {
   }
 
   /* Prints the Task to the console. */
-  void Out(SI4 indentation = 0, SI4 index = 0);
+  void Out(ISC indentation = 0, ISC index = 0);
 
   template <typename Printer>
   Printer& Print(Printer& o) {
@@ -279,13 +279,13 @@ class Task {
   }
 
   /* Parse a text command stream (possibly from the user). */
-  const CH1* Command(CH1* input) {
-    CH1 c,        //< The first CH1.
-        d;        //< The second CH1.
-    CH1 *end,     //< Used to detect the result of parsing.
+  const CHA* Command(CHA* input) {
+    CHA c,        //< The first CHA.
+        d;        //< The second CHA.
+    CHA *end,     //< Used to detect the result of parsing.
         *buffer;  //< AString buffer.
-    SI4 value;    //< Value to (possibly) be parsed and temp value.
-    FP4 number;   //< A number to (possibly) be parsed.
+    ISC value;    //< Value to (possibly) be parsed and temp value.
+    FPC number;   //< A number to (possibly) be parsed.
     TM8 time;     //< Time to (possibly) be parsed.
     if (input == nullptr) return "Task input was null";
     input = SkipSpaces(input);
@@ -334,9 +334,9 @@ class Task {
         case 'd':  // Details
                    // o << "> Details\n";
           value = StringLength(input + 1, '\"') + 1;
-          buffer = new CH1[value];
+          buffer = new CHA[value];
           end = Parse(input + 1, &buffer[0], value, '\"');
-          if (end == nullptr) return "Invalid details CH1";
+          if (end == nullptr) return "Invalid details CHA";
           SetDetails(buffer);
           if (*end == 0) {
             o << "\n> Task done\n";
@@ -352,9 +352,9 @@ class Task {
         case 's':  // Header
                    // o << "> Header\n";
           value = StringLength(input + 1, '\"') + 1;
-          buffer = new CH1[value];
+          buffer = new CHA[value];
           end = Parse(input + 1, &buffer[0], value, '\"');
-          if (end == nullptr) return "Invalid summary CH1";
+          if (end == nullptr) return "Invalid summary CHA";
           SteadHeader(buffer);
           if (*end == 0) {
             o << "\n> Task done\n";
@@ -364,9 +364,9 @@ class Task {
         case 'v':  // Review
                    // o << "> Review\n";
           value = StringLength(input + 1, '\"') + 1;
-          buffer = new CH1[value];
+          buffer = new CHA[value];
           end = Parse(input + 1, &buffer[0], value, '\"');
-          if (end == nullptr) return "Invalid review CH1";
+          if (end == nullptr) return "Invalid review CHA";
           StealReview(buffer);
           if (*end == 0)  //< This might be a '\"' or '\0'
           {
@@ -387,14 +387,14 @@ class Task {
   }
 
  private:
-  CH1 *summary_,       //< Task summary.
+  CHA *summary_,       //< Task summary.
       *details_,       //< Task details.
       *result_,        //< Task results log entry.
       *review_;        //< An after-incident review of the Event.
-  FP4 weight_,         //< Weight of the task.
+  FPC weight_,         //< Weight of the task.
       assessment_,     //< User's self-assessed grade.
       grade_;          //< Reviewed grade.
-  SI8 time_estimate_,  //< Amount of time it is estimated this will take.
+  ISD time_estimate_,  //< Amount of time it is estimated this will take.
       time_begins_,    //< Time the task begins.
       time_ends_,      //< Time the task was finished ends.
       time_started_,   //< Time the user started the task.

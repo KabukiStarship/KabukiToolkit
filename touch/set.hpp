@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/set.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R).
 This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file, You can
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_SET
@@ -22,7 +22,7 @@ namespace _ {
 class LIB_MEMBER Set {
  public:
   /* Constructor. */
-  Set(const CH1* name, UID uid) : name_(name), uid_(uid) {}
+  Set(const CHA* name, IUD uid) : name_(name), uid_(uid) {}
 
   /* Copy constructor copies the other object. */
   Set(const Set& s) {}
@@ -34,17 +34,17 @@ class LIB_MEMBER Set {
   void Add(const Project& workspace) { workspaces_.Add(workspace); }
 
   /* Gets the number of projects in the set. */
-  SI4 WorkspaceCount() { return workspaces_.GetCount(); }
+  ISC WorkspaceCount() { return workspaces_.GetCount(); }
 
   /* Prints this object to the terminal. */
   template <typename Printer>
   Printer& Print(Printer& o) {
-    o << "\nSet:" << name << " UID:" << uid_;
+    o << "\nSet:" << name << " IUD:" << uid_;
   }
 
  private:
   TStrand<> name_;                //< Set name.
-  UID uid_;                       //< UID of this set.
+  IUD uid_;                       //< IUD of this set.
   AArray<Workspace> workspaces_;  //< Array of Project(s).
 };
 }  // namespace _

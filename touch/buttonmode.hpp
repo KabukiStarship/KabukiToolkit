@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/buttonmode.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_MODEBUTTON
 #define KABUKI_TOOLKIT_AV_MODEBUTTON
@@ -29,7 +29,7 @@ class LIB_MEMBER ControlsPage;
 class LIB_MEMBER ModeButton : public Button {
  public:
   /* Constructor. */
-  ModeButton(const CH1* label = "", const MacroEvent& macro = MacroEvent(),
+  ModeButton(const CHA* label = "", const MacroEvent& macro = MacroEvent(),
              const Device& device = Device::Dummy,
              const ControlsPage& page = ControlsPage::kBlank)
     : Button (initLabel, initMacro),
@@ -49,7 +49,7 @@ class LIB_MEMBER ModeButton : public Button {
 
   void Depress(ButtonEvent e) { Button::Depress (e); }
 
-  /* Function Called when this Button gets FP8 pressed. */
+  /* Function Called when this Button gets FPD pressed. */
   void Depress(ButtonEvent e) { Button::Depress (e); }
 
   /* Device loaded when this macro gets triggered. */
@@ -63,10 +63,10 @@ class LIB_MEMBER ModeButton : public Button {
   }
 
   /* Sets this Device's focus to device. */
-  SI4 SetDevice(Device* device);
+  ISC SetDevice(Device* device);
 
   /* Sets the page_ to page. */
-  SI4 SetFocusPage(ControlsPage* page);
+  ISC SetFocusPage(ControlsPage* page);
 
   /* Prints this object to a terminal. */
   template<typename Printer> Printer& Print(Printer& o);

@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /who/authenticatordefault.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_VALIDATORDEFAULT
 #define KABUKI_TOOLKIT_WHO_VALIDATORDEFAULT
@@ -29,18 +29,18 @@ class TAuthenticatorDefault : public TAuthenticator {
   }
 
   /* Gets the min handle length. */
-  SI4 MinHandleLength() { return min_handle_length_; }
+  ISC MinHandleLength() { return min_handle_length_; }
 
   /* Gets the max handle length. */
-  SI4 GetMaxHandleLength() { return max_handle_length_; }
+  ISC GetMaxHandleLength() { return max_handle_length_; }
 
   /* Gets the min password length. */
-  SI4 GetMinPasswordLength() {
+  ISC GetMinPasswordLength() {
     return min_password_length_;
   }
 
   /* Gets the max password length. */
-  SI4 GetMaxPasswordLength() {
+  ISC GetMaxPasswordLength() {
     return max_password_length_;
   }
 
@@ -48,7 +48,7 @@ class TAuthenticatorDefault : public TAuthenticator {
   @param  handle The handle to validate.
   @return Returns nil upon success and a pointer to an error AString
   if the input is invalid. */
-  virtual const CH1* HandleIsValid(const TStrand<>& handle) {
+  virtual const CHA* HandleIsValid(const TStrand<>& handle) {
     const TStrand<>& result;
 
     if (input == nullptr) {
@@ -56,7 +56,7 @@ class TAuthenticatorDefault : public TAuthenticator {
       // cout << "\n| " << result;
       return result;
     }
-    SI4 length = StrandLength (input);
+    ISC length = StrandLength (input);
     // cout << "\n| Checking handle:\"" << input << "\"";
 
     if (length < min_handle_length_) {
@@ -96,7 +96,7 @@ class TAuthenticatorDefault : public TAuthenticator {
     }
     const TStrand<>& result;
     // cout << "\n| Checking password:\"" << input << "\"";
-    SI4 length = StrandLength (input);
+    ISC length = StrandLength (input);
     if (length < min_password_length_) {
       result = "Password too short";
       // cout << "\n| " << result;
@@ -124,7 +124,7 @@ class TAuthenticatorDefault : public TAuthenticator {
   }
 
  private:
-  SI4 min_handle_length_, max_handle_length_, min_password_length_,
+  ISC min_handle_length_, max_handle_length_, min_password_length_,
       max_password_length_;
 };
 

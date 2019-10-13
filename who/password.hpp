@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /who/password.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_PASSWORD
 #define KABUKI_TOOLKIT_WHO_PASSWORD
@@ -34,7 +34,7 @@ class TPassword {
     kMaxLength = 255,       //< The maximum length of a password.
   };
 
-  static const CH1 kDefault[];  //< Default password.
+  static const CHA kDefault[];  //< Default password.
 
   /* Attempts to create a password from the given password with the default
       format.
@@ -88,7 +88,7 @@ class TPassword {
  private:
   TStrand<>* key_;       //< Unencrypted password.
   TAuthenticator* auth_;  //< Password authenticator.
-  SI4 type_;             //< The validation type.
+  ISC type_;             //< The validation type.
 };
 
 }       // namespace _

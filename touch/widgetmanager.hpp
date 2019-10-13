@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/wiidget_nanager.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_WIDGETPAGE
 #define KABUKI_TOOLKIT_AV_WIDGETPAGE
@@ -27,7 +27,7 @@ namespace _ {
 
     There is one main global instance of the WidgetManager. Through the GUI, a
    user can edit only one parameter on either ControlLayer through a drop
-   down/up menu on either the top or bottom of the screen. The separation of LIB_MEMBER
+   down/up menu on either the Top or bottom of the screen. The separation of LIB_MEMBER
    from GUI allows the GUI to be programmed much easier by simply having them
    wrap the functions to the LIB_MEMBER. Because of this separation, there is not going
    to be any checking to see if a template has been saved in before applying any
@@ -49,10 +49,10 @@ class LIB_MEMBER WidgetManager {
   void ResetEditor();
 
   /* Checks to see if the current template is saved. */
-  SI4 CheckIfTemplateIsSaved();
+  ISC CheckIfTemplateIsSaved();
 
   /* Checks to see if the current page is saved. */
-  SI4 CheckIfPageIsSaved();
+  ISC CheckIfPageIsSaved();
 
   /* Saves the current TemplatePage being edited.
       @warning Does not compare to previous state! */
@@ -63,25 +63,25 @@ class LIB_MEMBER WidgetManager {
   void saveCurrentTemplate();
 
   /* Loads an Template into the editors currentTempalte. */
-  SI4 LoadTemplate(Template* new_template);
+  ISC LoadTemplate(Template* new_template);
 
   /* Loads an TemplatePage into the editors currentPage. */
-  SI4 LoadPage(ControlsPage* thisPage);
+  ISC LoadPage(ControlsPage* thisPage);
 
   /* Creates a new template. */
   void NewTemplate();
 
   /* Creates a new Template with the name. */
-  void NewTemplate(const CH1* name);
+  void NewTemplate(const CHA* name);
 
   /* Saves the current template. */
   void SaveTemplate();
 
   /* Renames the current page being edited. */
-  void RenamePage(const CH1* name);
+  void RenamePage(const CHA* name);
 
   /* Renames the current template being edited. */
-  void RenameTemplate(const CH1* name);
+  void RenameTemplate(const CHA* name);
 
   /* Removes the current page being edited. */
   void RemovePage();

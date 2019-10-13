@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/buttonwidget.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_DEVICEBUTTON
 #define KABUKI_TOOLKIT_AV_DEVICEBUTTON
@@ -30,7 +30,7 @@ triggering a MacroEvent. */
 class LIB_MEMBER ButtonWidget : public ButtonMacro {
  public:
   /* Constructor. */
-  ButtonWidget(const CH1* HmiComponent = const CH1* ::empty,
+  ButtonWidget(const CHA* HmiComponent = const CHA* ::empty,
                const MacroEvent& initMacro = MacroEvent(),
                const Widget& initDevice = Widget::empty,
                const ControlsPage& initPage = ControlsPage::blank)
@@ -49,7 +49,7 @@ class LIB_MEMBER ButtonWidget : public ButtonMacro {
     Button::Press (event);
   }
 
-  /* Function that is called when this Button gets FP8 pressed. */
+  /* Function that is called when this Button gets FPD pressed. */
   void Depress (ButtonEvent event) {}
 
   /* Widget that gets loaded when this macro gets triggered. */
@@ -59,7 +59,7 @@ class LIB_MEMBER ButtonWidget : public ButtonMacro {
   ControlsPage* FocusPage() { return focus_page_; }
 
   /* Sets this Widget's focus to device. */
-  SI4 SetDevice(Widget* d) {
+  ISC SetDevice(Widget* d) {
     if (!T) return false;
     focus_template_ = T;
     return true;

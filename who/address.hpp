@@ -1,14 +1,14 @@
 ﻿/* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /who/address.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_ADDRESS
 #define KABUKI_TOOLKIT_WHO_ADDRESS 1
@@ -22,7 +22,7 @@ class TAddress {
  public:
   /* Default constructor. */
   TAddress() {
-    /// Nothing to do here! :-)
+    /
   }
 
   /* Creates an address with the given parameters. */
@@ -107,8 +107,8 @@ class TAddress {
       *country_;      //< The country of address
   AddressType type_;  //< The type of address
 
-  static inline const CH1** AddressTypeLabels () {
-    static const CH1* labels[] = { "Home", "Work", "Other" };
+  static inline const CHA** AddressTypeLabels () {
+    static const CHA* labels[] = { "Home", "Work", "Other" };
     return labels;
   }
 

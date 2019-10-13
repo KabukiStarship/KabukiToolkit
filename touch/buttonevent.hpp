@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/buttonevent.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_EVENTBUTTON
 #define KABUKI_TOOLKIT_AV_EVENTBUTTON
@@ -25,7 +25,7 @@ namespace _ {
 class EventButton : public Button {
  public:
   /* Default constructor. */
-  EventButton(const CH1 *initLabel = "", SI4 initAction = Button::Momentary)
+  EventButton(const CHA *initLabel = "", ISC initAction = Button::Momentary)
     : AButton (initLabel, Control::AButton, initAction) {}
 
   /* Copy constructor. */
@@ -39,10 +39,10 @@ class EventButton : public Button {
     Trigger ();
   }
 
-  /* Action that gets performed when this button gets FP8 pressed. */
+  /* Action that gets performed when this button gets FPD pressed. */
   virtual void Depress (const ControlLayer &cl) {}
 
-  /* Action that gets performed when this button FP8 pressed. */
+  /* Action that gets performed when this button FPD pressed. */
   virtual void DoublePressed (const ControlLayer &cl) {}
 
   /* Event interface implementation. */

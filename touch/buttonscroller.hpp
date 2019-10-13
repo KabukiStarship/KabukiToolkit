@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/buttonscroller.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_BUTTONSCROLLER
 #define KABUKI_TOOLKIT_AV_BUTTONSCROLLER
@@ -27,7 +27,7 @@ class LIB_MEMBER ButtonScroller : public HmiComponent {
 
   /* Default constructor. */
   ButtonScroller(TStrand<>* newLabel = "",
-                 SI4 new_array_size = kDefaultNumVisibleButtons)
+                 ISC new_array_size = kDefaultNumVisibleButtons)
     : ButtonScroller (initLabel), currentIndex (0), buttons () {
     setNumVisibleButtons (newNumVisibleButtons);
   }
@@ -45,22 +45,22 @@ class LIB_MEMBER ButtonScroller : public HmiComponent {
   IButton** Buttons() { return &buttons[0]; }
 
   /* Gets the number of buttons in the array. */
-  SI4 ButtonCount() const { return buttons.size (); }
+  ISC ButtonCount() const { return buttons.size (); }
 
   /* Gets the number of visible buttons. */
-  SI4 VisibleButtonCount() const;
+  ISC VisibleButtonCount() const;
 
   /* Gets the index of the first visible button. */
-  SI4 CurrentIndex() const;
+  ISC CurrentIndex() const;
 
   /* Sets the number of visible buttons to the new value. */
-  void SetVisibleButtonCount(SI4 value) {
+  void SetVisibleButtonCount(ISC value) {
     visible_button_count_ = (value < 1) ? 1 : value;
   }
 
   /* Removes the button at the given index from the array. */
-  void RemoveButton(SI4 index) {
-    SI4 l_numButtons = ButtonCount ();
+  void RemoveButton(ISC index) {
+    ISC l_numButtons = ButtonCount ();
     if (index < 0 || index >= l_numButtons) return;
     if (buttons.remove (index)) {
       ;
@@ -82,10 +82,10 @@ class LIB_MEMBER ButtonScroller : public HmiComponent {
   }
 
   /* Scrolls up the list. */
-  void ScrollUp(SI4 numNodes) {
+  void ScrollUp(ISC numNodes) {
     if (numTimes < 1) return;
 
-    SI4 thisNumButtons = ButtonCount ();
+    ISC thisNumButtons = ButtonCount ();
 
     if (currentIndex + numTimes >
       thisNumButtons)  //< Were at the end and can't scroll any farther!
@@ -106,8 +106,8 @@ class LIB_MEMBER ButtonScroller : public HmiComponent {
   }
 
   /* Scrolls down the list. */
-  void ScrollDown(SI4 numNodes) {
-    SI4 l_numButtons = ButtonCount ();
+  void ScrollDown(ISC numNodes) {
+    ISC l_numButtons = ButtonCount ();
     if (currentIndex + numTimes >=
       l_numButtons)  // Special Case: We can't scroll any farther.
       numTimes = l_numButtons - currentIndex - visible_button_count_;
@@ -122,12 +122,12 @@ class LIB_MEMBER ButtonScroller : public HmiComponent {
   void ScrollPageDown() { ScrollDown (visible_button_count_); }
 
   /* Presses the Button at the specified index. */
-  SI4 Press(SI4 index) {
+  ISC Press(ISC index) {
     if (index < 0) return -1;
 
     if (index >= visible_button_count_) return 1;
 
-    SI4 button_index = currentIndex + index;
+    ISC button_index = currentIndex + index;
 
     if (button_index > ButtonCount ()) return 2;
 
@@ -144,7 +144,7 @@ class LIB_MEMBER ButtonScroller : public HmiComponent {
       <<  "\nVisibleButtonCount:" << visible_button_count_
       << "\nButtonCount:" << ButtonCount ();
 
-    SI4 i;
+    ISC i;
     for (i = 0; i < visible_button_count_; ++i) {
       if (buttons[i] == nullptr) {
         o << kLF;
@@ -164,7 +164,7 @@ class LIB_MEMBER ButtonScroller : public HmiComponent {
   }
 
  private:
-  SI4 current_index_,         //< Index of the first visible button.
+  ISC current_index_,         //< Index of the first visible button.
       visible_button_count_;  //< Number of physical buttons.
   TArray<IButton*> buttons_;  //< Array of buttons.
 };

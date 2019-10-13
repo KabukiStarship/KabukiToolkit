@@ -16,7 +16,7 @@
 
 ```Console
 git clone https://github.com/abc_org/xyz_project.git
-cd script2
+cd Script2™
 git checkout -b Issue123
 ```
 

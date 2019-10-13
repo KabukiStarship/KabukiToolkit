@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /who/registrar.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_IDSERVER
 #define KABUKI_TOOLKIT_WHO_IDSERVER
@@ -29,32 +29,32 @@ class TRegistrar {
   ~TRegistrar() {}
 
   /* Registers an unique key with the server without cloning the name. */
-  SI4 RegisterKey(TStrand<>& key) {
+  ISC RegisterKey(TStrand<>& key) {
     return RegisterKey (StrandClone (key));
   }
 
-  /* Registers an unique key the server and clones the name CH1. */
-  SI4 RegisterKey(const TStrand<>& key) {
+  /* Registers an unique key the server and clones the name CHA. */
+  ISC RegisterKey(const TStrand<>& key) {
     if (StrandLength (key) > kMaxKeyLength) return -1;
     return ids_.Push (StrandClone (key));
   }
 
   /* Searches for the given key.
-  @return Returns a pointer to a key CH1 upon success and null
+  @return Returns a pointer to a key CHA upon success and null
   if the key does not exist. */
-  SI4 Find(const TStrand<>& key) {
+  ISC Find(const TStrand<>& key) {
     // @todo Replace me with hash table!
-    for (SI4 i = 0; i < ids_.GetCount (); ++i)
+    for (ISC i = 0; i < ids_.GetCount (); ++i)
       if (!strcmp (key, ids_.Element (i))) return i;
     return -1;
   }
   
 
   /* Gets the number of events. */
-  SI4 NumEvents() { return event_count_; }
+  ISC NumEvents() { return event_count_; }
 
-  /* Registers a new Event UID by incrementing and returning the num_events. */
-  SI4 RegisterEvent();
+  /* Registers a new Event IUD by incrementing and returning the num_events. */
+  ISC RegisterEvent();
 
   /* Prints this object to the console. */
    Printer& Print (Printer& o) {
@@ -62,11 +62,11 @@ class TRegistrar {
        << "\n  EventCount: " << event_count_
        << "\n  Registered Handles: \n";
 
-     for (SI4 i = 0; i < ids_.GetCount (); ++i)
+     for (ISC i = 0; i < ids_.GetCount (); ++i)
        o << "| " << i <<
 
  private:
-  UID event_count_;        //< The global number of event created.
+  IUD event_count_;        //< The global number of event created.
   TArray<TStrand<>&> ids_;  //< A the id keys.
 };                          //< Array class
 }       // namespace _

@@ -1,14 +1,14 @@
 /* Kabuki Toolkit @version 0.x
 @link    https://github.com/kabuki-starship/kabuki.toolkit.git
 @file    /touch/mixer_channel.hpp
-@author  Cale McCollough <https://calemccollough.github.io>
+@author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <module_config.h>
+#include <_config.h>
 #if SEAM >= KABUKI_TOOLKIT_AV_1
 #ifndef KABUKI_TOOLKIT_AV_MIXERCHANNEL
 #define KABUKI_TOOLKIT_AV_MIXERCHANNEL
@@ -26,28 +26,28 @@ class LIB_MEMBER MixerChannel : public Op {
   };
 
   /* Constructs a mixer channel with the given name. */
-  MixerChannel(const CH1* initName = nullptr);
+  MixerChannel(const CHA* initName = nullptr);
 
   /* Destructor. */
   ~MixerChannel();
 
   /* Gets th level of this channel. */
-  SI4 GetVolume();
+  ISC GetVolume();
 
   /* Gets th pan of of the channel. */
-  SI4 GetPan();
+  ISC GetPan();
 
   /* Gets if this channel is muted. */
-  SI4 IsMuted();
+  ISC IsMuted();
 
   /* Gets if this channel is soloed. */
-  SI4 IsSoloed();
+  ISC IsSoloed();
 
   /* Sets the channel level to the value. */
-  void setVolume(SI4 value);
+  void setVolume(ISC value);
 
   /* Sets the channel pan to the value. */
-  void SetPan(SI4 value);
+  void SetPan(ISC value);
 
   /* Either mutes or unmutes this channel. */
   void SetMute(BOL isMuted);
@@ -62,27 +62,27 @@ class LIB_MEMBER MixerChannel : public Op {
   void ToggleSolo();
 
   /* Gets thisAux level. */
-  SI4 GetAux(SI4 thisAux);
+  ISC GetAux(ISC thisAux);
 
   /* Sets thisAuxSend level. */
-  void SetAux(SI4 thisAuxSend, SI4 level);
+  void SetAux(ISC thisAuxSend, ISC level);
 
   /* Deletes the aux send channel at thisIndex.
     @warning This function does not trim the auxSend array size for speed
     considerations Inserts an aux send at thisIndex. */
-  void DeleteAux(SI4 thisIndex);
+  void DeleteAux(ISC thisIndex);
 
   /* Script Operations. */
   const Op Star(uint index, Expr expr);
 
  private:
-  const CH1* label_text_;  //< Name of this channel.
-  SI4 vol_value_,           //< Volume value for this channel.
+  const CHA* label_text_;  //< Name of this channel.
+  ISC vol_value_,           //< Volume value for this channel.
       pan_value_,           //< Pan value for this channel.
       mute_value_,          //< Mute value for this channel.
       solo_value_,          //< Solo value for this channel.
       num_aux_sends_;       //< Number of aux sends.
-  SI4* aux_send_;           //< Array of aux send levels.
+  ISC* aux_send_;           //< Array of aux send levels.
 
 };  //< class MixerChannel
 }  // namespace _

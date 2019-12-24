@@ -12,8 +12,8 @@ obtain one at https://mozilla.org/MPL/2.0/. */
 #if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_USERLIST
 #define KABUKI_TOOLKIT_WHO_USERLIST
-#include "authenticatordefault.hpp"
-#include "uidserver.hpp"
+#include "authenticator_default.hpp"
+#include "uid_assigner.hpp"
 #include "user.hpp"
 
 namespace _ {

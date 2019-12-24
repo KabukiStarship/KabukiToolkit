@@ -13,7 +13,7 @@ obtain one at https://mozilla.org/MPL/2.0/. */
 #ifndef KABUKI_TOOLKIT_AV_CHANNELGROUP
 #define KABUKI_TOOLKIT_AV_CHANNELGROUP
 
-#include "config.hpp"
+#include <_config.h>
 
 namespace _ {
 

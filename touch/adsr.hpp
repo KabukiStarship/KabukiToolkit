@@ -14,7 +14,7 @@ obtain one at https://mozilla.org/MPL/2.0/. */
 #ifndef KABUKI_TOOLKIT_AV_ADSR
 #define KABUKI_TOOLKIT_AV_ADSR
 
-#include "config.hpp"
+#include <_config.h>
 
 namespace _ {
 

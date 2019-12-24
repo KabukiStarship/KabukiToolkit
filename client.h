@@ -15,7 +15,7 @@ class Client {
  public:
   Client();
 
-  SIN Run(SIN arg_count, CHA** args);
+  ISN Run(ISN arg_count, CHA** args);
 };
 }  // namespace _
 #endif

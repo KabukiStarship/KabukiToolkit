@@ -6417,4 +6417,4 @@ struct nk_alignof {
    (char *)0)
 #endif
 
-#endif /* NK_NUKLEAR_H_ */
+#endif

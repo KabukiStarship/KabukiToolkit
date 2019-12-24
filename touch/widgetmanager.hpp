@@ -13,7 +13,7 @@ obtain one at https://mozilla.org/MPL/2.0/. */
 #ifndef KABUKI_TOOLKIT_AV_WIDGETPAGE
 #define KABUKI_TOOLKIT_AV_WIDGETPAGE
 
-#include "config.hpp"
+#include <_config.h>
 
 #include "widget.hpp";
 class LIB_MEMBER ControlsPage;

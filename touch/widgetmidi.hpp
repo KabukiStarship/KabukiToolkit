@@ -1,20 +1,17 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/widgetmidi.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/WidgetMidi.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_MIDIWIDGET
-#define KABUKI_TOOLKIT_AV_MIDIWIDGET
-
-#include "widget.hpp"
-
+#ifndef KABUKI_TOOLKIT_TOUCH_MIDIWIDGET
+#define KABUKI_TOOLKIT_TOUCH_MIDIWIDGET
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#include "Widget.hpp"
 namespace _ {
 
 class WidgetMidi : public TWidget {
@@ -84,5 +81,5 @@ private:
 };
 }  // namespace _
 
-#endif  //< KABUKI_TOOLKIT_AV_MIDIWIDGET
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

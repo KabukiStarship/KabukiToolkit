@@ -1,21 +1,19 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /who/userlist.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Who/UserList.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_USERLIST
 #define KABUKI_TOOLKIT_WHO_USERLIST
-#include "authenticator_default.hpp"
-#include "uid_assigner.hpp"
-#include "user.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_WHO_CORE
+#include "AuthenticatorDefault.hpp"
+#include "UIDAssigner.hpp"
+#include "User.hpp"
 namespace _ {
 
 /* A List of User(s).
@@ -24,8 +22,7 @@ handles and passwords using the type parameter. This makes it very
 easy to create UserList subclasses for customizing format rules.
     
 Users may login and out. When a User logs out the pointer and class gets
-deleted.
-*/
+deleted. */
 class UserList : public Operand {
  public:
   enum {
@@ -107,7 +104,7 @@ class UserList : public Operand {
   TAuthenticator* GetAuthenticator() { return auth_; }
 
   /* Adds a new User to the list with the given handle and password. */
-  ISC Add(const TStrand<>& handle, const TStrand<>& password = TPassword::kDefault,
+  ISC Add(const TString<>& handle, const TString<>& password = TPassword::kDefault,
           FPD balance = TUser::kDefaultBalance,
           int64_t value = TUser::kDefaultValue) {
     cout << "\n| Attempting to add @" << ((handle == nullptr) ? "null" : handle)
@@ -124,7 +121,7 @@ class UserList : public Operand {
       return -1;
     }
     if (password == nullptr) {
-      password = StrandClone (TPassword::kDefault);
+      password = StringClone (TPassword::kDefault);
     }
     if (auth_->PasswordInvalid (password)) {
       cout << "\n| Invalid password!";
@@ -184,7 +181,7 @@ class UserList : public Operand {
   }
 
   /* Finds an entity in the list by the given search CHA. */
-  ISC Find(const TStrand<>& AString) {
+  ISC Find(const TString<>& AString) {
     if (handle == nullptr) {
       return -1;
     }
@@ -215,7 +212,7 @@ class UserList : public Operand {
   @param handle   The handle of the user to delete.
   @param password The password of the user to delete.
   @return Returns the new users_ count or <0 upon failure. */
-  ISC Remove(const TStrand<>& handle, const TStrand<>& password) {
+  ISC Remove(const TString<>& handle, const TString<>& password) {
     ISC session = Find (handle);
     if (session < 0) {
       return -1;
@@ -243,21 +240,21 @@ class UserList : public Operand {
   }
 
   /* Attempts to login to the given session and returns a session key. */
-  virtual IUD LogIn(const TStrand<>& handle, const TStrand<>& password) {
+  virtual IUD LogIn(const TString<>& handle, const TString<>& password) {
     return LogIn (Find (handle), password);
   }
 
   /* Attempts to login to the given session and returns a session key. */
-  virtual IUD LogIn(ISC session, const TStrand<>& password) {
+  virtual IUD LogIn(ISC session, const TString<>& password) {
     cout << "\n| Attempting to log in as " << index << "\"" << password << "\"";
     User* user = GetUser (index);
     if (!user) {
       cout << "\n| nil user!";
-      return UidServer<>::kInvalidUid;
+      return UidServer<>::cInvalidUid;
     }
     if (password == nullptr) {
       cout << "\n| nil password!";
-      return UidServer<>::kInvalidUid;
+      return UidServer<>::cInvalidUid;
     }
     cout << "\n| Comparing credentials \"" << user->GetHandle ().GetKey ()
       << "\":\"" << user->GetPassword ().GetKey () << "\" to \"" << password
@@ -270,7 +267,7 @@ class UserList : public Operand {
       return Random<IUD> ();
     }
     cout << "\n| Login unsuccessful.";
-    return UidServer<>::kInvalidUid;
+    return UidServer<>::cInvalidUid;
   }
 
   /* Attempts to remove the given session.
@@ -297,7 +294,7 @@ class UserList : public Operand {
   /* Attempts to remove the given session.
   @param  handle The handle of the User to remove.
   @return Returns negative upon failure and the user count upon success. */
-  virtual ISC Remove(const TStrand<>& handle) {
+  virtual ISC Remove(const TString<>& handle) {
     ISC session = Find (handle);
     if (session < 0) {
       return session;
@@ -324,65 +321,65 @@ class UserList : public Operand {
     return txt;
   }
   
-  /*const TStrand<>& Sudo(const TStrand<>& text, const TStrand<>& strand_end) {
+  /*const TString<>& Sudo(const TString<>& text, const TString<>& String_end) {
     CHA handle[Handle::kMaxLength + 1], password[Password::kMaxLength + 1];
     FPD balance;
     int64_t value;
-    const TStrand<>& next_token;
+    const TString<>& next_token;
 
     if (!text) {
       return nullptr;
     }
-    if (text > strand_end) {
+    if (text > String_end) {
       return nullptr;
     }
     // This algorithm's job is to figure out white user to route the message
     // too. Users are not sorted right so we're doing it the slow way.
     // @todo Update to hash table.
     // @all routes messages to everyone in the UserList.
-    if (next_token = TokenEquals(text, strand_end, "all")) {
+    if (next_token = TokenEquals(text, String_end, "all")) {
       ISC count = Length();
       if (count == 0) {
         return next_token;
       }
       for (ISC i = count - 2; i > 0; --i) {
-        if (!users_[i]->Sudo(next_token + 1, strand_end)) {
+        if (!users_[i]->Sudo(next_token + 1, String_end)) {
           return nullptr;
         }
       }
-      return users_[0]->Sudo(next_token + 1, strand_end);
+      return users_[0]->Sudo(next_token + 1, String_end);
     }
-    if (next_token = TokenEquals(text, strand_end, "add")) {
+    if (next_token = TokenEquals(text, String_end, "add")) {
       next_token =
-          TokenRead(text, strand_end, handle, handle + Handle::kMaxLength + 1);
+          TokenRead(text, String_end, handle, handle + Handle::kMaxLength + 1);
       if (!next_token) {
         return nullptr;
       }
-      next_token = TokenRead(text, strand_end, password,
+      next_token = TokenRead(text, String_end, password,
                              password + Password::kMaxLength + 1);
       if (!next_token) {
         return nullptr;
       }
-      if (!(next_token = TextRead(next_token + 1, strand_end, balance))) {
+      if (!(next_token = TextRead(next_token + 1, String_end, balance))) {
         return nullptr;
       }
-      if (!(next_token = TextRead(next_token + 1, strand_end, value))) {
+      if (!(next_token = TextRead(next_token + 1, String_end, value))) {
         return nullptr;
       }
       return next_token;
     }
-    if (next_token = TokenEquals(text, strand_end, "remove")) {
+    if (next_token = TokenEquals(text, String_end, "remove")) {
       CHA handle[Handle::kMaxLength + 1];
       while (
-          !TokenRead(text, strand_end, handle, handle + Handle::kMaxLength + 1)) {
+          !TokenRead(text, String_end, handle, handle + Handle::kMaxLength + 1)) {
         Remove(handle);
       }
     }
     for (ISC i = 0; i < Length(); ++i) {
       User* user = GetUser(i);
-      next_token = TokenEquals(text, strand_end, user->GetHandle().GetKey());
+      next_token = TokenEquals(text, String_end, user->GetHandle().GetKey());
       if (next_token) {
-        return user->Sudo(next_token + 1, strand_end);
+        return user->Sudo(next_token + 1, String_end);
       }
     }
     return nullptr;
@@ -413,5 +410,5 @@ class UserList : public Operand {
 };
 
 }       // namespace _
-#endif  //< KABUKI_TOOLKIT_WHO_USERLIST
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_WHO_1
+#endif
+#endif

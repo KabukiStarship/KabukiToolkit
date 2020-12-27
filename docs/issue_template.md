@@ -1,4 +1,4 @@
-# 
+# IssueType 
 
 ## Problem
 
@@ -10,4 +10,4 @@
 
 ## Hierarchy
 
-* Flat
+* CookingWithCale/CookingWithCale#1

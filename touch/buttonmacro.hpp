@@ -1,25 +1,24 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/buttonmacro.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/buttonmacro.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_BUTTONMACRO
-#define KABUKI_TOOLKIT_AV_BUTTONMACRO
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#ifndef KABUKI_TOOLKIT_TOUCH_BUTTONMACRO
+#define KABUKI_TOOLKIT_TOUCH_BUTTONMACRO
 
-#include "button.hpp"
-#include "button_midi.hpp"
-#include "control_midi.hpp"
-#include "dmx_button.hpp"
-#include "dmx_control.hpp"
-#include "param.hpp"
-
+#include "Button.hpp"
+#include "ButtonMidi.hpp"
+#include "ControlMidi.hpp"
+#include "ButtonDMX.hpp"
+#include "ControlDMX.hpp"
+#include "Param.hpp"
 namespace _ {
 
 /* Parameter<ISC> and Button that can trigger multiple events.
@@ -30,7 +29,7 @@ class LIB_MEMBER ButtonMacro : public Parameter<ISC>, public Button {
  public:
   /* Default constructor creates a ButtonMacro with no controls.
       A ButtonMacro without any controls triggers system functions only.*/
-  ButtonMacro(const TStrand<>& name = "")
+  ButtonMacro(const TString<>& name = "")
     : Parameter<ISC> (Parameter<ISC>::ButtonMacro, label, 0, 0, 0, 0, 0),
     control_count_ (0),
     controls (nullptr) {
@@ -154,11 +153,11 @@ class LIB_MEMBER ButtonMacro : public Parameter<ISC>, public Button {
   ISC GetMaxWordValue() const override;
 
   /* Gets the label. */
-  TStrand<>& Label() const override { return label; }
+  TString<>& Label() const override { return label; }
 
   /* Sets the label to the new label.
   @return Nil upon success or an error AString upon failure. */
-  const CHA* SetLabel(const TStrand<>& new_label) override {
+  const CHA* SetLabel(const TString<>& new_label) override {
     return label_.Set (new_label);
   }
 
@@ -186,14 +185,14 @@ class LIB_MEMBER ButtonMacro : public Parameter<ISC>, public Button {
   /* Prints a AString of the row Strings of the list. */
   template<typename Printer>
   Printer& PrintListString(Printer& o) const {
-    o << LineStrand ('#', Parameter<ISC>::kMacroHeaderLength);
+    o << LineString ('#', Parameter<ISC>::kMacroHeaderLength);
 
     auto node = controls;
     while (node) {
       o << node->data->PrintStringRow (o) << kLF;
       node = node->next;
     }
-    return o << LineStrand ('#', Parameter<ISC>::kMacroHeaderLength);
+    return o << LineString ('#', Parameter<ISC>::kMacroHeaderLength);
   }
 
   /* Prints the header for toStringRow (). */
@@ -215,11 +214,11 @@ class LIB_MEMBER ButtonMacro : public Parameter<ISC>, public Button {
   /* Prints this object to a terminal. */
   template<typename Printer>
   Printer& Print(Printer& o) const {
-    o << LineStrand ('~', Parameter<ISC>::kMacroHeaderLength)
+    o << LineString ('~', Parameter<ISC>::kMacroHeaderLength)
       << "Macro Control:\n "
-      << LineStrand ('~', Parameter<ISC>::kMacroHeaderLength)
+      << LineString ('~', Parameter<ISC>::kMacroHeaderLength)
       << Parameter<ISC>::MacroHeader << kLF
-      << LineStrand ('~', Parameter<ISC>::kMacroHeaderLength)
+      << LineString ('~', Parameter<ISC>::kMacroHeaderLength)
       << PrintStringRow (o);
     return o << PrintListString (o);
   }
@@ -247,5 +246,5 @@ class LIB_MEMBER ButtonMacro : public Parameter<ISC>, public Button {
 };
 
 }  // namespace _
-#endif  //< #ifndef KABUKI_TOOLKIT_AV_BUTTONMACRO
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

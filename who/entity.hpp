@@ -1,20 +1,17 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /who/entity.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Who/Entity.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_WHO_1
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_WHO_CORE
 #ifndef KABUKI_TOOLKIT_WHO_ENTITY
 #define KABUKI_TOOLKIT_WHO_ENTITY
-
-#include "profile.hpp"
-
+#include "Profile.hpp"
 namespace _ {
 
 /* A entity with contact information.
@@ -26,27 +23,27 @@ class TEntity {
   TEntity() {}
 
   /* Gets the entity first name. */
-  const TStrand<>& GetFirstName() { return first_name_; }
+  const TString<>& GetFirstName() { return first_name_; }
 
   /* Attempts to set the name to the one given AString. */
-  void SetFirstName(const TStrand<>& AString) {
+  void SetFirstName(const TString<>& AString) {
     delete first_name_;
-    first_name_ = StrandClone (AString);
+    first_name_ = StringClone (AString);
   }
 
   /* Gets the entity last name. */
-  const TStrand<>& GetLastName() { return last_name_; }
+  const TString<>& GetLastName() { return last_name_; }
 
   /* Attempts to set the last name to the given AString. */
-  void SetLastName(const TStrand<>& AString) {
+  void SetLastName(const TString<>& AString) {
     delete last_name_;
-    last_name_ = StrandClone (AString);
+    last_name_ = StringClone (AString);
   }
 
-  TStrand<>
+  TString<>
 
   /* Returns true if this entity contains the search query. */
-  BOL Query(const TStrand<>& query) {
+  BOL Query(const TString<>& query) {
     /*
     for_each (tags.begin (), tags.end (), [](CHA& AString(
     {
@@ -84,7 +81,7 @@ class TEntity {
 
  private:
 
-  TStrand<>first_name_,  //< The entity's first name.
+  TString<>first_name_,  //< The entity's first name.
       last_name_,        //< Entity's last name or class.
       phone_number_,     //< Phone number of the entity.
       image_uri_;         //< A URI pointing to an image of the Entity.

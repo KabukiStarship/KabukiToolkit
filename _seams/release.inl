@@ -1,33 +1,25 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /_seams/release.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright 2019 (C) Kabuki Starship <kabukistarship.com>; all rights 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /_Seams/release.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright 2019-20 (C) Kabuki Starship <kabukistarship.com>; all rights 
 reserved (R). This Source Code Form is subject to the terms of the Mozilla 
 Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
 You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
 #pragma once
-#include <_config.h>
-
+#include <_Config.h>
 #if SEAM == KABUKI_TOOLKIT_RELEASE
-#include "_debug.inl"
+#include "_Debug.inl"
 #else
-#include "_release.inl"
+#include "_Release.inl"
 #endif
-
 using namespace _;
-
-namespace kabuki {
-namespace toolkit {
-inline const CHA* Release(CHA* seam_log, CHA* seam_end, const CHA* args) {
+namespace KT {
+inline const CHA* Release(const CHA* args) {
 #if SEAM >= KABUKI_TOOLKIT_RELEASE
   TEST_BEGIN;
-
-  PRINT_HEADING("Testing Foo fun.");
 
 #endif
   return 0;
 }
-}  // namespace toolkit
-}  // namespace kabuki
+}  // namespace KT

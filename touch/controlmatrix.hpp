@@ -1,20 +1,17 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/controlmatrix.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/ControlMatrix.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_CONTROLMATRIX
-#define KABUKI_TOOLKIT_AV_CONTROLMATRIX
-
-#include "paramset.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#ifndef KABUKI_TOOLKIT_TOUCH_CONTROLMATRIX
+#define KABUKI_TOOLKIT_TOUCH_CONTROLMATRIX
+#include "ParamSet.hpp"
 namespace _ {
 
 /* A grid of Controls.
@@ -26,10 +23,10 @@ namespace _ {
 class LIB_MEMBER TControlMatrix {
  public:
   enum {
-    kMinNumRows = 1,                             //< The min number of rows.
-    kMinNumColumns = 2,                          //< The min number of columns.
-    kMaxNumRows = ParamSet::kElementCountMax,  //< The max number of rows.
-    kMaxNumColumns =
+    cMinNumRows = 1,                             //< The min number of rows.
+    cMinNumColumns = 2,                          //< The min number of columns.
+    cMaxNumRows = ParamSet::kElementCountMax,  //< The max number of rows.
+    cMaxNumColumns =
         ParamSet::kElementCountMax,  //< The max number of columns.
   };
 
@@ -75,12 +72,12 @@ class LIB_MEMBER TControlMatrix {
   /* Prints this object to a AString. */
   template<typename Printer>
   Printer& Print(Printer& o) const {
-    o << LineStrand ('-', Parameter<ISC>::kMacroHeaderLength)
+    o << LineString ('-', Parameter<ISC>::kMacroHeaderLength)
       << "Control Grid: rows:" << row_count_
       << " columns:" << col_count_
-      << LineStrand('-', Parameter<ISC>::kMacroHeaderLength);
+      << LineString('-', Parameter<ISC>::kMacroHeaderLength);
     PrintMacroHeader (o);
-    o << LineStrand ('-', Parameter<ISC>::kMacroHeaderLength)
+    o << LineString ('-', Parameter<ISC>::kMacroHeaderLength)
       << "\n!!!!row_count_" << row_count_;
 
     for (ISC i = 0; i < row_count_; ++i) {
@@ -88,13 +85,13 @@ class LIB_MEMBER TControlMatrix {
       rows[i].Print (o);
     }
 
-    return o << LineStrand ('-', Parameter<ISC>::kMacroHeaderLength);
+    return o << LineString ('-', Parameter<ISC>::kMacroHeaderLength);
   }
 
  private:
   ISC row_count_,       //< Number of rows.
       col_count_;       //< Number of columns.
-  ParamSet* rows_;  //< Rows of control array columns.
+  ParamSet* rows_;      //< Rows of control array columns.
 };
 }  // namespace _
 #endif

@@ -1,20 +1,17 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/wiidget_nanager.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/WiidgetManager.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_WIDGETPAGE
-#define KABUKI_TOOLKIT_AV_WIDGETPAGE
-
-#include <_config.h>
-
+#ifndef KABUKI_TOOLKIT_TOUCH_WIDGETPAGE
+#define KABUKI_TOOLKIT_TOUCH_WIDGETPAGE
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#include <_Config.h>
 #include "widget.hpp";
 class LIB_MEMBER ControlsPage;
 class LIB_MEMBER Controller;
@@ -22,20 +19,20 @@ class LIB_MEMBER Controller;
 namespace _ {
 
 /*  The WidgetManager is an editor for templates
-    The Template editor has one Template at a time loaded along with one page
-   that it is editing.
+The Template editor has one Template at a time loaded along with one page
+that it is editing.
 
-    There is one main global instance of the WidgetManager. Through the GUI, a
-   user can edit only one parameter on either ControlLayer through a drop
-   down/up menu on either the Top or bottom of the screen. The separation of LIB_MEMBER
-   from GUI allows the GUI to be programmed much easier by simply having them
-   wrap the functions to the LIB_MEMBER. Because of this separation, there is not going
-   to be any checking to see if a template has been saved in before applying any
-   changes that this classes functions might make.
+There is one main global instance of the WidgetManager. Through the GUI, a
+user can edit only one parameter on either ControlLayer through a drop
+down/up menu on either the Top or bottom of the screen. The separation of LIB_MEMBER
+from GUI allows the GUI to be programmed much easier by simply having them
+wrap the functions to the LIB_MEMBER. Because of this separation, there is not going
+to be any checking to see if a template has been saved in before applying any
+changes that this classes functions might make.
 
-    # Templates File Format:
-    The data for the Template file will be in the same order as the data
-   declarations in this object followed by a packed array of the ControlsPage.
+# Templates File Format:
+The data for the Template file will be in the same order as the data
+declarations in this object followed by a packed array of the ControlsPage.
 */
 class LIB_MEMBER WidgetManager {
  public:
@@ -110,5 +107,5 @@ class LIB_MEMBER WidgetManager {
   WidgetPage* page_;                //< Current page being edited.
 };
 }  // namespace _
-#endif  //< KABUKI_TOOLKIT_AV_WIDGETPAGE
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

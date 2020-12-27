@@ -1,20 +1,17 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /who/handle.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Who/Handle.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_WHO_1
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_WHO_CORE
 #ifndef KABUKI_TOOLKIT_WHO_HANDLE
 #define KABUKI_TOOLKIT_WHO_HANDLE
-
-#include "authenticator.hpp"
-
+#include "Authenticator.hpp"
 namespace _ {
 
 /* A handle like a CHA or IUD.
@@ -30,7 +27,7 @@ class THandle {
   static const CHA* Default ();
 
   /* Constructor creates a standard CHA. */
-  THandle(TAuthenticator* authenticator, const TStrand<>& key,
+  THandle(TAuthenticator* authenticator, const TString<>& key,
          ISC min_length = kDefaultMinLength, ISC max_length = kMaxLength)
     : auth_ (authenticator), type_ (kValidation) {
     if (min_length >= max_length) {
@@ -43,46 +40,46 @@ class THandle {
       min_length = kDefaultMinLength;
     else if (min_length > kMaxLength)
       min_length = kDefaultMinLength;
-    key_ = StrandClone (key);
+    key_ = StringClone (key);
   }
 
   /* Gets a reference to the handle AString. */
-  const TStrand<>& GetKey() { return key_; }
+  const TString<>& GetKey() { return key_; }
 
   /* Gets true if this password is value. */
-  BOL SetKey(const TStrand<>& key) {
-    size_t length = StrandLength (key);
+  BOL SetKey(const TString<>& key) {
+    size_t length = StringLength (key);
     if (length < kDefaultMinLength || length > kMaxLength) return false;
 
     if (!IsValid (key)) return false;
     delete key_;
-    key_ = StrandClone (key);
+    key_ = StringClone (key);
     return true;
   }
 
   /* Returns true if the handle is valid. */
-  BOL IsValid(const TStrand<>& key) {
-    size_t length = StrandLength (key);
+  BOL IsValid(const TString<>& key) {
+    size_t length = StringLength (key);
     if (length < kDefaultMinLength || length > kMaxLength) return false;
     return true;
   }
 
   /* Returns true if this Handle is identical to the given Handle. */
-  BOL Equals(const THandle& h) { return StrandEquals (key_, h.key_); }
+  BOL Equals(const THandle& h) { return StringEquals (key_, h.key_); }
 
   /* Returns true if this Handle is identical to the given Handle. */
-  BOL Equals(const TStrand<>& handle) { return StrandEquals (key_, handle); }
+  BOL Equals(const TString<>& handle) { return StringEquals (key_, handle); }
 
   /* Prints this object to the log. */
   template<typename Printer> Printer& Print (Printer& o) { return txt << "\nHandle: " << key_; }
 
  private:
-  TStrand<>& key_;        //< Unique AString key.
-  TAuthenticator* auth_;   //< Handle authenticator.
+  TString<>& key_;        //< Unique AString key.
+  TAuthenticator* auth_;  //< Handle authenticator.
   ISC type_;              //< The validation type.
 
 };  //< class Handle
 
-}       // namespace _
-#endif  //< KABUKI_TOOLKIT_WHO_HANDLE
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_WHO_1
+}   // namespace _
+#endif
+#endif

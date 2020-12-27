@@ -1,20 +1,17 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /who/entitylist.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Who/EntityList.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_WHO_1
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_WHO_CORE
 #ifndef KABUKI_TOOLKIT_WHO_ENTITYLIST
 #define KABUKI_TOOLKIT_WHO_ENTITYLIST
-
-#include "entity.hpp"
-
+#include "Entity.hpp"
 namespace _ {
 
 /* A List of entities.
@@ -30,7 +27,7 @@ class TEntityList {
   /* Adds an Entity to the list. */
   void Add(TEntity* entity) { return entities_.Push (a); }
 
-  /* Adds a list of Entity (AString) to the list. */
+  /* Adds the entities to the list. */
   void Add(TEntityList& enities) {
     // entities.Push (l);
   }
@@ -65,5 +62,5 @@ class TEntityList {
 };
 
 }       // namespace _
-#endif  //< KABUKI_TOOLKIT_WHO_ENTITYLIST
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_WHO_1
+#endif
+#endif

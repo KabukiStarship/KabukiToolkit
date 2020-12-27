@@ -1,20 +1,16 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/mixer_channel.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/mixer_channel.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_MIXERCHANNEL
-#define KABUKI_TOOLKIT_AV_MIXERCHANNEL
-
-#include <_config.h>
-
+#ifndef KABUKI_TOOLKIT_TOUCH_MIXERCHANNEL
+#define KABUKI_TOOLKIT_TOUCH_MIXERCHANNEL
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
 namespace _ {
 
 /* A mixer channel Operation. */
@@ -68,15 +64,15 @@ class LIB_MEMBER MixerChannel : public Op {
   void SetAux(ISC thisAuxSend, ISC level);
 
   /* Deletes the aux send channel at thisIndex.
-    @warning This function does not trim the auxSend array size for speed
-    considerations Inserts an aux send at thisIndex. */
+  @warning This function does not trim the auxSend array size for speed
+  considerations Inserts an aux send at thisIndex. */
   void DeleteAux(ISC thisIndex);
 
   /* Script Operations. */
   const Op Star(uint index, Expr expr);
 
  private:
-  const CHA* label_text_;  //< Name of this channel.
+  const CHA* label_text_;   //< Name of this channel.
   ISC vol_value_,           //< Volume value for this channel.
       pan_value_,           //< Pan value for this channel.
       mute_value_,          //< Mute value for this channel.
@@ -86,5 +82,5 @@ class LIB_MEMBER MixerChannel : public Op {
 
 };  //< class MixerChannel
 }  // namespace _
-#endif  //< KABUKI_TOOLKIT_AV_MIXERCHANNEL
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

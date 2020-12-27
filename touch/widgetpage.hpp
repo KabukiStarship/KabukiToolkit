@@ -1,24 +1,21 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/widgetpage.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/widgetpage.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_WIDGETPAGE
-#define KABUKI_TOOLKIT_AV_WIDGETPAGE
-
-#include "button.hpp"
-#include "component.hpp"
-#include "controlmatrix.hpp"
-#include "controlmidi.hpp"
-#include "widgetpage.hpp"
-
+#ifndef KABUKI_TOOLKIT_TOUCH_WIDGETPAGE
+#define KABUKI_TOOLKIT_TOUCH_WIDGETPAGE
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#include "Button.hpp"
+#include "Component.hpp"
+#include "ControlMatrix.hpp"
+#include "ControlMidi.hpp"
+#include "WidgetPage.hpp"
 namespace _ {
 
 class ControlMidi;
@@ -26,7 +23,7 @@ class Button;
 class TControlMatrix;
 
 /* A page of controls in a TWidget.
-    A WidgetPage is composed of multiple groups of controls.
+A WidgetPage is composed of multiple groups of controls.
 */
 class LIB_MEMBER WidgetPage {
  public:
@@ -35,11 +32,11 @@ class LIB_MEMBER WidgetPage {
     MaxControlPairs = 16,  //< Max number of control pairs allowed per Page.
   };
 
-  static const CHA* TypeText;  //< TStrand<> that reads "Page".
+  static const CHA* TypeText;  //< TString<> that reads "Page".
 
   /* Default constructor. */
   WidgetPage(const CHA* initName = "", ISC initNumControlPairs = 0)
-    : pageLabel (TStrand<> (initName)),
+    : pageLabel (TString<> (initName)),
     numControlPairs (initNumControlPairs),
     mstrControlsEnabled (false) {
     uint32_t numControlGroupControlPairs;
@@ -62,8 +59,8 @@ class LIB_MEMBER WidgetPage {
     uint32_t i;
 
     for (i = 0; i < numControlPairs; ++i) {
-      knobsArray[i] = new ControlMidi ((TStrand<> ("Knob ") += i));
-      bttnsArray[i] = new ButtonDummy ((TStrand<> ("Button ") += i));
+      knobsArray[i] = new ControlMidi ((TString<> ("Knob ") += i));
+      bttnsArray[i] = new ButtonDummy ((TString<> ("Button ") += i));
     }
 
     cntrlGroup1 = new ControlGroup (LAYER_A, numControlGroupControlPairs);
@@ -72,7 +69,7 @@ class LIB_MEMBER WidgetPage {
 
   /* Copy constuctor. */
   WidgetPage(const WidgetPage& thisPage)
-    : pageLabel (TStrand<> (page.)),
+    : pageLabel (TString<> (page.)),
     cntrlGroup1 (new ControlGroup (*page.cntrlGroup1)),
     cntrlGroup2 (new ControlGroup (*page.cntrlGroup2)),
     mstrControlsEnabled (page.mstrControlsEnabled) {
@@ -138,7 +135,7 @@ class LIB_MEMBER WidgetPage {
   }
 
   /* Gets the page_label_. */
-  const TStrand<>& Label() { return label_; }
+  const TString<>& Label() { return label_; }
 
   /* Sets the label_ to the label. */
   void SetLabel (const CHA* label) { return label_.Set (label); }
@@ -177,7 +174,7 @@ class LIB_MEMBER WidgetPage {
   BOL HasButtons () { return buttons_.Count () != 0; }
 
   /* Gets type AString. */
-  TStrand<>& GetType() { return typeText; }
+  TString<>& GetType() { return typeText; }
 
   /* Prints this object to a terminal. */
   template<typename Printer>
@@ -189,16 +186,16 @@ class LIB_MEMBER WidgetPage {
   }
 
  private:
-   TStrand<> label_;    
+   TString<> label_;    
   ISC num_control_pairs_;       //< Number of BoundedControl/Button pairs.
-  BOL mstr_controls_enabled_;  //< Stores if knob 9 is page specific or is the
+  BOL mstr_controls_enabled_;   //< Stores if knob 9 is page specific or is the
                                 // master controls.
   TArray<ControlMidi*> knobs_;  //< Knob controls.
   TArray<Button*> bttns_;       //< Button controls.
   TArray<TControlMatrix*>
-      control_group_;  //< Array of pointers to TControlMatrix objects.
+      control_group_;           //< Array of pointers to TControlMatrix objects.
 };
 
 }  // namespace _
-#endif  //< KABUKI_TOOLKIT_AV_WIDGETPAGE
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

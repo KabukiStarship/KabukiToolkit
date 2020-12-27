@@ -1,24 +1,20 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/master_controls.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/ControlMaster.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_MASTERCONTROLS
-#define KABUKI_TOOLKIT_AV_MASTERCONTROLS
-
-#include "param.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#ifndef KABUKI_TOOLKIT_TOUCH_MASTERCONTROLS
+#define KABUKI_TOOLKIT_TOUCH_MASTERCONTROLS
+#include "Param.hpp"
 namespace _ {
 
-/* Master control for an isymmetric control surface.
- */
+/* Master control for an isymmetric control surface. */
 class ControlMaster {
  public:
   /* Constructs a blank set of master controls. */

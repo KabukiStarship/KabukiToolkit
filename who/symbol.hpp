@@ -1,24 +1,20 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /who/symbol.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Who/Symbol.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_GRAMMAR
 #define KABUKI_TOOLKIT_WHO_GRAMMAR
-
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_WHO_CORE
 namespace _ {
 
 /* Used for settings rules to text grammar.
-Useful for rules for passwords.
-*/
+Useful for rules for passwords. */
 class TSymbol {
  public:
   enum {
@@ -66,17 +62,17 @@ class TSymbol {
     */
   }
 
-  const TStrand<>& GetDefaultPassword () { "password"; }
+  const TString<>& GetDefaultPassword () { "password"; }
 
-  const TStrand<>& GetDefaultPasswordFormat () { return "^[a-zA-Z0-9]*$"; }
+  const TString<>& GetDefaultPasswordFormat () { return "^[a-zA-Z0-9]*$"; }
 
   /* Clones the given object. */
   void Clone(const Word* grammar);
 
   /* Verifies the given AString to see if it has proper grammar. */
-  BOL IsValid(const TStrand<>& AString) {
+  BOL IsValid(const TString<>& AString) {
     /*
-    ISC StringLength = StrandLength (thisString);
+    ISC StringLength = StringLength (thisString);
 
     if (StringLength  < min_length_ || StringLength > max_length_)
     return false;
@@ -109,11 +105,11 @@ class TSymbol {
 
   }
 
-  void SetFormat (const TStrand<>& format) {
+  void SetFormat (const TString<>& format) {
     /*if (!format == nullptr) return;
     if (!format_ == nullptr) return;
     delete format_;
-    format_ = StrandClone (format);*/
+    format_ = StringClone (format);*/
   }
 
   /* Checks to see if thisChar is an illegal CHA. */
@@ -123,7 +119,7 @@ class TSymbol {
   @pre thisChar  must be > 0.
   @param thisChar The illegal CHA to add.
   */
-  BOL MakeIllegal(CHA thisChar, const TStrand<>& descString) {
+  BOL MakeIllegal(CHA thisChar, const TString<>& descString) {
     // if (!isprint (thisChar))
     //   return false;
     return true;
@@ -134,7 +130,7 @@ class TSymbol {
   @param startIndex The starting ASCII CHA index.
   @param stopIndex  The stopping ASCII CHA index. */
   BOL MakeIllegal(ISC startIndex, ISC stopIndex, 
-                   const TStrand<>& descString) {
+                   const TString<>& descString) {
     return true;
   }
 
@@ -146,7 +142,7 @@ class TSymbol {
   @param stop_index  The stopping ASCII CHA index.
   @param num_instances  The number of times the symbol range must occur. */
   BOL MakeMandatory(ISC startIndex, ISC stopIndex, ISC numInstances,
-                     const TStrand<>& descString) {
+                     const TString<>& descString) {
     return true;
   }
 
@@ -170,7 +166,7 @@ class TSymbol {
     Range<char_t> mustStartWithChars; //< A 2 column table of ints that
     represents the range (AString) of chars that the symbol must start with.
                                  
-    const TStrand<>& illegal_chars_desc,     
+    const TString<>& illegal_chars_desc,     
     //< An array of Strings that describes what illegal CHA (AString) are.                               
     mandatory_chars_desc,   //< An array of
     Strings that describes what the mandatory CHA (AString) are.
@@ -180,5 +176,5 @@ class TSymbol {
 };
 
 }       // namespace _
-#endif  //< KABUKI_TOOLKIT_WHO_GRAMMAR
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_WHO_1
+#endif
+#endif

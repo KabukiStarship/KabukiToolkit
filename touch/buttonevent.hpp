@@ -1,27 +1,23 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/buttonevent.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/ButtonEvent.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_EVENTBUTTON
-#define KABUKI_TOOLKIT_AV_EVENTBUTTON
-
-#include "button.hpp"
-#include "control_layer.hpp"
-#include "event.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#ifndef KABUKI_TOOLKIT_TOUCH_EVENTBUTTON
+#define KABUKI_TOOLKIT_TOUCH_EVENTBUTTON
+#include "Button.hpp"
+#include "ControlLayer.hpp"
+#include "Event.hpp"
 namespace _ {
 
 /* A button that triggers an Event.
-    A button Event is triggered on the press function.
-*/
+A button Event is triggered on the press function. */
 class EventButton : public Button {
  public:
   /* Default constructor. */
@@ -47,8 +43,7 @@ class EventButton : public Button {
 
   /* Event interface implementation. */
   virtual void Trigger () {}
-
 };
 }  // namespace _
-#endif  //< KABUKI_TOOLKIT_AV_EVENTBUTTON
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

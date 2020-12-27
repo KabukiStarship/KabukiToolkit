@@ -1,21 +1,19 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /who/user.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Who/User.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_USER
 #define KABUKI_TOOLKIT_WHO_USER
-#include "authenticator.hpp"
-#include "handle.hpp"
-#include "password.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_WHO_CORE
+#include "Authenticator.hpp"
+#include "Handle.hpp"
+#include "Password.hpp"
 namespace _ {
 
 /* A user account on a computer.
@@ -32,11 +30,11 @@ class TUser {
 
   /* Creates a user with the given handle, password, and status. */
   TUser(TAuthenticator* authenticator, IUD uid = 0,
-       const TStrand<>& handle = THandle::kDefault,
-       const TStrand<>& password = TPassword::kDefault,
+       const TString<>& handle = THandle::kDefault,
+       const TString<>& password = TPassword::kDefault,
        FPD balance = kDefaultBalance, int64_t v-alue = kDefaultValue)
     : handle_ (authenticator, handle),
-    status_ (StrandClone ("")),
+    status_ (StringClone ("")),
     password_ (authenticator, password),
     auth_ (authenticator),
     uid_ (uid),
@@ -79,14 +77,14 @@ class TUser {
   virtual ~TUser() {}
 
   /* Gets the handle's key. */
-  const TStrand<>& GetStatus() { return status_; }
+  const TString<>& GetStatus() { return status_; }
 
   /* Gets the handle's key. */
-  virtual const TStrand<>& SetStatus(const TStrand<>& name) {
+  virtual const TString<>& SetStatus(const TString<>& name) {
     if (name == nullptr) {
       return "name can't be nil.";
     }
-    status_ = StrandClone (name);
+    status_ = StringClone (name);
     return nullptr;
   }
 
@@ -94,7 +92,7 @@ class TUser {
   THandle& GetHandle() { return handle_; }
 
   /* Gets a reference to the handle_.GetKey (). */
-  const TStrand<>& GetHandleKey() { return handle_.GetKey (); }
+  const TString<>& GetHandleKey() { return handle_.GetKey (); }
 
   /* Gets a reference to the password. */
   TPassword& GetPassword() { return password_; }
@@ -106,7 +104,7 @@ class TUser {
   int32_t GetSession() { return session_; }
 
   /* Sets the session uid. */
-  virtual const TStrand<>& SetSession(int32_t session) {
+  virtual const TString<>& SetSession(int32_t session) {
     if (session == 0) return "Invalid session key";
     session_ = session;
     return nullptr;
@@ -119,7 +117,7 @@ class TUser {
   IUD GetResponse();
 
   /* Sets the abstract response code. */
-  virtual const TStrand<>& SetResponse(IUD response) {
+  virtual const TString<>& SetResponse(IUD response) {
     response_ = response;
     return nullptr;
   }
@@ -128,7 +126,7 @@ class TUser {
   FPD GetBalance() { return balance_; }
 
   /* Sets the abstract balance. */
-  virtual const TStrand<>& SetBalance(FPD balance) {
+  virtual const TString<>& SetBalance(FPD balance) {
     balance_ = balance;
     return nullptr;
   }
@@ -166,7 +164,7 @@ class TUser {
   }
 
   /* Sets the abstract value. */
-  virtual const TStrand<>& SetValue(int64_t value) {
+  virtual const TString<>& SetValue(int64_t value) {
     value_ = value;
     return nullptr;
   }
@@ -211,39 +209,39 @@ class TUser {
   }
 
   /* @todo Convert to Operation.
-  const TStrand<>& Sudo(const TStrand<>& text, const TStrand<>& strand_end) {
+  const TString<>& Sudo(const TString<>& text, const TString<>& String_end) {
     enum {
       kMessageLength = 141,
     };
-    const TStrand<>& token;
+    const TString<>& token;
     FPD balance;
     int64_t value;
     CHA input[kMessageLength];
 
-    text = TextSkipSpaces(text, strand_end);
+    text = TextSkipSpaces(text, String_end);
     if (!text) {
       return nullptr;
     }
-    if (TokenCompare(text, strand_end, "AddBalance")) {
-      token = TextRead(text, strand_end, balance);
+    if (TokenCompare(text, String_end, "AddBalance")) {
+      token = TextRead(text, String_end, balance);
       if (!token) {
         return nullptr;
       }
       balance_ += balance;
-    } else if (TokenCompare(text, strand_end, "AddValue")) {
-      token = TextRead(text, strand_end, value);
+    } else if (TokenCompare(text, String_end, "AddValue")) {
+      token = TextRead(text, String_end, value);
       if (!token) {
         return nullptr;
       }
       value_ += value;
-    } else if (TokenCompare(text, strand_end, "SetStatus")) {
-      token = TextRead(text, strand_end, input, input + kMessageLength);
+    } else if (TokenCompare(text, String_end, "SetStatus")) {
+      token = TextRead(text, String_end, input, input + kMessageLength);
       if (!token) {
         return nullptr;
       }
       SetStatus(input);
-    } else if (TokenCompare(text, strand_end, "SetHandle")) {
-      token = TextRead(text, strand_end, input, input + kMessageLength);
+    } else if (TokenCompare(text, String_end, "SetHandle")) {
+      token = TextRead(text, String_end, input, input + kMessageLength);
       if (!token) {
         return nullptr;
       }
@@ -251,8 +249,8 @@ class TUser {
         return "\n| Error: Password in invalid format!";
       }
       handle_.SetKey(input);
-    } else if (TokenCompare(text, strand_end, "SetPassword")) {
-      token = TextRead(text, strand_end, input, input + 141);
+    } else if (TokenCompare(text, String_end, "SetPassword")) {
+      token = TextRead(text, String_end, input, input + 141);
       if (!token) {
         return nullptr;
       }
@@ -260,12 +258,12 @@ class TUser {
         return "\n| Error: Password in invalid format!";
       }
       password_.SetKey(input);
-    } else if (TokenCompare(text, strand_end, "print")) {
+    } else if (TokenCompare(text, String_end, "print")) {
       cout << Print();
       return text;
     }
 
-    token = TextRead(text, strand_end, input, input + kMessageLength);
+    token = TextRead(text, String_end, input, input + kMessageLength);
     if (!token) {
       return nullptr;
     }
@@ -278,22 +276,22 @@ class TUser {
   @return      Returns null upon success, a Set header upon query, and an
   error_t ticket upon Read-Write failure. */
   virtual const Op* Star(uint index, Expr* expr) {
-    static const Op kThis{ "User", OperationCount (0), OperationFirst ('A'),
+    static const Op cThis{ "User", OperationCount (0), OperationFirst ('A'),
                          "A user account.", 0 };
     switch (index) {
     case '?':
-      return ExpressionOperand (expr, &kThis);
+      return ExpressionOperand (expr, &cThis);
     }
     return nullptr;
   }
 
  private:
   THandle handle_;        //< User's handle (i.e. key).
-  TStrand<>& status_;     //< User's status
-  TPassword password_;     //< User's password.
+  TString<>& status_;     //< User's status
+  TPassword password_;    //< User's password.
   TAuthenticator* auth_;  //< Handle and Password authenticator.
   int32_t session_;       //< Session index.
-  IUD uid_,             //< Index of user in the UserList.
+  IUD uid_,               //< Index of user in the UserList.
       public_key_,        //< Fake session encryption key.
       response_;          //< Gets user abstract response code.
   FPD balance_;           //< Abstract user account balance or money.
@@ -302,5 +300,5 @@ class TUser {
 
 };
 }       // namespace _
-#endif  //< KABUKI_TOOLKIT_WHO_USER
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_WHO_1
+#endif
+#endif

@@ -1,31 +1,26 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/mixer.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/mixer.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_MIXER
-#define KABUKI_TOOLKIT_AV_MIXER
-
+#ifndef KABUKI_TOOLKIT_TOUCH_MIXER
+#define KABUKI_TOOLKIT_TOUCH_MIXER
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
 namespace _ {
 
 class LIB_MEMBER MixerChannel;
 
-/* A generic parameter mixer.
-
-
-*/
+/* A generic parameter mixer. */
 template <typename T>
 class LIB_MEMBER Mixer {
  public:
   typedef enum {
-    MIDI = 0,
+    Midi = 0,
     DMX = 1,
   };
 
@@ -162,7 +157,7 @@ class LIB_MEMBER Mixer {
   template<typename Printer> Printer& Print(Printer& o);
 
  private:
-  ISC channel_count_,        //< number of active channels in the mixer.
+  ISC channel_count_,       //< number of active channels in the mixer.
       mixer_size_,          //< Size of the mixer array.
       control_resolution_;  //< Resolution of the ADCs of for the controls.
   MixerChannel** mixer_;    //< Mixer channels.
@@ -179,5 +174,5 @@ class LIB_MEMBER Mixer {
   }
 };
 }  //< namespace _
-#endif  //< KABUKI_TOOLKIT_AV_MIXER
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

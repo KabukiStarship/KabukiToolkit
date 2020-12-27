@@ -1,21 +1,17 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /pro/task.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Pro/Task.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at <https://mozilla.org/MPL/2.0/>. */
-
 #pragma once
-#include <_config.h>
-
-#if SEAM >= KABUKI_TOOLKIT_PRO_1
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_PRO_CORE
 #ifndef KABUKI_TOOLKIT_PRO_TASK
 #define KABUKI_TOOLKIT_PRO_TASK
-
-#include <script2/string.hpp>
-
+#include <Script2/String.hpp>
 namespace _ {
 
 /* An abstract task in a set of Task(AString). */
@@ -25,7 +21,7 @@ class Task {
   Task(const CHA* summary = "", const CHA* details = "", FPC weight_ = 0.0f,
        ISC time_testimate_min = 60 * 60)
       : summary_(TSTRClone<CHA>(summary)),
-        details_(StrandClone(details)),
+        details_(StringClone(details)),
         result_(nullptr),
         review_(nullptr),
         weight_(weight_),
@@ -198,7 +194,7 @@ class Task {
 
   /* Stopped the task. */
   void Stop(const CHA* result, FPC result_grade = 1.0f) {
-    Stop(StrandClone(new_result), new_assessment);
+    Stop(StringClone(new_result), new_assessment);
   }
 
   /* Returns true if the task is complete.
@@ -265,16 +261,16 @@ class Task {
   template <typename Printer>
   Printer& Print(Printer& o) {
     o << "\nTask:";
-    << LineStrand() << "| Task (" << weight_ << "): " << summary_
-    << LineStrand('-') << "| Begins: " << TimeDate(o, time_begins_)
-    << "       Ends: " << TimeDate(o, time_ends_) << LineStrand('-')
-    << "| Details: " << details_ << LineStrand('-')
+    << LineString() << "| Task (" << weight_ << "): " << summary_
+    << LineString('-') << "| Begins: " << TimeDate(o, time_begins_)
+    << "       Ends: " << TimeDate(o, time_ends_) << LineString('-')
+    << "| Details: " << details_ << LineString('-')
     << "| Assessment: " << assessment_
     << " Result: " << (result_ == nullptr ? "N/A" : result_)
     << "\n| Started: " << TimeDate(o, time_started_)
-    << "       Stopped: " << TimeDate(o, time_started_) << LineStrand('-');
+    << "       Stopped: " << TimeDate(o, time_started_) << LineString('-');
     << "|  Grade: " << grade_
-    << " Review: " << (review_ == nullptr ? "N/A" : review_) << LineStrand('_');
+    << " Review: " << (review_ == nullptr ? "N/A" : review_) << LineString('_');
     return o;
   }
 

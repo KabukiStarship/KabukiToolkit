@@ -1,20 +1,17 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/paramset.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/ParamSet.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_PARAMETERSET
-#define KABUKI_TOOLKIT_AV_PARAMETERSET
-
-#include "param.hpp"
-
+#ifndef KABUKI_TOOLKIT_TOUCH_PARAMETERSET
+#define KABUKI_TOOLKIT_TOUCH_PARAMETERSET
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#include "Param.hpp"
 namespace _ {
 
 /* A set of Parameter<T> that can be addressed by index.
@@ -98,9 +95,9 @@ class LIB_MEMBER ParamSet {
   template<typename Printer>
   Printer& Print(Printer& o) const {
     o << "\nParamSet:" << "ControlCount: " << Count ()
-      << LineStrand ('-')
+      << LineString ('-')
       << Parameter<T>::MacroHeader << kLF
-      << LineStrand ('-')
+      << LineString ('-')
       << "ParamCount():", ParamCount());
     for (ISC i = 0; i < ParamCount(); ++i) {
       auto control = controls[i];
@@ -113,7 +110,7 @@ class LIB_MEMBER ParamSet {
         o << kLF;
       }
     }
-    return o << LineStrand ('-');
+    return o << LineString ('-');
   }
 
  private:
@@ -128,5 +125,5 @@ class LIB_MEMBER ParamSet {
 
 
 }  // namespace _
-#endif  //< KABUKI_TOOLKIT_AV_PARAMETERSET
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

@@ -1,25 +1,22 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /who/organization.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Who/Organization.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_WHO_1
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_WHO_CORE
 #ifndef KABUKI_TOOLKIT_WHO_ORGANIZATION
 #define KABUKI_TOOLKIT_WHO_ORGANIZATION
-
-#include "entity.hpp"
-
+#include "Entity.hpp"
 namespace _ {
 
 /* An entity that is not a person such as a business or non-profit
-   organization. Roster - list or plan showing turns of duty or leave for
-   individuals or groups in an organization.
+organization. Roster - list or plan showing turns of duty or leave for
+individuals or groups in an organization.
 */
 class Organization : public Entity {
  public:
@@ -33,5 +30,5 @@ class Organization : public Entity {
 };
 
 }       // namespace _
-#endif  //< KABUKI_TOOLKIT_WHO_ORGANIZATION
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_WHO_1
+#endif
+#endif

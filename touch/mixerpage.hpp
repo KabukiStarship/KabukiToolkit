@@ -1,18 +1,16 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/mixerpage.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/MixerPage.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_MIXERPAGE
-#define KABUKI_TOOLKIT_AV_MIXERPAGE
-
+#ifndef KABUKI_TOOLKIT_TOUCH_MIXERPAGE
+#define KABUKI_TOOLKIT_TOUCH_MIXERPAGE
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
 namespace _ {
 
 class LIB_MEMBER Mixer;
@@ -21,8 +19,7 @@ class LIB_MEMBER MixerChannel;
 /* Class that represents a page of mixer channels on the Symmetry Live!
 A MixerPage stores 8 TemplatePages in an array. The user can switch through
 banks of pages on the mixer. The mixer can either be sorted in ascending
-track index order or the page banks can be customized to make buses.
-*/
+track index order or the page banks can be customized to make buses. */
 class LIB_MEMBER MixerPage {
   public:
     /* Constructor. */
@@ -43,7 +40,7 @@ class LIB_MEMBER MixerPage {
     ~MixerPage() {}
 
     /* Gets the name_. */
-    TStrand<>& Name () { return name_; }
+    TString<>& Name () { return name_; }
 
     /* Gets the startingIndex of this MixerPage. */
     ISC GetStartIndex () { return index_start_; }
@@ -75,12 +72,12 @@ class LIB_MEMBER MixerPage {
     }
 
   private:
-    TStrand<> name_;  //< MixerPage name.
+    TString<> name_;  //< MixerPage name.
     ISC index_start_;  //< Starting index of this page this MixerPage.
     Mixer* mixer_;     //< Pointer to the global AVMixer.
     TArray<MixerChannel*> channels_;  //< The Mixer channels.
 
 };
 }  // namespace _
-#endif  //< KABUKI_TOOLKIT_AV_MIXERPAGE
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

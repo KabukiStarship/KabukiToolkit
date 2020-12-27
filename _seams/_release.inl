@@ -1,1 +1,1 @@
-#include "../../script2/_release.inl"
+#include "../../Script2/_Release.inl"

@@ -1,20 +1,17 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/buttonswap.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/ButtonSwap.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_BUTTONSWAP
-#define KABUKI_TOOLKIT_AV_BUTTONSWAP
-
-#include "button.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#ifndef KABUKI_TOOLKIT_TOUCH_BUTTONSWAP
+#define KABUKI_TOOLKIT_TOUCH_BUTTONSWAP
+#include "Button.hpp"
 namespace {
 
 /* A Button that cycles a Control's functionality through various different
@@ -26,7 +23,7 @@ functionality of the knob through a cycle of different parameters.
 class LIB_MEMBER ButtonSwap : public Button {
  public:
   /* Constructor. */
-  ButtonSwap(const CHA* init_name = StrandEmpty ()) 
+  ButtonSwap(const CHA* init_name = StringEmpty ()) 
     : Button (init_name) {}
 
   /* Copy constructor. */
@@ -50,7 +47,7 @@ class LIB_MEMBER ButtonSwap : public Button {
                             0 };
     switch (index) {
     case '?':
-      return &kThis;
+      return &cThis;
     }
 
     return nullptr;
@@ -61,6 +58,6 @@ class LIB_MEMBER ButtonSwap : public Button {
   TArray<Button*> control_modes_;  //< Array of control mode buttons.
 };
 
-}  // namespace touch
+}  // namespace Touch
 #endif
 #endif

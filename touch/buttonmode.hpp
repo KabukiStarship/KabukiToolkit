@@ -1,20 +1,17 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/buttonmode.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/ButtonMode.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_MODEBUTTON
-#define KABUKI_TOOLKIT_AV_MODEBUTTON
-
-#include "button.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#ifndef KABUKI_TOOLKIT_TOUCH_MODEBUTTON
+#define KABUKI_TOOLKIT_TOUCH_MODEBUTTON
+#include "Button.hpp"
 namespace _ {
 
 class LIB_MEMBER ButtonMacro;
@@ -76,5 +73,5 @@ class LIB_MEMBER ModeButton : public Button {
   WidgetPage* page_;  //< Last saved page for switching macros.
 };
 }  // namespace _
-#endif  //< KABUKI_TOOLKIT_AV_MODEBUTTON
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

@@ -1,34 +1,30 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /who/account.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Who/Account.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_ID_ACCOUNT
-#define KABUKI_TOOLKIT_ID_ACCOUNT 1
-
-#include "handle.hpp"
-#include "password.hpp"
-#include "roster.hpp"
-#include "user.hpp"
-
+#define KABUKI_TOOLKIT_ID_ACCOUNT
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_WHO_CORE
+#include "Handle.hpp"
+#include "Password.hpp"
+#include "Roster.hpp"
+#include "User.hpp"
 namespace _ {
-
 /* An account with a username and password.
 */
 class TAccount {
  public:
   /* Constructs an Account with the given CHA. */
-  TAccount(const TStrand<>& username) : name_ (username) {}
+  TAccount(const TString<>& username) : name_ (username) {}
 
   /* Constructs an account from the given CHA and password. */
-  TAccount(const TStrand<>& username, const TStrand<>& password) 
+  TAccount(const TString<>& username, const TString<>& password) 
       : name_ (username), password_ (password) {
     // role = new Role ();
   }
@@ -52,16 +48,16 @@ class TAccount {
   }
 
   /* Gets a reference to the name.  */
-  const TStrand<>& Name() { return name_.GetKey (); }
+  const TString<>& Name() { return name_.GetKey (); }
 
   /* Sets the name to the CHA. */
-  BOL SetName(const TStrand<>& AString) { return name_.SetKey (AString); }
+  BOL SetName(const TString<>& AString) { return name_.SetKey (AString); }
 
   /* Returns true if this account requires a password. */
   BOL RequiresPassword() { return password_.Equals (""); }
 
   /* Sets the password to the new CHA. */
-  void SetPassword(const TStrand<>& AString) { password_.SetKey (AString); }
+  void SetPassword(const TString<>& AString) { password_.SetKey (AString); }
 
   /* Gets a reverence to the user list. */
   TRoster& Users() { return users_; }
@@ -84,5 +80,5 @@ class TAccount {
 };
 
 }       // namespace _
-#endif  //< KABUKI_TOOLKIT_ID_ACCOUNT
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_WHO_1
+#endif
+#endif

@@ -1,24 +1,20 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /who/userlist.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Who/UserList.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_WHO_1
 #ifndef KABUKI_TOOLKIT_WHO_USERLIST
 #define KABUKI_TOOLKIT_WHO_USERLIST
-
-#include "user.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_WHO_CORE
+#include "User.hpp"
 namespace _ {
 
-/* A list of registered users.
-*/
+/* A list of registered users. */
 class TRoster {
  public:
   /* Creates an empty user list. */
@@ -37,7 +33,7 @@ class TRoster {
   ISC GetCount();
 
   /* Returns true if this list contains the given user query result. */
-  BOL Contains(const TStrand<>& username) {
+  BOL Contains(const TString<>& username) {
     for (ISC index = 0; index < users_.GetCount (); index++) {
       if (users_[index]->Equals (username)) return true;
     }
@@ -55,8 +51,8 @@ class TRoster {
   /* Attempts to find a user with the given query.
   @return Returns a nullptr if this list does not contain the search query.
   */
-  TUser* Find(const TStrand<>& query) {
-    size_t length = StrandLength (username);
+  TUser* Find(const TString<>& query) {
+    size_t length = StringLength (username);
     if (length == 0) {
       return nullptr;  // static website guest account
     }
@@ -90,5 +86,5 @@ class TRoster {
   TArray<TUser*> users_;
 };
 }       // namespace _
-#endif  //< KABUKI_TOOLKIT_WHO_USERLIST
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_WHO_1
+#endif
+#endif

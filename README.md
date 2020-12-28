@@ -1,4 +1,4 @@
-# Kabuki Toolkit™
+# Kabuki Toolkit
 
 ```AsciiArt
   /\
@@ -11,16 +11,16 @@
    /         \                    ♫♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪
 ```
 
-Kabuki Toolkit™ (KT) is a [Modern Embedded-C++](https://github.com/kabuki-starship/kabuki.press.cookbook/blob/master/getting_started/modern_embedded_cpp.md), Script2™, and I am You Language (IMUL) toolkit for making intelligent connected software and art. The best place to get started learning KT is to read the [KabukiPress Cookbook](https://github.com/kabuki-starship/kabuki.press.cookbook), an open-source book that teaches how to make intelligent connected software, websites, books, and art with Modern Embedded-C++, Script2™, and I am You Language (IMUL).
+Kabuki Toolkit (KT) is a [Modern Embedded-C++](https://github.com/KabukiStarship/kabuki.press.cookbook/blob/master/GettingStarted/ModernEmbeddedCPP), Script2, and I am You Language (IMUL) toolkit for making intelligent connected software and art. The best place to get started learning KT is to read the [KabukiPress Cookbook](https://github.com/KabukiStarship/KabukiPressCookbook), an open-source book that teaches how to make intelligent connected software, websites, books, and art with Modern Embedded-C++, Script2, and I am You Language (IMUL).
 
-[![GitHub version](https://badge.fury.io/gh/kabuki-starship%2Fkabuki.toolkit.svg)](https://badge.fury.io/gh/kabuki-starship%2Fkabuki.toolkit)
+[![GitHub version](https://badge.fury.io/gh/KabukiStarship%2Fkabuki.toolkit.svg)](https://badge.fury.io/gh/KabukiStarship%2FKabukiToolkit)
 
 ## Mission and Vision
 
-The mission of Kabuki Toolkit™ is to make it easier and faster to create high-performance products in Embedded-C++, Script2™, and IMUL. Our vision is too eliminate wasted time, resources, and money with computer software throughout product lifecycles.
+The mission of Kabuki Toolkit is to make it easier and faster to create high-performance products in Embedded-C++, Script2, and IMUL. Our vision is too eliminate wasted time, resources, and money with computer software throughout product lifecycles.
 
 ## License
 
-Copyright © 2014-9 [Kabuki Starship™](https://kabukistarship.com).
+Copyright © 2014-20 [Kabuki Starship](https://kabukistarship.com).
 
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0/>.

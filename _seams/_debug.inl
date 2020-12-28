@@ -1,1 +1,1 @@
-#include "../../script2/_debug.inl"
+#include "../../Script2/_Debug.inl"

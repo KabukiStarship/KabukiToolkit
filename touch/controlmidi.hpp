@@ -1,27 +1,20 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/controlmidi.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/ControlMidi.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_MIDICONTROL
-#define KABUKI_TOOLKIT_AV_MIDICONTROL
-
-#include "param.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#ifndef KABUKI_TOOLKIT_TOUCH_MIDICONTROL
+#define KABUKI_TOOLKIT_TOUCH_MIDICONTROL
+#include "Param.hpp"
 namespace _ {
 
-/* A controller for MIDI signals.
-    
-
-
-*/
+/* A controller for MIDI signals. */
 class LIB_MEMBER ControlMidi : public Parameter<ISC> {
  public:
   enum {
@@ -29,7 +22,7 @@ class LIB_MEMBER ControlMidi : public Parameter<ISC> {
   };
 
   /* Constructor. */
-  ControlMidi(const TStrand<>& label = "", ISC cc = 0, ISC channel = 0,
+  ControlMidi(const TString<>& label = "", ISC cc = 0, ISC channel = 0,
               ISC init_value = 0, ISC newMinValue = 0, ISC min_value = 127,
               ISC word_size = 7, ISC type = Parameter<ISC>::ControlMidi)
     : Parameter<ISC> (type, label, channel, init_value, min_value, max_value,

@@ -1,1 +1,1 @@
-#include <script2/module_footer.inl>
+#include <Script2/_Footer.inl>

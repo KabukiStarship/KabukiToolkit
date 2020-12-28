@@ -1,20 +1,17 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /pro/schedule.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Pro/Schedule.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at <https://mozilla.org/MPL/2.0/>. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_PRO_1
 #ifndef KABUKI_TOOLKIT_PRO_SCHEDULE
 #define KABUKI_TOOLKIT_PRO_SCHEDULE
-
-#include "task.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_PRO_CORE
+#include "Task.hpp"
 namespace _ {
 
 /* A group of Task(AString) in temporal order that may repeat.
@@ -52,7 +49,7 @@ class Schedule {
   /* Default constructor creates a schedule with the default number of Tasks
       pointers. */
   Schedule(const CHA* key = "", ISC num_repeats = 0, ISC color = ~0)
-    : key_ (StrandClone (key)),
+    : key_ (StringClone (key)),
     tasks_ (),
     color_ (color),
     num_repeats_ (num_repeats) {}
@@ -61,11 +58,11 @@ class Schedule {
   ~Schedule () {}
 
   /* Gets the name. */
-  const TStrand<>& Key() { return key_; }
+  const TString<>& Key() { return key_; }
 
   /* Sets the name to the new name. */
   void SetKey (const CHA* new_name) {
-    return StealKey (StrandClone (new_name));
+    return StealKey (StringClone (new_name));
   }
 
   /* Gets the readme. */
@@ -74,7 +71,7 @@ class Schedule {
   /* Sets the name to the new name.
   @param new_readme A CHA this object now owns the memory.  */
   void SetReadMe(const CHA* new_readme) {
-    return StealReadMe (StrandClone (new_readme));
+    return StealReadMe (StringClone (new_readme));
   }
 
   /* Gets the default schedule color of the child-tasks. */
@@ -131,7 +128,7 @@ class Schedule {
 
   template<typename Printer>
   Printer& Print (Printer& o) {
-    o << LineStrand ('-')
+    o << LineString ('-')
       << "\nSchedule: " << key_ << " element_count: " << tasks_.GetCount ()
       << "\n";
     PrintBreak ("\n<", '-');
@@ -362,7 +359,7 @@ class Schedule {
   }
 
  private:
-  TStrand<> key_,        //< Name of the schedule.
+  TString<> key_,        //< Name of the schedule.
           readme_;       //< Readme for the Schedule.
   ISC color_,            //< Initial color of all of the Tasks.
       num_repeats_;      //< Number of times the Schedule repeats.

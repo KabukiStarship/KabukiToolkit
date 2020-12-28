@@ -1,18 +1,16 @@
 ﻿/* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /who/address.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Who/address.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_WHO_1
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_WHO_CORE
 #ifndef KABUKI_TOOLKIT_WHO_ADDRESS
-#define KABUKI_TOOLKIT_WHO_ADDRESS 1
-
+#define KABUKI_TOOLKIT_WHO_ADDRESS
 namespace _ {
 
 typedef enum { HomeAddress = 0, WordAddress, OtherAddress } AddressType;
@@ -22,64 +20,63 @@ class TAddress {
  public:
   /* Default constructor. */
   TAddress() {
-    /
   }
 
   /* Creates an address with the given parameters. */
-  TAddress(const TStrand<>& street, const TStrand<>& aCity, const TStrand<>& aState,
-          const TStrand<>& aZip, const TStrand<>& aCcountry, AddressType aType)
-    : street_ (StrandClone (street)),
-      city_ (StrandClone (city)),
-      state_ (StrandClone (state)),
-      zip_ (StrandClone (zip)),
-      country_ (StrandClone (country)),
+  TAddress(const TString<>& street, const TString<>& aCity, const TString<>& aState,
+          const TString<>& aZip, const TString<>& aCcountry, AddressType aType)
+    : street_ (StringClone (street)),
+      city_ (StringClone (city)),
+      state_ (StringClone (state)),
+      zip_ (StringClone (zip)),
+      country_ (StringClone (country)),
       type_ (type) {}
 
   /* Gets the street address. */
-  const TStrand<>& GetStreet() { return street_; }
+  const TString<>& GetStreet() { return street_; }
 
   /* Sets the street address. */
-  void SetStreet(const TStrand<>& AString) {
+  void SetStreet(const TString<>& AString) {
     delete street_;
-    street_ = StrandClone (AString);
+    street_ = StringClone (AString);
   }
 
   /* Gets the city. */
-  const TStrand<>& GetCity() { return city_; }
+  const TString<>& GetCity() { return city_; }
 
   /* Sets the city. */
-  void SetCity(const TStrand<>& AString) {
+  void SetCity(const TString<>& AString) {
     delete city_;
-    city_ = StrandClone (AString);
+    city_ = StringClone (AString);
   }
 
   /* Gets the State. */
-  const TStrand<>& GetState() { return state_; }
+  const TString<>& GetState() { return state_; }
   
 
   /* Sets the state. */
-  void SetState(const TStrand<>& AString) {
+  void SetState(const TString<>& AString) {
     delete state_;
-    state_ = StrandClone (AString);
+    state_ = StringClone (AString);
   }
   
 
   /* Gets the zip code. */
-  const TStrand<>& GetZip();
+  const TString<>& GetZip();
 
   /* Sets the zip code. */
-  void SetZip(const TStrand<>& AString) {
+  void SetZip(const TString<>& AString) {
     delete zip_;
-    zip_ = StrandClone (AString);
+    zip_ = StringClone (AString);
   }
 
   /* Gets the country. */
-  const TStrand<>& GetCountry() { return country_; }
+  const TString<>& GetCountry() { return country_; }
 
   /* Sets the country. */
-  void SetCountry(const TStrand<>& AString) {
+  void SetCountry(const TString<>& AString) {
     delete country_;
-    country_ = StrandClone (AString);
+    country_ = StringClone (AString);
   }
 
   /* Gets the address type.
@@ -100,7 +97,7 @@ class TAddress {
   }
 
  private:
-  TStrand<> *street_, //< The street address.
+  TString<> *street_, //< The street address.
       *city_,         //< The city of address
       *state_,        //< The state of address
       *zip_,          //< The zip code of address
@@ -120,5 +117,5 @@ class TAddress {
 };
 
 }  // namespace _
-#endif  //< KABUKI_TOOLKIT_WHO_ADDRESS
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_WHO_1
+#endif
+#endif

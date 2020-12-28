@@ -1,40 +1,37 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/buttonscroller.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/ButtonScroller.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_BUTTONSCROLLER
-#define KABUKI_TOOLKIT_AV_BUTTONSCROLLER
-
-#include "button.hpp"
-#include "component.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#ifndef KABUKI_TOOLKIT_TOUCH_BUTTONSCROLLER
+#define KABUKI_TOOLKIT_TOUCH_BUTTONSCROLLER
+#include "Button.hpp"
+#include "Component.hpp"
 namespace _ {
 
 /* A scrollable array Button (s). */
-class LIB_MEMBER ButtonScroller : public HmiComponent {
+class LIB_MEMBER ButtonScroller : public HMIComponent {
  public:
   enum {
-    kDefaultNumVisibleButtons = 5,  //< Default number of visible numbers.
+    cDefaultVisibleButtonCount = 5,  //< Default number of visible numbers.
   };
 
   /* Default constructor. */
-  ButtonScroller(TStrand<>* newLabel = "",
-                 ISC new_array_size = kDefaultNumVisibleButtons)
+  ButtonScroller(TString<>* newLabel = "",
+                 ISC new_array_size = cDefaultVisibleButtonCount)
     : ButtonScroller (initLabel), currentIndex (0), buttons () {
     setNumVisibleButtons (newNumVisibleButtons);
   }
 
   /* Copy constructor. */
   ButtonScroller(const ButtonScroller& o)
-    : HmiComponent (o),
+    : HMIComponent (o),
     visible_button_count_ (o.visible_button_count_),
     currentIndex (o.currentIndex),
     buttons (o.buttons) {

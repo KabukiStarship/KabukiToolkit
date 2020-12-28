@@ -1,24 +1,22 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/buttonradio.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/buttonradio.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
 
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_RADIOBUTTON
-#define KABUKI_TOOLKIT_AV_RADIOBUTTON
-
-#include "component.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#ifndef KABUKI_TOOLKIT_TOUCH_RADIOBUTTON
+#define KABUKI_TOOLKIT_TOUCH_RADIOBUTTON
+#include "Component.hpp"
 namespace _ {
 
-/* */
-class ButtonRadio : public HmiComponent {
+/* An abstract radio button. */
+class ButtonRadio : public HMIComponent {
  public:
 
   /* Constructs a radio button with starting index 0. */
@@ -57,5 +55,5 @@ class ButtonRadio : public HmiComponent {
   ParamSet buttons_;  //< The radio buttons ParamSet.
 };
 }  // namespace _
-#endif  //< KABUKI_TOOLKIT_AV_BUTTONRADIO
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

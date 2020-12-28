@@ -1,18 +1,16 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/component.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/Component.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_HMICOMPONENT
-#define KABUKI_TOOLKIT_AV_HMICOMPONENT
-
+#ifndef KABUKI_TOOLKIT_TOUCH_HMICOMPONENT
+#define KABUKI_TOOLKIT_TOUCH_HMICOMPONENT
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
 namespace _ {
 
 typedef enum {
@@ -55,27 +53,27 @@ typedef enum ParameterTypes {
 } ParameterType;
 
 /* A component in a Human-Machine Interface that may be referenced by name or
-IUD. A HmiComponent has the following rules: 1.) Labels must be 255
+IUD. A HMIComponent has the following rules: 1.) Labels must be 255
 characters or less for a normal label, and 16 characters or less for a short
 label. 2.) Labels must contain printable ASCII characters that are HUI
 compatible.
 */
-class LIB_MEMBER HmiComponent {
+class LIB_MEMBER HMIComponent {
  public:
   enum {
     MaxLabelLength = 20,  //< The max label length of a label.
   };
 
   /* Default constructor. */
-  HmiComponent(const CHA* newLabel = "") {
+  HMIComponent(const CHA* newLabel = "") {
     if (SetLabel (label)) label = GetUnnamedLabel ();
   }
 
   /* Copy constructor. */
-  HmiComponent(const HmiComponent& other);
+  HMIComponent(const HMIComponent& other);
 
   /* Virtual destructor. */
-  virtual ~HmiComponent() {}
+  virtual ~HMIComponent() {}
 
   /* Gets the unique ID for the object. */
   IUD Uid () { return uid_;  }
@@ -88,10 +86,10 @@ class LIB_MEMBER HmiComponent {
 
   /* Sets the label to the given AString.
   @return Returns 0 upon success and 1 if the new label is too uint32_t.
-  @see    HmiComponent::IsValid (CHA). */
+  @see    HMIComponent::IsValid (CHA). */
   virtual ISC SetLabel(const CHA* label) {
     if (label == "") return -1;
-    SIW length = StrandLength (label);
+    SIW length = StringLength (label);
     if (length > MaxLabelLength) return 1;
 
     if (!IsValidLabel (label)) return 1;
@@ -115,7 +113,7 @@ class LIB_MEMBER HmiComponent {
   IUD uid_,          //< Unique id.
       type_;           //< Type of HMI component.
   const CHA* label_;  //< This object's text label.
-};                     //< class HmiComponent
+};                     //< class HMIComponent
 }  // namespace _
 #endif 
 #endif

@@ -1,20 +1,17 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/library.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/Library.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_LIBRARY
-#define KABUKI_TOOLKIT_AV_LIBRARY
-
-#include "tag.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#ifndef KABUKI_TOOLKIT_TOUCH_LIBRARY
+#define KABUKI_TOOLKIT_TOUCH_LIBRARY
+#include "Tag.hpp"
 namespace _ {
 
 /* The main library of Hits.
@@ -30,8 +27,8 @@ class Library {
     patches.Add (hit);
 
     /// Check the tags for duplicates and add to tags if no duplicates exist.
-    const TStrand<>& category = hit.GetCategory ();
-    std::for_each (TStrand<>& AString in tags) if (AString == category) return true;
+    const TString<>& category = hit.GetCategory ();
+    std::for_each (TString<>& AString in tags) if (AString == category) return true;
     tags.Add (category);
     sort (tags.begin (), tags.end ());
     return true;
@@ -145,7 +142,7 @@ class Library {
 
  private:
   uint64_t num_uids;                   //< Total number of UIDs.
-  _::ADic<const TStrand<>&, Hit> patches;  //< List of patches.
+  _::ADic<const TString<>&, Hit> patches;  //< List of patches.
   TArray<CHA> catagories,        //< The list of categories.
       tags;                            //< List of tag Strings.
 
@@ -157,5 +154,5 @@ class Library {
 };
 
 }       // namespace _
-#endif  //< KABUKI_TOOLKIT_AV_LIBRARY
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

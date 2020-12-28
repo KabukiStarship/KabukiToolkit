@@ -1,20 +1,18 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /pro/project.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Pro/Project.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at <https://mozilla.org/MPL/2.0/>. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_PRO_1
 #ifndef KABUKI_PRO_PROJECT
 #define KABUKI_PRO_PROJECT
-#include "schedule.hpp"
-#include "task.hpp"
-
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_PRO
+#include "Schedule.hpp"
+#include "Task.hpp"
 namespace _ {
 
 /* A tree-like Project in the system that can be scheduled.
@@ -62,8 +60,8 @@ class Project : public Operand {
 
   /* Default constructor initializes list with the given or left key. */
   Project(const CHA* key = "Unnamed", const CHA* readme = "")
-    : key_ (key == nullptr ? StrandClone ("") : key),
-    readme_ (readme == nullptr ? StrandClone ("") : readme),
+    : key_ (key == nullptr ? StringClone ("") : key),
+    readme_ (readme == nullptr ? StringClone ("") : readme),
     task_ (nullptr) {}
 
   /* Constructor initializes with stolen key and readme. */
@@ -74,7 +72,7 @@ class Project : public Operand {
   ~Project() {}
 
   /* Gets the key. */
-  const TStrand<>& Key() { return key_; }
+  const TString<>& Key() { return key_; }
 
   /* Sets the key. */
   void StealKey(CHA* new_key);
@@ -83,7 +81,7 @@ class Project : public Operand {
   void SetKey (const CHA* new_key) { key_.Set (new_key); }
 
   /* Gets the readme. */
-  const TStrand<>& GetReadMe() { return readme_; }
+  const TString<>& GetReadMe() { return readme_; }
 
   /* Sets the readme to a clone of the new_readme and deletes the old one.. */
   void SetReadme (const CHA* new_readme) {
@@ -129,7 +127,7 @@ class Project : public Operand {
   /* Lists the keys in the given scope. */
   template<typename Printer>
   Printer& ListObjs(Printer& o) {
-    o << LineStrand ();
+    o << LineString ();
       << "|\n"
       "| Objs in Scope:\n"
       "|\n"
@@ -144,7 +142,7 @@ class Project : public Operand {
     for (ISC i = 0; i < schedules_->count; ++i)
       o << "| " << i << ".) "
       << schedules_[i]->Key () << kLF;
-    return o << LineStrand ('_');
+    return o << LineString ('_');
   }
 
   /* Searches for a Schedule with the given key. */
@@ -301,7 +299,7 @@ class Project : public Operand {
 
   /* Gets the help CHA. */
   static const CHA* GetAppHelpString() {
-    return "\n| kabuki.toolkit.pro.Project Help:\n"
+    return "\n| KabukiToolkit.pro.Project Help:\n"
       "| There are three primary classes for use:\n"
       "|\n"
       "| Task     - A general purpose todo task.\n"
@@ -379,7 +377,7 @@ class Project : public Operand {
   template<typename Printer>
   Printer& Print(Printer& o, ISC indent_level = 0, CHA bullet_type = '1',
            ISC spaces_per_tab = 4) {
-    o << LineStrand ()
+    o << LineString ()
       << "\nProject: " << key_
       << "\n| Projects: " << projects_->count << "|\n";
     for (ISC i = 0; i < projects_->count; ++i) {
@@ -389,7 +387,7 @@ class Project : public Operand {
     for (ISC i = 0; i < schedules_->count; ++i) {
       Ar4Get<Schedule*> (schedules_, i)->Print (o);
     }
-    return o << LineStrand ('_');
+    return o << LineString ('_');
   }
 
   /* Script2 operations. */
@@ -398,7 +396,7 @@ class Project : public Operand {
   }
 
  private:
-  TStrand<> key_,             //< Entity key.
+  TString<> key_,             //< Entity key.
       readme_;                //< Project readme.
   Schedule* task_;            //< Current Schedule being edited.
   TStack<Project> schedules_; //< Composition of Schedule(AString).

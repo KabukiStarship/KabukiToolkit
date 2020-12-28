@@ -1,22 +1,19 @@
 /* Kabuki Toolkit @version 0.x
-@link    https://github.com/kabuki-starship/kabuki.toolkit.git
-@file    /touch/widget.hpp
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Cale McCollough; all right reserved (R). 
+@link    https://github.com/KabukiStarship/KabukiToolkit.git
+@file    /Touch/Widget.hpp
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-20 Cale McCollough; all right reserved (R). 
 This Source Code Form is subject to the terms of the Mozilla Public License, 
 v. 2.0. If a copy of the MPL was not distributed with this file, You can 
 obtain one at https://mozilla.org/MPL/2.0/. */
-
 #pragma once
-#include <_config.h>
-#if SEAM >= KABUKI_TOOLKIT_AV_1
-#ifndef KABUKI_TOOLKIT_AV_WIDGET
-#define KABUKI_TOOLKIT_AV_WIDGET
-
-#include "controlmatrix.hpp"
-#include "component.hpp"
-#include "controlmidi.hpp"
-
+#ifndef KABUKI_TOOLKIT_TOUCH_WIDGET
+#define KABUKI_TOOLKIT_TOUCH_WIDGET
+#include <_Config.h>
+#if SEAM >= KABUKI_TOOLKIT_TOUCH_CORE
+#include "ControlMatrix.hpp"
+#include "Component.hpp"
+#include "ControlMidi.hpp"
 namespace _ {
 
 /* A TWidget or instance of a widget.
@@ -45,7 +42,7 @@ class LIB_MEMBER TWidget : public Operation {
 
   /* Default contrctor. */
   TWidget(const CHA* name = "")
-    : HmiComponent (initLabel), page_count_ (1) {
+    : HMIComponent (initLabel), page_count_ (1) {
     // We have to have at least one blank page.
     pages.add (ControlsPage ());
   }
@@ -137,10 +134,10 @@ class LIB_MEMBER TWidget : public Operation {
   }
 
   /* Gets this TWidget's name. */
-  TStrand<>& Name() { return name_; }
+  TString<>& Name() { return name_; }
 
   /* Renames this TWidget to the given AString. */
-  const CHA* SetName(const TStrand<>& new_name) {
+  const CHA* SetName(const TString<>& new_name) {
     return name_.Set (new_name);
   }
 
@@ -169,7 +166,7 @@ class LIB_MEMBER TWidget : public Operation {
   /* Inserts a new blank page into the Array.
   @param s The name for the new page. */
   ISC InsertPage(const CHA* s) {  // This function inserts a new TWidget page in d
-    TStrand<> trimmed_name;
+    TString<> trimmed_name;
 
     if (name.Compare (""))
       trimmed_name = T ("Untitled");
@@ -274,12 +271,12 @@ class LIB_MEMBER TWidget : public Operation {
   }
 
   /* Gets the filename of this TWidget. */
-  const TStrand<>& GetFilename () { return filename_; }
+  const TString<>& GetFilename () { return filename_; }
 
   /* Prints the page_labels_ to the given Printer. */
   template<typename Printer>
   Printer& PrintPageLables (Printer& o) {
-    TStrand<> pageLables;
+    TString<> pageLables;
     WidgetPage* current = pagesHead;
     o << "Pages: ";
     if (current) {
@@ -301,7 +298,7 @@ class LIB_MEMBER TWidget : public Operation {
   Printer& Print(Printer& o) const {
     const CHA* namesFormater = " -> ";
     o << "\nWidget: " << WidgetName <<  << " PageCount: " << page_count_ 
-      << "\n" << LineStrand ('-');
+      << "\n" << LineString ('-');
     if (page_count_ == 0) {
       o << "No Pages\n";
       return o;
@@ -319,7 +316,7 @@ class LIB_MEMBER TWidget : public Operation {
   virtual const Op* Star (CHW index, Expr* io);
 
  private:
-  TStrand<> widget_name_,       //< This TWidget's name.
+  TString<> widget_name_,       //< This TWidget's name.
       filename_;                //< Filename of this widget.
   ISC num_pages_;               //< Number of pages this TWidget has.
   Parameter<ISC>*masterKnob_a_, //< Master knob for Layer A.
@@ -366,18 +363,18 @@ class LIB_MEMBER TWidget : public Operation {
     //     process over from 1.
 
     ISC trailingValue;
-    TStrand<> name;
+    TString<> name;
 
     trailingValue = name.GetTrailingIntValue ();
 
     if (trailingValue < 0) trailingValue = 1;
 
-    name = name.dropLastCharacters (TStrand<> (trailingValue).length ()) +
-      TStrand<> (++trailingValue);
+    name = name.dropLastCharacters (TString<> (trailingValue).length ()) +
+      TString<> (++trailingValue);
     return InsertDuplicate (name);
   }
 };
 
 }  // namespace _
-#endif  //< KABUKI_TOOLKIT_AV_WIDGET
-#endif  //< #if SEAM >= KABUKI_TOOLKIT_AV_1
+#endif
+#endif

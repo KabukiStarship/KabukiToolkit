@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="Code\CodeModule.h" />
+    <ClInclude Include="Code\CommentStripper.h" />
+    <ClInclude Include="Code\Include.h" />
+    <ClInclude Include="Code\stb_c_lexer.h" />
+    <ClInclude Include="Code\stb_leakcheck.h" />
+    <ClInclude Include="Document.h" />
+    <ClInclude Include="Image\etc1_utils.h" />
+    <ClInclude Include="Image\image_DXT.h" />
+    <ClInclude Include="Image\image_helper.h" />
+    <ClInclude Include="Image\jo_jpeg.h" />
+    <ClInclude Include="Image\pkm_helper.h" />
+    <ClInclude Include="Image\pvr_helper.h" />
+    <ClInclude Include="Image\SOIL2.h" />
+    <ClInclude Include="Image\stbi_DDS.h" />
+    <ClInclude Include="Image\stbi_DDS_c.h" />
+    <ClInclude Include="Image\stbi_ext.h" />
+    <ClInclude Include="Image\stbi_ext_c.h" />
+    <ClInclude Include="Image\stbi_pkm.h" />
+    <ClInclude Include="Image\stbi_pkm_c.h" />
+    <ClInclude Include="Image\stbi_pvr.h" />
+    <ClInclude Include="Image\stbi_pvr_c.h" />
+    <ClInclude Include="Image\stb_image.h" />
+    <ClInclude Include="Image\stb_image_write.h" />
+    <ClInclude Include="IMUL\Doxygen.h" />
+    <ClInclude Include="IMUL\Parser.h" />
+    <ClInclude Include="IMUL\UML.h" />
+    <ClInclude Include="Package.h" />
+    <ClInclude Include="Pro\Git.hpp" />
+    <ClInclude Include="Pro\Global.h" />
+    <ClInclude Include="Pro\Issue.hpp" />
+    <ClInclude Include="Pro\Mission.hpp" />
+    <ClInclude Include="Pro\Project.hpp" />
+    <ClInclude Include="Pro\Schedule.hpp" />
+    <ClInclude Include="Pro\Task.hpp" />
+    <ClInclude Include="Pro\Workspace.hpp" />
+    <ClInclude Include="Pro\_Config.h" />
+    <ClInclude Include="Server.h" />
+    <ClInclude Include="Touch\ADSR.hpp" />
+    <ClInclude Include="Touch\Button.hpp" />
+    <ClInclude Include="Touch\ButtonDMX.hpp" />
+    <ClInclude Include="Touch\ButtonDummy.hpp" />
+    <ClInclude Include="Touch\ButtonEvent.hpp" />
+    <ClInclude Include="Touch\ButtonMacro.hpp" />
+    <ClInclude Include="Touch\ButtonMidi.hpp" />
+    <ClInclude Include="Touch\ButtonMode.hpp" />
+    <ClInclude Include="Touch\ButtonPage.hpp" />
+    <ClInclude Include="Touch\ButtonRadio.hpp" />
+    <ClInclude Include="Touch\ButtonScroller.hpp" />
+    <ClInclude Include="Touch\ButtonSwap.hpp" />
+    <ClInclude Include="Touch\ButtonWidget.hpp" />
+    <ClInclude Include="Touch\ChannelGroup.hpp" />
+    <ClInclude Include="Touch\Component.hpp" />
+    <ClInclude Include="Touch\ControlDMX.hpp" />
+    <ClInclude Include="Touch\Controller.hpp" />
+    <ClInclude Include="Touch\ControllerISymmetric.hpp" />
+    <ClInclude Include="Touch\ControlMaster.hpp" />
+    <ClInclude Include="Touch\ControlMatrix.hpp" />
+    <ClInclude Include="Touch\ControlMidi.hpp" />
+    <ClInclude Include="Touch\ControlXY.hpp" />
+    <ClInclude Include="Touch\Event.h" />
+    <ClInclude Include="Touch\GlobalConfig.h" />
+    <ClInclude Include="Touch\Library.hpp" />
+    <ClInclude Include="Touch\Mixer.hpp" />
+    <ClInclude Include="Touch\MixerChannel.hpp" />
+    <ClInclude Include="Touch\MixerPage.hpp" />
+    <ClInclude Include="Touch\Param.hpp" />
+    <ClInclude Include="Touch\ParamSet.hpp" />
+    <ClInclude Include="Touch\Set.hpp" />
+    <ClInclude Include="Touch\Tag.hpp" />
+    <ClInclude Include="Touch\TagLibrary.hpp" />
+    <ClInclude Include="Touch\Widget.hpp" />
+    <ClInclude Include="Touch\WidgetManager.hpp" />
+    <ClInclude Include="Touch\WidgetMidi.hpp" />
+    <ClInclude Include="Touch\WidgetPage.hpp" />
+    <ClInclude Include="Touch\_Config.h" />
+    <ClInclude Include="Who\Acount.hpp" />
+    <ClInclude Include="Who\Address.hpp" />
+    <ClInclude Include="Who\AddressEmail.hpp" />
+    <ClInclude Include="Who\Authenticator.hpp" />
+    <ClInclude Include="Who\AuthenticatorDefault.hpp" />
+    <ClInclude Include="Who\Entity.hpp" />
+    <ClInclude Include="Who\EntityGroup.hpp" />
+    <ClInclude Include="Who\EntityList.hpp" />
+    <ClInclude Include="Who\Global.h" />
+    <ClInclude Include="Who\Handle.hpp" />
+    <ClInclude Include="Who\Name.hpp" />
+    <ClInclude Include="Who\Organization.hpp" />
+    <ClInclude Include="Who\Password.hpp" />
+    <ClInclude Include="Who\Person.hpp" />
+    <ClInclude Include="Who\Privilege.hpp" />
+    <ClInclude Include="Who\Profile.hpp" />
+    <ClInclude Include="Who\Registrar.hpp" />
+    <ClInclude Include="Who\Relationahip.hpp" />
+    <ClInclude Include="Who\Role.hpp" />
+    <ClInclude Include="Who\Roster.hpp" />
+    <ClInclude Include="Who\Symbol.hpp" />
+    <ClInclude Include="Who\UIDAssigner.hpp" />
+    <ClInclude Include="Who\User.hpp" />
+    <ClInclude Include="Who\UserList.hpp" />
+    <ClInclude Include="_Seams\Code\01.StripComments.h" />
+    <ClInclude Include="_Seams\Code\01.StripComments.SourceExampleWithoutComments.h" />
+    <ClInclude Include="_Seams\_Config.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Client.inl" />
+    <None Include="Code\CodeModule.inl" />
+    <None Include="Code\CommentStripper.inl" />
+    <None Include="Code\Include.inl" />
+    <None Include="Code\stb_c_lexer.inl" />
+    <None Include="Code\stb_leakcheck.inl" />
+    <None Include="Code\_Seams.inl" />
+    <None Include="Document.inl" />
+    <None Include="GUI\_Package.inl" />
+    <None Include="Image\etc1_utils.inl" />
+    <None Include="Image\image_DXT.inl" />
+    <None Include="Image\image_helper.inl" />
+    <None Include="Image\SOIL2.inl" />
+    <None Include="Image\_Package.inl" />
+    <None Include="IMUL\ReadMe.md" />
+    <None Include="IMUL\_Seams.inl" />
+    <None Include="Package.inl" />
+    <None Include="Pro\ReadMe.md" />
+    <None Include="Pro\_Config.inl" />
+    <None Include="Pro\_Debug.inl" />
+    <None Include="Pro\_Library.inl" />
+    <None Include="Pro\_Release.inl" />
+    <None Include="Pro\_Seams.inl" />
+    <None Include="Pro\_Undef.inl" />
+    <None Include="ReadMe.md" />
+    <None Include="Server.inl" />
+    <None Include="Touch\ReadMe.md" />
+    <None Include="Touch\_Config.inl" />
+    <None Include="Touch\_Debug.inl" />
+    <None Include="Touch\_Library.inl" />
+    <None Include="Touch\_Release.inl" />
+    <None Include="Touch\_Seams.inl" />
+    <None Include="Touch\_Undef.inl" />
+    <None Include="Who\ReadMe.md" />
+    <None Include="Who\_Config.inl" />
+    <None Include="Who\_Debug.inl" />
+    <None Include="Who\_Library.inl" />
+    <None Include="Who\_Release.inl" />
+    <None Include="Who\_Seams.inl" />
+    <None Include="Who\_Undef.inl" />
+    <None Include="_Package.inl" />
+    <None Include="_Seams\Code\00.Core.inl" />
+    <None Include="_Seams\Database\00.Core.inl" />
+    <None Include="_Seams\GUI\00.Core.inl" />
+    <None Include="_Seams\Image\00.Core.inl" />
+    <None Include="_Seams\Imul\00.Core.inl" />
+    <None Include="_Seams\Pro\00.Core.inl" />
+    <None Include="_Seams\ReadMe.md" />
+    <None Include="_Seams\Release.inl" />
+    <None Include="_Seams\Touch\00.Core.inl" />
+    <None Include="_Seams\Who\00.Core.inl" />
+    <None Include="_Seams\_Debug.inl" />
+    <None Include="_Seams\_Release.inl" />
+    <None Include="_Seams\_Seams.inl" />
+    <None Include="_Seams\_Undef.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="_Seams\_Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="_Seams\CMakeFiles.txt" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{F634AA2B-5701-4DBC-A60E-FFAFB220504B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>kabukitoolkit</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>KabukiToolkit</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(PrjectDir)./_seams;$(PrjectDir)./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>-lGL %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\workspace\glew\include;C:\workspace\glfw\include;C:\workspace\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\workspace\glew\lib\Release\Win32;C:\workspace\glfw\bin\win64\lib-vc2019;C:\workspace\SDL2-2.0.10\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

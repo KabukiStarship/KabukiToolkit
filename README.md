@@ -11,7 +11,7 @@
    /         \                    ♫♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪
 ```
 
-Kabuki Toolkit (KT) is a [Modern Embedded-C++](https://github.com/KabukiStarship/kabuki.press.cookbook/blob/master/GettingStarted/ModernEmbeddedCPP), Script2, and I am You Language (IMUL) toolkit for making intelligent connected software and art. The best place to get started learning KT is to read the [KabukiPress Cookbook](https://github.com/KabukiStarship/KabukiPressCookbook), an open-source book that teaches how to make intelligent connected software, websites, books, and art with Modern Embedded-C++, Script2, and I am You Language (IMUL).
+Kabuki Toolkit (KT) is a [Modern Embedded-C++](https://github.com/KabukiStarship/kabuki.press.cookbook/blob/master/GettingStarted/ModernEmbeddedCPP), Script2, and I am You Language (IMUL) toolkit for making intelligent connected software and art. The best place to get started learning KT is to read the [KP Cookbook](https://github.com/KabukiStarship/KabukiPressCookbook), an open-source book that teaches how to make intelligent connected software, websites, books, and art with Modern Embedded-C++, Script2, and I am You Language (IMUL).
 
 [![GitHub version](https://badge.fury.io/gh/KabukiStarship%2Fkabuki.toolkit.svg)](https://badge.fury.io/gh/KabukiStarship%2FKabukiToolkit)
 
@@ -21,6 +21,6 @@ The mission of Kabuki Toolkit is to make it easier and faster to create high-per
 
 ## License
 
-Copyright © 2014-20 [Kabuki Starship](https://kabukistarship.com).
+Copyright 2014-21 © [Kabuki Starship](https://kabukistarship.com).
 
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0/>.
